@@ -45,8 +45,8 @@ import com.sun.star.text.XTextRange;
 /**
  * Range of text in a text document.
  * 
- * @author Andreas Bröker
- * @author Markus Krüger
+ * @author Andreas Brueker
+ * @author Markus Krueger
  * @version $Revision: 11361 $
  */
 public interface ITextRange {
@@ -60,7 +60,7 @@ public interface ITextRange {
    * 
    * @return OpenOffice.org XTextRange interface
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public XTextRange getXTextRange();
   //----------------------------------------------------------------------------
@@ -69,7 +69,7 @@ public interface ITextRange {
    * 
    * @param text text to be used
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void setText(String text);
   //----------------------------------------------------------------------------
@@ -80,7 +80,7 @@ public interface ITextRange {
    * 
    * @throws TextException 
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public IPageStyle getPageStyle() throws TextException;  
   //----------------------------------------------------------------------------
@@ -90,7 +90,7 @@ public interface ITextRange {
    * @return cell of the texttable if the text range is part of cell or null if
    * the text range is not part of a cell
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public ITextTableCell getCell();  
   //----------------------------------------------------------------------------
@@ -106,7 +106,7 @@ public interface ITextRange {
    * 
    * @throws TextException if the text ranges to compare are not within the same text. 
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public short compareRange(ITextRange textRangeToCompare) throws TextException;  
   //----------------------------------------------------------------------------
@@ -116,7 +116,7 @@ public interface ITextRange {
    * 
    * @param document document to be used
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 25.01.2007
    */
   public void setDocument(IDocument document);

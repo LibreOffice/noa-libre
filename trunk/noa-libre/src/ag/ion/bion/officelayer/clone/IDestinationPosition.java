@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.clone;
 /**
  * Interface for DestinationPositions
  * 
- * @author Sebastian Rösgen
+ * @author Sebastian Ruesgen
  * 
  * @version $Revision: 10398 $
  */
@@ -52,7 +52,7 @@ public interface IDestinationPosition {
 	 * 
 	 * @return the class of the stored object
 	 * 
-	 * @author Sebastian Rösgen
+	 * @author Sebastian Ruesgen
 	 */
 	public Class getType();
   //----------------------------------------------------------------------------
@@ -61,7 +61,7 @@ public interface IDestinationPosition {
 	 * 
 	 * @return the stored object
 	 * 
-	 * @author Sebastian Rösgen
+	 * @author Sebastian Ruesgen
 	 */
 	public Object getDestinationObject();
   //----------------------------------------------------------------------------

@@ -46,7 +46,7 @@ import com.sun.star.lang.EventObject;
 /**
  * Wrapper in order to register an event listener in OpenOffice.org.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  */
 public class EventListenerWrapper implements XEventListener {
@@ -61,7 +61,7 @@ public class EventListenerWrapper implements XEventListener {
    * 
    * @throws IllegalArgumentException if the submitted event listener is not valid
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public EventListenerWrapper(IEventListener eventListener) throws IllegalArgumentException {
     if(eventListener == null)
@@ -74,7 +74,7 @@ public class EventListenerWrapper implements XEventListener {
 	 * 
 	 * @param eventObject source event object
 	 * 
-     * @author Andreas Bröker
+     * @author Andreas Brueker
 	 */
 	public void disposing(EventObject eventObject) {
 	  eventListener.disposing(new Event(eventObject));

@@ -50,8 +50,8 @@ import com.sun.star.uno.UnoRuntime;
 /**
  * OpenOffice.org drawing document representation.
  * 
- * @author Andreas Bröker
- * @author Markus Krüger
+ * @author Andreas Brueker
+ * @author Markus Krueger
  * @version $Revision: 11637 $
  */
 public class DrawingDocument extends AbstractDocument implements IDrawingDocument {
@@ -67,7 +67,7 @@ public class DrawingDocument extends AbstractDocument implements IDrawingDocumen
    * 
    * @throws IllegalArgumentException if the submitted OpenOffice.org interface is not valid
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public DrawingDocument(XDrawPagesSupplier xDrawPagesSupplier, PropertyValue[] initialProperties)
       throws IllegalArgumentException {
@@ -82,7 +82,7 @@ public class DrawingDocument extends AbstractDocument implements IDrawingDocumen
    * 
    * @return OpenOffice.org XDrawPagesSupplier interface
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public XDrawPagesSupplier getDrawPagesSupplier() {
     return xDrawPagesSupplier;
@@ -94,7 +94,7 @@ public class DrawingDocument extends AbstractDocument implements IDrawingDocumen
    * 
    * @return type of the document
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public String getDocumentType() {
     return IDocument.DRAW;
@@ -104,7 +104,7 @@ public class DrawingDocument extends AbstractDocument implements IDrawingDocumen
   /**
    * Reformats the document.
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void reformat() {
     //TODO fill with logic

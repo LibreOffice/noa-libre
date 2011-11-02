@@ -59,7 +59,7 @@ import java.util.HashMap;
  * This code snippet shows how to insert data in a calc document.
  * Currently with UNO API access as it is not yet implemented in NOA.
  * 
- * @author Markus Krüger
+ * @author Markus Krueger
  * @version $Revision: 10398 $
  * @date 09.03.2007
  */

@@ -44,8 +44,8 @@ import ag.ion.noa.NOAException;
 /**
  * Properties of a paragraph.
  * 
- * @author Andreas Bröker
- * @author Markus Krüger
+ * @author Andreas Brueker
+ * @author Markus Krueger
  * @version $Revision: 10782 $
  */
 public interface IParagraphProperties extends IProperties {
@@ -71,7 +71,7 @@ public interface IParagraphProperties extends IProperties {
    * 
    * @throws TextException if the break type can not be set
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void setBreakType(short breakType) throws TextException;
   //----------------------------------------------------------------------------  
@@ -82,7 +82,7 @@ public interface IParagraphProperties extends IProperties {
    * 
    * @throws TextException if the break type is not available
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public short getBreakType() throws TextException;
   //----------------------------------------------------------------------------
@@ -93,7 +93,7 @@ public interface IParagraphProperties extends IProperties {
    * 
    * @throws TextException if the break type is not available
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public short getParaAdjust() throws TextException;
   //----------------------------------------------------------------------------
@@ -104,7 +104,7 @@ public interface IParagraphProperties extends IProperties {
    * 
    * @throws TextException if the break type is not available
    * 
-   * @author Sebastian Rösgen
+   * @author Sebastian Ruesgen
    */
   public void setParaAdjust(short adjust) throws TextException;
   //---------------------------------------------------------------------------- 
@@ -115,7 +115,7 @@ public interface IParagraphProperties extends IProperties {
    * 
    * @throws NOAException if the new paragraph style can not be set
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    * @date 02.11.2006
    */
   public void setParaStyleName(String name) throws NOAException;
@@ -126,7 +126,7 @@ public interface IParagraphProperties extends IProperties {
    * 
    * @throws NOAException if the name of the paragraph style can not be provided
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    * @date 02.11.2006
    */
   public String getParaStyleName() throws NOAException;  
@@ -136,7 +136,7 @@ public interface IParagraphProperties extends IProperties {
    * 
    * @return the characterproperties of the paragraph
    * 
-   * @author Sebastian Rösgen
+   * @author Sebastian Ruesgen
    */
   public ICharacterProperties getCharacterProperties() throws TextException;
   //----------------------------------------------------------------------------

@@ -47,8 +47,8 @@ import com.sun.star.document.EventObject;
 /**
  * Wrapper in order to register a document listener in OpenOffice.org.
  * 
- * @author Andreas Bröker
- * @author Markus Krüger
+ * @author Andreas Brueker
+ * @author Markus Krueger
  * @author Alessandro Conte
  * @version $Revision: 10398 $
  */
@@ -64,7 +64,7 @@ public class DocumentListenerWrapper extends EventListenerWrapper implements XEv
    * 
    * @throws IllegalArgumentException if the submitted document listener is not valid
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public DocumentListenerWrapper(IDocumentListener documentListener) throws IllegalArgumentException {
     super(documentListener);
@@ -76,8 +76,8 @@ public class DocumentListenerWrapper extends EventListenerWrapper implements XEv
 	 * 
 	 * @param eventObject source of the event
    * 
-   * @author Andreas Bröker
-   * @author Markus Krüger
+   * @author Andreas Brueker
+   * @author Markus Krueger
    * @author Alessandro Conte
    * @date 04.09.2006
 	 */

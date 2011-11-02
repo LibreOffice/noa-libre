@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.text;
 /**
  * Annotation of a text document.
  * 
- * @author Markus Krüger
+ * @author Markus Krueger
  * @version $Revision: 10398 $
  */
 public interface IAnnotation extends ITextContent, ITextComponent {
@@ -52,7 +52,7 @@ public interface IAnnotation extends ITextContent, ITextComponent {
    * 
    * @return the text content of the annotation
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 13.07.2006
    */
   public String getText();
@@ -60,7 +60,7 @@ public interface IAnnotation extends ITextContent, ITextComponent {
   /**
    * Jumps to the annotation.
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 13.07.2006
    */
   public void jumpTo();
@@ -70,7 +70,7 @@ public interface IAnnotation extends ITextContent, ITextComponent {
    * 
    * @return text range of the textfield
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 13.07.2006
    */
   public ITextRange getTextRange();

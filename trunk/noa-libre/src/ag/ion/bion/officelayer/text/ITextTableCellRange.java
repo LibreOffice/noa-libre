@@ -47,7 +47,7 @@ import com.sun.star.table.XCellRange;
 /**
  * Cell range of a text table. 
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 11547 $
  */
 public interface ITextTableCellRange extends ICloneServiceProvider {
@@ -58,7 +58,7 @@ public interface ITextTableCellRange extends ICloneServiceProvider {
    * 
    * @return the OpenOffice.org XCellRange interface
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 01.08.2007
    */
   public XCellRange getXCellRange();
@@ -79,7 +79,7 @@ public interface ITextTableCellRange extends ICloneServiceProvider {
    * 
    * @throws TextException if the submitted array is not suitable
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void setData(Object[][] values) throws TextException;
   //----------------------------------------------------------------------------
@@ -88,7 +88,7 @@ public interface ITextTableCellRange extends ICloneServiceProvider {
    * 
    * @return data of the cell range
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public Object[][] getData();
   //----------------------------------------------------------------------------
@@ -97,7 +97,7 @@ public interface ITextTableCellRange extends ICloneServiceProvider {
    * 
    * @return text table cell properties
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public ITextTableCellProperties getCellProperties();
   //----------------------------------------------------------------------------

@@ -42,7 +42,7 @@ import ag.ion.noa.NOAException;
 /**
  * Service for printing documents.
  * 
- * @author Markus Krüger
+ * @author Markus Krueger
  * @version $Revision: 10398 $
  */ 
 public interface IPrintService {
@@ -53,7 +53,7 @@ public interface IPrintService {
    * 
    * @throws DocumentException if printing fails
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 16.08.2007
    */
   public void print() throws DocumentException;
@@ -65,7 +65,7 @@ public interface IPrintService {
    * 
    * @throws DocumentException if printing fails
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 16.08.2007
    */
   public void print(IPrintProperties printProperties) throws DocumentException;
@@ -77,7 +77,7 @@ public interface IPrintService {
    * 
    * @throws NOAException if the busy state could not be retrieved
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 16.08.2007
    */
   public boolean isActivePrinterBusy() throws NOAException;
@@ -89,7 +89,7 @@ public interface IPrintService {
    * 
    * @throws NOAException if printer could not be retrieved
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 16.08.2007
    */
   public IPrinter getActivePrinter() throws NOAException;
@@ -101,7 +101,7 @@ public interface IPrintService {
    * 
    * @throws NOAException if printer could not be set
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 16.08.2007
    */
   public void setActivePrinter(IPrinter printer) throws NOAException;
@@ -115,7 +115,7 @@ public interface IPrintService {
    * 
    * @throws NOAException if printer could not be constructed
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 16.08.2007
    */
   public IPrinter createPrinter(String name) throws NOAException;

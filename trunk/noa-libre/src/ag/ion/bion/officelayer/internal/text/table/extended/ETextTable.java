@@ -127,7 +127,7 @@ public class ETextTable implements IETextTable {
 	 * @throws TextException if the row(s) can not be added 
    * 
    * @author ???
-   * @author Markus Krüger
+   * @author Markus Krueger
 	 */
 	private void addRowsProperty(int count, ITextTableCellRange textTableCellRangeClone) throws TextException {
 		try {
@@ -719,7 +719,7 @@ public class ETextTable implements IETextTable {
    * 
    * @throws CloneException if the clone service could not be returned
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public ICloneService getCloneService() throws CloneException  {
   	return new ETextTableCloneService(this,textDocument);

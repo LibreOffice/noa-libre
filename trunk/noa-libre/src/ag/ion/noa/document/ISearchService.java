@@ -42,7 +42,7 @@ import ag.ion.noa.search.ISearchResult;
 /**
  * Search service for of a document.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  * @date 09.07.2006
  */ 
@@ -56,7 +56,7 @@ public interface ISearchService {
 	 * 
 	 * @return result of the search
 	 * 
-	 * @author Andreas Bröker
+	 * @author Andreas Brueker
 	 * @date 09.07.2006
 	 */
 	public ISearchResult findFirst(ISearchDescriptor searchDescriptor);
@@ -68,7 +68,7 @@ public interface ISearchService {
 	 * 
 	 * @return result of the search
 	 * 
-	 * @author Andreas Bröker
+	 * @author Andreas Brueker
 	 * @date 09.07.2006
 	 */
 	public ISearchResult findAll(ISearchDescriptor searchDescriptor);
@@ -80,7 +80,7 @@ public interface ISearchService {
 	 * @return information whether a find all search is
 	 * supported
 	 * 
-	 * @author Andreas Bröker
+	 * @author Andreas Brueker
 	 * @date 09.07.2006
 	 */
 	public boolean supportsFindAll();	

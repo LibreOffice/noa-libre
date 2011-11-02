@@ -56,7 +56,7 @@ import java.util.HashMap;
 /**
  * In here we will do some more stuff with tables especially with formulas.
  *  
- * @author Sebastian Rösgen
+ * @author Sebastian Ruesgen
  * @version $Revision: 10398 $
  * @date 17.03.2006
  */
@@ -107,7 +107,7 @@ public class Snippet11 {
 	 * 
 	 * @param textDocument the document to place the table in
 	 *
-	 * @author Sebastian Rösgen
+	 * @author Sebastian Ruesgen
 	 * @date 17.03.2006
 	 */
 	public static void constructAndFillTables(ITextDocument textDocument) {

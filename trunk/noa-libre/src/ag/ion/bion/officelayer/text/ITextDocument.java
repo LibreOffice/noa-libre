@@ -51,8 +51,8 @@ import ag.ion.noa.text.IDocumentIndexService;
 /**
  * OpenOffice.org text document.
  * 
- * @author Andreas Bröker
- * @author Markus Krüger
+ * @author Andreas Brueker
+ * @author Markus Krueger
  * @version $Revision: 11500 $
  */
 public interface ITextDocument extends IDocument, ISearchableDocument {
@@ -64,7 +64,7 @@ public interface ITextDocument extends IDocument, ISearchableDocument {
    * 
    * @return OpenOffice.org XTextDocument interface
    * 
-   * @author Andreas Bröker 
+   * @author Andreas Brueker 
    */
   public XTextDocument getXTextDocument();  
   //----------------------------------------------------------------------------
@@ -73,7 +73,7 @@ public interface ITextDocument extends IDocument, ISearchableDocument {
    * 
    * @return page service of the document
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public IPageService getPageService();
   //----------------------------------------------------------------------------
@@ -82,7 +82,7 @@ public interface ITextDocument extends IDocument, ISearchableDocument {
    * 
    * @return service for text fields
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public ITextFieldService getTextFieldService();
   //----------------------------------------------------------------------------
@@ -91,7 +91,7 @@ public interface ITextDocument extends IDocument, ISearchableDocument {
    * 
    * @return text service
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public ITextService getTextService();
   //----------------------------------------------------------------------------
@@ -100,7 +100,7 @@ public interface ITextDocument extends IDocument, ISearchableDocument {
    * 
    * @return view cursor service
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public IViewCursorService getViewCursorService(); 
   //----------------------------------------------------------------------------
@@ -109,7 +109,7 @@ public interface ITextDocument extends IDocument, ISearchableDocument {
    * 
    * @return text table service
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public ITextTableService getTextTableService();
   //----------------------------------------------------------------------------
@@ -118,7 +118,7 @@ public interface ITextDocument extends IDocument, ISearchableDocument {
    * 
    * @return number format service
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public INumberFormatService getNumberFormatService();
   //----------------------------------------------------------------------------
@@ -127,7 +127,7 @@ public interface ITextDocument extends IDocument, ISearchableDocument {
    * 
    * @return index service of the document
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    * @date 17.08.2006
    */
   public IDocumentIndexService getIndexService();
@@ -141,7 +141,7 @@ public interface ITextDocument extends IDocument, ISearchableDocument {
    * 
    * @throws DocumentException if zoom fails
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 06.07.2007
    */
   public void zoom(short zoomType, short zoomValue) throws DocumentException;

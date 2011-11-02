@@ -41,7 +41,7 @@ import ag.ion.noa.NOAException;
 /**
  * Provider for servives.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  * @date 15.08.2006
  */ 
@@ -59,7 +59,7 @@ public interface IServiceProvider {
    * 
    * @throws NOAException if the service can not be requested
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    * @date 15.08.2006
    */
   public Object createService(String serviceName) throws NOAException;
@@ -75,7 +75,7 @@ public interface IServiceProvider {
    * 
    * @throws NOAException if the service can not be requested
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    * @date 15.08.2006
    */
   public Object createServiceWithContext(String serviceName) throws NOAException;

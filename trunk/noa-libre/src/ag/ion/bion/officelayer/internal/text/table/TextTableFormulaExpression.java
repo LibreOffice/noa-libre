@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.internal.text.table;
 /**
  * Expression of a formula which is placed into a text table cell.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  */
 public class TextTableFormulaExpression {
@@ -56,7 +56,7 @@ public class TextTableFormulaExpression {
    * 
    * @throws IllegalArgumentException if the submitted formula is not valid
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public TextTableFormulaExpression(String formulaExpression) throws IllegalArgumentException {
     if(formulaExpression == null)
@@ -71,7 +71,7 @@ public class TextTableFormulaExpression {
    * 
    * @throws IllegalArgumentException if the submitted formula is not valid
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void setExpression(String formulaExpression) throws IllegalArgumentException {
     if(formulaExpression == null)
@@ -84,7 +84,7 @@ public class TextTableFormulaExpression {
    * 
    * @return expression of the formula
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public String getExpression() {
     return formulaExpression;

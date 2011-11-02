@@ -55,7 +55,7 @@ import java.util.List;
 /**
  * Annotation service of a text document.
  * 
- * @author Markus Krüger
+ * @author Markus Krueger
  * @version $Revision: 11572 $
  */
 public class AnnotationService implements IAnnotationService {
@@ -68,7 +68,7 @@ public class AnnotationService implements IAnnotationService {
    * 
    * @param textDocument the text document of the service
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 13.07.2006
    */
   public AnnotationService(ITextDocument textDocument) {
@@ -81,7 +81,7 @@ public class AnnotationService implements IAnnotationService {
    * 
    * @return all annotations
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 13.07.2006
    */
   public IAnnotation[] getAnnotations() {

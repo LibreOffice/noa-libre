@@ -70,7 +70,7 @@ import com.sun.star.uno.UnoRuntime;
 /**
  * Document loading helper class. 
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 11724 $
  */
 public class DocumentLoader {

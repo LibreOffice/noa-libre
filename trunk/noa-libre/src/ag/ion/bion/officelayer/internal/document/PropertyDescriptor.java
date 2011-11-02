@@ -45,7 +45,7 @@ import java.util.ArrayList;
 /**
  * Class to set ServiceMediaDescriptor properties.  
  * 
- * @author Sebastian Rösgen
+ * @author Sebastian Ruesgen
  * @version $Revision: 10398 $
  */
 public class PropertyDescriptor {

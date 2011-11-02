@@ -66,8 +66,8 @@ import java.util.Hashtable;
 /**
  * Desktop service of OpenOffice.org.
  * 
- * @author Andreas Bröker
- * @author Markus Krüger
+ * @author Andreas Brueker
+ * @author Markus Krueger
  * @version $Revision: 11158 $
  */
 public class DesktopService implements IDesktopService {
@@ -92,8 +92,8 @@ public class DesktopService implements IDesktopService {
    * @throws IllegalArgumentException if the submitted OpenOffice.org XDesktop interface or the connection to OpenOffice.org
    * is not valid
    * 
-   * @author Andreas Bröker
-   * @author Markus Krüger
+   * @author Andreas Brueker
+   * @author Markus Krueger
    */
   public DesktopService(XDesktop xDesktop, IOfficeConnection officeConnection) throws IllegalArgumentException {
     this(xDesktop,officeConnection,false);
@@ -109,7 +109,7 @@ public class DesktopService implements IDesktopService {
    * @throws IllegalArgumentException if the submitted OpenOffice.org XDesktop interface or the connection to OpenOffice.org
    * is not valid
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public DesktopService(XDesktop xDesktop, IOfficeConnection officeConnection, boolean preventTermination) throws IllegalArgumentException {
     if(xDesktop == null)
@@ -128,7 +128,7 @@ public class DesktopService implements IDesktopService {
 	 * 
 	 * @throws NOAException if the termination can not be done
 	 * 
-	 * @author Andreas Bröker
+	 * @author Andreas Brueker
 	 * @date 14.03.2006
 	 */
 	public void terminate() throws NOAException {
@@ -143,7 +143,7 @@ public class DesktopService implements IDesktopService {
   /**
    * Activates the prevention of the termination.
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void activateTerminationPrevention() {
     if(!preventTermination) {
@@ -157,7 +157,7 @@ public class DesktopService implements IDesktopService {
   /**
    * Deactivates the prevention of the termination.
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void deactivateTerminationPrevention() {
     if(preventTermination) {
@@ -173,7 +173,7 @@ public class DesktopService implements IDesktopService {
    * 
    * @param terminateListener new terminate listener
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void addTerminateListener(ITerminateListener terminateListener) {
     if(terminateListeners == null)
@@ -189,7 +189,7 @@ public class DesktopService implements IDesktopService {
    * 
    * @param terminateListener terminate listener to be removed
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void removeTerminateListener(ITerminateListener terminateListener) {
     if(terminateListeners == null)
@@ -207,7 +207,7 @@ public class DesktopService implements IDesktopService {
    * 
    * @throws DesktopException if document listener can not be registered
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void addDocumentListener(IDocumentListener documentListener) throws DesktopException {      
     try {
@@ -231,7 +231,7 @@ public class DesktopService implements IDesktopService {
    * 
    * @param documentListener document listener to be removed
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void removeDocumentListener(IDocumentListener documentListener) {
     if(documentListener == null)
@@ -254,7 +254,7 @@ public class DesktopService implements IDesktopService {
    * 
    * @throws DesktopException if the frame can not be constructed
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public IFrame constructNewOfficeFrame(Container container) throws DesktopException {
     if(officeConnection instanceof LocalOfficeConnection) {
@@ -275,7 +275,7 @@ public class DesktopService implements IDesktopService {
    * 
    * @throws DesktopException if the frame can not be constructed
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 08.12.2006
    */
   public IFrame constructNewOfficeFrame(NativeView nativeView) throws DesktopException {
@@ -290,7 +290,7 @@ public class DesktopService implements IDesktopService {
   /**
    * Disposes all allocated resources.
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void dispose() {
     terminateListeners = null;
@@ -303,7 +303,7 @@ public class DesktopService implements IDesktopService {
    * 
    * @return the current number of frames, or -1 if an error occured returning it
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public int getFramesCount() {
     if(xDesktop == null)

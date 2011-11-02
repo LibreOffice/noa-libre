@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.text;
 /**
  * Enumeration over all text content parts.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  */
 public interface ITextContentEnumeration {
@@ -52,7 +52,7 @@ public interface ITextContentEnumeration {
    * 
    * @return all available text fields
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public ITextField[] getTextFields();
   //----------------------------------------------------------------------------

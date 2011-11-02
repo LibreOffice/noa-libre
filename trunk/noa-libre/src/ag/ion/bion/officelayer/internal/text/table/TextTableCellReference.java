@@ -45,8 +45,8 @@ import ag.ion.bion.officelayer.text.table.TextTableCellNameHelper;
 /**
  * Reference to a text table cell or a range of text table cells.
  * 
- * @author Andreas Bröker
- * @author Markus Krüger
+ * @author Andreas Brueker
+ * @author Markus Krueger
  * @version $Revision: 10398 $
  */
 public class TextTableCellReference {   
@@ -70,7 +70,7 @@ public class TextTableCellReference {
    * 
    * @throws IllegalArgumentException if the submitted reference expression is not valid
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public TextTableCellReference(String cellReferenceExpression) throws IllegalArgumentException {
     if(cellReferenceExpression == null)
@@ -107,7 +107,7 @@ public class TextTableCellReference {
   /**
    * Inits all variables.
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   private void init() {
   }
@@ -117,7 +117,7 @@ public class TextTableCellReference {
    * 
    * @return information whether the text table cell reference is a range reference
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public boolean isRangeReference() {
     if(endCellReference == null)
@@ -131,7 +131,7 @@ public class TextTableCellReference {
    * 
    * @return name of the table to which the text table cell reference is bounded
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public String getTableName() {
     return tableName;
@@ -146,7 +146,7 @@ public class TextTableCellReference {
    * @return informations whether this text table cell reference contains a cell with
    * the submitted name
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public boolean containsCell(String cellName) {   
     int columnIndex = TextTableCellNameHelper.getColumnIndex(cellName);
@@ -164,7 +164,7 @@ public class TextTableCellReference {
    * @return informations whether this text table cell reference contains a cell with
    * the submitted column and row index
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public boolean containsCell(int columnIndex, int rowIndex) {
     int startRowIndex = getStartRowIndex();
@@ -187,7 +187,7 @@ public class TextTableCellReference {
    * @return informations whether this text table cell reference contains the column of
    * the submitted text table cell name
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public boolean containsColumn(String cellName) {
     int columnIndex = TextTableCellNameHelper.getColumnIndex(cellName);
@@ -203,7 +203,7 @@ public class TextTableCellReference {
    * @return informations whether this text table cell reference contains the submitted
    * column index
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public boolean containsColumn(int columnIndex) {
     int startColumnIndex = getStartColumnIndex();    
@@ -223,7 +223,7 @@ public class TextTableCellReference {
    * @return information whether this text table cell reference contains the row 
    * of the submitted text table cell name
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public boolean containsRow(String cellName) {
     int rowIndex = TextTableCellNameHelper.getRowIndex(cellName);
@@ -239,7 +239,7 @@ public class TextTableCellReference {
    * @return information whether this text table cell reference contains a row 
    * with the submtted index
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public boolean containsRow(int rowIndex) {
     int startRowIndex = getStartRowIndex();
@@ -259,7 +259,7 @@ public class TextTableCellReference {
    * @return information whether this text table cell reference contains a column
    * after the submitted column of the text table cell name
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public boolean containsColumnAfter(String cellName) {
     int columnIndex = TextTableCellNameHelper.getColumnIndex(cellName);
@@ -275,7 +275,7 @@ public class TextTableCellReference {
    * @return information whether this text table cell reference contains a column
    * after the submitted column index
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public boolean containsColumnAfter(int columnIndex) {
     int endColumnIndex = getEndColumnIndex();
@@ -293,7 +293,7 @@ public class TextTableCellReference {
    * @return information whether this text table cell reference contains a row after 
    * the row index of the submitted text table cell name
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public boolean containsRowAfter(String cellName) {
     int rowIndex = TextTableCellNameHelper.getRowIndex(cellName);
@@ -309,7 +309,7 @@ public class TextTableCellReference {
    * @return information whether this text table cell reference contains a row after 
    * the submitted row index
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public boolean containsRowAfter(int rowIndex) {
     int endRowIndex = getEndRowIndex();
@@ -323,7 +323,7 @@ public class TextTableCellReference {
    * 
    * @return start column index
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public int getStartColumnIndex() {
     return TextTableCellNameHelper.getColumnIndex(startCellReference);
@@ -334,7 +334,7 @@ public class TextTableCellReference {
    * 
    * @return start column character
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public String getStartColumnCharacter() {
     return TextTableCellNameHelper.getColumnCharacter(startCellReference);
@@ -346,7 +346,7 @@ public class TextTableCellReference {
    * 
    * @return end column index
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public int getEndColumnIndex() {
     if(endCellReference == null)
@@ -359,7 +359,7 @@ public class TextTableCellReference {
    * 
    * @return start row index
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public int getStartRowIndex() {
     return TextTableCellNameHelper.getRowIndex(startCellReference);
@@ -371,7 +371,7 @@ public class TextTableCellReference {
    * 
    * @return start row index
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public int getEndRowIndex() {
     if(endCellReference == null)
@@ -384,7 +384,7 @@ public class TextTableCellReference {
    * 
    * @param tableName name of a table to be used
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void setTableName(String tableName) {
     this.tableName = tableName;
@@ -398,7 +398,7 @@ public class TextTableCellReference {
    * 
    * @throws TextException if the column index can not be moved
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void moveColumnIndex(int count) throws TextException {
     startCellReference = TextTableCellNameHelper.moveColumnIndex(count, startCellReference);
@@ -414,7 +414,7 @@ public class TextTableCellReference {
    * 
    * @throws TextException if the row index can not be moved
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void moveRowIndex(int count) throws TextException {
     startCellReference = TextTableCellNameHelper.moveRowCounterValue(count, startCellReference);
@@ -433,7 +433,7 @@ public class TextTableCellReference {
    * 
    * @throws TextException if the text table cell reference can not be extended
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void toColumnRange(int startColumnIndex, int endColumnIndex) throws TextException {
     startCellReference = TextTableCellNameHelper.moveColumnIndexTo(startColumnIndex, startCellReference);
@@ -448,7 +448,7 @@ public class TextTableCellReference {
    * 
    * @throws TextException if the column range can not be extended
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void extendColumnRangeTo(int endColumnIndex) throws TextException {
     if(endColumnIndex < TextTableCellNameHelper.getColumnIndex(startCellReference))
@@ -471,7 +471,7 @@ public class TextTableCellReference {
    * 
    * @throws TextException if the column range can not be extended
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void extendColumnRange(int count) throws TextException {
     if(count < 1)
@@ -490,7 +490,7 @@ public class TextTableCellReference {
    * 
    * @throws TextException if the row range can not be extended
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void extendRowRangeTo(int rowIndexTo) throws TextException {
     if(rowIndexTo <= getStartRowIndex()) {
@@ -512,7 +512,7 @@ public class TextTableCellReference {
    * 
    * @throws TextException if the row range can not be extended
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void extendRowRange(int count) throws TextException {
     if(count < 1)
@@ -530,7 +530,7 @@ public class TextTableCellReference {
    * 
    * @return information whether this text table cell reference was modified
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public boolean isModified() {
     return modified;
@@ -541,7 +541,7 @@ public class TextTableCellReference {
    * 
    * @return cell reference expression
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public String toString() {
     modified = false;

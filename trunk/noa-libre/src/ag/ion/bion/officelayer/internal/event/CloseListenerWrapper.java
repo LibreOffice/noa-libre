@@ -48,7 +48,7 @@ import com.sun.star.util.XCloseListener;
 /**
  * Wrapper in order to register a close listener in OpenOffice.org.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  */
 public class CloseListenerWrapper extends EventListenerWrapper implements XCloseListener {
@@ -63,7 +63,7 @@ public class CloseListenerWrapper extends EventListenerWrapper implements XClose
    *  
    * @throws IllegalArgumentException if the submitted close listener is not valid
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public CloseListenerWrapper(ICloseListener closeListener) throws IllegalArgumentException {
     super(closeListener);
@@ -78,7 +78,7 @@ public class CloseListenerWrapper extends EventListenerWrapper implements XClose
    * 
    * @throws CloseVetoException close veto exception
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */ 
   public void queryClosing(EventObject eventObject, boolean getsOwnership) 
     throws CloseVetoException {  
@@ -93,7 +93,7 @@ public class CloseListenerWrapper extends EventListenerWrapper implements XClose
    * 
    * @param eventObject event object
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void notifyClosing(EventObject eventObject) { 
     closeListener.notifyClosing(new CloseEvent(eventObject));

@@ -39,7 +39,7 @@ package ag.ion.noa.printing;
 /**
  * Properties for printing documents.
  * 
- * @author Markus Krüger
+ * @author Markus Krueger
  * @version $Revision: 10398 $
  */ 
 public interface IPrintProperties {
@@ -50,7 +50,7 @@ public interface IPrintProperties {
    * 
    * @return the number of copies to print
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 16.08.2007
    */
   public short getCopyCount();
@@ -60,7 +60,7 @@ public interface IPrintProperties {
    * 
    * @return the pages to print (e.g. "1, 3, 4-7, 9-")
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 16.08.2007
    */
   public String getPages();

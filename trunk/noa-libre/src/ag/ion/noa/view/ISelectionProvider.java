@@ -41,7 +41,7 @@ import ag.ion.noa.NOAException;
 /**
  * Provider for selections.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  * @date 09.07.2006
  */ 
@@ -55,7 +55,7 @@ public interface ISelectionProvider {
 	 * 
 	 * @throws NOAException if the selection type is not supported
 	 * 
-	 * @author Andreas Bröker
+	 * @author Andreas Brueker
 	 * @date 09.07.2006
 	 */
 	public void setSelection(ISelection selection) throws NOAException;

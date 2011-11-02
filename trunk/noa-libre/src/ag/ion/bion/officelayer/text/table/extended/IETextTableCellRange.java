@@ -49,7 +49,7 @@ import ag.ion.bion.officelayer.text.table.ITextTableCellRangeName;
 /**
  * Cell range of a text table. 
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  */
 public interface IETextTableCellRange extends ICloneServiceProvider {

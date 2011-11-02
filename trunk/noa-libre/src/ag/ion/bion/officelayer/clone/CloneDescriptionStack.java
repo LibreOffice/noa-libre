@@ -47,7 +47,7 @@ import ag.ion.bion.officelayer.text.IPropertyDescriptionElement;
  * clone service for cloning purpose. This structure only serves as a
  * storage for the cloning process controled by the ICloneService 
  * 
- * @author Sebastian Rösgen 
+ * @author Sebastian Ruesgen 
  * @version $Revision: 10398 $
  */
 public class CloneDescriptionStack implements ICloneDescriptionStack{

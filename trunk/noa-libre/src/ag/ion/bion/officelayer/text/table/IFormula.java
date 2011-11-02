@@ -44,7 +44,7 @@ import ag.ion.bion.officelayer.text.TextException;
  * Formula of a text table cell.
  * 
  * @author Miriam Sutter
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  */
 public interface IFormula {
@@ -75,7 +75,7 @@ public interface IFormula {
    * 
    * @return text table cell references service
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public ITextTableCellReferencesService getCellReferencesService();  
   //----------------------------------------------------------------------------
@@ -84,7 +84,7 @@ public interface IFormula {
    * 
    * @return formula expression
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public String getExpression();  
   //----------------------------------------------------------------------------

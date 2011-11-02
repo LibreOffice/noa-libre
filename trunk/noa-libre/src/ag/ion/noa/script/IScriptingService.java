@@ -41,7 +41,7 @@ import ag.ion.noa.NOAException;
 /**
  * Service of the office scripting framework.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  * @date 13.06.2006
  */ 
@@ -55,7 +55,7 @@ public interface IScriptingService {
 	 * 
 	 * @throws NOAException if the script provider can not be provided
 	 * 
-	 * @author Andreas Bröker
+	 * @author Andreas Brueker
 	 * @date 13.06.2006
 	 */
 	public IScriptProvider getScriptProvider() throws NOAException;

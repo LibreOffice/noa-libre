@@ -45,7 +45,7 @@ import com.sun.star.beans.XPropertySet;
 /**
  * Interface for properties.
  * 
- * @author Markus Krüger
+ * @author Markus Krueger
  * @version $Revision: 10398 $
  */
 public interface IProperties {
@@ -56,7 +56,7 @@ public interface IProperties {
    * 
    * @return the id of the property
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public String getTypeID();
   //----------------------------------------------------------------------------
@@ -65,7 +65,7 @@ public interface IProperties {
    * 
    * @return the XPropertySet used for this properties
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public XPropertySet getXPropertySet();
   //----------------------------------------------------------------------------
@@ -77,7 +77,7 @@ public interface IProperties {
    * 
    * @throws OfficeException if copy failed
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void copyTo(String[] propertyKeys, IProperties properties) throws OfficeException;
   //----------------------------------------------------------------------------

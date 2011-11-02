@@ -45,7 +45,7 @@ import com.sun.star.lang.EventObject;
 /**
  * Close event.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  */
 public class CloseEvent extends Event implements ICloseEvent {
@@ -60,7 +60,7 @@ public class CloseEvent extends Event implements ICloseEvent {
    * 
    * @throws IllegalArgumentException if the submitted OpenOffice.org EventObject is not valid
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public CloseEvent(EventObject eventOject) throws IllegalArgumentException {
     super(eventOject);    
@@ -71,7 +71,7 @@ public class CloseEvent extends Event implements ICloseEvent {
    * 
    * @param veto veto information
    * 
-   * @author Andreas Bröker 
+   * @author Andreas Brueker 
    */
   public void setVeto(boolean veto) {
     this.veto = veto;
@@ -82,7 +82,7 @@ public class CloseEvent extends Event implements ICloseEvent {
    * 
    * @return information whether the close event should be stopped
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public boolean getVeto() {
     return veto;

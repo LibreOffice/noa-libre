@@ -50,7 +50,7 @@ import com.sun.star.uno.UnoRuntime;
 /**
  * Style of page of a text document.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  */
 public class PageStyle implements IPageStyle {
@@ -65,7 +65,7 @@ public class PageStyle implements IPageStyle {
    * 
    * @throws IllegalArgumentException if the submitted OpenOffice.org XStyle interface is not valid
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public PageStyle(XStyle xStyle) throws IllegalArgumentException {
     if(xStyle == null)
@@ -78,7 +78,7 @@ public class PageStyle implements IPageStyle {
    * 
    * @return name of the page style
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public String getName() {
     return xStyle.getName();
@@ -89,7 +89,7 @@ public class PageStyle implements IPageStyle {
    * 
    * @return page style properties
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public IPageStyleProperties getProperties() {
     XPropertySet xPropertySet = (XPropertySet)UnoRuntime.queryInterface(XPropertySet.class, xStyle);

@@ -43,7 +43,7 @@ import java.awt.Color;
 /**
  * Formatted number for pure java code.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  */
 public interface IJavaFormattedNumber {
@@ -54,7 +54,7 @@ public interface IJavaFormattedNumber {
    * 
    * @return formatted number
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public String getFormattedNumber();
   //----------------------------------------------------------------------------
@@ -63,7 +63,7 @@ public interface IJavaFormattedNumber {
    * 
    * @return text color of the number
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public Color getTextColor();
   //----------------------------------------------------------------------------

@@ -45,7 +45,7 @@ import java.util.HashMap;
  * This code snippet creates a base document
  * and stores it.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  * @date 16.03.2006
  */

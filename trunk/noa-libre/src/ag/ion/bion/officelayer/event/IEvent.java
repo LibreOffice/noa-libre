@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.event;
 /**
  * Base event.
  * 
- * @author Andreas Bröker 
+ * @author Andreas Brueker 
  * @version $Revision: 10398 $
  */
 public interface IEvent {
@@ -52,7 +52,7 @@ public interface IEvent {
    * 
    * @return source object of the event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public Object getSourceObject();
   //----------------------------------------------------------------------------  

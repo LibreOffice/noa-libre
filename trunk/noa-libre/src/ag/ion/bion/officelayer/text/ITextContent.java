@@ -43,7 +43,7 @@ import com.sun.star.text.XTextContent;
 /**
  * Content of a text document.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  */
 public interface ITextContent extends ITextComponent {
@@ -57,7 +57,7 @@ public interface ITextContent extends ITextComponent {
    * 
    * @return OpenOffice.org XTextContent interface
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public XTextContent getXTextContent();
   //----------------------------------------------------------------------------

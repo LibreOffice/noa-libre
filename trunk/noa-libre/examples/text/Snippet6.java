@@ -58,7 +58,7 @@ import java.util.HashMap;
  * We will create two tables, put some content in them (iterating through all cells)
  * and then add some new rows and columns to the second table.
  * 
- * @author Sebastian Rösgen
+ * @author Sebastian Ruesgen
  * @version $Revision: 10398 $
  * @date 17.03.2006
  */
@@ -105,7 +105,7 @@ public class Snippet6 {
 	 * 
 	 * @param textDocument the document to place the table in
 	 *
-	 * @author Sebastian Rösgen
+	 * @author Sebastian Ruesgen
 	 * @date 17.03.2006
 	 */
 	public static void constructAndFillTables(ITextDocument textDocument) {

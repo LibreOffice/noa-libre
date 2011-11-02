@@ -51,7 +51,7 @@ import com.sun.star.uno.UnoRuntime;
 /**
  * Position on a text page.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  */
 public class PagePosition {
@@ -74,7 +74,7 @@ public class PagePosition {
    * 
    * @throws IllegalArgumentException if one of the OpenOffice.org interfaces is not valid
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public PagePosition(ITextDocument textDocument, XTextRange xTextRange) throws IllegalArgumentException {
     if(textDocument == null)
@@ -91,7 +91,7 @@ public class PagePosition {
    * 
    * @return content type of the page position
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public short getContentType() {
     XCell xCell = (XCell)UnoRuntime.queryInterface(XCell.class, xTextRange.getText());
@@ -107,7 +107,7 @@ public class PagePosition {
    * 
    * @return text table cell
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public ITextTableCell getTextTableCell() {
     if(getContentType() == TEXT_TABLE_CELL) {
@@ -123,7 +123,7 @@ public class PagePosition {
    * 
    * @return text range
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public ITextRange getTextRange() {
     if(getContentType() == PLAIN_TEXT) {

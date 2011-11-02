@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.text.table;
 /**
  * Formula service of text table cell.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  */
 public interface IFormulaService {
@@ -52,7 +52,7 @@ public interface IFormulaService {
    * 
    * @param formulaExpression formula expression to be used
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void setFormula(String formulaExpression);
   //----------------------------------------------------------------------------
@@ -61,7 +61,7 @@ public interface IFormulaService {
    * 
    * @return formula of the text table cell
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public IFormula getFormula();
   //----------------------------------------------------------------------------

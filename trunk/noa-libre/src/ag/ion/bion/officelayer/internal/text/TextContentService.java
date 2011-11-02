@@ -81,7 +81,7 @@ import com.sun.star.uno.UnoRuntime;
 /**
  * Content service implementation of a text document.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 11744 $
  */
 public class TextContentService implements ITextContentService {
@@ -107,9 +107,9 @@ public class TextContentService implements ITextContentService {
    * @throws IllegalArgumentException if the submitted text document or OpenOffice.org XText interface 
    * is not valid
    * 
-   * @author Andreas Bröker
-   * @author Sebastian Rösgen
-   * @author Markus Krüger
+   * @author Andreas Brueker
+   * @author Sebastian Ruesgen
+   * @author Markus Krueger
    */
   public TextContentService(ITextDocument textDocument, XMultiServiceFactory xMultiServiceFactory,
       XText xText) throws IllegalArgumentException {
@@ -132,7 +132,7 @@ public class TextContentService implements ITextContentService {
    * 
    * @throws TextException if the paragraph can not be constructed
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public IParagraph constructNewParagraph() throws TextException {
     try {
@@ -161,7 +161,7 @@ public class TextContentService implements ITextContentService {
    * 
    * @throws TextException if the image can not be constructed
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 09.07.2007
    */
   public ITextDocumentImage constructNewImage(GraphicInfo graphicInfo) throws TextException {
@@ -313,7 +313,7 @@ public class TextContentService implements ITextContentService {
    * 
    * @throws TextException if the text content can not be inserted
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void insertTextContent(ITextContent textContent) throws TextException {
     try {
@@ -359,7 +359,7 @@ public class TextContentService implements ITextContentService {
    * 
    * @throws TextException if the text content can not be inserted
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void insertTextContent(ITextRange textRange, ITextContent textContent)
       throws TextException {
@@ -402,7 +402,7 @@ public class TextContentService implements ITextContentService {
    * 
    * @throws TextException if the text content can not be inserted
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void insertTextContentBefore(ITextContent newTextContent, ITextContent textContent)
       throws TextException {
@@ -450,7 +450,7 @@ public class TextContentService implements ITextContentService {
    * 
    * @throws TextException if the text content can not be inserted
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void insertTextContentAfter(ITextContent newTextContent, ITextContent textContent)
       throws TextException {
@@ -512,7 +512,7 @@ public class TextContentService implements ITextContentService {
    * 
    * @throws TextException if conversion fails
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 07.09.2009
    */
   public void convertLinkedImagesToEmbeded() throws TextException {
@@ -614,7 +614,7 @@ public class TextContentService implements ITextContentService {
    * 
    * @throws TextException if something fails
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 21.06.2010
    */
   private XTextContent getNewParagraphTextContent(IParagraph[] oldParagraphsBeforeInsert)

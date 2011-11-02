@@ -47,7 +47,7 @@ import java.util.HashMap;
  * This code snippet creates an inpress document
  * and exports the new document to pdf.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  * @date 16.03.2006
  */

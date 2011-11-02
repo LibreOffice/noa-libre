@@ -52,7 +52,7 @@ import ag.ion.bion.officelayer.text.table.TextTableCellNameHelper;
 /**
  * Column of a text table.
  * 
- * @author Markus Krüger
+ * @author Markus Krueger
  * @version $Revision: 11553 $
  */
 public class TextTableColumn implements ITextTableColumn {
@@ -74,7 +74,7 @@ public class TextTableColumn implements ITextTableColumn {
    * @throws IllegalArgumentException if one the OpenOffice.org interfaces is not valid
    * @throws TextException
    * 
-   * @author Markus Krüger 
+   * @author Markus Krueger 
    */
   public TextTableColumn(ITextTable textTable, int index) throws IllegalArgumentException, TextException {
     if(textTable == null)
@@ -107,7 +107,7 @@ public class TextTableColumn implements ITextTableColumn {
    * 
    * @throws TextException if necessary properties are not available
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void setWidth(short width) throws TextException {
     //get text table properties
@@ -217,7 +217,7 @@ public class TextTableColumn implements ITextTableColumn {
    * 
    * @return column width
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public short getWidth() throws TextException {
     //get text table properties
@@ -261,7 +261,7 @@ public class TextTableColumn implements ITextTableColumn {
    * 
    * @throws CloneException if the clone service could not be returned
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public ICloneService getCloneService() throws CloneException {
 		return new TextTableColumnCloneService(this);

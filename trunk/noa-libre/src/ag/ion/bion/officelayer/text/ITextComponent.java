@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.text;
 /**
  * Component of a text document.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  */
 public interface ITextComponent {
@@ -52,7 +52,7 @@ public interface ITextComponent {
    * 
    * @return text document
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public ITextDocument getTextDocument();
   //----------------------------------------------------------------------------

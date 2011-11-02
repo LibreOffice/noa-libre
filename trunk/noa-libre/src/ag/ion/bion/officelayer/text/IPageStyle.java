@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.text;
 /**
  * Style of page of a text document.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  */
 public interface IPageStyle {
@@ -52,7 +52,7 @@ public interface IPageStyle {
    * 
    * @return name of the page style
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public String getName();
   //----------------------------------------------------------------------------
@@ -61,7 +61,7 @@ public interface IPageStyle {
    * 
    * @return page style properties
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public IPageStyleProperties getProperties();
   //----------------------------------------------------------------------------

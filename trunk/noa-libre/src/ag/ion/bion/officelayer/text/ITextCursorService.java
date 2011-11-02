@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.text;
 /**
  * Cursor service of a text document.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  */
 public interface ITextCursorService {

@@ -54,7 +54,7 @@ import junit.framework.Assert;
 import junit.framework.TestCase;
 
 /**
- * @author Andreas Bröker
+ * @author Andreas Brueker
  */
 public class IPageStylePropertiesTest extends TestCase {
 

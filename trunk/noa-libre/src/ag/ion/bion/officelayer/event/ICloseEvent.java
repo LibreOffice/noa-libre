@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.event;
 /**
  * Close event.
  * 
- * @author Andreas Bröker 
+ * @author Andreas Brueker 
  * @version $Revision: 10398 $
  */
 public interface ICloseEvent extends IEvent {
@@ -52,7 +52,7 @@ public interface ICloseEvent extends IEvent {
    * 
    * @param veto veto information
    * 
-   * @author Andreas Bröker 
+   * @author Andreas Brueker 
    */
   public void setVeto(boolean veto);
   //----------------------------------------------------------------------------
@@ -61,7 +61,7 @@ public interface ICloseEvent extends IEvent {
    * 
    * @return information whether the close event should be stopped
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public boolean getVeto();
   //----------------------------------------------------------------------------

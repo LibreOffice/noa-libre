@@ -51,7 +51,7 @@ import com.sun.star.lang.XMultiServiceFactory;
  * Connection in order to communicate with an OpenOffice.org 
  * application.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  */
 public interface IOfficeConnection {
@@ -82,14 +82,14 @@ public interface IOfficeConnection {
    * 
    * @return information whether the connection is active
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public boolean isConnected();  
   //----------------------------------------------------------------------------
   /**
    * Closes connection to OpenOffice.org.
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void closeConnection();
   //----------------------------------------------------------------------------
@@ -98,7 +98,7 @@ public interface IOfficeConnection {
    * 
    * @return XComponentContext
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public XComponentContext getXComponentContext();
   //----------------------------------------------------------------------------
@@ -109,8 +109,8 @@ public interface IOfficeConnection {
    * 
    * @throws Exception if anything fails
    * 
-   * @author Andreas Bröker
-   * @author Markus Krüger
+   * @author Andreas Brueker
+   * @author Markus Krueger
    */
   public XMultiServiceFactory getXMultiServiceFactory() throws Exception;
   //----------------------------------------------------------------------------
@@ -121,8 +121,8 @@ public interface IOfficeConnection {
    * 
    * @throws Exception if the closed connection could not be opened
    * 
-   * @author Andreas Bröker
-   * @author Markus Krüger
+   * @author Andreas Brueker
+   * @author Markus Krueger
    */
   public XMultiComponentFactory getXMultiComponentFactory() throws Exception;
   //----------------------------------------------------------------------------
@@ -131,7 +131,7 @@ public interface IOfficeConnection {
    * 
    * @return host of the connection
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public String getHost();
   //----------------------------------------------------------------------------
@@ -140,7 +140,7 @@ public interface IOfficeConnection {
    * 
    * @return port of the connection.
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public String getPort();  
   //----------------------------------------------------------------------------
@@ -153,7 +153,7 @@ public interface IOfficeConnection {
    * 
    * @throws Exception if any error occurs
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public Object createService(String serviceName) throws Exception;
   //----------------------------------------------------------------------------
@@ -166,7 +166,7 @@ public interface IOfficeConnection {
    * 
    * @throws Exception if any error occurs
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public Object createServiceWithContext(String serviceName) throws Exception;
   //----------------------------------------------------------------------------
@@ -175,7 +175,7 @@ public interface IOfficeConnection {
    * 
    * @param eventListener new event listener
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void addBridgeEventListener(IEventListener eventListener);
   //----------------------------------------------------------------------------

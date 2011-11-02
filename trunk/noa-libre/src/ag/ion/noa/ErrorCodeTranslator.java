@@ -39,7 +39,7 @@ package ag.ion.noa;
 /**
  * Translator for error code messages.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  * @date 2006/02/05
  */ 
@@ -64,7 +64,7 @@ public class ErrorCodeTranslator {
 	 * @return message for the submitted error code or null
 	 * if a message is not available
 	 * 
-	 * @author Andreas Bröker
+	 * @author Andreas Brueker
 	 * @date 21.02.2006
 	 */
 	public static String getErrorCodeMessage(int errorCode) {

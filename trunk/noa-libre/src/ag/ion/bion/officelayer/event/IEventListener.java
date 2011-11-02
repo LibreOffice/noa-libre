@@ -43,7 +43,7 @@ import java.util.EventListener;
 /**
  * Base event listener.
  * 
- * @author Andreas Bröker 
+ * @author Andreas Brueker 
  * @version $Revision: 10398 $
  */
 public interface IEventListener extends EventListener {
@@ -54,7 +54,7 @@ public interface IEventListener extends EventListener {
    * 
    * @param event source event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void disposing(IEvent event);
   //----------------------------------------------------------------------------
