@@ -49,7 +49,7 @@ import java.net.URL;
 /**
  * Persistence service for office documents.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  */
 public interface IPersistenceService {
@@ -60,7 +60,7 @@ public interface IPersistenceService {
    * 
    * @return information whether the document has a location URL
    * 
-   * @author Andreas Bröekr
+   * @author Andreas Brueekr
    */
   public boolean hasLocation();
   //----------------------------------------------------------------------------
@@ -70,7 +70,7 @@ public interface IPersistenceService {
    * 
    * @return location URL of the document
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public URL getLocation();
   //----------------------------------------------------------------------------
@@ -81,7 +81,7 @@ public interface IPersistenceService {
    * @return informations whether the doccument is in read only state 
    * or not
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public boolean isReadOnly();
   //----------------------------------------------------------------------------
@@ -90,7 +90,7 @@ public interface IPersistenceService {
    * 
    * @throws DocumentException if the document can not be stored or no location URL is available
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void store() throws DocumentException;
   //----------------------------------------------------------------------------
@@ -101,7 +101,7 @@ public interface IPersistenceService {
    * 
    * @throws DocumentException if the document can not be stored
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void store(String url) throws DocumentException;
   //----------------------------------------------------------------------------
@@ -135,7 +135,7 @@ public interface IPersistenceService {
    * 
    * @throws DocumentException if the document can not be exported
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void export(String url, IFilter filter) throws DocumentException;
   //----------------------------------------------------------------------------
@@ -147,7 +147,7 @@ public interface IPersistenceService {
    * 
    * @throws NOAException if the document can not be exported
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    * @date 25.08.2006
    */
   public void export(OutputStream outputStream, IFilter filter) throws NOAException;

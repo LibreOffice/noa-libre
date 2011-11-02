@@ -47,7 +47,7 @@ import com.sun.star.text.XTextRange;
 /**
  * Content service of a text document.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 11708 $
  */
 public interface ITextContentService {
@@ -60,7 +60,7 @@ public interface ITextContentService {
    * 
    * @throws TextException if the paragraph can not be constructed
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public IParagraph constructNewParagraph() throws TextException;
 
@@ -74,7 +74,7 @@ public interface ITextContentService {
    * 
    * @throws TextException if the image can not be constructed
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 09.07.2007
    */
   public ITextDocumentImage constructNewImage(GraphicInfo graphicInfo) throws TextException;
@@ -119,7 +119,7 @@ public interface ITextContentService {
    * 
    * @throws TextException if the text content can not be inserted
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void insertTextContent(ITextContent textContent) throws TextException;
 
@@ -132,7 +132,7 @@ public interface ITextContentService {
    * 
    * @throws TextException if the text content can not be inserted
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void insertTextContent(ITextRange textRange, ITextContent textContent)
       throws TextException;
@@ -146,7 +146,7 @@ public interface ITextContentService {
    * 
    * @throws TextException if the text content can not be inserted
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void insertTextContentBefore(ITextContent newTextContent, ITextContent textContent)
       throws TextException;
@@ -160,7 +160,7 @@ public interface ITextContentService {
    * 
    * @throws TextException if the text content can not be inserted
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void insertTextContentAfter(ITextContent newTextContent, ITextContent textContent)
       throws TextException;
@@ -183,7 +183,7 @@ public interface ITextContentService {
    * 
    * @throws TextException if conversion fails
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 07.09.2009
    */
   public void convertLinkedImagesToEmbeded() throws TextException;

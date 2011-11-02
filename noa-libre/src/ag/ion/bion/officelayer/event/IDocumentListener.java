@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.event;
 /**
  * Listener for documents.
  * 
- * @author Andreas Bröker 
+ * @author Andreas Brueker 
  * @version $Revision: 10398 $
  */
 public interface IDocumentListener extends IEventListener {
@@ -52,7 +52,7 @@ public interface IDocumentListener extends IEventListener {
    * 
    * @param documentEvent source of the event
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void onNew(IDocumentEvent documentEvent);
   //----------------------------------------------------------------------------
@@ -61,7 +61,7 @@ public interface IDocumentListener extends IEventListener {
    * 
    * @param documentEvent source of the event
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void onLoad(IDocumentEvent documentEvent);
   //----------------------------------------------------------------------------
@@ -70,7 +70,7 @@ public interface IDocumentListener extends IEventListener {
    * 
    * @param documentEvent source of the event
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void onLoadDone(IDocumentEvent documentEvent);
   //----------------------------------------------------------------------------
@@ -79,7 +79,7 @@ public interface IDocumentListener extends IEventListener {
    * 
    * @param documentEvent source of the event
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void onLoadFinished(IDocumentEvent documentEvent);
   //----------------------------------------------------------------------------
@@ -88,7 +88,7 @@ public interface IDocumentListener extends IEventListener {
    * 
    * @param documentEvent source of the event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void onSave(IDocumentEvent documentEvent);
   //----------------------------------------------------------------------------
@@ -97,7 +97,7 @@ public interface IDocumentListener extends IEventListener {
    * 
    * @param documentEvent source of the event
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void onSaveDone(IDocumentEvent documentEvent);
   //----------------------------------------------------------------------------
@@ -106,7 +106,7 @@ public interface IDocumentListener extends IEventListener {
    * 
    * @param documentEvent source of the event
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void onSaveFinished(IDocumentEvent documentEvent);
   //----------------------------------------------------------------------------
@@ -115,7 +115,7 @@ public interface IDocumentListener extends IEventListener {
    * 
    * @param documentEvent source of the event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void onSaveAs(IDocumentEvent documentEvent);
   //----------------------------------------------------------------------------
@@ -124,7 +124,7 @@ public interface IDocumentListener extends IEventListener {
    * 
    * @param documentEvent source of the event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void onSaveAsDone(IDocumentEvent documentEvent);
   //----------------------------------------------------------------------------
@@ -133,7 +133,7 @@ public interface IDocumentListener extends IEventListener {
    * 
    * @param documentEvent source of the event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void onModifyChanged(IDocumentEvent documentEvent);
   //----------------------------------------------------------------------------
@@ -142,7 +142,7 @@ public interface IDocumentListener extends IEventListener {
    * 
    * @param documentEvent source of the event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void onMouseOver(IDocumentEvent documentEvent);
   //----------------------------------------------------------------------------
@@ -151,7 +151,7 @@ public interface IDocumentListener extends IEventListener {
    * 
    * @param documentEvent source of the event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void onMouseOut(IDocumentEvent documentEvent);
   //----------------------------------------------------------------------------
@@ -160,7 +160,7 @@ public interface IDocumentListener extends IEventListener {
    * 
    * @param documentEvent source of the event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void onFocus(IDocumentEvent documentEvent);
   //----------------------------------------------------------------------------
@@ -169,7 +169,7 @@ public interface IDocumentListener extends IEventListener {
    * 
    * @param documentEvent source of the event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void onAlphaCharInput(IDocumentEvent documentEvent);
   //----------------------------------------------------------------------------
@@ -178,7 +178,7 @@ public interface IDocumentListener extends IEventListener {
    * 
    * @param documentEvent source of the event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void onNonAlphaCharInput(IDocumentEvent documentEvent);
   //----------------------------------------------------------------------------
@@ -187,7 +187,7 @@ public interface IDocumentListener extends IEventListener {
    * 
    * @param documentEvent source of the event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void onInsertStart(IDocumentEvent documentEvent);
   //----------------------------------------------------------------------------
@@ -196,7 +196,7 @@ public interface IDocumentListener extends IEventListener {
    * 
    * @param documentEvent source of the event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void onInsertDone(IDocumentEvent documentEvent);
   //----------------------------------------------------------------------------
@@ -205,7 +205,7 @@ public interface IDocumentListener extends IEventListener {
    * 
    * @param documentEvent source of the event
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void onUnload(IDocumentEvent documentEvent);
   //----------------------------------------------------------------------------

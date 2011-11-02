@@ -47,7 +47,7 @@ import junit.framework.Assert;
 import junit.framework.TestCase;
 
 /**
- * @author Andreas Bröker
+ * @author Andreas Brueker
  */
 public class JavaNumberFormatTest extends TestCase {
 
@@ -63,17 +63,17 @@ public class JavaNumberFormatTest extends TestCase {
       value = javaFormattedNumber.getFormattedNumber();
       Assert.assertEquals("1234,57", value);
       
-      javaNumberFormat = new JavaNumberFormat("[<=4][GRÜN]#.##0,00 \"°C kalt\";[>7][ROT]#.##0,00 \"°C\";[BLAU]#.##0,00 \"°C\"");
+      javaNumberFormat = new JavaNumberFormat("[<=4][GRueN]#.##0,00 \"ueC kalt\";[>7][ROT]#.##0,00 \"ueC\";[BLAU]#.##0,00 \"ueC\"");
       javaFormattedNumber = javaNumberFormat.formatNumber(-10);
       value = javaFormattedNumber.getFormattedNumber();
-      Assert.assertEquals("-10,00 °C kalt", value);
+      Assert.assertEquals("-10,00 ueC kalt", value);
       Assert.assertEquals(Color.GREEN, javaFormattedNumber.getTextColor());
       
       
-      javaNumberFormat = new JavaNumberFormat("[<=4][GRÜN]#.##0,00 \"°C kalt\";[>7][ROT]#.##0,00 \"°C\";[BLAU]#.##0,00 \"°C\"");
+      javaNumberFormat = new JavaNumberFormat("[<=4][GRueN]#.##0,00 \"ueC kalt\";[>7][ROT]#.##0,00 \"ueC\";[BLAU]#.##0,00 \"ueC\"");
       javaFormattedNumber = javaNumberFormat.formatNumber(10);
       value = javaFormattedNumber.getFormattedNumber();
-      Assert.assertEquals("10,00 °C", value);
+      Assert.assertEquals("10,00 ueC", value);
       Assert.assertEquals(Color.RED, javaFormattedNumber.getTextColor());
     }
     catch(Exception exception) {

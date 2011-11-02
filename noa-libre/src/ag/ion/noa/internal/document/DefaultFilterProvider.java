@@ -48,7 +48,7 @@ import java.util.List;
 /**
  * Default provider for document filters.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  * @date 08.07.2006
  */ 
@@ -62,7 +62,7 @@ public class DefaultFilterProvider implements IFilterProvider {
 	 * 
 	 * @param abstractDocument abstract document to be used
 	 * 
-	 * @author Andreas Bröker
+	 * @author Andreas Brueker
 	 * @date 08.07.2006
 	 */
 	public DefaultFilterProvider(AbstractDocument abstractDocument) {
@@ -74,7 +74,7 @@ public class DefaultFilterProvider implements IFilterProvider {
 	 * 
 	 * @return available save filters
 	 * 
-	 * @author Andreas Bröker
+	 * @author Andreas Brueker
 	 * @date 08.07.2006
 	 */
 	public IFilter[] getFilters() {

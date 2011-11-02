@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.internal.util;
 /**
  * Number format condition for java code.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  */
 public class JavaNumberFormatCondition {
@@ -72,7 +72,7 @@ public class JavaNumberFormatCondition {
    * 
    * @throws IllegalArgumentException if the submitted operator is not valid
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public JavaNumberFormatCondition(String operator, double compareValue) throws IllegalArgumentException {
     if(!(operator.equals(LOWER) ||
@@ -94,7 +94,7 @@ public class JavaNumberFormatCondition {
    * 
    * @return result of the condition checking
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public boolean checkCondition(double value) {
     if(operator.equals(LOWER)) {

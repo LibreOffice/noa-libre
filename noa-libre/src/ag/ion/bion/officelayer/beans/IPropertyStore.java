@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.beans;
 /**
  * Interface for property stores.
  * 
- * @author Markus Krüger
+ * @author Markus Krueger
  * @version $Revision: 10398 $
  */
 public interface IPropertyStore {
@@ -52,7 +52,7 @@ public interface IPropertyStore {
    * 
    * @return the properties
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public IProperties getProperties();
   //----------------------------------------------------------------------------

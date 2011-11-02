@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.event;
 /**
  * Terminate listener.
  * 
- * @author Andreas Bröker 
+ * @author Andreas Brueker 
  * @version $Revision: 10398 $
  */
 public interface ITerminateListener extends IEventListener {
@@ -52,7 +52,7 @@ public interface ITerminateListener extends IEventListener {
    * 
    * @param terminateEvent terminate event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void queryTermination(ITerminateEvent terminateEvent); 
   //----------------------------------------------------------------------------
@@ -61,7 +61,7 @@ public interface ITerminateListener extends IEventListener {
    * 
    * @param terminateEvent terminate event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void notifyTermination(ITerminateEvent terminateEvent);
   //----------------------------------------------------------------------------

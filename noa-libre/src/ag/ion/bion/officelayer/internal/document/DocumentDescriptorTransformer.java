@@ -49,8 +49,8 @@ import com.sun.star.beans.PropertyValue;
 /**
  * Transformer for document descriptors.
  * 
- * @author Andreas Bröker
- * @author Markus Krüger
+ * @author Andreas Brueker
+ * @author Markus Krueger
  * @version $Revision: 11722 $
  */
 public class DocumentDescriptorTransformer {
@@ -63,7 +63,7 @@ public class DocumentDescriptorTransformer {
    * 
    * @return converted document descriptor
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public static PropertyValue[] documentDescriptor2PropertyValues(
       IDocumentDescriptor documentDescriptor) {
@@ -80,8 +80,8 @@ public class DocumentDescriptorTransformer {
    * 
    * @return converted document descriptor
    * 
-   * @author Andreas Bröker
-   * @author Markus Krüger
+   * @author Andreas Brueker
+   * @author Markus Krueger
    */
   public static PropertyValue[] documentDescriptor2PropertyValues(PropertyValue[] propertyValues,
       IDocumentDescriptor documentDescriptor) {

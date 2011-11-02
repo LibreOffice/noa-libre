@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.application;
 /**
  * Properties of an office application.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  */
 public interface IApplicationProperties {
@@ -59,7 +59,7 @@ public interface IApplicationProperties {
    * @return property value with the submitted name or null
    * if the property is not available
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public String getPropertyValue(String name);
   //----------------------------------------------------------------------------
@@ -68,7 +68,7 @@ public interface IApplicationProperties {
    * 
    * @return available property names
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public String[] getPropertyNames();
   //----------------------------------------------------------------------------

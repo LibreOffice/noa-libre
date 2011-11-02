@@ -54,7 +54,7 @@ import java.util.HashMap;
  * do some work with simple text. More examples for tables and texts can follow after we 
  * just get used to the basics a little bit more.
  * 
- * @author Sebastian Rösgen
+ * @author Sebastian Ruesgen
  * @version $Revision: 10398 $
  * @date 17.03.2006
  */
@@ -102,7 +102,7 @@ public class Snippet7 {
 	 * 
 	 * @param textDocument the document to place the table in
 	 *
-	 * @author Sebastian Rösgen
+	 * @author Sebastian Ruesgen
 	 * @date 17.03.2006
 	 */
 	public static void placeSomeTextContent(ITextDocument textDocument) {

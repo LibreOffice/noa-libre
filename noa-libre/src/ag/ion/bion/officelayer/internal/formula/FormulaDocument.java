@@ -50,8 +50,8 @@ import com.sun.star.uno.UnoRuntime;
 /**
  * OpenOffice.org formula document representation.
  * 
- * @author Andreas Bröker
- * @author Markus Krüger
+ * @author Andreas Brueker
+ * @author Markus Krueger
  * @version $Revision: 11637 $
  */
 public class FormulaDocument extends AbstractDocument implements IFormulaDocument {
@@ -67,7 +67,7 @@ public class FormulaDocument extends AbstractDocument implements IFormulaDocumen
    * 
    * @throws IllegalArgumentException if the submitted OpenOffice.org interface is not valid
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public FormulaDocument(XPropertySet xPropertySet, PropertyValue[] initialProperties)
       throws IllegalArgumentException {
@@ -81,7 +81,7 @@ public class FormulaDocument extends AbstractDocument implements IFormulaDocumen
    * 
    * @return OpenOffice.org XPropertySet interface
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public XPropertySet getPropertySet() {
     return xPropertySet;
@@ -93,7 +93,7 @@ public class FormulaDocument extends AbstractDocument implements IFormulaDocumen
    * 
    * @return type of the document
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public String getDocumentType() {
     return IDocument.MATH;
@@ -103,7 +103,7 @@ public class FormulaDocument extends AbstractDocument implements IFormulaDocumen
   /**
    * Reformats the document.
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void reformat() {
     //TODO fill with logic

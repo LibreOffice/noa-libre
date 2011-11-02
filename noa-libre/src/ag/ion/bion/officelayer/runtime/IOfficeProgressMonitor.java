@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.runtime;
 /**
  * Progress monitor of the office layer.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  */
 public interface IOfficeProgressMonitor {
@@ -56,7 +56,7 @@ public interface IOfficeProgressMonitor {
    * @param name name of the task
    * @param totalWork total work of the task
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void beginTask(String name, int totalWork);
   //----------------------------------------------------------------------------
@@ -68,7 +68,7 @@ public interface IOfficeProgressMonitor {
    *
    * @param work the number of work units just completed
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void worked(int work);
   //----------------------------------------------------------------------------
@@ -77,7 +77,7 @@ public interface IOfficeProgressMonitor {
    * 
    * @param name name of the substask
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void beginSubTask(String name);
   //----------------------------------------------------------------------------
@@ -88,14 +88,14 @@ public interface IOfficeProgressMonitor {
    * @return information whether the progress monitor needs
    * to be notified about the end of the main task
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public boolean needsDone();
   //----------------------------------------------------------------------------
   /**
    * Informs the progress monitor that the work is done.
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void done();  
   //----------------------------------------------------------------------------
@@ -104,7 +104,7 @@ public interface IOfficeProgressMonitor {
    * 
    * @param canceled information whether the work was canceled
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void setCanceled(boolean canceled);  
   //----------------------------------------------------------------------------
@@ -113,7 +113,7 @@ public interface IOfficeProgressMonitor {
    * 
    * @return information whether the work was canceled
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public boolean isCanceled();  
   //----------------------------------------------------------------------------

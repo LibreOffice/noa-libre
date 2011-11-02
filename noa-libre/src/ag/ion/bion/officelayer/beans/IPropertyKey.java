@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.beans;
 /**
  * Interface for property key.
  * 
- * @author Markus Krüger
+ * @author Markus Krueger
  * @version $Revision: 10398 $
  */
 public interface IPropertyKey {
@@ -52,7 +52,7 @@ public interface IPropertyKey {
    * 
    * @return the key used with open office
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public String getKey();
   //----------------------------------------------------------------------------
@@ -61,7 +61,7 @@ public interface IPropertyKey {
    * 
    * @return the text used for this key
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public String getText();
   //----------------------------------------------------------------------------
@@ -70,7 +70,7 @@ public interface IPropertyKey {
    * 
    * @return the description used for this key
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public String getDescription();
   //----------------------------------------------------------------------------

@@ -65,7 +65,7 @@ import com.sun.star.uno.UnoRuntime;
 /**
  * Cell range of a text table. 
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 11547 $
  */
 public class TextTableCellRange implements ITextTableCellRange {
@@ -86,7 +86,7 @@ public class TextTableCellRange implements ITextTableCellRange {
    * @throws IllegalArgumentException if the submitted text document, OpenOffice.org XCellRange interface or
    * text table range name is not valid
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public TextTableCellRange(ITextDocument textDocument, XCellRange xCellRange, ITextTableCellRangeName textTableCellRangeName) throws IllegalArgumentException {
   	if(textDocument == null)
@@ -108,7 +108,7 @@ public class TextTableCellRange implements ITextTableCellRange {
    * 
    * @return the OpenOffice.org XCellRange interface
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 01.08.2007
    */
   public XCellRange getXCellRange() {
@@ -121,7 +121,7 @@ public class TextTableCellRange implements ITextTableCellRange {
    * @return text document
    * 
    * @author Miriam Sutter
-   * @author Andreas Bröker 
+   * @author Andreas Brueker 
    */
   public ITextDocument getTextDocument() {
     return textDocument;
@@ -134,7 +134,7 @@ public class TextTableCellRange implements ITextTableCellRange {
    * 
    * @throws TextException if the submitted array is not suitably
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void setData(Object[][] values) throws TextException {
     try {
@@ -153,7 +153,7 @@ public class TextTableCellRange implements ITextTableCellRange {
    * 
    * @return data of the cell range
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public Object[][] getData() {
     XCellRangeData xCellRangeData = (XCellRangeData)UnoRuntime.queryInterface(XCellRangeData.class, xCellRange);
@@ -165,7 +165,7 @@ public class TextTableCellRange implements ITextTableCellRange {
    * 
    * @return text table cell properties
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public ITextTableCellProperties getCellProperties() {
     XPropertySet xPropertySet = (XPropertySet)UnoRuntime.queryInterface(XPropertySet.class, xCellRange);
@@ -281,7 +281,7 @@ public class TextTableCellRange implements ITextTableCellRange {
    * 
    * @throws CloneException if the clone service could not be returned
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public ICloneService getCloneService() throws CloneException {
 		return new TextTableCellRangeCloneService(this); 

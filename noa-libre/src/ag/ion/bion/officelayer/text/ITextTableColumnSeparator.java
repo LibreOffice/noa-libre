@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.text;
 /**
  * Seperator of a text table column.
  * 
- * @author Markus Krüger
+ * @author Markus Krueger
  * @version $Revision: 10398 $
  */
 public interface ITextTableColumnSeparator {
@@ -52,7 +52,7 @@ public interface ITextTableColumnSeparator {
    * 
    * @param position of the column separator
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void setPosition(short position);
   //----------------------------------------------------------------------------
@@ -61,7 +61,7 @@ public interface ITextTableColumnSeparator {
    * 
    * @return position of the column separator
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public short getPosition();
   //----------------------------------------------------------------------------  
@@ -70,7 +70,7 @@ public interface ITextTableColumnSeparator {
    * 
    * @param visibility of the column separator
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void setIsVisible(boolean visibility);
   //----------------------------------------------------------------------------
@@ -79,7 +79,7 @@ public interface ITextTableColumnSeparator {
    * 
    * @return visibility of the column separator
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public boolean getIsVisible();
   //----------------------------------------------------------------------------  

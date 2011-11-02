@@ -43,7 +43,7 @@ package ag.ion.bion.officelayer.clone;
  * its possible to give a newly cloned object a target destiantion, so
  * that it "knows" wherer to be placed.
  * 
- * @author Sebastian Rösgen
+ * @author Sebastian Ruesgen
  * 
  * @version $Revision: 10398 $
  */
@@ -58,7 +58,7 @@ public class DestinationPosition implements IDestinationPosition {
 	 * 
 	 * @param storeObject the object to be stored in this class
 	 * 
-	 * @author Sebastian Rösgen
+	 * @author Sebastian Ruesgen
 	 */
 	public DestinationPosition (Object storeObject) {
     this.storeObject = storeObject;
@@ -73,7 +73,7 @@ public class DestinationPosition implements IDestinationPosition {
 	 * 
 	 * @return the class type of the stored object.
 	 * 
-	 * @author Sebastian Rösgen
+	 * @author Sebastian Ruesgen
 	 */
 	public Class getType() {
 		return clazz;
@@ -84,7 +84,7 @@ public class DestinationPosition implements IDestinationPosition {
 	 * 
 	 * @return the object stored.
 	 * 
-	 * @author Sebastian Rösgen
+	 * @author Sebastian Ruesgen
 	 */
 	public Object getDestinationObject() {
 		return storeObject;

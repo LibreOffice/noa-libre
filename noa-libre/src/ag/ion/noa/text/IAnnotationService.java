@@ -39,7 +39,7 @@ package ag.ion.noa.text;
 /**
  * Annotation service of a text document.
  * 
- * @author Markus Krüger
+ * @author Markus Krueger
  * @version $Revision: 10398 $
  */
 public interface IAnnotationService {
@@ -50,7 +50,7 @@ public interface IAnnotationService {
    * 
    * @return all annotations
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 13.07.2006
    */
   public IAnnotation[] getAnnotations();

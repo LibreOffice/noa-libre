@@ -56,7 +56,7 @@ import java.util.HashMap;
  * This code snippet creates a new text document (like in Snippet2). Furthermore
  * we will place a table in the document and add some content to it.
  * 
- * @author Sebastian Rösgen
+ * @author Sebastian Ruesgen
  * @version $Revision: 10398 $
  * @date 17.03.2006
  */
@@ -103,7 +103,7 @@ public class Snippet5 {
 	 * 
 	 * @param textDocument the document to place the table in
 	 *
-	 * @author Sebastian Rösgen
+	 * @author Sebastian Ruesgen
 	 * @date 17.03.2006
 	 */
 	public static void constructAndFillTable(ITextDocument textDocument) {

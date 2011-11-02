@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.event;
 /**
  * Adapter for document listener.
  * 
- * @author Andreas Bröker 
+ * @author Andreas Brueker 
  * @version $Revision: 10398 $
  */
 public class DocumentAdapter extends EventAdapter implements IDocumentListener {
@@ -52,7 +52,7 @@ public class DocumentAdapter extends EventAdapter implements IDocumentListener {
    * 
    * @param documentEvent source of the event
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void onNew(IDocumentEvent documentEvent) {   
   }
@@ -62,7 +62,7 @@ public class DocumentAdapter extends EventAdapter implements IDocumentListener {
    * 
    * @param documentEvent source of the event
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void onLoad(IDocumentEvent documentEvent) {   
   }
@@ -72,7 +72,7 @@ public class DocumentAdapter extends EventAdapter implements IDocumentListener {
    * 
    * @param documentEvent source of the event
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void onLoadDone(IDocumentEvent documentEvent) {   
   }
@@ -82,7 +82,7 @@ public class DocumentAdapter extends EventAdapter implements IDocumentListener {
    * 
    * @param documentEvent source of the event
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void onLoadFinished(IDocumentEvent documentEvent) {   
   }
@@ -92,7 +92,7 @@ public class DocumentAdapter extends EventAdapter implements IDocumentListener {
    * 
    * @param documentEvent source of the event
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void onSaveDone(IDocumentEvent documentEvent) {   
   }
@@ -102,7 +102,7 @@ public class DocumentAdapter extends EventAdapter implements IDocumentListener {
    * 
    * @param documentEvent source of the event
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void onSaveFinished(IDocumentEvent documentEvent) {   
   }
@@ -112,7 +112,7 @@ public class DocumentAdapter extends EventAdapter implements IDocumentListener {
    * 
    * @param documentEvent source of the event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void onSave(IDocumentEvent documentEvent) {    
   }
@@ -122,7 +122,7 @@ public class DocumentAdapter extends EventAdapter implements IDocumentListener {
    * 
    * @param documentEvent document event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void onSaveAs(IDocumentEvent documentEvent) {   
   }
@@ -132,7 +132,7 @@ public class DocumentAdapter extends EventAdapter implements IDocumentListener {
    * 
    * @param documentEvent document event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void onSaveAsDone(IDocumentEvent documentEvent) {   
   }
@@ -142,7 +142,7 @@ public class DocumentAdapter extends EventAdapter implements IDocumentListener {
    * 
    * @param documentEvent document event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void onModifyChanged(IDocumentEvent documentEvent) {    
   }
@@ -152,7 +152,7 @@ public class DocumentAdapter extends EventAdapter implements IDocumentListener {
    * 
    * @param documentEvent document event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void onMouseOver(IDocumentEvent documentEvent) {
   }
@@ -162,7 +162,7 @@ public class DocumentAdapter extends EventAdapter implements IDocumentListener {
    * 
    * @param documentEvent document event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void onMouseOut(IDocumentEvent documentEvent) {
   }
@@ -172,7 +172,7 @@ public class DocumentAdapter extends EventAdapter implements IDocumentListener {
    * 
    * @param documentEvent document event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void onFocus(IDocumentEvent documentEvent) {
   }
@@ -182,7 +182,7 @@ public class DocumentAdapter extends EventAdapter implements IDocumentListener {
    * 
    * @param documentEvent document event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void onAlphaCharInput(IDocumentEvent documentEvent) {
   }
@@ -192,7 +192,7 @@ public class DocumentAdapter extends EventAdapter implements IDocumentListener {
    * 
    * @param documentEvent document event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void onNonAlphaCharInput(IDocumentEvent documentEvent) {
   }
@@ -202,7 +202,7 @@ public class DocumentAdapter extends EventAdapter implements IDocumentListener {
    * 
    * @param documentEvent document event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void onInsertStart(IDocumentEvent documentEvent) {
   }
@@ -212,7 +212,7 @@ public class DocumentAdapter extends EventAdapter implements IDocumentListener {
    * 
    * @param documentEvent document event
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void onInsertDone(IDocumentEvent documentEvent) {
   }
@@ -222,7 +222,7 @@ public class DocumentAdapter extends EventAdapter implements IDocumentListener {
    * 
    * @param documentEvent document event
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void onUnload(IDocumentEvent documentEvent) {
   }

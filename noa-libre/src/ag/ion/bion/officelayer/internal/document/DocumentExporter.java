@@ -54,7 +54,7 @@ import java.io.IOException;
 /**
  * Document exporting helper class.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  */
 public class DocumentExporter {

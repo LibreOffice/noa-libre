@@ -59,8 +59,8 @@ import com.sun.star.uno.UnoRuntime;
 /**
  * Abstract OpenOffice.org application.
  * 
- * @author Andreas Bröker
- * @author Markus Krüger
+ * @author Andreas Brueker
+ * @author Markus Krueger
  * @version $Revision: 11684 $
  */
 public abstract class AbstractOfficeApplication implements IOfficeApplication {
@@ -77,7 +77,7 @@ public abstract class AbstractOfficeApplication implements IOfficeApplication {
   /**
    * Internal class in order to listen on the connection to OpenOffice.org.
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   private class ConnectionListener implements IEventListener {
 
@@ -87,7 +87,7 @@ public abstract class AbstractOfficeApplication implements IOfficeApplication {
      * 
      * @param event source event
      * 
-     * @author Andreas Bröker
+     * @author Andreas Brueker
      */
     public void disposing(IEvent event) {
       active = false;
@@ -108,8 +108,8 @@ public abstract class AbstractOfficeApplication implements IOfficeApplication {
    * 
    * @throws OfficeApplicationException if the office application can not be activated
    * 
-   * @author Andreas Bröker
-   * @author Markus Krüger
+   * @author Andreas Brueker
+   * @author Markus Krueger
    */
   public void activate(IOfficeProgressMonitor officeProgressMonitor)
       throws OfficeApplicationException {
@@ -134,7 +134,7 @@ public abstract class AbstractOfficeApplication implements IOfficeApplication {
    * 
    * @throws OfficeApplicationException if the office application can not be activated
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void activate() throws OfficeApplicationException {
     activate(null);
@@ -148,7 +148,7 @@ public abstract class AbstractOfficeApplication implements IOfficeApplication {
    * 
    * @throws OfficeApplicationException if the office application can not be deactivated
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public void deactivate() throws OfficeApplicationException {
     if (officeConnection != null)
@@ -163,8 +163,8 @@ public abstract class AbstractOfficeApplication implements IOfficeApplication {
    * 
    * @return whether the office application is active or not
    * 
-   * @author Andreas Bröker
-   * @author Markus Krüger
+   * @author Andreas Brueker
+   * @author Markus Krueger
    */
   public boolean isActive() {
     //TODO needs to be changed in later version as the dispose listener can be used.
@@ -184,7 +184,7 @@ public abstract class AbstractOfficeApplication implements IOfficeApplication {
    * 
    * @throws OfficeApplicationException if the document service is not available
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public IDocumentService getDocumentService() throws OfficeApplicationException {
     if (officeConnection == null)
@@ -202,7 +202,7 @@ public abstract class AbstractOfficeApplication implements IOfficeApplication {
    * 
    * @throws OfficeApplicationException if the desktop service is not available
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public IDesktopService getDesktopService() throws OfficeApplicationException {
     try {
@@ -227,7 +227,7 @@ public abstract class AbstractOfficeApplication implements IOfficeApplication {
   /**
    * Disposes all allocated resources.
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void dispose() {
     try {
@@ -254,7 +254,7 @@ public abstract class AbstractOfficeApplication implements IOfficeApplication {
    * @return service provider null if the application is not
    * active
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    * @date 15.08.2006
    */
   public IServiceProvider getServiceProvider() {
@@ -273,7 +273,7 @@ public abstract class AbstractOfficeApplication implements IOfficeApplication {
    * 
    * @throws Exception if return fails
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 18.11.2008
    */
   public IApplicationInfo getApplicationInfo() throws Exception {
@@ -293,7 +293,7 @@ public abstract class AbstractOfficeApplication implements IOfficeApplication {
    * 
    * @throws OfficeApplicationException if the connection can not be established
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   protected abstract void openConnection(IOfficeProgressMonitor officeProgressMonitor)
       throws OfficeApplicationException;
@@ -304,7 +304,7 @@ public abstract class AbstractOfficeApplication implements IOfficeApplication {
    * 
    * @param officeApplicationConfiguration office application configuration configuration
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   protected void setOfficeApplicationConfiguration(
       IOfficeApplicationConfiguration officeApplicationConfiguration) {
@@ -317,7 +317,7 @@ public abstract class AbstractOfficeApplication implements IOfficeApplication {
    * 
    * @param officeConnection office connection
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   protected void setOfficeConnection(IOfficeConnection officeConnection) {
     this.officeConnection = officeConnection;

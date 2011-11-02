@@ -60,7 +60,7 @@ import com.ice.jni.registry.RegistryKey;
 /**
  * Assistant for office applications.
  * 
- * @author Andreas Br�ker
+ * @author Andreas Brueker
  * @version $Revision: 11760 $
  */
 public class ApplicationAssistant implements IApplicationAssistant {
@@ -80,7 +80,7 @@ public class ApplicationAssistant implements IApplicationAssistant {
    * @throws OfficeApplicationException if the office application assitant can not
    * be constructed
    * 
-   * @author Andreas Br�ker
+   * @author Andreas Brueker
    */
   public ApplicationAssistant() throws OfficeApplicationException {
     this(null);
@@ -95,7 +95,7 @@ public class ApplicationAssistant implements IApplicationAssistant {
    * @throws OfficeApplicationException if the office application assitant can not
    * be constructed
    * 
-   * @author Andreas Br�ker
+   * @author Andreas Brueker
    */
   public ApplicationAssistant(String nativeLibPath) throws OfficeApplicationException {
     if (OSHelper.IS_WINDOWS) {
@@ -136,7 +136,7 @@ public class ApplicationAssistant implements IApplicationAssistant {
    * @return informations about latest available local office application, or null
    * if none was found
    * 
-   * @author Markus Kr�ger
+   * @author Markus Krueger
    * @date 07.07.2010
    */
   public ILazyApplicationInfo getLatestLocalApplication() {
@@ -153,7 +153,7 @@ public class ApplicationAssistant implements IApplicationAssistant {
    * @return informations about latest available local office application, or null
    * if none was found
    * 
-   * @author Markus Kr�ger
+   * @author Markus Krueger
    * @date 07.07.2010
    */
   public ILazyApplicationInfo getLatestLocalApplication(IOfficeProgressMonitor officeProgressMonitor) {
@@ -187,7 +187,7 @@ public class ApplicationAssistant implements IApplicationAssistant {
    * 
    * @return informations about available local office applications
    * 
-   * @author Andreas Br�ker
+   * @author Andreas Brueker
    */
   public ILazyApplicationInfo[] getLocalApplications() {
     return getLocalApplications(null);
@@ -201,8 +201,8 @@ public class ApplicationAssistant implements IApplicationAssistant {
    * 
    * @return informations about available local office applications
    * 
-   * @author Andreas Br�ker
-   * @author Markus Kr�ger
+   * @author Andreas Brueker
+   * @author Markus Krueger
    */
   public ILazyApplicationInfo[] getLocalApplications(IOfficeProgressMonitor officeProgressMonitor) {
     ArrayList arrayList = new ArrayList();
@@ -330,7 +330,7 @@ public class ApplicationAssistant implements IApplicationAssistant {
    * @return application info on the basis of the submitted application 
    * home path or null if the application info can not be provided
    * 
-   * @author Andreas Br�ker
+   * @author Andreas Brueker
    */
   public ILazyApplicationInfo findLocalApplicationInfo(String home) {
     if (home == null)
@@ -386,8 +386,8 @@ public class ApplicationAssistant implements IApplicationAssistant {
    * @param root root file entry to be used
    * @param list list to be filled with possible office home entries
    * 
-   * @author Andreas Br�ker
-   * @author Markus Kr�ger
+   * @author Andreas Brueker
+   * @author Markus Krueger
    */
   private void findPossibleOfficeHomes(IOfficeProgressMonitor officeProgressMonitor, File root,
       List list, int currentLevel, int maxLevel) {
@@ -453,7 +453,7 @@ public class ApplicationAssistant implements IApplicationAssistant {
    * @return application properties on the basis of the submitted office home
    * path or null if the application properties can not be found
    * 
-   * @author Andreas Br�ker
+   * @author Andreas Brueker
    */
   private IApplicationProperties findApplicationProperties(String home) {
     File file = null;
@@ -495,7 +495,7 @@ public class ApplicationAssistant implements IApplicationAssistant {
    * 
    * @return possible windows registry keys of OpenOffice.org
    * 
-   * @author Andreas Br�ker
+   * @author Andreas Brueker
    */
   private String[] getPossibleKeys() {
     /**

@@ -44,7 +44,7 @@ import java.util.ArrayList;
 /**
  * A special hash-like structure which saves key value pairs and makes random access to them possible.
  * 
- * @author Sebastian Rösgen
+ * @author Sebastian Ruesgen
  * @version $Revision: 10398 $
  */
 public class OrderedHashMap {

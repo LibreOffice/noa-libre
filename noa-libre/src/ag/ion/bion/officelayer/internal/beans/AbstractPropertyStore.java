@@ -48,7 +48,7 @@ import ag.ion.bion.officelayer.beans.IPropertyStore;
 /**
  * Abstract class for property stores.
  * 
- * @author Markus Krüger
+ * @author Markus Krueger
  * @version $Revision: 10398 $
  */
 public abstract class AbstractPropertyStore implements IProperties, IPropertyStore {
@@ -59,7 +59,7 @@ public abstract class AbstractPropertyStore implements IProperties, IPropertySto
    * 
    * @return the id of the property
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public String getTypeID() {
     //TODO implementation needed
@@ -71,7 +71,7 @@ public abstract class AbstractPropertyStore implements IProperties, IPropertySto
    * 
    * @return the properties
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public abstract IProperties getProperties();
   //----------------------------------------------------------------------------
@@ -80,7 +80,7 @@ public abstract class AbstractPropertyStore implements IProperties, IPropertySto
    * 
    * @return the XPropertySet used for this properties
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public XPropertySet getXPropertySet() {
     //TODO implementation needed
@@ -95,7 +95,7 @@ public abstract class AbstractPropertyStore implements IProperties, IPropertySto
    * 
    * @throws OfficeException if copy failed
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void copyTo(String[] propertyKeys, IProperties properties) throws OfficeException {
     //TODO implementation needed

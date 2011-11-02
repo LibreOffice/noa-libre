@@ -41,8 +41,8 @@ import com.sun.star.frame.XLayoutManager;
 /**
  * Layout manager for frames.
  * 
- * @author Andreas Bröker
- * @author Markus Krüger
+ * @author Andreas Brueker
+ * @author Markus Krueger
  * @version $Revision: 11734 $
  * @date 2006/02/05
  */
@@ -139,7 +139,7 @@ public interface ILayoutManager {
    * 
    * @return office XLayoutManager interface
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    * @date 2006/02/05
    */
   public XLayoutManager getXLayoutManager();
@@ -153,7 +153,7 @@ public interface ILayoutManager {
    * 
    * @return information whether the UI resource is hidden after method call
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    * @date 2006/02/05
    */
   public boolean hideElement(String resourceURL);
@@ -167,7 +167,7 @@ public interface ILayoutManager {
    * 
    * @return information whether the UI resource is hidden after method call
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 06.05.2010
    */
   public boolean hideElement(String resourceURL, boolean persistent);
@@ -177,7 +177,7 @@ public interface ILayoutManager {
    * Hides all bars.
    * Automatically perist changes.
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 08.12.2006
    */
   public void hideAll();
@@ -188,7 +188,7 @@ public interface ILayoutManager {
    * 
    * @param if changes should be persistent
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 06.05.2010
    */
   public void hideAll(boolean persistent);
@@ -202,7 +202,7 @@ public interface ILayoutManager {
    * 
    * @return information whether the UI resource is visible after method call
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    * @date 2006/02/05
    */
   public boolean showElement(String resourceURL);
@@ -216,7 +216,7 @@ public interface ILayoutManager {
    * 
    * @return information whether the UI resource is visible after method call
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 06.05.2010
    */
   public boolean showElement(String resourceURL, boolean persistent);
@@ -228,7 +228,7 @@ public interface ILayoutManager {
    * 
    * @param visible new visibility state
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    * @date 2006/02/05
    */
   public void setVisible(boolean visible);

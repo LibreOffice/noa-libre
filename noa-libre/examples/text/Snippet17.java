@@ -56,7 +56,7 @@ import java.util.HashMap;
 /** 
  * This code snippet creates an image inside a text document. 
  *  
- * @author Markus Krüger
+ * @author Markus Krueger
  * @version $Revision: 10398 $ 
  */
 public class Snippet17 {

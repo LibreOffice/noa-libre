@@ -45,7 +45,7 @@ import com.sun.star.text.XTextContent;
 /**
  * Paragraph of a text document.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 11738 $
  */
 public interface IParagraph extends ITextContent, ICloneServiceProvider {
@@ -56,7 +56,7 @@ public interface IParagraph extends ITextContent, ICloneServiceProvider {
    * 
    * @param xTextContent OpenOffice.org XTextContent interface
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 21.06.2010
    */
   public void setXTextContent(XTextContent xTextContent);
@@ -67,7 +67,7 @@ public interface IParagraph extends ITextContent, ICloneServiceProvider {
    * 
    * @return properties of the paragraph
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    */
   public IParagraphProperties getParagraphProperties();
 
@@ -77,7 +77,7 @@ public interface IParagraph extends ITextContent, ICloneServiceProvider {
    * 
    * @return text range of the text table
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 06.08.2007
    */
   public ITextRange getTextRange();
@@ -88,7 +88,7 @@ public interface IParagraph extends ITextContent, ICloneServiceProvider {
    * 
    * @return characterproperties of the paragraph
    * 
-   * @author Sebastian Rösgen
+   * @author Sebastian Ruesgen
    */
   public ICharacterProperties getCharacterProperties();
 
@@ -98,7 +98,7 @@ public interface IParagraph extends ITextContent, ICloneServiceProvider {
    * 
    * @return the paragprah property store
    * 
-   * @author Sebastian Rösgen
+   * @author Sebastian Ruesgen
    */
   public IParagraphPropertyStore getParagraphPropertyStore() throws TextException;
 
@@ -108,7 +108,7 @@ public interface IParagraph extends ITextContent, ICloneServiceProvider {
    * 
    * @return the paragprah's character property store
    * 
-   * @author Sebastian Rösgen
+   * @author Sebastian Ruesgen
    */
   public ICharacterPropertyStore getCharacterPropertyStore() throws TextException;
 
@@ -118,7 +118,7 @@ public interface IParagraph extends ITextContent, ICloneServiceProvider {
    * 
    * @return the paragraph text
    * 
-   * @author Sebastian Rösgen 
+   * @author Sebastian Ruesgen 
    */
   public String getParagraphText() throws TextException;
 
@@ -128,7 +128,7 @@ public interface IParagraph extends ITextContent, ICloneServiceProvider {
    * 
    * @param text the text that should be placed
    * 
-   * @author Sebastian Rösgen
+   * @author Sebastian Ruesgen
    */
   public void setParagraphText(String text);
   //----------------------------------------------------------------------------

@@ -55,7 +55,7 @@ import java.util.List;
 /**
  * Service for document indices.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  * @date 17.08.2006
  */ 
@@ -69,7 +69,7 @@ public class DocumentIndexService implements IDocumentIndexService {
    * 
    * @param textDocument XTextDocument interface to be used
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    * @date 17.08.2006
    */
   public DocumentIndexService(XTextDocument textDocument) {
@@ -82,7 +82,7 @@ public class DocumentIndexService implements IDocumentIndexService {
    * 
    * @return available document indexes
    * 
-   * @author Andreas Bröker
+   * @author Andreas Brueker
    * @date 17.08.2006
    */
   public IDocumentIndex[] getDocumentIndexes() {

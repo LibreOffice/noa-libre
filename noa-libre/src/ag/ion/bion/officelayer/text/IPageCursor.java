@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.text;
 /**
  * Page cursor of a text document.
  * 
- * @author Markus Krüger
+ * @author Markus Krueger
  * @version $Revision: 10398 $
  */
 public interface IPageCursor {
@@ -50,14 +50,14 @@ public interface IPageCursor {
   /**
    * Moves the cursor to the first page.
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void jumpToFirstPage();  
   //----------------------------------------------------------------------------
   /**
    * Moves the cursor to the last page.
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void jumpToLastPage();  
   //----------------------------------------------------------------------------
@@ -66,7 +66,7 @@ public interface IPageCursor {
    * 
    * @param pageNumber the page number to jump to
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void jumpToPage(short pageNumber);  
   //----------------------------------------------------------------------------
@@ -75,35 +75,35 @@ public interface IPageCursor {
    * 
    * @return the number of the page within the document of this cursor
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public short getPage();  
   //----------------------------------------------------------------------------
   /**
    * Moves the cursor to the next page.
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void jumpToNextPage();  
   //----------------------------------------------------------------------------
   /**
    * Moves the cursor to the previous page.
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void jumpToPreviousPage();  
   //----------------------------------------------------------------------------
   /**
    * Moves the cursor to the end of the current page.
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void jumpToEndOfPage();  
   //----------------------------------------------------------------------------
   /**
    * Moves the cursor to the start of the current page.
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void jumpToStartOfPage();  
   //----------------------------------------------------------------------------

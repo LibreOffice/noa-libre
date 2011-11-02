@@ -45,7 +45,7 @@ import com.sun.star.text.XPageCursor;
 /**
  * Page cursor of a text document.
  * 
- * @author Markus Krüger
+ * @author Markus Krueger
  * @version $Revision: 10398 $
  */
 public class PageCursor implements IPageCursor {
@@ -61,7 +61,7 @@ public class PageCursor implements IPageCursor {
    * @throws IllegalArgumentException if the submitted OpenOffice.org XPageCursor 
    * interface is not valid
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public PageCursor(XPageCursor xPageCursor) throws IllegalArgumentException {    
     if(xPageCursor == null)
@@ -72,7 +72,7 @@ public class PageCursor implements IPageCursor {
   /**
    * Moves the cursor to the first page.
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void jumpToFirstPage() {
     xPageCursor.jumpToFirstPage();
@@ -81,7 +81,7 @@ public class PageCursor implements IPageCursor {
   /**
    * Moves the cursor to the last page.
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void jumpToLastPage() {
     xPageCursor.jumpToLastPage();
@@ -92,7 +92,7 @@ public class PageCursor implements IPageCursor {
    * 
    * @param pageNumber the page number to jump to
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void jumpToPage(short pageNumber) {
     xPageCursor.jumpToPage(pageNumber);
@@ -103,7 +103,7 @@ public class PageCursor implements IPageCursor {
    * 
    * @return the number of the page within the document of this cursor
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public short getPage() {
     return xPageCursor.getPage();
@@ -112,7 +112,7 @@ public class PageCursor implements IPageCursor {
   /**
    * Moves the cursor to the next page.
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void jumpToNextPage() {
     xPageCursor.jumpToNextPage();
@@ -121,7 +121,7 @@ public class PageCursor implements IPageCursor {
   /**
    * Moves the cursor to the previous page.
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void jumpToPreviousPage() {
     xPageCursor.jumpToPreviousPage();
@@ -130,7 +130,7 @@ public class PageCursor implements IPageCursor {
   /**
    * Moves the cursor to the end of the current page.
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void jumpToEndOfPage() {
     xPageCursor.jumpToEndOfPage();
@@ -139,7 +139,7 @@ public class PageCursor implements IPageCursor {
   /**
    * Moves the cursor to the start of the current page.
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public void jumpToStartOfPage() {
     xPageCursor.jumpToStartOfPage();

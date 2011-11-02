@@ -308,7 +308,7 @@ public class ETextTableCellRange implements IETextTableCellRange {
    * 
    * @throws CloneException if the clone service could not be returned
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    */
   public ICloneService getCloneService() throws CloneException  {
   	return new ETextTableCellRangeCloneService(this,textDocument);

@@ -52,7 +52,7 @@ import com.sun.star.uno.UnoRuntime;
 /**
  * Service of the office scripting framework.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 10398 $
  * @date 13.06.2006
  */ 
@@ -66,7 +66,7 @@ public class ScriptingService implements IScriptingService {
 	 * 
 	 * @param document document to be used
 	 * 
-	 * @author Andreas Bröker 
+	 * @author Andreas Brueker 
 	 * @date 13.06.2006
 	 */
 	public ScriptingService(IDocument document) {
@@ -81,7 +81,7 @@ public class ScriptingService implements IScriptingService {
 	 * 
 	 * @throws NOAException if the script provider can not be provided
 	 * 
-	 * @author Andreas Bröker
+	 * @author Andreas Brueker
 	 * @date 13.06.2006
 	 */
 	public IScriptProvider getScriptProvider() throws NOAException {

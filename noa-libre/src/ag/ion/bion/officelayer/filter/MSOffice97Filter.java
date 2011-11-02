@@ -46,7 +46,7 @@ import ag.ion.noa.filter.AbstractFilter;
  * Contains information in order to export an OpenOffice.org document 
  * to MS Office 97/2000/XP.
  * 
- * @author Andreas Bröker
+ * @author Andreas Brueker
  * @version $Revision: 11619 $
  */
 public class MSOffice97Filter extends AbstractFilter implements IFilter {
@@ -68,7 +68,7 @@ public class MSOffice97Filter extends AbstractFilter implements IFilter {
    * @return definition of the filter or null if the filter
    * is not available for the submitted document type
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 13.03.2008
    */
   public String getFilterDefinition(String documentType) {
@@ -92,7 +92,7 @@ public class MSOffice97Filter extends AbstractFilter implements IFilter {
    * 
    * @return file extension of the filter
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 03.04.2007
    */
   public String getFileExtension(String documentType) {
@@ -118,7 +118,7 @@ public class MSOffice97Filter extends AbstractFilter implements IFilter {
    * 
    * @return name of the filter
    * 
-   * @author Markus Krüger
+   * @author Markus Krueger
    * @date 13.03.2008
    */
   public String getName(String documentType) {
