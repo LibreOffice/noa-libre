@@ -50,8 +50,8 @@ import ag.ion.bion.officelayer.text.table.ITextTableCellPropertyStore;
  * that even when deleteing the original cell (and thus loosing
  * the reference), we keep the cell information.  
  * 
- * @author Sebastian Ruesgen
- * @author Markus Krueger
+ * @author Sebastian Rösgen
+ * @author Markus Krüger
  * 
  * @version $Revision: 10398 $
  */
@@ -77,7 +77,7 @@ public class TextTableCellPropertyStore extends AbstractPropertyStore implements
 	 * 
 	 * @param horizontalPosition the row in which the cell is positioned
 	 * 
-	 * @author Sebastian Ruesgen 
+	 * @author Sebastian Rösgen 
 	 */
 	public TextTableCellPropertyStore(ITextTableCell cell) throws TextException {
 		this.verticalPosition = cell.getName().getColumnIndex();
@@ -90,7 +90,7 @@ public class TextTableCellPropertyStore extends AbstractPropertyStore implements
    * 
    * @return the properties
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public IProperties getProperties() {
     return properties;
@@ -104,7 +104,7 @@ public class TextTableCellPropertyStore extends AbstractPropertyStore implements
    * 
    * @throws TextException if the property is not available
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
 	public void setBackColor(int color) throws TextException {
 		backColor = new Integer(color);
@@ -118,7 +118,7 @@ public class TextTableCellPropertyStore extends AbstractPropertyStore implements
    * 
    * @throws TextException if the property is not available
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
 	public void setVertOrient(short align) throws TextException {
 		verticalAlignment = new Short(align);
@@ -131,7 +131,7 @@ public class TextTableCellPropertyStore extends AbstractPropertyStore implements
    * 
    * @throws TextException if the property can not be modified
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
 	public void setCellStyle(String cellStyle) throws TextException {
 		this.cellStyle = cellStyle;
@@ -144,7 +144,7 @@ public class TextTableCellPropertyStore extends AbstractPropertyStore implements
    * 
    * @throws TextException if the property is not available
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
 	public String getCellStyle() throws TextException {
 		return cellStyle;
@@ -157,7 +157,7 @@ public class TextTableCellPropertyStore extends AbstractPropertyStore implements
    * 
    * @throws TextException if the property can not be modified
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
 	public void setNumberFormat(int numberFormat) throws TextException {
 		this.numberFormat = new Integer(numberFormat);
@@ -170,7 +170,7 @@ public class TextTableCellPropertyStore extends AbstractPropertyStore implements
    * 
    * @throws TextException if the property is not available
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
 	public int getNumberFormat() throws TextException {
 		return numberFormat.intValue();
@@ -183,7 +183,7 @@ public class TextTableCellPropertyStore extends AbstractPropertyStore implements
    * 
    * @throws TextException if the property is not available
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
 	public int getBackColor() throws TextException {
 		return backColor.intValue();
@@ -196,7 +196,7 @@ public class TextTableCellPropertyStore extends AbstractPropertyStore implements
    * 
    * @throws TextException if the property is not available.
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
 	public short getVertOrient() throws TextException {
 		return verticalAlignment.shortValue();
@@ -207,8 +207,8 @@ public class TextTableCellPropertyStore extends AbstractPropertyStore implements
 	 * 
 	 * @param xPropertySet the properties that shuld be analysed and stored. 
 	 * 
-	 * @author Sebastian Ruesgen
-   * @author Markus Krueger
+	 * @author Sebastian Rösgen
+   * @author Markus Krüger
 	 */
 	private void construct(ITextTableCell cell) throws TextException{
 		//cellStyle = (String)xPropertySet.getPropertyValue("CellStyle").toString(); // not existent

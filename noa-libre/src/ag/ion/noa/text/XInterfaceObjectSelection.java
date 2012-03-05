@@ -44,7 +44,7 @@ import com.sun.star.uno.XInterface;
 /**
  * Selection of a open office object implementing XInterface.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */ 
 public class XInterfaceObjectSelection implements IXInterfaceObjectSelection, ISelection {
@@ -57,7 +57,7 @@ public class XInterfaceObjectSelection implements IXInterfaceObjectSelection, IS
 	 * 
 	 * @param interfaceObject object implementing XInterface to be used
 	 * 
-	 * @author Markus Krueger
+	 * @author Markus Krüger
 	 * @date 01.08.2007
 	 */
 	public XInterfaceObjectSelection(XInterface interfaceObject) {
@@ -70,7 +70,7 @@ public class XInterfaceObjectSelection implements IXInterfaceObjectSelection, IS
    * 
    * @return object implementing XInterface of the selection
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.08.2007
    */
   public XInterface getXInterfaceObject() {
@@ -82,7 +82,7 @@ public class XInterfaceObjectSelection implements IXInterfaceObjectSelection, IS
 	 * 
 	 * @return information whether the selection is empty
 	 * 
-	 * @author Markus Krueger
+	 * @author Markus Krüger
    * @date 01.08.2007
 	 */
 	public boolean isEmpty() {

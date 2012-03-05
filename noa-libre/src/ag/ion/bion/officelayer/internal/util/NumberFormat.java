@@ -51,8 +51,8 @@ import java.util.Calendar;
 /**
  * Number format. 
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 11533 $
  */
 public class NumberFormat implements INumberFormat {
@@ -80,8 +80,8 @@ public class NumberFormat implements INumberFormat {
    * 
    * @throws IllegalArgumentException if the submitted OpenOffice.org XPropertySet interface is not valid
    * 
-   * @author Andreas Brueker
-   * @author Markus Krueger
+   * @author Andreas Bröker
+   * @author Markus Krüger
    */
   public NumberFormat(int formatKey, XPropertySet xPropertySet, INumberFormatService numberFormatService) throws IllegalArgumentException {
     if(xPropertySet == null)
@@ -96,7 +96,7 @@ public class NumberFormat implements INumberFormat {
    * 
    * @return format key
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.07.2007
    */
   public int getFormatKey() {
@@ -108,7 +108,7 @@ public class NumberFormat implements INumberFormat {
    * 
    * @return format type as constants of {@link com.sun.star.util.NumberFormat}
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.07.2007
    */
   public short getFormatType() {
@@ -127,7 +127,7 @@ public class NumberFormat implements INumberFormat {
    * 
    * @throws UtilException if returning the example fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.07.2007
    */
   public String getExample() throws UtilException {
@@ -174,7 +174,7 @@ public class NumberFormat implements INumberFormat {
    * 
    * @return format pattern
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public String getFormatPattern() {
     try {
@@ -192,7 +192,7 @@ public class NumberFormat implements INumberFormat {
    * 
    * @throws UtilException if no suitable number format is available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public IJavaNumberFormat getJavaNumberFormat() throws UtilException {
     return new JavaNumberFormat(getFormatPattern());
@@ -203,7 +203,7 @@ public class NumberFormat implements INumberFormat {
    * 
    * @return whether some other object is "equal to" this one
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 27.07.2007
    */
   public boolean equals(Object obj) {
@@ -217,7 +217,7 @@ public class NumberFormat implements INumberFormat {
    * 
    * @return a hash code value for the object
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 27.07.2007
    */
   public int hashCode() {
@@ -229,7 +229,7 @@ public class NumberFormat implements INumberFormat {
    *
    * @return a string representation of the object
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 27.07.2007
    */
   public String toString() {    

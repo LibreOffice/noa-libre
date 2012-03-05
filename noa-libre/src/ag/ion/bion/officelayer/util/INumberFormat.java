@@ -41,8 +41,8 @@ package ag.ion.bion.officelayer.util;
 /**
  * Number format. 
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 11533 $
  */
 public interface INumberFormat {
@@ -53,7 +53,7 @@ public interface INumberFormat {
    * 
    * @return format key
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.07.2007
    */
   public int getFormatKey();
@@ -63,7 +63,7 @@ public interface INumberFormat {
    * 
    * @return format type as constants of {@link com.sun.star.util.NumberFormat}
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.07.2007
    */
   public short getFormatType();
@@ -75,7 +75,7 @@ public interface INumberFormat {
    * 
    * @throws UtilException if returning the example fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.07.2007
    */
   public String getExample() throws UtilException;
@@ -85,7 +85,7 @@ public interface INumberFormat {
    * 
    * @return format pattern
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public String getFormatPattern();
   //----------------------------------------------------------------------------
@@ -96,7 +96,7 @@ public interface INumberFormat {
    * 
    * @throws UtilException if no suitable number format is available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public IJavaNumberFormat getJavaNumberFormat() throws UtilException;
   //----------------------------------------------------------------------------

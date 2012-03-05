@@ -45,7 +45,7 @@ import com.sun.star.sheet.XSpreadsheetDocument;
 /**
  * OpenOffice.org calc document.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public interface ISpreadsheetDocument extends IDocument {
@@ -56,7 +56,7 @@ public interface ISpreadsheetDocument extends IDocument {
    * 
    * @return OpenOffice.org XSpreadsheet interface
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public XSpreadsheetDocument getSpreadsheetDocument();
   //----------------------------------------------------------------------------

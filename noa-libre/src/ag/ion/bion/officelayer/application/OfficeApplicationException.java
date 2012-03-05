@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.application;
 /**
  * Exception which may be thrown from OpenOffice.org application.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public class OfficeApplicationException extends Exception {
@@ -52,7 +52,7 @@ public class OfficeApplicationException extends Exception {
   /**
    * Constructs new OfficeApplicationException.
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public OfficeApplicationException() {
     super();
@@ -63,7 +63,7 @@ public class OfficeApplicationException extends Exception {
    * 
    * @param message message to be used
    * 
-   * @author Andreas Brueker 
+   * @author Andreas Bröker 
    */
   public OfficeApplicationException(String message) {
     super(message == null ? DEFAULT_EXCEPTION_MESSAGE : message);
@@ -74,7 +74,7 @@ public class OfficeApplicationException extends Exception {
    * 
    * @param throwable throwable to be used
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public OfficeApplicationException(Throwable throwable) {
     super(throwable.getMessage() == null ? DEFAULT_EXCEPTION_MESSAGE : throwable.getMessage());
@@ -87,7 +87,7 @@ public class OfficeApplicationException extends Exception {
    * @param message message to be used
    * @param throwable throwable to be used
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public OfficeApplicationException(String message, Throwable throwable) {
     super(message == null ? DEFAULT_EXCEPTION_MESSAGE : message);

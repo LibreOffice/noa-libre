@@ -57,7 +57,7 @@ import java.util.List;
 /**
  * Provider for scripts.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 11525 $
  * @date 13.06.2006
  */ 
@@ -71,7 +71,7 @@ public class ScriptProvider implements IScriptProvider {
 	 * 
 	 * @param xScriptProvider OpenOffice.org XScriptProvider interface to be used
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 13.06.2006
 	 */
 	public ScriptProvider(XScriptProvider xScriptProvider) {
@@ -96,7 +96,7 @@ public class ScriptProvider implements IScriptProvider {
    * 
    * @return  the script with the submitted type, library, module, and name, or null
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 13.06.2006
    */
   public IScript getScript(String type, String library, String module, String name) {
@@ -135,7 +135,7 @@ public class ScriptProvider implements IScriptProvider {
 	 * 
 	 * @return all scripts of the submitted type and library with the submitted name
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 13.06.2006
 	 */
 	public IScript[] getScripts(String type, String library) {
@@ -151,7 +151,7 @@ public class ScriptProvider implements IScriptProvider {
 	 * 
 	 * @return all scripts of the library with the submitted name
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 13.06.2006
 	 */
 	public IScript[] getScripts(String library) {
@@ -165,7 +165,7 @@ public class ScriptProvider implements IScriptProvider {
    * 
    * @return all scripts
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 17.07.2007
    */
   public IScript[] getScripts() {
@@ -191,7 +191,7 @@ public class ScriptProvider implements IScriptProvider {
 	 * 
 	 * @return scripts of the submitted type and library
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 13.06.2006
 	 */
 	private IScript[] getScriptsInternal(String type, String library) {
@@ -219,7 +219,7 @@ public class ScriptProvider implements IScriptProvider {
 	 * 
 	 * @return builded scripts of the submitted browse node
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 13.06.2006
 	 */
 	private List buildScripts(List list, XBrowseNode browseNode) {
@@ -262,7 +262,7 @@ public class ScriptProvider implements IScriptProvider {
 	 * if a library with the submitted name is
 	 * not available
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 13.06.2006
 	 */
 	private XBrowseNode getLibraryNode(XBrowseNode typeNode, String library) {

@@ -47,7 +47,7 @@ import ag.ion.bion.officelayer.util.Assert;
 /**
  * Provider for servives.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  * @date 15.08.2006
  */ 
@@ -61,7 +61,7 @@ public class ServiceProvider implements IServiceProvider {
    * 
    * @param officeConnection office connection to be used
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 15.08.2006
    */
   public ServiceProvider(IOfficeConnection officeConnection) {
@@ -80,7 +80,7 @@ public class ServiceProvider implements IServiceProvider {
    * 
    * @throws NOAException if the service can not be requested
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 15.08.2006
    */
   public Object createService(String serviceName) throws NOAException {
@@ -103,7 +103,7 @@ public class ServiceProvider implements IServiceProvider {
    * 
    * @throws NOAException if the service can not be requested
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 15.08.2006
    */
   public Object createServiceWithContext(String serviceName) throws NOAException {

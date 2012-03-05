@@ -48,7 +48,7 @@ import com.sun.star.lang.EventObject;
 /**
  * Wrapper in order to register a terminate listener.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public class TerminateListenerWrapper extends EventListenerWrapper implements XTerminateListener {
@@ -63,7 +63,7 @@ public class TerminateListenerWrapper extends EventListenerWrapper implements XT
    *  
    * @throws IllegalArgumentException if the submitted terminate listener is not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public TerminateListenerWrapper(ITerminateListener terminateListener) throws IllegalArgumentException {
     super(terminateListener);
@@ -78,7 +78,7 @@ public class TerminateListenerWrapper extends EventListenerWrapper implements XT
    * @throws TerminationVetoException listener can disagree with this query by throwing a veto
    * exception
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void queryTermination(EventObject eventObject) throws TerminationVetoException {
     TerminateEvent terminateEvent = new TerminateEvent(eventObject);
@@ -92,7 +92,7 @@ public class TerminateListenerWrapper extends EventListenerWrapper implements XT
    * 
    * @param eventObject of the event
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void notifyTermination(EventObject eventObject) { 
     TerminateEvent terminateEvent = new TerminateEvent(eventObject);

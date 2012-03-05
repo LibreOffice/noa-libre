@@ -41,7 +41,7 @@ import ag.ion.bion.officelayer.document.IDocument;
 /**
  * OpenOffice.org global text document.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  * @date 16.03.2006
  */

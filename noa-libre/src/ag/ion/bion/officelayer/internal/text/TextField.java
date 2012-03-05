@@ -66,8 +66,8 @@ import com.sun.star.uno.UnoRuntime;
 /**
  * Text field implementation of a text document.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 11496 $
  */
 public class TextField extends AbstractTextComponent implements ITextField {
@@ -85,7 +85,7 @@ public class TextField extends AbstractTextComponent implements ITextField {
    * @throws IllegalArgumentException if the submitted text document or OpenOffice.org XDependentTextField interface  
    * is not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public TextField(ITextDocument textDocument, XDependentTextField xDependentTextField) throws IllegalArgumentException {
     super(textDocument);
@@ -104,7 +104,7 @@ public class TextField extends AbstractTextComponent implements ITextField {
    * @throws IllegalArgumentException if the submitted text document or OpenOffice.org XTextField interface 
    * is not valid
    * 
-   * @author Andreas Brueker 
+   * @author Andreas Bröker 
    */
   public TextField(ITextDocument textDocument, XTextField xTextField) throws IllegalArgumentException {
     super(textDocument);
@@ -119,7 +119,7 @@ public class TextField extends AbstractTextComponent implements ITextField {
    * 
    * @return OpenOffice.org XTextContent interface
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public XTextContent getXTextContent() {
     return xDependentTextField;
@@ -130,7 +130,7 @@ public class TextField extends AbstractTextComponent implements ITextField {
    * 
    * @return display text of the text field
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public String getDisplayText() {
     return xDependentTextField.getPresentation(false);
@@ -141,7 +141,7 @@ public class TextField extends AbstractTextComponent implements ITextField {
    * 
    * @return master of the textfield.
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextFieldMaster getTextFieldMaster() {
     return new TextFieldMaster(textDocument, xDependentTextField.getTextFieldMaster());
@@ -152,7 +152,7 @@ public class TextField extends AbstractTextComponent implements ITextField {
    * 
    * @return text range of the textfield
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextRange getTextRange() {
     return new TextRange(textDocument, xDependentTextField.getAnchor());
@@ -161,7 +161,7 @@ public class TextField extends AbstractTextComponent implements ITextField {
   /**
    * Removes the text field from the document.
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void remove() {
     xDependentTextField.dispose();    
@@ -172,7 +172,7 @@ public class TextField extends AbstractTextComponent implements ITextField {
    * 
    * @param listener listene to be used
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public void addDisposeListener(IElementDisposedListener listener) {
     wrapper = new ElementDisposeListenerWrapper(listener);
@@ -185,7 +185,7 @@ public class TextField extends AbstractTextComponent implements ITextField {
    * 
    * @param listener the dispose listener to be removed
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public void removeDisposeListener(IElementDisposedListener listener) {
     if (wrapper != null)
@@ -197,7 +197,7 @@ public class TextField extends AbstractTextComponent implements ITextField {
    * 
    * @param xEventListener the event listener wrapper to be added
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   private void addEventListener(XEventListener xEventListener) {
     XTextField xTextField = (XTextField)UnoRuntime.queryInterface(XTextField.class, xDependentTextField);
@@ -209,7 +209,7 @@ public class TextField extends AbstractTextComponent implements ITextField {
    * 
    * @param xEventListener the event listener wrapper to be removed
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   private void removeEventListener(XEventListener xEventListener) {
     XTextField xTextField = (XTextField)UnoRuntime.queryInterface(XTextField.class, xDependentTextField);
@@ -219,8 +219,8 @@ public class TextField extends AbstractTextComponent implements ITextField {
   /**
    * Marks the text field in the text.
    * 
-   * @author Sebastian Ruesgen
-   * @author Markus Krueger
+   * @author Sebastian Rösgen
+   * @author Markus Krüger
    */
   public void markTextField() {    
     try {

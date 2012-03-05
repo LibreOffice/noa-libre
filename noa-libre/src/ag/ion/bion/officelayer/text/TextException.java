@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.text;
 /**
  * Exception for text parts of the Office API.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public class TextException extends Exception {
@@ -52,7 +52,7 @@ public class TextException extends Exception {
   /**
    * Constructs new TextException.
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public TextException() {
    super(); 
@@ -63,7 +63,7 @@ public class TextException extends Exception {
    * 
    * @param message exception message
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public TextException(String message) {
    super(message == null ? DEFAULT_EXCEPTION_MESSAGE : message); 
@@ -74,7 +74,7 @@ public class TextException extends Exception {
    * 
    * @param exception exception to be used
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public TextException(Exception exception) {
     super(exception.getMessage() == null ? DEFAULT_EXCEPTION_MESSAGE : exception.getMessage());
@@ -87,7 +87,7 @@ public class TextException extends Exception {
    * @param message message to be used
    * @param exception exception to be used
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public TextException(String message, Exception exception) {
     super(message == null ? DEFAULT_EXCEPTION_MESSAGE : message);

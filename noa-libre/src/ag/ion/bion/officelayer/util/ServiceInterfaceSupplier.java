@@ -48,7 +48,7 @@ import com.sun.star.uno.UnoRuntime;
 /**
  * Supplier for OpenOffice.org services.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public class ServiceInterfaceSupplier {

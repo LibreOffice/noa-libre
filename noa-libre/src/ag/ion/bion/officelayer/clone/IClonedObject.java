@@ -42,7 +42,7 @@ package ag.ion.bion.officelayer.clone;
 /**
  * Interface to be implemented by clonedobject classes.
  * 
- * @author Sebastian Ruesgen
+ * @author Sebastian Rösgen
  * 
  * @version $Revision: 10398 $
  */
@@ -53,7 +53,7 @@ public interface IClonedObject {
 	 * 
 	 * @return the object stored.
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public Object getClonedObject ();
   //----------------------------------------------------------------------------
@@ -63,7 +63,7 @@ public interface IClonedObject {
 	 * 
 	 * @return the original class of the stored object
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public Class getCloneClassType();
   //----------------------------------------------------------------------------

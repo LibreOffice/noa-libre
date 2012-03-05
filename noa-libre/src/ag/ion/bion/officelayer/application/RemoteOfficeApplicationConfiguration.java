@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.application;
 /**
  * Configuration for remote OpenOffice.org application.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  * 
  * @deprecated
@@ -58,7 +58,7 @@ public class RemoteOfficeApplicationConfiguration extends AbstractOfficeConfigur
    * 
    * @throws IllegalArgumentException if the submitted host is not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setHost(String host) throws IllegalArgumentException {
     if(host == null)
@@ -71,7 +71,7 @@ public class RemoteOfficeApplicationConfiguration extends AbstractOfficeConfigur
    * 
    * @return host of a remote OpenOffice.org application
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public String getHost() {
     return host;

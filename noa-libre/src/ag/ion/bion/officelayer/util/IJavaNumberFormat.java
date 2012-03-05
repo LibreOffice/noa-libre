@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.util;
 /**
  * Number format for java code.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public interface IJavaNumberFormat {
@@ -57,7 +57,7 @@ public interface IJavaNumberFormat {
    * 
    * @throws UtilException if the format operation fails
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public IJavaFormattedNumber formatNumber(double value) throws UtilException;
   //----------------------------------------------------------------------------
@@ -71,7 +71,7 @@ public interface IJavaNumberFormat {
    * 
    * @throws UtilException if the format operation fails
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public IJavaFormattedNumber formatNumber(String value) throws UtilException;
   //----------------------------------------------------------------------------

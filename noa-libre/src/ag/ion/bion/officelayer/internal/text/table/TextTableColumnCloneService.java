@@ -51,8 +51,8 @@ import ag.ion.bion.officelayer.text.ITextTableColumn;
 /**
  * CloneService for TextTableRows
  *  
- * @author Sebastian Ruesgen
- * @author Markus Krueger 
+ * @author Sebastian Rösgen
+ * @author Markus Krüger 
  * @version $Revision: 10398 $
  */
 public class TextTableColumnCloneService extends AbstractCloneService {
@@ -99,7 +99,7 @@ public class TextTableColumnCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneToPositionNoReturn(IDestinationPosition position, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     cloneService.cloneToPositionNoReturn(position,propertyKeysContainer); 
@@ -136,7 +136,7 @@ public class TextTableColumnCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneToPositionNoReturn(IDestinationPosition position , boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     cloneService.cloneToPositionNoReturn(position, adoptContent,propertyKeysContainer);
@@ -162,7 +162,7 @@ public class TextTableColumnCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public IClonedObject cloneAfterThisPosition(IDestinationPosition position, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     return cloneToPosition(position, true,propertyKeysContainer);
@@ -185,7 +185,7 @@ public class TextTableColumnCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneAfterThisPositionNoReturn(IDestinationPosition position, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     cloneToPositionNoReturn(position, true,propertyKeysContainer);
@@ -213,7 +213,7 @@ public class TextTableColumnCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */  
   public IClonedObject cloneAfterThisPosition(IDestinationPosition position, boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     return cloneToPosition(position, adoptContent,propertyKeysContainer);
@@ -239,7 +239,7 @@ public class TextTableColumnCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */  
   public void cloneAfterThisPositionNoReturn(IDestinationPosition position, boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     cloneToPositionNoReturn(position, adoptContent,propertyKeysContainer);

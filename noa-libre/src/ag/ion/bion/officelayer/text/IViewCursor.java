@@ -41,8 +41,8 @@ package ag.ion.bion.officelayer.text;
 /**
  * Visible cursor of a text document.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 11732 $
  */
 public interface IViewCursor {
@@ -53,7 +53,7 @@ public interface IViewCursor {
    * 
    * @return start text range of the cursor
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextRange getStartTextRange();
 
@@ -63,7 +63,7 @@ public interface IViewCursor {
    * 
    * @return new text cursor from the start position of the view cursor
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextCursor getTextCursorFromStart();
 
@@ -73,7 +73,7 @@ public interface IViewCursor {
    * 
    * @return new text cursor from the end position of the view cursor
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextCursor getTextCursorFromEnd();
 
@@ -84,7 +84,7 @@ public interface IViewCursor {
    * @param textRange the text range to go to
    * @param select if to extend the selection
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void goToRange(ITextRange textRange, boolean select);
 
@@ -94,7 +94,7 @@ public interface IViewCursor {
    * 
    * @return the page cursor for the view cursor, can be null
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public IPageCursor getPageCursor();
 
@@ -104,7 +104,7 @@ public interface IViewCursor {
    * 
    * @return the line cursor for the view cursor, can be null
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public ILineCursor getLineCursor();
   //----------------------------------------------------------------------------

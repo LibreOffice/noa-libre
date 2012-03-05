@@ -57,7 +57,7 @@ import java.util.HashMap;
  * This code snippet disables commands within the OpenOffice.org
  * User Interface.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 11063 $
  * @date 16.07.2006
  */

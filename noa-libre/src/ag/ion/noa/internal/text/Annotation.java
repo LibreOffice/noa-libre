@@ -63,7 +63,7 @@ import com.sun.star.uno.UnoRuntime;
 /**
  * Annotation of a text document.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 11572 $
  */
 public class Annotation extends AbstractTextComponent implements IAnnotation, ITextContent, ITextComponent {
@@ -79,7 +79,7 @@ public class Annotation extends AbstractTextComponent implements IAnnotation, IT
    *  
    * @throws IllegalArgumentException if one the OpenOffice.org interface is not valid
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.07.2006
    */
   public Annotation(ITextDocument textDocument, ITextField textField) throws IllegalArgumentException {
@@ -95,7 +95,7 @@ public class Annotation extends AbstractTextComponent implements IAnnotation, IT
    * @param textDocument text document to be used
    * @param xDependentTextField OpenOffice.org XDependentTextField interface
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.07.2006
    */
   public Annotation(ITextDocument textDocument, XDependentTextField xDependentTextField) {
@@ -109,7 +109,7 @@ public class Annotation extends AbstractTextComponent implements IAnnotation, IT
    * 
    * @return the text content of the annotation, or null
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.07.2006
    */
   public String getText() {
@@ -134,7 +134,7 @@ public class Annotation extends AbstractTextComponent implements IAnnotation, IT
    * 
    * @return text range of the annotation
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.07.2006
    */
   public ITextRange getTextRange() {
@@ -144,7 +144,7 @@ public class Annotation extends AbstractTextComponent implements IAnnotation, IT
   /**
    * Jumps to the annotation.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.07.2006
    */
   public void jumpTo() {
@@ -160,7 +160,7 @@ public class Annotation extends AbstractTextComponent implements IAnnotation, IT
    * 
    * @return OpenOffice.org XTextContent interface
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 13.07.2006
    */
   public XTextContent getXTextContent() {

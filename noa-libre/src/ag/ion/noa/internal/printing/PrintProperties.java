@@ -41,7 +41,7 @@ import ag.ion.noa.printing.IPrintProperties;
 /**
  * Properties for printing documents.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */ 
 public class PrintProperties implements IPrintProperties {
@@ -56,7 +56,7 @@ public class PrintProperties implements IPrintProperties {
    * @param copyCount the number of copies to print 
    * (values less then 1 will result in a copy count of 1)
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 16.08.2007
    */
   public PrintProperties(short copyCount) {
@@ -71,7 +71,7 @@ public class PrintProperties implements IPrintProperties {
    * @param pages the pages to print (e.g. "1, 3, 4-7, 9-"), or null for default
    * TODO: This format is not checked yet, so validate it yourself for now
 	 * 
-	 * @author Markus Krueger
+	 * @author Markus Krüger
    * @date 16.08.2007
 	 */
 	public PrintProperties(short copyCount, String pages) {
@@ -85,7 +85,7 @@ public class PrintProperties implements IPrintProperties {
    * 
    * @return the number of copies to print
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 16.08.2007
    */
   public short getCopyCount() {
@@ -97,7 +97,7 @@ public class PrintProperties implements IPrintProperties {
    * 
    * @return the pages to print (e.g. "1, 3, 4-7, 9-")
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 16.08.2007
    */
   public String getPages() {

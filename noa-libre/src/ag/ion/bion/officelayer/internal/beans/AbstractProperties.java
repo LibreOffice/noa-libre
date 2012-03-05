@@ -47,7 +47,7 @@ import ag.ion.bion.officelayer.beans.IProperties;
 /**
  * Abstract properties.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public abstract class AbstractProperties implements IProperties {
@@ -60,7 +60,7 @@ public abstract class AbstractProperties implements IProperties {
    * 
    * @return the id of the property
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public abstract String getTypeID();
   //----------------------------------------------------------------------------
@@ -71,7 +71,7 @@ public abstract class AbstractProperties implements IProperties {
    * 
    * @throws IllegalArgumentException if the OpenOffice.org interface is not valid
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public AbstractProperties(XPropertySet xPropertySet) throws IllegalArgumentException {
     if(xPropertySet == null)
@@ -84,7 +84,7 @@ public abstract class AbstractProperties implements IProperties {
    * 
    * @return the XPropertySet used for this properties
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public XPropertySet getXPropertySet() {
     return xPropertySet;
@@ -98,7 +98,7 @@ public abstract class AbstractProperties implements IProperties {
    * 
    * @throws OfficeException if copy failed
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void copyTo(String[] propertyKeys, IProperties properties) throws OfficeException {
     XPropertySet foreignPropertySet = properties.getXPropertySet();

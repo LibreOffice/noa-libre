@@ -39,7 +39,7 @@ package ag.ion.noa.printing;
 /**
  * A printer that can be used for the printer service.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */ 
 public interface IPrinter {
@@ -50,7 +50,7 @@ public interface IPrinter {
    * 
    * @return the name of the printer que that is used
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 16.08.2007
    */
   public String getName();

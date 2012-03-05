@@ -42,7 +42,7 @@ import ag.ion.noa.printing.IPrinter;
 /**
  * A printer that can be used for the printer service.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */ 
 public class Printer implements IPrinter {
@@ -57,7 +57,7 @@ public class Printer implements IPrinter {
 	 * 
 	 * @throws NOAException if the name is invalid
 	 * 
-	 * @author Markus Krueger
+	 * @author Markus Krüger
    * @date 16.08.2007
 	 */
 	public Printer(String name) throws NOAException {
@@ -71,7 +71,7 @@ public class Printer implements IPrinter {
    * 
    * @return the name of the printer que that is used
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 16.08.2007
    */
   public String getName() {

@@ -47,7 +47,7 @@ import ag.ion.bion.officelayer.text.TextException;
 /**
  * Page of a text document.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public class Page implements IPage {
@@ -67,7 +67,7 @@ public class Page implements IPage {
    * 
    * @throws IllegalArgumentException if the submitted text document, startposition or end position is not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public Page(ITextDocument textDocument, PagePosition startPagePosition, PagePosition endPagePosition) throws IllegalArgumentException {
     //if(textDocument == null)
@@ -90,7 +90,7 @@ public class Page implements IPage {
    * 
    * @throws TextException if the page style is not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public IPageStyle getPageStyle() throws TextException {
     if(startPagePosition.getContentType() == PagePosition.TEXT_TABLE_CELL) {

@@ -42,7 +42,7 @@ package ag.ion.bion.officelayer.event;
  * The elements dispose listener will be triggered when the specific
  * element the listener belongs to, will be disposed.
  *  
- * @author Sebastian Ruesgen
+ * @author Sebastian Rösgen
  */
 public interface IElementDisposedListener extends IEventListener {
 
@@ -50,7 +50,7 @@ public interface IElementDisposedListener extends IEventListener {
   /**
    * Should be triggered on a dispose.
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public void reactOnDispose();
   // ------------------------------------------------------------

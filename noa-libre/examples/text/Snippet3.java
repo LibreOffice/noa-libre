@@ -50,7 +50,7 @@ import ag.ion.noa.NOAException;
  * do some work with simple text. More examples for tales and texts can follow after we 
  * just get used to the basics a little bit more.
  * 
- * @author Sebastian Ruesgen
+ * @author Sebastian Rösgen
  * @version $Revision: 10398 $
  * @date 17.03.2006
  */

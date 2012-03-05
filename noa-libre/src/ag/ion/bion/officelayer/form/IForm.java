@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.form;
 /**
  * Marker interface for a form in a document.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision$
  */
 public interface IForm extends IFormComponent {

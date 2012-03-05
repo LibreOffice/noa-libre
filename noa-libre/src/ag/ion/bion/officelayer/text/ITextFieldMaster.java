@@ -43,7 +43,7 @@ import ag.ion.noa.NOAException;
 /**
  * Master of a textfield of a text document.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public interface ITextFieldMaster {
@@ -56,7 +56,7 @@ public interface ITextFieldMaster {
    * @return name of the master of a textfield or null if a name is
    * not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public String getName();
   //----------------------------------------------------------------------------
@@ -67,7 +67,7 @@ public interface ITextFieldMaster {
    * @return content of the master of a textfield or null if a content
    * is not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public String getContent();
   //----------------------------------------------------------------------------
@@ -78,7 +78,7 @@ public interface ITextFieldMaster {
    * 
    * @throws TextException if the new content can not be set
    *  
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setContent(String content) throws TextException;
   //----------------------------------------------------------------------------
@@ -89,7 +89,7 @@ public interface ITextFieldMaster {
    * 
    * @throws TextException if the textfields can not be fetched
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextField[] getTextFields() throws TextException;
   //----------------------------------------------------------------------------
@@ -100,7 +100,7 @@ public interface ITextFieldMaster {
    * 
    * @throws NOAException if the new textfield can not be constructed
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 16.02.2006
    */
   public ITextField constructNewTextField() throws NOAException;  
@@ -108,7 +108,7 @@ public interface ITextFieldMaster {
   /**
    * Removes the master of a textfield from the document.
    *
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void remove();
   //----------------------------------------------------------------------------

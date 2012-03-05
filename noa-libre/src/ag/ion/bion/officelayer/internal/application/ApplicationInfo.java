@@ -54,7 +54,7 @@ import com.sun.star.uno.UnoRuntime;
 /**
  * Information provider of an office application.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 11681 $
  */
 public class ApplicationInfo implements IApplicationInfo {
@@ -69,7 +69,7 @@ public class ApplicationInfo implements IApplicationInfo {
    * 
    * @throws Exception if serviceProvider is null
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.11.2008
    */
   public ApplicationInfo(IServiceProvider serviceProvider) throws Exception {
@@ -86,7 +86,7 @@ public class ApplicationInfo implements IApplicationInfo {
    * 
    * @throws Exception if retreiving the value fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.11.2008
    */
   public String getName() throws Exception {
@@ -110,7 +110,7 @@ public class ApplicationInfo implements IApplicationInfo {
    * 
    * @throws Exception if retreiving the value fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.11.2008
    */
   public String getVersion() throws Exception {
@@ -134,7 +134,7 @@ public class ApplicationInfo implements IApplicationInfo {
    * 
    * @throws Exception if retreiving the value fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.11.2008
    */
   public int getMajorVersion() throws Exception {
@@ -158,7 +158,7 @@ public class ApplicationInfo implements IApplicationInfo {
    * 
    * @throws Exception if retreiving the value fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.11.2008
    */
   public int getMinorVersion() throws Exception {
@@ -182,7 +182,7 @@ public class ApplicationInfo implements IApplicationInfo {
    * 
    * @throws Exception if retreiving the value fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.11.2008
    */
   public int getUpdateVersion() throws Exception {
@@ -204,7 +204,7 @@ public class ApplicationInfo implements IApplicationInfo {
    * 
    * @throws Exception if retreiving the value fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.11.2008
    */
   public String getLocale() throws Exception {
@@ -226,7 +226,7 @@ public class ApplicationInfo implements IApplicationInfo {
    * 
    * @throws Exception if retreiving the value fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.11.2008
    */
   public Date getLicenseAcceptDate() throws Exception {
@@ -248,7 +248,7 @@ public class ApplicationInfo implements IApplicationInfo {
    * 
    * @throws Exception if retreiving the value fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.11.2008
    */
   public Boolean getFirstStartWizardCompleted() throws Exception {
@@ -271,7 +271,7 @@ public class ApplicationInfo implements IApplicationInfo {
    * 
    * @throws Exception if retreiving the value fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.11.2008
    */
   public Object getInfo(String path, String key) throws Exception {
@@ -296,7 +296,7 @@ public class ApplicationInfo implements IApplicationInfo {
    * 
    * @throws Exception if dumping info fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.11.2008
    */
   public void dumpInfo() throws Exception {
@@ -311,7 +311,7 @@ public class ApplicationInfo implements IApplicationInfo {
    * 
    * @throws Exception if dumping info fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.11.2008
    */
   public void dumpInfo(String path) throws Exception {

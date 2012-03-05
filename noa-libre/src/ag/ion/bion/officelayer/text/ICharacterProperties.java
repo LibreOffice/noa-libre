@@ -44,7 +44,7 @@ import ag.ion.bion.officelayer.beans.IProperties;
  * Properties of a character
  * 
  * @author Miriam Sutter
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 11629 $
  */
 public interface ICharacterProperties extends IProperties {
@@ -69,7 +69,7 @@ public interface ICharacterProperties extends IProperties {
 	 * 
 	 * @throws TextException if any error occurs
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public void setFontSize(float fontSize) throws TextException;
   //----------------------------------------------------------------------------
@@ -89,7 +89,7 @@ public interface ICharacterProperties extends IProperties {
 	 * 
 	 * @throws TextException if any error occurs
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public void setFontBold(boolean param) throws TextException;
 	//----------------------------------------------------------------------------
@@ -109,7 +109,7 @@ public interface ICharacterProperties extends IProperties {
 	 * 
 	 * @throws TextException if any error occurs
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public void setFontItalic(boolean param) throws TextException;
 	//----------------------------------------------------------------------------
@@ -129,7 +129,7 @@ public interface ICharacterProperties extends IProperties {
 	 *  
 	 * @throws TextException if any error occurs
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public void setFontUnderline(boolean param) throws TextException;
 	//----------------------------------------------------------------------------
@@ -147,7 +147,7 @@ public interface ICharacterProperties extends IProperties {
 	 * 
 	 * @param color the font color
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public void setFontColor(int color)  throws TextException;
   //----------------------------------------------------------------------------
@@ -158,7 +158,7 @@ public interface ICharacterProperties extends IProperties {
    * 
    * @throws TextException if any error occurs
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 14.04.2008
    */
   public String getFontName() throws TextException;
@@ -170,7 +170,7 @@ public interface ICharacterProperties extends IProperties {
    * 
    * @throws TextException if any error occurs
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 14.04.2008
    */
   public void setFontName(String font)  throws TextException;

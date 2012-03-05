@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer;
 /**
  * Helper for detecting os!
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public class OSHelper {
@@ -59,7 +59,7 @@ public class OSHelper {
    * 
    * @return if the given part of the os name is contained in the current os name
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 07.07.2010
    */
   private static boolean getOSMatchesName(String osNamePart) {
@@ -70,7 +70,7 @@ public class OSHelper {
   /**
    * Constructs new OSHelper.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 07.07.2010
    */
   private OSHelper() {

@@ -50,7 +50,7 @@ import com.sun.star.util.URL;
 /**
  * Wrapper for a dispatch delegate.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  * @date 09.07.2006
  */ 
@@ -67,7 +67,7 @@ public class DispatchWrapper implements XDispatch {
 	 * @param dispatchDelegate dispatch delegate in order to execute the command
 	 * @param xDispatch OpenOffice.org XDispatch interface in order to handle the status listener
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public DispatchWrapper(IDispatchDelegate dispatchDelegate, XDispatch xDispatch) {
@@ -83,7 +83,7 @@ public class DispatchWrapper implements XDispatch {
 	 * @param url url of the command
 	 * @param propertyValues property values to be used
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public void dispatch(URL url, PropertyValue[] propertyValues) {
@@ -96,7 +96,7 @@ public class DispatchWrapper implements XDispatch {
 	 * @param status listener to be added
 	 * @param url url of the command
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public void addStatusListener(XStatusListener statusListener, URL url) {
@@ -110,7 +110,7 @@ public class DispatchWrapper implements XDispatch {
 	 * @param status listener to be removed
 	 * @param url url of the command
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public void removeStatusListener(XStatusListener statusListener, URL url) {

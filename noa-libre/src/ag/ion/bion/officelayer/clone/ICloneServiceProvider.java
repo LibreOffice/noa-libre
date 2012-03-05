@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.clone;
 /**
  * This interface needs to be implemented by all elements that need a clone service.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * 
  * @version $Revision: 10398 $
  */
@@ -55,7 +55,7 @@ public interface ICloneServiceProvider {
    * 
    * @throws CloneException if the clone service could not be returned
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public ICloneService getCloneService() throws CloneException;
   //----------------------------------------------------------------------------

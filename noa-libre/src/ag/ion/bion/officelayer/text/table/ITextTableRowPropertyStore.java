@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.text.table;
 /**
  * Propertystore for table rows.
  * 
- * @author Sebastian Ruesgen 
+ * @author Sebastian Rösgen 
  * @version $Revision: 10398 $
  */
 public interface ITextTableRowPropertyStore {

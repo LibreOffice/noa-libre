@@ -45,7 +45,7 @@ import ag.ion.bion.officelayer.text.ITextTableColumnSeparator;
 /**
  * Seperator of a text table column.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public class TextTableColumnsSeparator implements ITextTableColumnSeparator {
@@ -60,7 +60,7 @@ public class TextTableColumnsSeparator implements ITextTableColumnSeparator {
    * 
    * @throws IllegalArgumentException if the OpenOffice.org TableColumnSeparator struct is not valid
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public TextTableColumnsSeparator(TableColumnSeparator tableColumnSeparator) throws IllegalArgumentException {
     if(tableColumnSeparator == null)
@@ -74,7 +74,7 @@ public class TextTableColumnsSeparator implements ITextTableColumnSeparator {
    * 
    * @param position of the column separator
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void setPosition(short position){
     tableColumnSeparator.Position = position;
@@ -85,7 +85,7 @@ public class TextTableColumnsSeparator implements ITextTableColumnSeparator {
    * 
    * @return position of the column separator
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public short getPosition() {
     return tableColumnSeparator.Position;
@@ -96,7 +96,7 @@ public class TextTableColumnsSeparator implements ITextTableColumnSeparator {
    * 
    * @param visibility of the column separator
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void setIsVisible(boolean visibility){
     tableColumnSeparator.IsVisible = visibility;
@@ -107,7 +107,7 @@ public class TextTableColumnsSeparator implements ITextTableColumnSeparator {
    * 
    * @return visibility of the column separator
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public boolean getIsVisible() {
     return tableColumnSeparator.IsVisible;

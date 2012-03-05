@@ -43,8 +43,8 @@ import ag.ion.noa.text.IAnnotationService;
 /**
  * Text service of a text document.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public interface ITextService {
@@ -55,7 +55,7 @@ public interface ITextService {
    * 
    * @return text content service
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextContentService getTextContentService();  
   //----------------------------------------------------------------------------
@@ -64,7 +64,7 @@ public interface ITextService {
    * 
    * @return cursor service
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextCursorService getCursorService();
   //----------------------------------------------------------------------------
@@ -73,7 +73,7 @@ public interface ITextService {
    * 
    * @return bookmark service
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public IBookmarkService getBookmarkService();
   //----------------------------------------------------------------------------
@@ -82,7 +82,7 @@ public interface ITextService {
    * 
    * @return annotation service
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.07.2006
    */
   public IAnnotationService getAnnotationService();
@@ -92,7 +92,7 @@ public interface ITextService {
    * 
    * @return text
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public IText getText();  
   //----------------------------------------------------------------------------

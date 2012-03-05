@@ -51,8 +51,8 @@ import com.sun.star.text.VertOrientation;
 /**
  * Properties of cell of a text table.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public class TextTableCellProperties extends AbstractProperties implements ITextTableCellProperties {
@@ -69,8 +69,8 @@ public class TextTableCellProperties extends AbstractProperties implements IText
    * 
    * @throws IllegalArgumentException if the OpenOffice.org interface is not valid
    * 
-   * @author Andreas Brueker
-   * @author Markus Krueger
+   * @author Andreas Bröker
+   * @author Markus Krüger
    */
   public TextTableCellProperties(XPropertySet xPropertySet) throws IllegalArgumentException {
     super(xPropertySet);
@@ -81,7 +81,7 @@ public class TextTableCellProperties extends AbstractProperties implements IText
    * 
    * @return the possible property keys
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public static IPropertyKey[] getPossiblyPropertyKeys() {
     if(PROPERTY_KEYS == null) {
@@ -107,7 +107,7 @@ public class TextTableCellProperties extends AbstractProperties implements IText
    * 
    * @return the default property keys
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public static String[] getDefaultPropertyKeys() {
     if(DEFAULT_PROPERTY_KEYS == null) {
@@ -133,7 +133,7 @@ public class TextTableCellProperties extends AbstractProperties implements IText
    * 
    * @return the id of the property
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public String getTypeID() {
     return TYPE_ID;
@@ -146,7 +146,7 @@ public class TextTableCellProperties extends AbstractProperties implements IText
    * 
    * @throws TextException if the property can not be modified
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setCellStyle(String cellStyle) throws TextException {
     try {
@@ -184,7 +184,7 @@ public class TextTableCellProperties extends AbstractProperties implements IText
    * 
    * @throws TextException if the property can not be modified
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setNumberFormat(int numberFormat) throws TextException {
     try {
@@ -204,7 +204,7 @@ public class TextTableCellProperties extends AbstractProperties implements IText
    * 
    * @throws TextException if the property is not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public int getNumberFormat() throws TextException {
     try {
@@ -276,7 +276,7 @@ public class TextTableCellProperties extends AbstractProperties implements IText
    * 
    * @throws TextException if the property can not be modified
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
 	public void setBackColor(int color) throws TextException {
 		try {
@@ -296,7 +296,7 @@ public class TextTableCellProperties extends AbstractProperties implements IText
    * 
    * @throws TextException if the property can not be modified
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
 	public void setVertOrient(short align) throws TextException {
 		try {

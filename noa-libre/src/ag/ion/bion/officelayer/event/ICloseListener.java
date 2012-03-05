@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.event;
 /**
  * Close listener.
  * 
- * @author Andreas Brueker 
+ * @author Andreas Bröker 
  * @version $Revision: 10398 $
  */
 public interface ICloseListener extends IEventListener {
@@ -53,7 +53,7 @@ public interface ICloseListener extends IEventListener {
    * @param closeEvent close event
    * @param getsOwnership information about the ownership
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */ 
   public void queryClosing(ICloseEvent closeEvent, boolean getsOwnership);
   //----------------------------------------------------------------------------
@@ -62,7 +62,7 @@ public interface ICloseListener extends IEventListener {
    * 
    * @param closeEvent close event
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void notifyClosing(ICloseEvent closeEvent);
   //----------------------------------------------------------------------------

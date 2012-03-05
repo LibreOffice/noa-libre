@@ -53,7 +53,7 @@ import java.util.HashMap;
 /**
  * This code snippet creates a new text document.
  * 
- * @author Sebastian Ruesgen
+ * @author Sebastian Rösgen
  * @version $Revision: 10398 $
  * @date 17.03.2006
  */

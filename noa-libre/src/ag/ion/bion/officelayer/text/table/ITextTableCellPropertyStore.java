@@ -43,7 +43,7 @@ import ag.ion.bion.officelayer.text.ITextTableCellProperties;
 /**
  * Propertystore for tables.
  * 
- * @author Sebastian Ruesgen
+ * @author Sebastian Rösgen
  * @version $Revision: 10398 $
  */
 public interface ITextTableCellPropertyStore extends ITextTableCellProperties{

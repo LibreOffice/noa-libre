@@ -53,7 +53,7 @@ import java.io.InputStream;
  * 
  * This class bases on the OpenOffice.org Java API class ByteArrayToXInputStreamAdapter.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10751 $
  */
 public class ByteArrayXInputStreamAdapter extends ComponentBase implements XInputStream, XSeekable {
@@ -78,7 +78,7 @@ public class ByteArrayXInputStreamAdapter extends ComponentBase implements XInpu
    * 
    * @throws IOException if the input stream can not be read
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 27.10.2006
    */
   public ByteArrayXInputStreamAdapter(InputStream inputStream, IOfficeProgressMonitor officeProgressMonitor) throws IOException {    
@@ -92,7 +92,7 @@ public class ByteArrayXInputStreamAdapter extends ComponentBase implements XInpu
    * 
    * @throws IllegalArgumentException if the submitted bytes are not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ByteArrayXInputStreamAdapter(byte[] bytes) throws IllegalArgumentException {
     this(null, bytes);
@@ -106,7 +106,7 @@ public class ByteArrayXInputStreamAdapter extends ComponentBase implements XInpu
    * 
    * @throws IllegalArgumentException if the submitted bytes are not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ByteArrayXInputStreamAdapter(IOfficeProgressMonitor officeProgressMonitor, byte[] bytes) throws IllegalArgumentException {
     if(bytes == null)
@@ -128,7 +128,7 @@ public class ByteArrayXInputStreamAdapter extends ComponentBase implements XInpu
    * 
    * @throws com.sun.star.io.IOException if any I/O related exception occurs
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public int available() throws com.sun.star.io.IOException {
     long available = length - pos;        
@@ -143,7 +143,7 @@ public class ByteArrayXInputStreamAdapter extends ComponentBase implements XInpu
    * 
    * @throws com.sun.star.io.IOException if any I/O related exception occurs
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void closeInput() throws com.sun.star.io.IOException {
     bytes = null;
@@ -160,7 +160,7 @@ public class ByteArrayXInputStreamAdapter extends ComponentBase implements XInpu
    * @throws com.sun.star.io.BufferSizeExceededException if the buffer size was exceeded
    * @throws com.sun.star.io.IOException if any I/O related exception occurs
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public int readBytes(byte[][] buffer, int size) throws com.sun.star.io.BufferSizeExceededException, com.sun.star.io.IOException {
     try {    
@@ -213,7 +213,7 @@ public class ByteArrayXInputStreamAdapter extends ComponentBase implements XInpu
    * @throws com.sun.star.io.BufferSizeExceededException if the buffer size was exceeded
    * @throws com.sun.star.io.IOException if any I/O related exception occurs
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public int readSomeBytes(byte[][] buffer, int size) throws com.sun.star.io.BufferSizeExceededException, com.sun.star.io.IOException {
     return readBytes(buffer, size);
@@ -227,7 +227,7 @@ public class ByteArrayXInputStreamAdapter extends ComponentBase implements XInpu
    * @throws com.sun.star.io.BufferSizeExceededException if the buffer size was exceeded
    * @throws com.sun.star.io.IOException if any I/O related exception occurs
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void skipBytes(int size) throws com.sun.star.io.BufferSizeExceededException, com.sun.star.io.IOException {
     if(size > (length - pos))
@@ -242,7 +242,7 @@ public class ByteArrayXInputStreamAdapter extends ComponentBase implements XInpu
    *
    * @throws com.sun.star.io.IOException if any I/O related exception occurs
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public long getLength() throws com.sun.star.io.IOException {
     if(bytes != null) return length;
@@ -256,7 +256,7 @@ public class ByteArrayXInputStreamAdapter extends ComponentBase implements XInpu
    *
    * @throws com.sun.star.io.IOException if any I/O related exception occurs
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public long getPosition() throws com.sun.star.io.IOException {
     if(bytes != null) 
@@ -272,7 +272,7 @@ public class ByteArrayXInputStreamAdapter extends ComponentBase implements XInpu
    * @throws com.sun.star.lang.IllegalArgumentException if the seek position is invalid
    * @throws com.sun.star.io.IOException if any I/O related exception occurs
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void seek(long position) throws com.sun.star.lang.IllegalArgumentException, com.sun.star.io.IOException {
     if(bytes != null) {
@@ -293,7 +293,7 @@ public class ByteArrayXInputStreamAdapter extends ComponentBase implements XInpu
    * 
    * @throws IOException if the input stream can not be read
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 27.10.2006
    */
   private static final byte[] toByteArray(InputStream inputStream) throws IOException {

@@ -45,7 +45,7 @@ import com.sun.star.script.XEventAttacherManager;
 /**
  * Service for forms.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision$
  */
 public interface IFormService {
@@ -61,7 +61,7 @@ public interface IFormService {
    * 
    * @throws NOAException if the return of forms fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 26.01.2007
    */
   public IForm[] getForms(String formName) throws NOAException;
@@ -77,7 +77,7 @@ public interface IFormService {
    * 
    * @throws NOAException if the return of OpenOffice.org XEventAttacherManager interface fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 26.01.2007
    */
   public XEventAttacherManager getXEventAttacherManager(IForm form) throws NOAException;
@@ -92,7 +92,7 @@ public interface IFormService {
    * 
    * @throws NOAException if anything fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.01.2007
    */
   public int getIndexInForm(IForm form, IFormComponent formComponent) throws NOAException;
@@ -104,7 +104,7 @@ public interface IFormService {
    * 
    * @throws NOAException if the check fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.01.2007
    */
   public boolean hasForms() throws NOAException;
@@ -116,7 +116,7 @@ public interface IFormService {
    * 
    * @throws NOAException if the check fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.01.2007
    */
   public boolean hasFormComponents() throws NOAException;  
@@ -128,7 +128,7 @@ public interface IFormService {
    * 
    * @throws NOAException if the return fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.01.2007
    */
   public IFormComponent[] getFormComponents() throws NOAException;  
@@ -140,7 +140,7 @@ public interface IFormService {
    * 
    * @throws NOAException if the return fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.01.2007
    */
   public String[] getFormComponentsNames() throws NOAException;  
@@ -152,7 +152,7 @@ public interface IFormService {
    * 
    * @throws NOAException if the remove fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.01.2007
    */
   public void removeFormComponent(IFormComponent formComponent) throws NOAException;  

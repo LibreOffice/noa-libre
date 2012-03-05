@@ -43,7 +43,7 @@ import java.util.Date;
 /**
  * Information provider of an office application.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 11681 $
  */
 public interface IApplicationInfo {
@@ -80,7 +80,7 @@ public interface IApplicationInfo {
    * 
    * @throws Exception if retreiving the value fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.11.2008
    */
   public String getName() throws Exception;
@@ -95,7 +95,7 @@ public interface IApplicationInfo {
    * 
    * @throws Exception if retreiving the value fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.11.2008
    */
   public String getVersion() throws Exception;
@@ -110,7 +110,7 @@ public interface IApplicationInfo {
    * 
    * @throws Exception if retreiving the value fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.11.2008
    */
   public int getMajorVersion() throws Exception;
@@ -125,7 +125,7 @@ public interface IApplicationInfo {
    * 
    * @throws Exception if retreiving the value fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.11.2008
    */
   public int getMinorVersion() throws Exception;
@@ -140,7 +140,7 @@ public interface IApplicationInfo {
    * 
    * @throws Exception if retreiving the value fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.11.2008
    */
   public int getUpdateVersion() throws Exception;
@@ -153,7 +153,7 @@ public interface IApplicationInfo {
    * 
    * @throws Exception if retreiving the value fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.11.2008
    */
   public String getLocale() throws Exception;
@@ -166,7 +166,7 @@ public interface IApplicationInfo {
    * 
    * @throws Exception if retreiving the value fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.11.2008
    */
   public Date getLicenseAcceptDate() throws Exception;
@@ -179,7 +179,7 @@ public interface IApplicationInfo {
    * 
    * @throws Exception if retreiving the value fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.11.2008
    */
   public Boolean getFirstStartWizardCompleted() throws Exception;
@@ -197,7 +197,7 @@ public interface IApplicationInfo {
    * 
    * @throws Exception if retreiving the value fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.11.2008
    */
   public Object getInfo(String path, String key) throws Exception;
@@ -208,7 +208,7 @@ public interface IApplicationInfo {
    * 
    * @throws Exception if dumping info fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.11.2008
    */
   public void dumpInfo() throws Exception;
@@ -221,7 +221,7 @@ public interface IApplicationInfo {
    * 
    * @throws Exception if dumping info fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.11.2008
    */
   public void dumpInfo(String path) throws Exception;

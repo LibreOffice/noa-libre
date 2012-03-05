@@ -45,7 +45,7 @@ import com.sun.star.text.XTextDocument;
 /**
  * OpenOffice.org global text document.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 11637 $
  * @date 16.03.2006
  */
@@ -58,7 +58,7 @@ public class GlobalTextDocument extends TextDocument implements IGlobalTextDocum
    * @param xTextDocument XTextDocument OpenOffice.org interface to be used
    * @param intitialProperties the properties that were used loading the document
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 16.03.2006
    */
   public GlobalTextDocument(XTextDocument xTextDocument, PropertyValue[] initialProperties) {
@@ -71,7 +71,7 @@ public class GlobalTextDocument extends TextDocument implements IGlobalTextDocum
    * 
    * @return type of the document
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public String getDocumentType() {
     return IDocument.GLOBAL;

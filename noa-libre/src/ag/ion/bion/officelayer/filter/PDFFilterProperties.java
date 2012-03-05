@@ -46,7 +46,7 @@ import com.sun.star.beans.PropertyValue;
 /**
  * Contains PDF properties for exporting an OpenOffice.org document to PDF.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 11619 $
  */
 public class PDFFilterProperties {
@@ -137,7 +137,7 @@ public class PDFFilterProperties {
    * @return the password that a user will need to change the permissions of the 
    * exported PDF, or null if no permission password is set
    *  
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public String getPermissionPassword() {
@@ -153,7 +153,7 @@ public class PDFFilterProperties {
    * @param permissionPassword the clear test password to be used, or null to not
    * use a permission password
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public void setPermissionPassword(String permissionPassword) {
@@ -169,7 +169,7 @@ public class PDFFilterProperties {
    * @return the password you must know to open the PDF document, or null if no 
    * document open password is set
    *  
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public String getDocumentOpenPassword() {
@@ -184,7 +184,7 @@ public class PDFFilterProperties {
    * @param documentOpenPassword the clear test password to be used, or null to not
    * use a document open password
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public void setDocumentOpenPassword(String documentOpenPassword) {
@@ -200,7 +200,7 @@ public class PDFFilterProperties {
    * 
    * @return the printing mode
    *  
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public int getPrintingMode() {
@@ -216,7 +216,7 @@ public class PDFFilterProperties {
    * 
    * @param printingMode the printing mode to be set
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public void setPrintingMode(int printingMode) {
@@ -236,7 +236,7 @@ public class PDFFilterProperties {
    * 
    * @return the changes mode
    *  
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public int getChangesMode() {
@@ -255,7 +255,7 @@ public class PDFFilterProperties {
    * 
    * @param changesMode the changes mode to be set
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public void setChangesMode(int changesMode) {
@@ -273,7 +273,7 @@ public class PDFFilterProperties {
    * extracted to be used in other documents: Copy from the PDF
    * document and paste eleswhere
    *  
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public boolean getEnableCopyingOfContent() {
@@ -289,7 +289,7 @@ public class PDFFilterProperties {
    * @param enableCopyingOfContent if the pages and the PDF document content can be
    * extracted to be used in other documents
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public void setEnableCopyingOfContent(boolean enableCopyingOfContent) {
@@ -304,7 +304,7 @@ public class PDFFilterProperties {
    * @return if the PDF document content can be extracted to
    * be used in accessibility applications
    *  
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public boolean getEnableTextAccessForAccessibilityTools() {
@@ -319,7 +319,7 @@ public class PDFFilterProperties {
    * @param enableTextAccessForAccessibilityTools if the PDF document content can be extracted to
    * be used in accessibility applications
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public void setEnableTextAccessForAccessibilityTools(boolean enableTextAccessForAccessibilityTools) {
@@ -345,7 +345,7 @@ public class PDFFilterProperties {
    * 
    * @return which pages are exported to the PDF document, or null
    *  
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public String getPageRange() {
@@ -372,7 +372,7 @@ public class PDFFilterProperties {
    * @param enableTextAccessForAccessibilityTools if the PDF document content can be extracted to
    * be used in accessibility applications
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public void setPageRange(String pageRange) {
@@ -387,7 +387,7 @@ public class PDFFilterProperties {
    * 
    * @return the quality of the JPG export in a range from 0 to 100
    *  
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public int getPictureQuality() {
@@ -402,7 +402,7 @@ public class PDFFilterProperties {
    * 
    * @param quality the quality of the JPG export in a range from 0 to 100
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public void setPictureQuality(int quality) {
@@ -419,7 +419,7 @@ public class PDFFilterProperties {
    * 
    * return the DPI to reduce images to, or -1 to not reduce
    *  
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public int getMaxImageResolution() {
@@ -435,7 +435,7 @@ public class PDFFilterProperties {
    * 
    * @param maxImageResolution the DPI to reduce images to, or -1 to not reduce
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public void setMaxImageResolution(int maxImageResolution) {
@@ -455,7 +455,7 @@ public class PDFFilterProperties {
    * @return whether form fields are exported as widgets or
    * only their fixed print representation is exported
    *  
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public boolean getExportFormFields() {
@@ -470,7 +470,7 @@ public class PDFFilterProperties {
    * @param exportFormFields whether form fields are exported as widgets or
    * only their fixed print representation is exported
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public void setExportFormFields(boolean exportFormFields) {
@@ -485,7 +485,7 @@ public class PDFFilterProperties {
    * @return if the PDF viewer window is centered to the
    * screen when the PDF document is opened
    *  
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public boolean getCenterWindow() {
@@ -500,7 +500,7 @@ public class PDFFilterProperties {
    * @param centerWindow if the PDF viewer window is centered to the
    * screen when the PDF document is opened
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public void setCenterWindow(boolean centerWindow) {
@@ -522,7 +522,7 @@ public class PDFFilterProperties {
    * @return the magnification to be performed when the PDF document
    * is opened
    *  
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public int getMagnificationMode() {
@@ -544,7 +544,7 @@ public class PDFFilterProperties {
    * @param magnificationMode the magnification to be performed when the PDF document
    * is opened
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public void setMagnificationMode(int magnificationMode) {
@@ -560,7 +560,7 @@ public class PDFFilterProperties {
    * @return the zoom level between 50 and 1600 a PDF document is opened with.
    * Only valid if the magnification mode is set to 4
    *  
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public int getZoom() {
@@ -574,7 +574,7 @@ public class PDFFilterProperties {
    * 
    * @param zoom the zoom level between 50 and 1600 a PDF document is opened with
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public void setZoom(int zoom) {
@@ -592,7 +592,7 @@ public class PDFFilterProperties {
    * suppressed. This option only applies for storing Writer
    * documents
    *  
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public boolean getSkipEmptyPages() {
@@ -608,7 +608,7 @@ public class PDFFilterProperties {
    * @param skipEmptyPages if automatically inserted empty pages are
    * suppressed
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public void setSkipEmptyPages(boolean skipEmptyPages) {
@@ -623,7 +623,7 @@ public class PDFFilterProperties {
    * 
    * @return the PDF version that should be generated
    *  
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public int getPdfVersion() {
@@ -638,7 +638,7 @@ public class PDFFilterProperties {
    * 
    * @param pdfVersion the PDF version that should be generated
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public void setPdfVersion(int pdfVersion) {
@@ -652,7 +652,7 @@ public class PDFFilterProperties {
    * 
    * @return the additional property values
    *  
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public PropertyValue[] getAdditionalPropertyValues() {
@@ -667,7 +667,7 @@ public class PDFFilterProperties {
    * @param additionalProps the additional property values that are not covered
    * by this class
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public void setAdditionalPropertyValues(PropertyValue[] additionalProps) {
@@ -681,7 +681,7 @@ public class PDFFilterProperties {
    * 
    * @return the property values of this properties
    *  
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.06.2010
    */
   public PropertyValue[] toPropertyValues() {

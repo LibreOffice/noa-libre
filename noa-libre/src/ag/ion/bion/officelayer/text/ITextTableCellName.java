@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.text;
 /**
  * Name of a text table cell.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public interface ITextTableCellName {
@@ -52,7 +52,7 @@ public interface ITextTableCellName {
    * 
    * @return name
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public String getName();
   //----------------------------------------------------------------------------
@@ -61,7 +61,7 @@ public interface ITextTableCellName {
    * 
    * @return row index
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public int getRowIndex();
   //----------------------------------------------------------------------------
@@ -72,7 +72,7 @@ public interface ITextTableCellName {
    * 
    * @return column index
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public int getColumnIndex();
   //----------------------------------------------------------------------------

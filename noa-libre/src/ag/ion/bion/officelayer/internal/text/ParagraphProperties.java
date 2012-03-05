@@ -54,8 +54,8 @@ import com.sun.star.style.ParagraphAdjust;
 /**
  * Properties of a paragraph.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 10782 $
  */
 public class ParagraphProperties extends AbstractProperties implements IParagraphProperties {
@@ -72,8 +72,8 @@ public class ParagraphProperties extends AbstractProperties implements IParagrap
    * 
    * @throws IllegalArgumentException if the OpenOffice.org interface is not valid
    * 
-   * @author Andreas Brueker
-   * @author Markus Krueger
+   * @author Andreas Bröker
+   * @author Markus Krüger
    */
   public ParagraphProperties(XPropertySet xPropertySet) throws IllegalArgumentException {
     super(xPropertySet);
@@ -84,7 +84,7 @@ public class ParagraphProperties extends AbstractProperties implements IParagrap
    * 
    * @return the possible property keys
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public static IPropertyKey[] getPossiblyPropertyKeys() {
     if(PROPERTY_KEYS == null) {
@@ -106,7 +106,7 @@ public class ParagraphProperties extends AbstractProperties implements IParagrap
    * 
    * @return the default property keys
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public static String[] getDefaultPropertyKeys() {
     if(DEFAULT_PROPERTY_KEYS == null) {
@@ -128,7 +128,7 @@ public class ParagraphProperties extends AbstractProperties implements IParagrap
    * 
    * @return the id of the property
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public String getTypeID() {
     return TYPE_ID;
@@ -141,7 +141,7 @@ public class ParagraphProperties extends AbstractProperties implements IParagrap
    * 
    * @throws TextException if the break type can not be set
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setBreakType(short breakType) throws TextException {
     try {
@@ -166,7 +166,7 @@ public class ParagraphProperties extends AbstractProperties implements IParagrap
    * 
    * @throws TextException if the break type is not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public short getBreakType() throws TextException {
     try {
@@ -193,7 +193,7 @@ public class ParagraphProperties extends AbstractProperties implements IParagrap
    * 
    * @throws TextException if the break type is not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public short getParaAdjust() throws TextException {
   	try {
@@ -220,7 +220,7 @@ public class ParagraphProperties extends AbstractProperties implements IParagrap
    * 
    * @throws TextException if any error occurs
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public void setParaAdjust(short adjustValue) throws TextException {
   	try {
@@ -240,7 +240,7 @@ public class ParagraphProperties extends AbstractProperties implements IParagrap
    * 
    * @throws NOAException if the new paragraph style can not be set
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 02.11.2006
    */
   public void setParaStyleName(String name) throws NOAException {
@@ -259,7 +259,7 @@ public class ParagraphProperties extends AbstractProperties implements IParagrap
    * 
    * @throws NOAException if the name of the paragraph style can not be provided
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 02.11.2006
    */
   public String getParaStyleName() throws NOAException {
@@ -278,7 +278,7 @@ public class ParagraphProperties extends AbstractProperties implements IParagrap
    * 
    * @throws TextException if any error occurs
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public ICharacterProperties getCharacterProperties() throws TextException {
   	return new CharacterProperties(getXPropertySet());

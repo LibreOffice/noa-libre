@@ -68,9 +68,9 @@ import com.sun.star.text.XTextDocument;
 /**
  * Implementation of the ICloneService for text tables.
  * 
- * @author Sebastian Ruesgen
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Sebastian Rösgen
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public class TextTableCloneService extends AbstractCloneService {
@@ -122,7 +122,7 @@ public class TextTableCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneToPositionNoReturn(IDestinationPosition position, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     clonePreprocessor(position, true, false, false,propertyKeysContainer);
@@ -143,7 +143,7 @@ public class TextTableCloneService extends AbstractCloneService {
 	 * 
 	 * @throws CloneException if the object could not be cloned.
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public IClonedObject cloneToPosition(IDestinationPosition range, boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException {
 		return clonePreprocessor(range, adoptContent, false, true,propertyKeysContainer);
@@ -161,7 +161,7 @@ public class TextTableCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneToPositionNoReturn(IDestinationPosition position , boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     clonePreprocessor(position, adoptContent, false, false,propertyKeysContainer);
@@ -182,8 +182,8 @@ public class TextTableCloneService extends AbstractCloneService {
 	 * 
 	 * @throws CloneException if the object could not be cloned.
 	 * 
-	 * @author Sebastian Ruesgen
-   * @author Markus Krueger
+	 * @author Sebastian Rösgen
+   * @author Markus Krüger
 	 */
 	private IClonedObject clonePreprocessor (IDestinationPosition position, boolean adoptContent, boolean createSpace, boolean generateReturnValue, PropertyKeysContainer propertyKeysContainer) throws CloneException {
 		try {
@@ -254,8 +254,8 @@ public class TextTableCloneService extends AbstractCloneService {
 	 * 
 	 * @throws CloneException if any error occurs
 	 * 
-	 * @author Sebastian Ruesgen
-   * @author Markus Krueger
+	 * @author Sebastian Rösgen
+   * @author Markus Krüger
 	 */
 	private void getTableInfo(ITextTable textTable) throws CloneException {
 		// lets get all cells and see what's in 
@@ -299,7 +299,7 @@ public class TextTableCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public IClonedObject cloneAfterThisPosition(IDestinationPosition position, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     return clonePreprocessor(position, true, true, true,propertyKeysContainer);
@@ -322,7 +322,7 @@ public class TextTableCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneAfterThisPositionNoReturn(IDestinationPosition position, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     clonePreprocessor(position, true, true, false,propertyKeysContainer);
@@ -350,7 +350,7 @@ public class TextTableCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */  
   public IClonedObject cloneAfterThisPosition(IDestinationPosition position, boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     return clonePreprocessor(position, adoptContent, true, true,propertyKeysContainer);
@@ -376,7 +376,7 @@ public class TextTableCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */  
   public void cloneAfterThisPositionNoReturn(IDestinationPosition position, boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     clonePreprocessor(position, adoptContent, true, false,propertyKeysContainer);

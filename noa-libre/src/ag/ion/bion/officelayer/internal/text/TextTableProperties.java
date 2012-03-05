@@ -51,8 +51,8 @@ import com.sun.star.text.TableColumnSeparator;
 /**
  * Properties of a text table.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public class TextTableProperties extends AbstractProperties implements ITextTableProperties {
@@ -71,8 +71,8 @@ public class TextTableProperties extends AbstractProperties implements ITextTabl
    * 
    * @throws IllegalArgumentException if the OpenOffice.org interface is not valid
    * 
-   * @author Andreas Brueker
-   * @author Markus Krueger
+   * @author Andreas Bröker
+   * @author Markus Krüger
    */
   public TextTableProperties(XPropertySet xPropertySet) throws IllegalArgumentException {
     super(xPropertySet);
@@ -83,7 +83,7 @@ public class TextTableProperties extends AbstractProperties implements ITextTabl
    * 
    * @return the possible property keys
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public static IPropertyKey[] getPossiblyPropertyKeys() {
     if(PROPERTY_KEYS == null) {
@@ -110,7 +110,7 @@ public class TextTableProperties extends AbstractProperties implements ITextTabl
    * 
    * @return the default property keys
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public static String[] getDefaultPropertyKeys() {
     if(DEFAULT_PROPERTY_KEYS == null) {
@@ -136,7 +136,7 @@ public class TextTableProperties extends AbstractProperties implements ITextTabl
    * 
    * @return the id of the property
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public String getTypeID() {
     return TYPE_ID;
@@ -151,7 +151,7 @@ public class TextTableProperties extends AbstractProperties implements ITextTabl
    * 
    * @throws TextException if the property can not be set
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setRepeatHeadline(boolean repeatHeadline) throws TextException {
     try {
@@ -173,7 +173,7 @@ public class TextTableProperties extends AbstractProperties implements ITextTabl
    * 
    * @throws TextException if the property is not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public boolean repeatHeadline() throws TextException {
     try {
@@ -243,7 +243,7 @@ public class TextTableProperties extends AbstractProperties implements ITextTabl
    * 
    * @throws TextException if the property is not available
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public TextTableColumnsSeparator[] getTableColumnSeparators() throws TextException {
     try {
@@ -270,7 +270,7 @@ public class TextTableProperties extends AbstractProperties implements ITextTabl
    * 
    * @throws TextException if the property is not available
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void setTableColumnSeparators(TextTableColumnsSeparator[] textTableColumnSeparators) throws TextException {
     try {

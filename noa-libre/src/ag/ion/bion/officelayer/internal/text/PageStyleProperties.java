@@ -49,8 +49,8 @@ import com.sun.star.beans.XPropertySet;
 /**
  * Properties of a page style.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public class PageStyleProperties extends AbstractProperties implements IPageStyleProperties {
@@ -67,8 +67,8 @@ public class PageStyleProperties extends AbstractProperties implements IPageStyl
    * 
    * @throws IllegalArgumentException if the submitted OpenOffice.org XPropertySet interface is not valid
    * 
-   * @author Andreas Brueker
-   * @author Markus Krueger
+   * @author Andreas Bröker
+   * @author Markus Krüger
    */
   public PageStyleProperties(XPropertySet xPropertySet) throws IllegalArgumentException {
     super(xPropertySet);
@@ -79,7 +79,7 @@ public class PageStyleProperties extends AbstractProperties implements IPageStyl
    * 
    * @return the possible property keys
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public static IPropertyKey[] getPossiblyPropertyKeys() {
     if(PROPERTY_KEYS == null) {
@@ -95,7 +95,7 @@ public class PageStyleProperties extends AbstractProperties implements IPageStyl
    * 
    * @return the default property keys
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public static String[] getDefaultPropertyKeys() {
     if(DEFAULT_PROPERTY_KEYS == null) {
@@ -111,7 +111,7 @@ public class PageStyleProperties extends AbstractProperties implements IPageStyl
    * 
    * @return the id of the property
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public String getTypeID() {
     return TYPE_ID;
@@ -124,7 +124,7 @@ public class PageStyleProperties extends AbstractProperties implements IPageStyl
    * 
    * @throws TextException if the property can not be set
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setIsLandscape(boolean isLandscape) throws TextException {
     try {
@@ -144,7 +144,7 @@ public class PageStyleProperties extends AbstractProperties implements IPageStyl
    * 
    * @throws TextException if the property is not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public boolean getIsLandscape() throws TextException {
     try {

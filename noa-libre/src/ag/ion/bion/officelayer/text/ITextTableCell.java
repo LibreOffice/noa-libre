@@ -46,8 +46,8 @@ import ag.ion.bion.officelayer.text.table.ITextTableCellPropertyStore;
 /**
  * Cell of a table in a text document.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 11474 $
  */
 public interface ITextTableCell extends ITextComponent, ICloneServiceProvider {
@@ -83,7 +83,7 @@ public interface ITextTableCell extends ITextComponent, ICloneServiceProvider {
    * 
    * @throws TextException if the text table is not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextTable getTextTable() throws TextException;  
   //----------------------------------------------------------------------------
@@ -92,7 +92,7 @@ public interface ITextTableCell extends ITextComponent, ICloneServiceProvider {
    * 
    * @return content type
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public int getContentType();  
   //----------------------------------------------------------------------------
@@ -101,7 +101,7 @@ public interface ITextTableCell extends ITextComponent, ICloneServiceProvider {
    * 
    * @return text service
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextService getTextService();
   //----------------------------------------------------------------------------
@@ -110,7 +110,7 @@ public interface ITextTableCell extends ITextComponent, ICloneServiceProvider {
    * 
    * @return text table cell properties
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextTableCellProperties getProperties();
   //----------------------------------------------------------------------------
@@ -119,7 +119,7 @@ public interface ITextTableCell extends ITextComponent, ICloneServiceProvider {
    * 
    * @return text table cell character properties
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public ICharacterProperties getCharacterProperties();
   //----------------------------------------------------------------------------
@@ -148,7 +148,7 @@ public interface ITextTableCell extends ITextComponent, ICloneServiceProvider {
    * 
    * @throws TextException if the page style is not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public IPageStyle getPageStyle() throws TextException;  
   //----------------------------------------------------------------------------
@@ -162,7 +162,7 @@ public interface ITextTableCell extends ITextComponent, ICloneServiceProvider {
    * 
    * @throws TextException if the cell is not available
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public ITextTableCellPropertyStore getCellPropertyStore (int verticalPosition, int horizontalPosition) throws TextException;
   //----------------------------------------------------------------------------
@@ -173,7 +173,7 @@ public interface ITextTableCell extends ITextComponent, ICloneServiceProvider {
    * 
    * @throws TextException if property store could not be returned
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public ICharacterPropertyStore getCharacterPropertyStore() throws TextException;
   //----------------------------------------------------------------------------
@@ -182,7 +182,7 @@ public interface ITextTableCell extends ITextComponent, ICloneServiceProvider {
    * 
    * @return the value of the cell
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public double getValue();
   //----------------------------------------------------------------------------  
@@ -191,7 +191,7 @@ public interface ITextTableCell extends ITextComponent, ICloneServiceProvider {
    * 
    * @param value the value to be set in the table
    * 
-   * @author SebastianRuesgen
+   * @author SebastianRösgen
    */
   public void setValue(double value);
   //----------------------------------------------------------------------------
@@ -202,7 +202,7 @@ public interface ITextTableCell extends ITextComponent, ICloneServiceProvider {
    * @return the page number of the cell, returns -1 if page number
    * could not be determined
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public short getPageNumber();  
   //----------------------------------------------------------------------------
@@ -214,7 +214,7 @@ public interface ITextTableCell extends ITextComponent, ICloneServiceProvider {
    * 
    * @throws TextException if the property can not be modified
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 21.03.2007
    */
   public void setCellParagraphStyle(String cellParagraphStyle) throws TextException;

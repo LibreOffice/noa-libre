@@ -45,7 +45,7 @@ import java.util.Map;
  * Container that can hold property keys for different properties.
  * Is used for cloning cell formats and to decide wich properties to clone, for example.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public class PropertyKeysContainer {
@@ -60,7 +60,7 @@ public class PropertyKeysContainer {
    * @param propertiesID the id of the properties object (i.e. #ICharacterProperties.TYPE_ID)
    * @param propertyStringKeys the keys of the properties
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void addPropertyKeys(String propertiesID, String[] propertyStringKeys) {
     if(propertiesID == null || propertyStringKeys == null)
@@ -75,7 +75,7 @@ public class PropertyKeysContainer {
    * 
    * @param propertiesID the id of the properties object (i.e. #ICharacterProperties.TYPE_ID)
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void removePropertyKeys(String propertiesID) {
     if(propertiesID == null || propertyKeys == null)
@@ -90,7 +90,7 @@ public class PropertyKeysContainer {
    * 
    * @return property keys for the property with the given id, or null, if key is not in container
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public String[] getPropertyKeys(String propertiesID) {
     if(propertiesID == null || propertyKeys == null)

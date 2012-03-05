@@ -50,7 +50,7 @@ import ag.ion.noa.text.TextRangeSelection;
  * Walker for result matches. The walker will select
  * result matches in a document.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  * @date 09.07.2006
  */ 
@@ -69,7 +69,7 @@ public class ResultMatchWalker {
 	 * @param document document to be used
 	 * @param searchResult search result to be used
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 12.07.2006
 	 */
 	public ResultMatchWalker(IDocument document, ISearchResult searchResult) {
@@ -87,7 +87,7 @@ public class ResultMatchWalker {
 	 * 
 	 * @return information whether a next match is available
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 12.07.2006
 	 */
 	public boolean hasNextMatch() {
@@ -104,7 +104,7 @@ public class ResultMatchWalker {
 	 * @return information whether the move to 
 	 * the next match was successfully
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 12.07.2006
 	 */
 	public boolean nextMatch() {
@@ -131,7 +131,7 @@ public class ResultMatchWalker {
 	 * @return information whether a previous match
 	 * is available
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 12.07.2006
 	 */
 	public boolean hasPreviousMatch() {
@@ -148,7 +148,7 @@ public class ResultMatchWalker {
 	 * @return information whether the move to 
 	 * the previous match was successfully
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 12.07.2006
 	 */
 	public boolean previousMatch() {
@@ -175,7 +175,7 @@ public class ResultMatchWalker {
 	 * 
 	 * @return text range with the submitted position
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 12.07.2006
 	 */
 	private ITextRange getTextRange(int index) {

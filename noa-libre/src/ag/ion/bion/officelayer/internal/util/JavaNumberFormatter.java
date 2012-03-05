@@ -44,7 +44,7 @@ import java.text.DecimalFormat;
 /**
  * Number formatter for java code.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public class JavaNumberFormatter {
@@ -64,7 +64,7 @@ public class JavaNumberFormatter {
    * 
    * @param textColor color of the text
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setTextColor(Color textColor) {
     this.textColor = textColor;
@@ -75,7 +75,7 @@ public class JavaNumberFormatter {
    * 
    * @param decimalFormat decimal format to be used
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setDecimalFormat(DecimalFormat decimalFormat) {
     this.decimalFormat = decimalFormat;
@@ -86,7 +86,7 @@ public class JavaNumberFormatter {
    * 
    * @param javaNumberFormatCondition number format condition to be used
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setJavaNumberFormatCondition(JavaNumberFormatCondition javaNumberFormatCondition) {
     this.javaNumberFormatCondition = javaNumberFormatCondition;
@@ -97,7 +97,7 @@ public class JavaNumberFormatter {
    * 
    * @param contentBefore content before pattern
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setContentBefore(String contentBefore) {
     this.contentBefore = contentBefore;
@@ -108,7 +108,7 @@ public class JavaNumberFormatter {
    * 
    * @param contentAfter content after pattern
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setContentAfter(String contentAfter) {
     this.contentAfter = contentAfter;
@@ -119,7 +119,7 @@ public class JavaNumberFormatter {
    * 
    * @param isNegativePattern information whether this pattern is a negative pattern
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setIsNegativePattern(boolean isNegativePattern) {
     this.isNegativePattern = isNegativePattern;
@@ -130,7 +130,7 @@ public class JavaNumberFormatter {
    * 
    * @return text color
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public Color getTextColor() {
     return textColor;
@@ -141,7 +141,7 @@ public class JavaNumberFormatter {
    * 
    * @return decimal format
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public DecimalFormat getDecimalFormat() {
     return decimalFormat;
@@ -152,7 +152,7 @@ public class JavaNumberFormatter {
    * 
    * @return number format condition
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public JavaNumberFormatCondition getJavaNumberFormatCondition() {
     return javaNumberFormatCondition;
@@ -163,7 +163,7 @@ public class JavaNumberFormatter {
    * 
    * @return content before pattern
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public String getContentBefore() {
     return contentBefore;
@@ -174,7 +174,7 @@ public class JavaNumberFormatter {
    * 
    * @return content after pattern
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public String getContentAfter() {
     return contentAfter;
@@ -187,7 +187,7 @@ public class JavaNumberFormatter {
    * 
    * @return formatted number
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public String format(double value) {
     String textValue = decimalFormat.format(value);    

@@ -45,7 +45,7 @@ import java.util.Properties;
 /**
  * Properties of an office application.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public class ApplicationProperties implements IApplicationProperties {
@@ -60,7 +60,7 @@ public class ApplicationProperties implements IApplicationProperties {
    * 
    * @throws IllegalArgumentException if the submitted properties are not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ApplicationProperties(Properties properties) throws IllegalArgumentException {
     if(properties == null)
@@ -77,7 +77,7 @@ public class ApplicationProperties implements IApplicationProperties {
    * @return property value with the submitted name or null
    * if the property is not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public String getPropertyValue(String name) {
    return properties.getProperty(name);
@@ -88,7 +88,7 @@ public class ApplicationProperties implements IApplicationProperties {
    * 
    * @return available property names
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public String[] getPropertyNames() {
     return (String[])properties.keySet().toArray(new String[properties.size()]);

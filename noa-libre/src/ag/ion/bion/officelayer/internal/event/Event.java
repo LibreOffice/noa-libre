@@ -45,7 +45,7 @@ import com.sun.star.lang.EventObject;
 /**
  * Base event.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public class Event implements IEvent {
@@ -60,7 +60,7 @@ public class Event implements IEvent {
    * 
    * @throws IllegalArgumentException if the submitted OpenOffice.org EventObject is not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public Event(EventObject eventOject) throws IllegalArgumentException {
     if(eventOject == null)
@@ -73,7 +73,7 @@ public class Event implements IEvent {
    * 
    * @return source object of the event
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public Object getSourceObject() {
     return eventOject.Source;

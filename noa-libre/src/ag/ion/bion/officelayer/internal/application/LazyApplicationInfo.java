@@ -44,7 +44,7 @@ import ag.ion.bion.officelayer.application.ILazyApplicationInfo;
 /**
  * Information provider of an office application.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 11681 $
  */
 public class LazyApplicationInfo implements ILazyApplicationInfo {
@@ -68,7 +68,7 @@ public class LazyApplicationInfo implements ILazyApplicationInfo {
    * 
    * @throws IllegalArgumentException if the submitted home path is not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public LazyApplicationInfo(String home, IApplicationProperties applicationProperties)
       throws IllegalArgumentException {
@@ -88,7 +88,7 @@ public class LazyApplicationInfo implements ILazyApplicationInfo {
    * @param minor minor version to be used
    * @param update update version to be used
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setVersion(int major, int minor, int update) {
     majorVersion = major;
@@ -102,7 +102,7 @@ public class LazyApplicationInfo implements ILazyApplicationInfo {
    * 
    * @return home of the office application
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public String getHome() {
     return home;
@@ -117,7 +117,7 @@ public class LazyApplicationInfo implements ILazyApplicationInfo {
    * @return properties of the office application or null
    * if the properties are not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public IApplicationProperties getProperties() {
     return applicationProperties;
@@ -131,7 +131,7 @@ public class LazyApplicationInfo implements ILazyApplicationInfo {
    * @return major version of the office application or <code>-1</code>
    * if the major version is not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public int getMajorVersion() {
     return majorVersion;
@@ -145,7 +145,7 @@ public class LazyApplicationInfo implements ILazyApplicationInfo {
    * @return minor version of the office application or <code>-1</code>
    * if the minor version is not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public int getMinorVersion() {
     return minorVersion;
@@ -159,7 +159,7 @@ public class LazyApplicationInfo implements ILazyApplicationInfo {
    * @return update version of the office application or <code>-1</code>
    * if the update version is not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public int getUpdateVersion() {
     return updateVersion;
@@ -171,7 +171,7 @@ public class LazyApplicationInfo implements ILazyApplicationInfo {
    * 
    * @param applicationProperties application properties to be used
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   private void intitVersion(IApplicationProperties applicationProperties) {
     String productKey = applicationProperties.getPropertyValue(IApplicationProperties.PRODUCT_KEY_PROPERTY);

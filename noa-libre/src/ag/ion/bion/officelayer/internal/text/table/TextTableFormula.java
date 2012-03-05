@@ -173,7 +173,7 @@ public class TextTableFormula implements IFormula {
    * 
    * @return text table cell references service
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextTableCellReferencesService getCellReferencesService() {
     if(textTableCellReferencesService == null) {      
@@ -187,7 +187,7 @@ public class TextTableFormula implements IFormula {
    * 
    * @return formula expression
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public String getExpression() {     
     return textTableFormulaExpression.getExpression();

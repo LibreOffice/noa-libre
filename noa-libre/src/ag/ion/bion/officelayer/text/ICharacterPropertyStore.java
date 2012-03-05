@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.text;
 /**
  * Interface for character property stores
  * 
- * @author Sebastian Ruesgen
+ * @author Sebastian Rösgen
  * @version $Revision: 10398 $
  */
 public interface ICharacterPropertyStore extends ICharacterProperties{

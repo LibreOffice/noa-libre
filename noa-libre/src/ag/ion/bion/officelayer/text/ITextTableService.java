@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.text;
 /**
  * Service for text tables.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public interface ITextTableService {
@@ -57,7 +57,7 @@ public interface ITextTableService {
    * 
    * @throws TextException if the new text table can not be constructed
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextTable constructTextTable(int rows, int columns) throws TextException;
   //----------------------------------------------------------------------------
@@ -66,7 +66,7 @@ public interface ITextTableService {
    * 
    * @return all available text tables
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextTable[] getTextTables();
   //----------------------------------------------------------------------------
@@ -79,7 +79,7 @@ public interface ITextTableService {
    * 
    * @throws TextException if the table does not exist
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextTable getTextTable(String name) throws TextException;
   //----------------------------------------------------------------------------

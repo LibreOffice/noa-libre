@@ -62,7 +62,7 @@ import ag.ion.bion.officelayer.text.table.extended.IETextTableCellRange;
  * Implementation for extended text table cell ranges.
  * 
  * @author Miriam Sutter
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public class ETextTableCellRangeCloneService extends AbstractCloneService {
@@ -117,7 +117,7 @@ public class ETextTableCellRangeCloneService extends AbstractCloneService {
    * @throws CloneException if the object could not be cloned.
    * @param propertyKeysContainer container for property keys used for cloning style, my be null
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneToPositionNoReturn(IDestinationPosition position, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     cloneToPositionNoReturn(position, true,propertyKeysContainer);
@@ -139,7 +139,7 @@ public class ETextTableCellRangeCloneService extends AbstractCloneService {
 	 * @throws CloneException if the object could not be cloned.
 	 * 
 	 * @author Miriam Sutter
-	 * @author Markus Krueger
+	 * @author Markus Krüger
 	 */
 	public IClonedObject cloneToPosition(IDestinationPosition position, boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException {
 		return clonePreprocessor(position,adoptContent, true,propertyKeysContainer);
@@ -157,7 +157,7 @@ public class ETextTableCellRangeCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneToPositionNoReturn(IDestinationPosition position , boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     clonePreprocessor(position, adoptContent, false,propertyKeysContainer);
@@ -175,7 +175,7 @@ public class ETextTableCellRangeCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   private IClonedObject clonePreprocessor (IDestinationPosition position, boolean adoptContent, boolean generateReturnValue, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     try {
@@ -225,7 +225,7 @@ public class ETextTableCellRangeCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public IClonedObject cloneAfterThisPosition(IDestinationPosition position, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     return cloneToPosition(position, true,propertyKeysContainer);
@@ -248,7 +248,7 @@ public class ETextTableCellRangeCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneAfterThisPositionNoReturn(IDestinationPosition position, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     cloneToPositionNoReturn(position, true,propertyKeysContainer);
@@ -276,7 +276,7 @@ public class ETextTableCellRangeCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */  
   public IClonedObject cloneAfterThisPosition(IDestinationPosition position, boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     return cloneToPosition(position, adoptContent,propertyKeysContainer);
@@ -302,7 +302,7 @@ public class ETextTableCellRangeCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */  
   public void cloneAfterThisPositionNoReturn(IDestinationPosition position, boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     cloneToPositionNoReturn(position, adoptContent,propertyKeysContainer);

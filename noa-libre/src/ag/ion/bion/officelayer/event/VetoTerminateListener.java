@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.event;
 /**
  * Listener in order to prevent OpenOffice.org from closing.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public class VetoTerminateListener extends EventAdapter implements ITerminateListener {
@@ -52,7 +52,7 @@ public class VetoTerminateListener extends EventAdapter implements ITerminateLis
    * 
    * @param terminateEvent terminate event
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void queryTermination(ITerminateEvent terminateEvent) {
     terminateEvent.setVeto(true);    
@@ -63,7 +63,7 @@ public class VetoTerminateListener extends EventAdapter implements ITerminateLis
    * 
    * @param terminateEvent terminate event
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void notifyTermination(ITerminateEvent terminateEvent) {
   }

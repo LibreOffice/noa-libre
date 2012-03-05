@@ -81,8 +81,8 @@ import java.util.TreeSet;
 /**
  * OpenOffice.org frame.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 11543 $
  */
 public class Frame implements IFrame {
@@ -100,7 +100,7 @@ public class Frame implements IFrame {
   /**
    * Internal dispatch provider interceptor.
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @version $Revision: 11543 $
    * @date 15.08.2006
    */
@@ -115,7 +115,7 @@ public class Frame implements IFrame {
      * 
      * @return slave dispatch provider
      * 
-     * @author Andreas Brueker
+     * @author Andreas Bröker
      * @date 15.08.2006
      */
 		public XDispatchProvider getSlaveDispatchProvider() {
@@ -127,7 +127,7 @@ public class Frame implements IFrame {
      * 
      * @param slaveDispatchProvider slave dispatch provider to be set
      * 
-     * @author Andreas Brueker
+     * @author Andreas Bröker
      * @date 15.08.2006
      */
 		public void setSlaveDispatchProvider(XDispatchProvider slaveDispatchProvider) {
@@ -139,7 +139,7 @@ public class Frame implements IFrame {
      * 
      * @return master dispatch provider
      * 
-     * @author Andreas Brueker
+     * @author Andreas Bröker
      * @date 15.08.2006
      */
 		public XDispatchProvider getMasterDispatchProvider() {
@@ -151,7 +151,7 @@ public class Frame implements IFrame {
      * 
      * @param masterDispatchProvider master dispatch provider to be set
      * 
-     * @author Andreas Brueker
+     * @author Andreas Bröker
      * @date 15.08.2006
      */
 		public void setMasterDispatchProvider(XDispatchProvider masterDispatchProvider) {
@@ -168,7 +168,7 @@ public class Frame implements IFrame {
      * @return dispatch or null if the dispatch
      * can not be provided
      * 
-     * @author Andreas Brueker
+     * @author Andreas Bröker
      * @date 15.08.2006
      */
 		public XDispatch queryDispatch(URL url, String targetFrameName, int searchFlags) {
@@ -195,7 +195,7 @@ public class Frame implements IFrame {
      * 
      * @return dispatches for the submitted dispatch descriptors
      * 
-     * @author Andreas Brueker
+     * @author Andreas Bröker
      * @date 15.08.2006
      */
 		public XDispatch[] queryDispatches(DispatchDescriptor[] dispatchDescriptors) {
@@ -214,7 +214,7 @@ public class Frame implements IFrame {
      * 
      * @return intercepted dispatch URLs
      * 
-     * @author Andreas Brueker
+     * @author Andreas Bröker
      * @date 15.08.2006
      */
 		public String[] getInterceptedURLs() {
@@ -249,7 +249,7 @@ public class Frame implements IFrame {
    * @param xFrame OpenOffice.org XFrame interface to be used
    * @param officeConnection office connection to be used
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public Frame(XFrame xFrame, IOfficeConnection officeConnection) {
     Assert.isNotNull(xFrame, XFrame.class, this);
@@ -265,7 +265,7 @@ public class Frame implements IFrame {
    * @param xFrame OpenOffice.org XFrame interface to be used
    * @param serviceProvider service provider to be used
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 01.08.2007
    */
   public Frame(XFrame xFrame, IServiceProvider serviceProvider) {
@@ -282,7 +282,7 @@ public class Frame implements IFrame {
    * 
    * @return OpenOffice.org XFrame interface
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public XFrame getXFrame() {
     return xFrame;
@@ -297,7 +297,7 @@ public class Frame implements IFrame {
    * 
    * @throws NOAException if the layout manager can not be requested
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 2006/02/05
    */
   public ILayoutManager getLayoutManager() throws NOAException {
@@ -322,8 +322,8 @@ public class Frame implements IFrame {
    * 
    * @see GlobalCommands
    * 
-   * @author Andreas Brueker
-   * @author Markus Krueger
+   * @author Andreas Bröker
+   * @author Markus Krüger
    * @date 07.07.2006
    */
   public void disableDispatch(String commandURL) {
@@ -342,8 +342,8 @@ public class Frame implements IFrame {
    * @param commandURL command URL to be used
    * @param dispatchDelegate dispatch delegate to be added
    * 
-   * @author Andreas Brueker
-   * @author Markus Krueger
+   * @author Andreas Bröker
+   * @author Markus Krüger
    * @date 07.07.2006
    */
   public void addDispatchDelegate(String commandURL, IDispatchDelegate dispatchDelegate) {
@@ -361,8 +361,8 @@ public class Frame implements IFrame {
    * 
    * @param commandURL command URL to be used
    * 
-   * @author Andreas Brueker
-   * @author Markus Krueger
+   * @author Andreas Bröker
+   * @author Markus Krüger
    * @date 07.07.2006
    */
   public void removeDispatchDelegate(String commandURL) {
@@ -382,7 +382,7 @@ public class Frame implements IFrame {
    * @throws NOAException if a dispatch for the submitted command URL
    * can not be provided
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 14.06.2006
    */
   public IDispatch getDispatch(String commandURL) throws NOAException {
@@ -413,7 +413,7 @@ public class Frame implements IFrame {
   /**
    * Closes the frame.
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void close() {
     xFrame.dispose();
@@ -422,7 +422,7 @@ public class Frame implements IFrame {
   /**
    * Focuses the frame.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void setFocus() {
     xFrame.getContainerWindow().setFocus();
@@ -432,8 +432,8 @@ public class Frame implements IFrame {
   /**
    * Updates the current dispatches. 
    * 
-   * @author Andreas Brueker
-   * @author Markus Krueger
+   * @author Andreas Bröker
+   * @author Markus Krüger
    * @date 07.07.2006
    */
   public void updateDispatches() {
@@ -460,7 +460,7 @@ public class Frame implements IFrame {
    * 
    * @throws NOAException if there is an error showing the preview
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 09.07.2007
    */
   public void showPreview() throws NOAException {
@@ -475,7 +475,7 @@ public class Frame implements IFrame {
    * 
    * @throws NOAException if there is an error showing the preview
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 09.07.2007
    */
   public void showPreview(int columns, int rows) throws NOAException {
@@ -503,7 +503,7 @@ public class Frame implements IFrame {
    * 
    * @return information whether the submitted command URL is disabled
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 15.08.2006
    */
   private boolean isDispatchDisabled(String commandURL) {

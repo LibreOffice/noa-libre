@@ -62,7 +62,7 @@ import com.sun.star.bridge.XBridgeFactory;
  * Connection in order to communicate with remote OpenOffice.org 
  * application.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public class RemoteOfficeConnection extends AbstractOfficeConnection {  

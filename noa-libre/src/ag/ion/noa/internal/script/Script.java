@@ -48,7 +48,7 @@ import com.sun.star.script.provider.XScript;
 /**
  * Script of the office scripting framework which can be invoked.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 11524 $
  * @date 13.06.2006
  */ 
@@ -64,7 +64,7 @@ public class Script implements IScript {
    * @param uri the uri to be used
 	 * @param xScript OpenOffice.org XScript interface to be used
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 13.06.2006
 	 */
 	public Script(String uri, XScript xScript) {
@@ -79,7 +79,7 @@ public class Script implements IScript {
    * 
    * @return the name of the script
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 17.07.2007
    */
   public String getName() {
@@ -100,7 +100,7 @@ public class Script implements IScript {
    * 
    * @return the module name of the script, or null if not TYPE_BASIC
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 17.07.2007
    */
   public String getModuleName() {
@@ -118,7 +118,7 @@ public class Script implements IScript {
    * 
    * @return the library name of the script
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 17.07.2007
    */
   public String getLibraryName() {
@@ -139,7 +139,7 @@ public class Script implements IScript {
    * 
    * @return the language of the script
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 17.07.2007
    */
   public String getLanguage() {
@@ -154,7 +154,7 @@ public class Script implements IScript {
    * 
    * @return the URI of the script as string
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 17.07.2007
    */
   public String getURI() {
@@ -166,7 +166,7 @@ public class Script implements IScript {
 	 * 
 	 * @return OpenOffice.org XScript interface
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 14.06.2006
 	 */
 	public XScript getXScript() {
@@ -184,7 +184,7 @@ public class Script implements IScript {
 	 * 
 	 * @throws NOAException if the script can not be invoked
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 13.06.2006
 	 */
 	public Object invoke(Object[] parameters, short[][] outParameterIndices, Object[][] outParameters) throws NOAException {
@@ -203,7 +203,7 @@ public class Script implements IScript {
 	 * 
 	 * @throws NOAException if the script can not be invoked
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 13.06.2006
 	 */
 	public Object invoke() throws NOAException {

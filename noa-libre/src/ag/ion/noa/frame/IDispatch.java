@@ -45,7 +45,7 @@ import com.sun.star.frame.XDispatch;
 /**
  * A dispatch can be used in order execute UI commands.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10836 $
  * @date 14.06.2006
  */ 
@@ -57,7 +57,7 @@ public interface IDispatch {
 	 * 
 	 * @return OpenOffice.org XDispatch interface
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 14.06.2006
 	 */
 	public XDispatch getXDispatch();
@@ -67,7 +67,7 @@ public interface IDispatch {
 	 * 
 	 * @throws NOAException if the command can not be executed
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 14.06.2006
 	 */
 	public void dispatch() throws NOAException;
@@ -79,7 +79,7 @@ public interface IDispatch {
    * 
    * @throws NOAException if the command can not be executed
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 06.11.2006
    */
   public void dispatch(PropertyValue[] propertyValues) throws NOAException;

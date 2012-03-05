@@ -43,8 +43,8 @@ import ag.ion.bion.officelayer.clone.ICloneServiceProvider;
 /**
  * Row of a text table.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public interface ITextTableRow extends ICloneServiceProvider {
@@ -55,7 +55,7 @@ public interface ITextTableRow extends ICloneServiceProvider {
    * 
    * @return cells of the text table row
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextTableCell[] getCells();
   //----------------------------------------------------------------------------
@@ -73,7 +73,7 @@ public interface ITextTableRow extends ICloneServiceProvider {
    * 
    * @return the row height
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public int getHeight();
   //----------------------------------------------------------------------------
@@ -82,7 +82,7 @@ public interface ITextTableRow extends ICloneServiceProvider {
    * 
    * @param height the row height to be set
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void setHeight(int height);
   //----------------------------------------------------------------------------
@@ -91,7 +91,7 @@ public interface ITextTableRow extends ICloneServiceProvider {
    * 
    * @return if the row height is set to automatically be adjusted or not
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public boolean getAutoHeight();
   //----------------------------------------------------------------------------
@@ -100,7 +100,7 @@ public interface ITextTableRow extends ICloneServiceProvider {
    * 
    * @param autoHeight if the row height is set to automatically be adjusted or not
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void setAutoHeight(boolean autoHeight);
   //----------------------------------------------------------------------------

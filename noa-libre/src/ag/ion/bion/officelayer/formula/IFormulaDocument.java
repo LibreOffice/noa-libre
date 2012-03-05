@@ -43,7 +43,7 @@ import com.sun.star.beans.XPropertySet;
 /**
  * OpenOffice.org draw document representation.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public interface IFormulaDocument {
@@ -54,7 +54,7 @@ public interface IFormulaDocument {
    * 
    * @return OpenOffice.org XPropertySet interface
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public XPropertySet getPropertySet();
   //----------------------------------------------------------------------------

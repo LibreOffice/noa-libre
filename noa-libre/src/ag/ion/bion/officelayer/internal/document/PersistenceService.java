@@ -59,7 +59,7 @@ import com.sun.star.task.ErrorCodeIOException;
 /**
  * Persistence service for office documents.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @author Alessandro Conte
  * @version $Revision: 11737 $
  */
@@ -80,7 +80,7 @@ public class PersistenceService implements IPersistenceService {
    * @throws IllegalArgumentException if the submitted document or the OpenOffice.org XStorable interface 
    * is not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public PersistenceService(IDocument document, XStorable xStorable)
       throws IllegalArgumentException {
@@ -112,7 +112,7 @@ public class PersistenceService implements IPersistenceService {
    * 
    * @return location URL of the document
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public URL getLocation() {
     String documentURL = xStorable.getLocation();
@@ -135,7 +135,7 @@ public class PersistenceService implements IPersistenceService {
    * @return informations whether the doccument is in read only state 
    * or not
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public boolean isReadOnly() {
     return xStorable.isReadonly();
@@ -147,7 +147,7 @@ public class PersistenceService implements IPersistenceService {
    * 
    * @throws DocumentException if the document can not be stored or no location URL is available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void store() throws DocumentException {
     try {
@@ -173,7 +173,7 @@ public class PersistenceService implements IPersistenceService {
    * 
    * @throws DocumentException if the document can not be stored
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void store(String url) throws DocumentException {
     if (url == null)
@@ -220,7 +220,7 @@ public class PersistenceService implements IPersistenceService {
    * 
    * @throws DocumentException if the document can not be stored
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @author Alessandro Conte
    * @date 07.09.2006
    */
@@ -282,7 +282,7 @@ public class PersistenceService implements IPersistenceService {
    * 
    * @throws DocumentException if the document can not be exported
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void export(String url, IFilter filter) throws DocumentException {
     if (url == null)
@@ -338,7 +338,7 @@ public class PersistenceService implements IPersistenceService {
    * 
    * @throws NOAException if the document can not be exported
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 25.08.2006
    */
   public void export(OutputStream outputStream, IFilter filter) throws NOAException {

@@ -51,7 +51,7 @@ import com.sun.star.util.URL;
 /**
  * A dispatch can be used in order execute UI commands.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10836 $
  * @date 14.06.2006
  */ 
@@ -67,7 +67,7 @@ public class Dispatch implements IDispatch {
 	 * @param xDispatch OpenOffice.org XDispatch interface to be used
 	 * @param url command URL to be used
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 14.06.2006
 	 */
 	public Dispatch(XDispatch xDispatch, URL url) {
@@ -82,7 +82,7 @@ public class Dispatch implements IDispatch {
 	 * 
 	 * @return OpenOffice.org XDispatch interface
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 14.06.2006
 	 */
 	public XDispatch getXDispatch() {
@@ -94,7 +94,7 @@ public class Dispatch implements IDispatch {
 	 * 
 	 * @throws NOAException if the command can not be executed
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 14.06.2006
 	 */
 	public void dispatch() throws NOAException {
@@ -113,7 +113,7 @@ public class Dispatch implements IDispatch {
    * 
    * @throws NOAException if the command can not be executed
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 06.11.2006
    */
   public void dispatch(PropertyValue[] propertyValues) throws NOAException {

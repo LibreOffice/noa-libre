@@ -66,7 +66,7 @@ import ag.ion.noa.filter.XHTMLFilter;
 /**
  * Filter for the export of documents.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 11619 $
  */
 public interface IFilter {
@@ -126,7 +126,7 @@ public interface IFilter {
    * @return definition of the filter or null if the filter
    * is not available for the submitted document type
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.03.2008
    */
   public String getFilterDefinition(String documentType);
@@ -140,7 +140,7 @@ public interface IFilter {
 	 * @return information whether the submitted document
 	 * is supported by the filter
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 08.07.2006
 	 */
 	public boolean isSupported(IDocument document);	
@@ -154,7 +154,7 @@ public interface IFilter {
    * @return information whether the submitted document type
    * is supported by the filter
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.03.2008
    */
   public boolean isSupported(String documentType); 
@@ -166,7 +166,7 @@ public interface IFilter {
 	 * @return information whether the filter constructs
 	 * a document which can not be interpreted again
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 08.07.2006
 	 */
 	public boolean isExternalFilter();
@@ -179,7 +179,7 @@ public interface IFilter {
 	 * 
 	 * @return file extension of the filter
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 08.07.2006
 	 */
 	public String getFileExtension(IDocument document);	
@@ -192,7 +192,7 @@ public interface IFilter {
    * 
    * @return file extension of the filter
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 03.04.2007
    */
   public String getFileExtension(String documentType); 
@@ -205,7 +205,7 @@ public interface IFilter {
 	 * 
 	 * @return name of the filter
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 14.07.2006
 	 */
 	public String getName(IDocument document);	
@@ -218,7 +218,7 @@ public interface IFilter {
    * 
    * @return name of the filter
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.03.2008
    */
   public String getName(String documentType);  

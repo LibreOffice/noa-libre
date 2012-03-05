@@ -52,9 +52,9 @@ import ag.ion.noa.NOAException;
 /**
  * Concrete implementation of the ParagraphProeprtyStore
  * 
- * @author Sebastian Ruesgen
- * @author Markus Krueger
- * @author Andreas Brueker
+ * @author Sebastian Rösgen
+ * @author Markus Krüger
+ * @author Andreas Bröker
  * @version $Revision: 11459 $
  */
 public class ParagraphPropertyStore extends AbstractPropertyStore implements IParagraphPropertyStore {
@@ -71,7 +71,7 @@ public class ParagraphPropertyStore extends AbstractPropertyStore implements IPa
 	 *  
 	 * @param paragraph the Paragraph from which to gain the properties
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public ParagraphPropertyStore (IParagraph paragraph) throws TextException{
 		fillStorage(paragraph);
@@ -82,7 +82,7 @@ public class ParagraphPropertyStore extends AbstractPropertyStore implements IPa
    * 
    * @return the properties
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public IProperties getProperties() {
     return properties;
@@ -95,7 +95,7 @@ public class ParagraphPropertyStore extends AbstractPropertyStore implements IPa
    * 
    * @throws TextException if the break type is not valid
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public void setBreakType(short breakType) throws TextException {
   	if (breakType == IParagraphProperties.BREAK_TYPE_PAGE_AFTER || 
@@ -115,7 +115,7 @@ public class ParagraphPropertyStore extends AbstractPropertyStore implements IPa
    * 
    * @throws TextException if the break type is not available
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public short getBreakType() throws TextException {
   	if (breakType != -1) {
@@ -133,7 +133,7 @@ public class ParagraphPropertyStore extends AbstractPropertyStore implements IPa
    * 
    * @throws TextException if the para adjust is not available
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public short getParaAdjust() throws TextException {
   	if (paraAdjust != -1) {
@@ -151,7 +151,7 @@ public class ParagraphPropertyStore extends AbstractPropertyStore implements IPa
    * 
    * @throws TextException if the para adjust is not valid
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public void setParaAdjust(short paraAdjust) throws TextException {
   	if (paraAdjust == IParagraphProperties.ALIGN_CENTER ||
@@ -173,7 +173,7 @@ public class ParagraphPropertyStore extends AbstractPropertyStore implements IPa
    * 
    * @throws NOAException if the new paragraph style can not be set
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 02.11.2006
    */
   public void setParaStyleName(String name) throws NOAException {
@@ -187,7 +187,7 @@ public class ParagraphPropertyStore extends AbstractPropertyStore implements IPa
    * 
    * @throws NOAException if the name of the paragraph style can not be provided
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 02.11.2006
    */
   public String getParaStyleName() throws NOAException {
@@ -199,7 +199,7 @@ public class ParagraphPropertyStore extends AbstractPropertyStore implements IPa
    * 
    * @return the characterproperties of the paragraph
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public ICharacterProperties getCharacterProperties() throws TextException {
   	return this.characterPropertyStore;
@@ -211,7 +211,7 @@ public class ParagraphPropertyStore extends AbstractPropertyStore implements IPa
    * 
    * @param paragraph the paragraph from which to gain the information
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   private void fillStorage (IParagraph paragraph) throws TextException {
   	IParagraphProperties properties = paragraph.getParagraphProperties();

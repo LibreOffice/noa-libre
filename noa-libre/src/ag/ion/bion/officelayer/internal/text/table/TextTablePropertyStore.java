@@ -52,7 +52,7 @@ import ag.ion.bion.officelayer.text.table.ITextTablePropertyStore;
  * get a table and stores its properties (noteably : the proeprties 
  * are not changned
  * 
- * @author Sebastian Ruesgen
+ * @author Sebastian Rösgen
  * 
  * @version $Revision: 10398 $
  */
@@ -72,7 +72,7 @@ public class TextTablePropertyStore extends AbstractPropertyStore implements ITe
 	 * 
 	 * @param table the table from which to gain the properties
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public TextTablePropertyStore (ITextTable table) throws TextException {
 		getTableAnalyse(table);
@@ -83,7 +83,7 @@ public class TextTablePropertyStore extends AbstractPropertyStore implements ITe
    * 
    * @return the properties
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public IProperties getProperties() {
     return properties;
@@ -94,7 +94,7 @@ public class TextTablePropertyStore extends AbstractPropertyStore implements ITe
 	 * 
 	 * @param width an array containing the individual cell width
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public void setCellWidths(int[] width) {
 		this.cellWidth = width;
@@ -114,7 +114,7 @@ public class TextTablePropertyStore extends AbstractPropertyStore implements ITe
 	 * 
 	 * @param rows the number of rows
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public void setRows(int number) {
 		rowCount = number;
@@ -125,7 +125,7 @@ public class TextTablePropertyStore extends AbstractPropertyStore implements ITe
 	 * 
 	 * @param number the number of columns to be set to the table
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public void setColumns(int number) {
 		columnCount = number;
@@ -137,7 +137,7 @@ public class TextTablePropertyStore extends AbstractPropertyStore implements ITe
 	 * 
 	 * @param repeatHeadline if set to true the headline is repeated otherwise not
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public void setRepeatHeadline(boolean repeatHeadline) throws TextException {
 		this.repeatHeadline = repeatHeadline;
@@ -148,7 +148,7 @@ public class TextTablePropertyStore extends AbstractPropertyStore implements ITe
 	 * 
 	 * @return the indicator if the headline is to be repeated
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public boolean repeatHeadline() throws TextException {
 		return this.repeatHeadline;
@@ -159,7 +159,7 @@ public class TextTablePropertyStore extends AbstractPropertyStore implements ITe
 	 * 
 	 * @return the cell-width set currently to the table. 
 	 *
- 	 * @author Sebastian Ruesgen
+ 	 * @author Sebastian Rösgen
 	 */
 	public int[] getCellWidths() throws TextException {
 		return cellWidth;
@@ -170,7 +170,7 @@ public class TextTablePropertyStore extends AbstractPropertyStore implements ITe
 	 * 
 	 * @return the width currently set to the table
 	 * 
-	 * @author Sebastian Ruesgen 
+	 * @author Sebastian Rösgen 
 	 */
 	public long getWidth() throws TextException {
 		return tableWidth;
@@ -181,7 +181,7 @@ public class TextTablePropertyStore extends AbstractPropertyStore implements ITe
 	 * 
 	 * @return the column seperators
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public TextTableColumnsSeparator[] getTableColumnSeparators()
 			throws TextException {
@@ -193,7 +193,7 @@ public class TextTablePropertyStore extends AbstractPropertyStore implements ITe
 	 * 
 	 * @param columnseperators the columnseperators to be set to the table
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public void setTableColumnSeparators(
 			TextTableColumnsSeparator[] textTableColumnsSeparators)
@@ -207,7 +207,7 @@ public class TextTablePropertyStore extends AbstractPropertyStore implements ITe
    * 
    * @return the count of the columns of the table if value is -1 then the table can't be build
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public int getColumns() {
   	return this.columnCount;
@@ -219,7 +219,7 @@ public class TextTablePropertyStore extends AbstractPropertyStore implements ITe
    * 
    * @return the count of the rows of the table if value is -1 then the table can't be build
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public int getRows() {
   	return this.rowCount;
@@ -234,7 +234,7 @@ public class TextTablePropertyStore extends AbstractPropertyStore implements ITe
 	 * 
 	 * @param table the ITextTable that should be analysed
 	 * 
-	 * @author Sebastian Ruesgen   
+	 * @author Sebastian Rösgen   
 	 */
 	private void getTableAnalyse (ITextTable table) throws TextException {
 		ITextTableProperties props = table.getProperties();

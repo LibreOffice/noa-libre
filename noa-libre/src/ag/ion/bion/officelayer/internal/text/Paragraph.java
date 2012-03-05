@@ -62,7 +62,7 @@ import com.sun.star.uno.UnoRuntime;
 /**
  * Paragraph of a text document.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 11738 $
  */
 public class Paragraph extends AbstractTextComponent implements IParagraph {
@@ -79,8 +79,8 @@ public class Paragraph extends AbstractTextComponent implements IParagraph {
    *  
    * @throws IllegalArgumentException if the OpenOffice.org interface or the document is not valid
    * 
-   * @author Andreas Brueker
-   * @author Sebastian Ruesgen
+   * @author Andreas Bröker
+   * @author Sebastian Rösgen
    */
   public Paragraph(ITextDocument textDocument, XTextContent xTextContent)
       throws IllegalArgumentException {
@@ -96,7 +96,7 @@ public class Paragraph extends AbstractTextComponent implements IParagraph {
    * 
    * @return OpenOffice.org XTextContent interface
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public XTextContent getXTextContent() {
     return xTextContentAfterInsert == null ? xTextContentOrig : xTextContentAfterInsert;
@@ -108,7 +108,7 @@ public class Paragraph extends AbstractTextComponent implements IParagraph {
    * 
    * @param xTextContent OpenOffice.org XTextContent interface
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 21.06.2010
    */
   public void setXTextContent(XTextContent xTextContent) {
@@ -121,7 +121,7 @@ public class Paragraph extends AbstractTextComponent implements IParagraph {
    * 
    * @return text range of the text table
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 06.08.2007
    */
   public ITextRange getTextRange() {
@@ -134,7 +134,7 @@ public class Paragraph extends AbstractTextComponent implements IParagraph {
    * 
    * @return properties of the paragraph
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public IParagraphProperties getParagraphProperties() {
     XPropertySet xPropertySet = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class,
@@ -148,7 +148,7 @@ public class Paragraph extends AbstractTextComponent implements IParagraph {
    * 
    * @return characterproperties of the paragraph
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public ICharacterProperties getCharacterProperties() {
     XPropertySet xPropertySet = (XPropertySet) UnoRuntime.queryInterface(XPropertySet.class,
@@ -164,7 +164,7 @@ public class Paragraph extends AbstractTextComponent implements IParagraph {
    * 
    * @throws TextException if any error occurs 
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public IParagraphPropertyStore getParagraphPropertyStore() throws TextException {
     return new ParagraphPropertyStore(this);
@@ -178,7 +178,7 @@ public class Paragraph extends AbstractTextComponent implements IParagraph {
    * 
    * @throws TextException if any error occurs getting the store
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public ICharacterPropertyStore getCharacterPropertyStore() throws TextException {
     return new CharacterPropertyStore(this);
@@ -192,7 +192,7 @@ public class Paragraph extends AbstractTextComponent implements IParagraph {
    * 
    * @throws CloneException if the clone service could not be returned
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public ICloneService getCloneService() throws CloneException {
     return new ParagraphCloneService(this, textDocument);
@@ -206,7 +206,7 @@ public class Paragraph extends AbstractTextComponent implements IParagraph {
    * 
    * @throws TextException if there occurs an error while fetching the text
    * 
-   * @author Sebastian Ruesgen 
+   * @author Sebastian Rösgen 
    */
   public String getParagraphText() throws TextException {
     StringBuffer buffer = new StringBuffer();
@@ -236,7 +236,7 @@ public class Paragraph extends AbstractTextComponent implements IParagraph {
    * 
    * @param text the text that should be placed
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public void setParagraphText(String text) {
     if (text != null) {

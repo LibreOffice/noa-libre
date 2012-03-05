@@ -78,8 +78,8 @@ import com.sun.star.uno.UnoRuntime;
 /**
  * Cell of a table in a text document.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 11583 $
  */
 public class TextTableCell extends AbstractTextComponent implements ITextTableCell {
@@ -108,7 +108,7 @@ public class TextTableCell extends AbstractTextComponent implements ITextTableCe
    * @throws IllegalArgumentException if the submitted text document or OpenOffice.org XCell interface 
    * is not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public TextTableCell(ITextDocument textDocument, XCell xCell) throws IllegalArgumentException {
     super(textDocument);
@@ -128,7 +128,7 @@ public class TextTableCell extends AbstractTextComponent implements ITextTableCe
    * 
    * @return text document
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextDocument getTextDocument() {
     return textDocument;
@@ -161,8 +161,8 @@ public class TextTableCell extends AbstractTextComponent implements ITextTableCe
    * 
    * @throws TextException if the text table is not available
    * 
-   * @author Andreas Brueker
-   * @author Markus Krueger
+   * @author Andreas Bröker
+   * @author Markus Krüger
    */
   public ITextTable getTextTable() throws TextException {
     if(textTable == null) {
@@ -187,7 +187,7 @@ public class TextTableCell extends AbstractTextComponent implements ITextTableCe
    * 
    * @return content type
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public int getContentType() {
     String formula = xCell.getFormula();
@@ -217,8 +217,8 @@ public class TextTableCell extends AbstractTextComponent implements ITextTableCe
    * 
    * @return text service
    * 
-   * @author Andreas Brueker
-   * @author Markus Krueger
+   * @author Andreas Bröker
+   * @author Markus Krüger
    */
   public ITextService getTextService() {
     if(textService == null) {
@@ -236,7 +236,7 @@ public class TextTableCell extends AbstractTextComponent implements ITextTableCe
    * 
    * @return text table cell properties
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextTableCellProperties getProperties() {
     if(textTableCellProperties == null) {
@@ -251,7 +251,7 @@ public class TextTableCell extends AbstractTextComponent implements ITextTableCe
    * 
    * @return text table cell character properties
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public ICharacterProperties getCharacterProperties() {
     if(characterProperties == null) {
@@ -283,7 +283,7 @@ public class TextTableCell extends AbstractTextComponent implements ITextTableCe
    * 
    * @throws TextException if the page style is not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public IPageStyle getPageStyle() throws TextException {
     if(textRange == null) {
@@ -303,7 +303,7 @@ public class TextTableCell extends AbstractTextComponent implements ITextTableCe
    * 
    * @throws TextException if the cell property store is not available
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public ITextTableCellPropertyStore getCellPropertyStore(int horizontalPosition, int verticalPosition) throws TextException {
   	if(textTableCellPropertyStore == null) {
@@ -319,7 +319,7 @@ public class TextTableCell extends AbstractTextComponent implements ITextTableCe
    * 
    * @throws TextException if property store could not be returned
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public ICharacterPropertyStore getCharacterPropertyStore() throws TextException {
     if(characterPropertyStore == null) {      
@@ -337,7 +337,7 @@ public class TextTableCell extends AbstractTextComponent implements ITextTableCe
    * 
    * @throws CloneException if the clone service could not be returned
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public ICloneService getCloneService() throws CloneException {
   	/*try {
@@ -360,7 +360,7 @@ public class TextTableCell extends AbstractTextComponent implements ITextTableCe
    * 
    * @return the value of the cell
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public double getValue() {
   	return xCell.getValue();
@@ -371,7 +371,7 @@ public class TextTableCell extends AbstractTextComponent implements ITextTableCe
    * 
    * @param value the value to be set in the table
    * 
-   * @author SebastianRuesgen
+   * @author SebastianRösgen
    */
   public void setValue(double value){
   	xCell.setValue(value);
@@ -395,7 +395,7 @@ public class TextTableCell extends AbstractTextComponent implements ITextTableCe
    * @return the page number of the cell, returns -1 if page number
    * could not be determined
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public short getPageNumber() {
     return getTextService().getCursorService().getTextCursor().getStartPageNumber();
@@ -409,7 +409,7 @@ public class TextTableCell extends AbstractTextComponent implements ITextTableCe
    * 
    * @throws TextException if the property can not be modified
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 21.03.2007
    */
   public void setCellParagraphStyle(String cellParagraphStyle) throws TextException {

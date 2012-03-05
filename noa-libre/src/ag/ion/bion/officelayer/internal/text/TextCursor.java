@@ -76,8 +76,8 @@ import java.io.InputStream;
  * Cursor of a text document.
  * 
  * @author Miriam Sutter
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 11574 $
  */
 public class TextCursor implements ITextCursor {
@@ -99,7 +99,7 @@ public class TextCursor implements ITextCursor {
    * @throws IllegalArgumentException if the submitted OpenOffice.org XTextCursor or XTextDocument interface 
    * is not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
 	public TextCursor(ITextDocument textDocument, XTextCursor xTextCursor) {
 		if(xTextCursor == null)
@@ -129,7 +129,7 @@ public class TextCursor implements ITextCursor {
 	 * @param mark indicates if the space between the current  
 	 * 				position and the end is to be marked
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public void gotoEnd(boolean mark) {
 		xTextCursor.gotoEnd(mark);
@@ -140,7 +140,7 @@ public class TextCursor implements ITextCursor {
 	 * @param mark indicates if the space between the current  
 	 * 				position and the start is to be marked
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public void gotoStart(boolean mark) {
 		xTextCursor.gotoStart(mark);
@@ -153,7 +153,7 @@ public class TextCursor implements ITextCursor {
 	 * @param mark indicates if the space between the current  
 	 * 				position and the new one is to be marked
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public void gotoRange(ITextRange range, boolean mark) {
 		xTextCursor.gotoRange(range.getXTextRange(), mark);
@@ -164,7 +164,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @param content content to be used
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setString(String content) {
     if(content != null)
@@ -176,7 +176,7 @@ public class TextCursor implements ITextCursor {
 	 * 
 	 * @return the text marked
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public String getString() {
 		return xTextCursor.getString();
@@ -189,7 +189,7 @@ public class TextCursor implements ITextCursor {
 	 * @param mark mark indicates if the space between the current  
 	 * 				position and the new one is to be marked
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public void goLeft(short stepNumber, boolean mark) { 
 		xTextCursor.goLeft(stepNumber, mark);
@@ -202,7 +202,7 @@ public class TextCursor implements ITextCursor {
 	 * @param mark mark indicates if the space between the current  
 	 * 				position and the new one is to be marked
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public void goRight(short stepNumber, boolean mark) {
 		xTextCursor.goRight(stepNumber, mark);
@@ -213,7 +213,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @return start position of the cursor
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextRange getStart() {
     return new TextRange(textDocument, xTextCursor.getStart());
@@ -224,7 +224,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @return end position of the cursor
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public ITextRange getEnd() {
     return new TextRange(textDocument, xTextCursor.getEnd());
@@ -237,7 +237,7 @@ public class TextCursor implements ITextCursor {
    * @return the page number of the text cursor start, returns -1 if page number
    * could not be determined
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public short getStartPageNumber() {
     IViewCursor viewCursor = textDocument.getViewCursorService().getViewCursor();
@@ -256,7 +256,7 @@ public class TextCursor implements ITextCursor {
    * @return the page number of the text cursor end, returns -1 if page number
    * could not be determined
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public short getEndPageNumber() {
     IViewCursor viewCursor = textDocument.getViewCursorService().getViewCursor();
@@ -273,7 +273,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @throws NOAException if the page break can not be set
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 19.09.2006
    */
   public void insertPageBreak() throws NOAException {
@@ -297,7 +297,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @throws NOAException if the text document can not be inserted
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 27.10.2006
    */
   public void insertDocument(String url) throws NOAException {
@@ -321,7 +321,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @throws NOAException if the file stream can not be inserted
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 24.05.2007
    */
   public void insertDocument(InputStream inputStream,IFilter filter) throws NOAException {
@@ -387,7 +387,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @return if the current cursor supports word cursor operations
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.12.2006
    */
   public boolean supportsWordCursor() {
@@ -408,7 +408,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @throws NOAException if word cursor operations are not supported
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.12.2006
    */
   public boolean isStartOfWord() throws NOAException {
@@ -424,7 +424,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @throws NOAException if word cursor operations are not supported
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.12.2006
    */
   public boolean isEndOfWord() throws NOAException {
@@ -443,7 +443,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @throws NOAException if word cursor operations are not supported
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.12.2006
    */
   public boolean gotoNextWord(boolean mark) throws NOAException {
@@ -462,7 +462,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @throws NOAException if word cursor operations are not supported
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.12.2006
    */
   public boolean gotoPreviousWord(boolean mark) throws NOAException {
@@ -481,7 +481,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @throws NOAException if word cursor operations are not supported
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.12.2006
    */
   public boolean gotoEndOfWord(boolean mark) throws NOAException {
@@ -500,7 +500,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @throws NOAException if word cursor operations are not supported
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.12.2006
    */
   public boolean gotoStartOfWord(boolean mark) throws NOAException {
@@ -514,7 +514,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @return if the current cursor supports sentence cursor operations
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.12.2006
    */
   public boolean supportsSentenceCursor() {
@@ -535,7 +535,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @throws NOAException if sentence cursor operations are not supported
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.12.2006
    */
   public boolean isStartOfSentence() throws NOAException {
@@ -551,7 +551,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @throws NOAException if sentence cursor operations are not supported
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.12.2006
    */
   public boolean isEndOfSentence() throws NOAException {
@@ -568,7 +568,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @throws NOAException if sentence cursor operations are not supported
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.12.2006
    */
   public void gotoNextSentence(boolean mark) throws NOAException {
@@ -586,7 +586,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @throws NOAException if sentence cursor operations are not supported
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.12.2006
    */
   public void gotoPreviousSentence(boolean mark) throws NOAException {
@@ -604,7 +604,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @throws NOAException if sentence cursor operations are not supported
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.12.2006
    */
   public void gotoEndOfSentence(boolean mark) throws NOAException {
@@ -622,7 +622,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @throws NOAException if sentence cursor operations are not supported
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.12.2006
    */
   public void gotoStartOfSentence(boolean mark) throws NOAException {
@@ -637,7 +637,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @return if the current cursor supports paragraph cursor operations
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.12.2006
    */
   public boolean supportsParagraphCursor() {
@@ -658,7 +658,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @throws NOAException if paragraph cursor operations are not supported
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.12.2006
    */
   public boolean isStartOfParagraph() throws NOAException {
@@ -674,7 +674,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @throws NOAException if paragraph cursor operations are not supported
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.12.2006
    */
   public boolean isEndOfParagraph() throws NOAException {
@@ -691,7 +691,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @throws NOAException if paragraph cursor operations are not supported
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.12.2006
    */
   public void gotoNextParagraph(boolean mark) throws NOAException {
@@ -709,7 +709,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @throws NOAException if paragraph cursor operations are not supported
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.12.2006
    */
   public void gotoPreviousParagraph(boolean mark) throws NOAException {
@@ -727,7 +727,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @throws NOAException if paragraph cursor operations are not supported
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.12.2006
    */
   public void gotoEndOfParagraph(boolean mark) throws NOAException {
@@ -745,7 +745,7 @@ public class TextCursor implements ITextCursor {
    * 
    * @throws NOAException if paragraph cursor operations are not supported
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.12.2006
    */
   public void gotoStartOfParagraph(boolean mark) throws NOAException {

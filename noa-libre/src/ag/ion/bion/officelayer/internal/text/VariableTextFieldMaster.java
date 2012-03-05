@@ -61,7 +61,7 @@ import com.sun.star.uno.UnoRuntime;
 /**
  * Master of a variable text field of a text document.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public class VariableTextFieldMaster implements IVariableTextFieldMaster {
@@ -81,7 +81,7 @@ public class VariableTextFieldMaster implements IVariableTextFieldMaster {
    * @throws IllegalArgumentException if the submitted text document or 
    * OpenOffice.org XPropertySet interface is not valid
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 30.05.2007
    */
   public VariableTextFieldMaster(ITextDocument textDocument, XPropertySet xPropertySet) throws IllegalArgumentException {
@@ -99,7 +99,7 @@ public class VariableTextFieldMaster implements IVariableTextFieldMaster {
    * 
    * @return the property set of this master
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.07.2007
    */
   public XPropertySet getXPropertySet() {
@@ -113,7 +113,7 @@ public class VariableTextFieldMaster implements IVariableTextFieldMaster {
    * @return name of the master of a variable text field or null if a name is
    * not available
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 30.05.2007
    */
   public String getName() {
@@ -135,7 +135,7 @@ public class VariableTextFieldMaster implements IVariableTextFieldMaster {
    * 
    * @throws TextException if the variable text fields can not be fetched
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 30.05.2007
    */
   public ITextField[] getVariableTextFields() throws TextException {
@@ -167,7 +167,7 @@ public class VariableTextFieldMaster implements IVariableTextFieldMaster {
    * 
    * @throws NOAException if the new variable text field can not be constructed
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 30.05.2007
    */
   public ITextField constructNewVariableTextField(String content, boolean visible) throws NOAException {
@@ -187,7 +187,7 @@ public class VariableTextFieldMaster implements IVariableTextFieldMaster {
    * 
    * @throws NOAException if the new variable text field can not be constructed
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 30.05.2007
    */
   public ITextField constructNewVariableTextField(String content, boolean visible,
@@ -219,7 +219,7 @@ public class VariableTextFieldMaster implements IVariableTextFieldMaster {
   /**
    * Removes the master of a variable text field from the document.
    *
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 30.05.2007
    */
   public void remove() {

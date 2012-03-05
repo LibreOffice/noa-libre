@@ -39,7 +39,7 @@ package ag.ion.bion.officelayer.util;
 /**
  * Checker for internal application states.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  * @date 2006/02/05
  */
@@ -49,7 +49,7 @@ public class Assert {
 	/**
 	 * Internal assertion exception.
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 2006/02/05
 	 */
 	private static class AssertionException extends RuntimeException {
@@ -62,7 +62,7 @@ public class Assert {
 		 * 
 		 * @param message message to be used
 		 * 
-		 * @author Andreas Brueker
+		 * @author Andreas Bröker
 		 * @date 2006/02/05
 		 */
 		public AssertionException(String message) {
@@ -82,7 +82,7 @@ public class Assert {
 	 * @param type type of the object
 	 * @param requester requester of the check 
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 2006/02/05
 	 */
 	public static void isNotNull(Object object, Class type, Object requester) {

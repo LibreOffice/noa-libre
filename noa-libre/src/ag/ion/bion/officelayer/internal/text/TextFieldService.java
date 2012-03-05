@@ -70,7 +70,7 @@ import java.util.List;
 /**
  * Textfield service of a text document.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 11575 $
  */
 public class TextFieldService implements ITextFieldService {
@@ -88,7 +88,7 @@ public class TextFieldService implements ITextFieldService {
      * 
      * @throws IllegalArgumentException if the OpenOffice.org interface is not valid
      * 
-     * @author Andreas Brueker
+     * @author Andreas Bröker
      */
     public TextFieldService(ITextDocument textDocument) {
         if (textDocument == null) {
@@ -109,7 +109,7 @@ public class TextFieldService implements ITextFieldService {
      * 
      * @throws TextException if the user text field can not be provided
      * 
-     * @author Andreas Brueker
+     * @author Andreas Bröker
      */
     public ITextFieldMaster getUserTextFieldMaster(String name) throws TextException {
         try {
@@ -144,7 +144,7 @@ public class TextFieldService implements ITextFieldService {
      * 
      * @throws TextException if the masters of the user textfields can not be constructed
      * 
-     * @author Andreas Brueker
+     * @author Andreas Bröker
      */
     public ITextFieldMaster[] getUserTextFieldMasters(String prefix) throws TextException {
         if (prefix == null) {
@@ -240,7 +240,7 @@ public class TextFieldService implements ITextFieldService {
      * 
      * @throws TextException if any error occurs during textfield creation
      * 
-     * @author Andreas Brueker
+     * @author Andreas Bröker
      */
     public ITextField addUserTextField(String name, String content) throws TextException {
         try {
@@ -270,7 +270,7 @@ public class TextFieldService implements ITextFieldService {
      * 
      * @throws TextException if the user textfields can not be constructed
      * 
-     * @author Andreas Brueker
+     * @author Andreas Bröker
      */
     public ITextField[] getUserTextFields() throws TextException {
         try {

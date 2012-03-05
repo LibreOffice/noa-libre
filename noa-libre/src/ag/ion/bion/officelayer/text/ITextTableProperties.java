@@ -45,8 +45,8 @@ import ag.ion.bion.officelayer.internal.text.TextTableColumnsSeparator;
 /**
  * Properties of a text table.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public interface ITextTableProperties extends IPropertyDescriptionElement, IProperties {
@@ -64,7 +64,7 @@ public interface ITextTableProperties extends IPropertyDescriptionElement, IProp
    * 
    * @throws TextException if the property can not be set
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setRepeatHeadline(boolean repeatHeadline) throws TextException;
   //----------------------------------------------------------------------------
@@ -77,7 +77,7 @@ public interface ITextTableProperties extends IPropertyDescriptionElement, IProp
    * 
    * @throws TextException if the property is not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public boolean repeatHeadline() throws TextException;
   //----------------------------------------------------------------------------
@@ -110,7 +110,7 @@ public interface ITextTableProperties extends IPropertyDescriptionElement, IProp
    * 
    * @throws TextException if the property is not available
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public TextTableColumnsSeparator[] getTableColumnSeparators() throws TextException;
   //----------------------------------------------------------------------------
@@ -119,7 +119,7 @@ public interface ITextTableProperties extends IPropertyDescriptionElement, IProp
    * 
    * @throws TextException if the property is not available
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void setTableColumnSeparators(TextTableColumnsSeparator[] textTableColumnsSeparators) throws TextException;
   //----------------------------------------------------------------------------

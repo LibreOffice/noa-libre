@@ -43,8 +43,8 @@ import ag.ion.noa.view.ISelection;
 /**
  * Selection of a text range.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 11545 $
  * @date 09.07.2006
  */ 
@@ -56,7 +56,7 @@ public interface ITextRangeSelection extends IXInterfaceObjectSelection, ISelect
 	 * 
 	 * @return text range of the selection
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public ITextRange getTextRange();

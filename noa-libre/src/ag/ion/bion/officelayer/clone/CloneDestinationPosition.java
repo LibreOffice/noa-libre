@@ -43,7 +43,7 @@ package ag.ion.bion.officelayer.clone;
  * this class is used to store the target position for a 
  * newly created clone.
  * 
- * @author Sebastian Ruesgen 
+ * @author Sebastian Rösgen 
  * @version $Revision: 10398 $
  */
 public class CloneDestinationPosition implements IDestinationPosition {
@@ -58,7 +58,7 @@ public class CloneDestinationPosition implements IDestinationPosition {
 	 * @param storeObject the class to be put into the store
 	 * @param clazz the class type of the class to be stored
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public CloneDestinationPosition (Object storeObject, Class clazz) {
 		this.storeObject = storeObject;
@@ -70,7 +70,7 @@ public class CloneDestinationPosition implements IDestinationPosition {
 	 * 
 	 * @return the type of the stored class
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public Class getType() {
 		return clazz;
@@ -81,7 +81,7 @@ public class CloneDestinationPosition implements IDestinationPosition {
 	 * 
 	 * @return the stored destiantion object.
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public Object getDestinationObject() {
 		return storeObject;
