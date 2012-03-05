@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.document;
 /**
  * Covers all document exceptions.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public class DocumentException extends Exception {
@@ -52,7 +52,7 @@ public class DocumentException extends Exception {
   /**
    * Constructs new DocumentException.
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public DocumentException() {
     super();
@@ -63,7 +63,7 @@ public class DocumentException extends Exception {
    * 
    * @param message message to be used
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public DocumentException(String message) {
     super(message == null ? DEFAULT_EXCEPTION_MESSAGE : message);
@@ -74,8 +74,8 @@ public class DocumentException extends Exception {
    * 
    * @param throwable throwable to be used
    * 
-   * @author Markus Krueger
-   * @author Andreas Brueker
+   * @author Markus Krüger
+   * @author Andreas Bröker
    */
   public DocumentException(Throwable throwable) {
     super(throwable.getMessage() == null ? DEFAULT_EXCEPTION_MESSAGE : throwable.getMessage());
@@ -88,8 +88,8 @@ public class DocumentException extends Exception {
    * @param message message to be used
    * @param throwable throwable to be used
    * 
-   * @author Markus Krueger
-   * @author Andreas Brueker
+   * @author Markus Krüger
+   * @author Andreas Bröker
    */
   public DocumentException(String message, Throwable throwable) {
     super(message == null ? DEFAULT_EXCEPTION_MESSAGE : message);

@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.util;
 /**
  * Exception for util parts of the Office API.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public class UtilException extends Exception {
@@ -52,7 +52,7 @@ public class UtilException extends Exception {
   /**
    * Constructs new UtilException.
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public UtilException() {
     super(); 
@@ -63,7 +63,7 @@ public class UtilException extends Exception {
    * 
    * @param message exception message
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public UtilException(String message) {
     super(message == null ? DEFAULT_EXCEPTION_MESSAGE : message); 
@@ -74,7 +74,7 @@ public class UtilException extends Exception {
    * 
    * @param exception exception to be used
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public UtilException(Exception exception) {
     super(exception.getMessage() == null ? DEFAULT_EXCEPTION_MESSAGE : exception.getMessage());
@@ -87,7 +87,7 @@ public class UtilException extends Exception {
    * @param message message to be used
    * @param exception exception to be used
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public UtilException(String message, Exception exception) {
     super(message == null ? DEFAULT_EXCEPTION_MESSAGE : message);

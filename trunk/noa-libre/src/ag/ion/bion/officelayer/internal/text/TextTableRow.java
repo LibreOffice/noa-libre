@@ -56,8 +56,8 @@ import com.sun.star.uno.UnoRuntime;
 /**
  * Row of a text table.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public class TextTableRow implements ITextTableRow {
@@ -96,7 +96,7 @@ public class TextTableRow implements ITextTableRow {
    * 
    * @return cells of the text table row
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextTableCell[] getCells() {
     ITextTableCell[] textTableCells = textTableCellRange.getCells()[0];
@@ -110,7 +110,7 @@ public class TextTableRow implements ITextTableRow {
    * 
    * @throws CloneException if the clone service could not be returned
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public ICloneService getCloneService() throws CloneException {
 		return new TextTableRowCloneService(this);
@@ -132,7 +132,7 @@ public class TextTableRow implements ITextTableRow {
    * 
    * @return the row height
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public int getHeight() {
     if(textTableCellRange == null)
@@ -156,7 +156,7 @@ public class TextTableRow implements ITextTableRow {
    * 
    * @param height the row height to be set
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void setHeight(int height) {
     if(textTableCellRange == null)
@@ -177,7 +177,7 @@ public class TextTableRow implements ITextTableRow {
    * 
    * @return if the row height is set to automatically be adjusted or not
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public boolean getAutoHeight() {
     if(textTableCellRange == null)
@@ -201,7 +201,7 @@ public class TextTableRow implements ITextTableRow {
    * 
    * @param autoHeight if the row height is set to automatically be adjusted or not
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void setAutoHeight(boolean autoHeight) {
     if(textTableCellRange == null)

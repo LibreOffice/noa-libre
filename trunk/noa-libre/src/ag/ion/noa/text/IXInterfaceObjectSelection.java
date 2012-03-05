@@ -43,7 +43,7 @@ import com.sun.star.uno.XInterface;
 /**
  * Selection of a open office object implementing XInterface.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */ 
 public interface IXInterfaceObjectSelection extends ISelection {
@@ -54,7 +54,7 @@ public interface IXInterfaceObjectSelection extends ISelection {
 	 * 
 	 * @return object implementing XInterface of the selection
 	 * 
-	 * @author Markus Krueger
+	 * @author Markus Krüger
 	 * @date 01.08.2007
 	 */
 	public XInterface getXInterfaceObject();

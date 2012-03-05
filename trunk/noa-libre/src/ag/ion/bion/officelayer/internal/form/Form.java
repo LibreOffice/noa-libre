@@ -48,7 +48,7 @@ import com.sun.star.form.XFormComponent;
 /**
  * The implementation of a form in a document.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision$
  */
 public class Form extends FormComponent implements IForm, IFormComponent {
@@ -64,7 +64,7 @@ public class Form extends FormComponent implements IForm, IFormComponent {
    * @throws IllegalArgumentException if the submitted document or the OpenOffice.org 
    * XFormComponent or XControlShape interface is not valid
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.01.2007
    */
   public Form(IDocument document, XControlShape xControlShape, XFormComponent xFormComponent) throws IllegalArgumentException {

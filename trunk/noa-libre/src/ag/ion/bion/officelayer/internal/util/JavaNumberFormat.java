@@ -52,7 +52,7 @@ import java.awt.Color;
 /**
  * Number format for java code.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public class JavaNumberFormat implements IJavaNumberFormat {
@@ -87,7 +87,7 @@ public class JavaNumberFormat implements IJavaNumberFormat {
   /**
    * Internal registry for number formatter.
    *  
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   private class JavaNumberFormatterRegistry {
     
@@ -99,7 +99,7 @@ public class JavaNumberFormat implements IJavaNumberFormat {
      * 
      * @param javaNumberFormatter new java number formatter
      * 
-     * @author Andreas Brueker
+     * @author Andreas Bröker
      */
     public void addJavaNumberFormatter(JavaNumberFormatter javaNumberFormatter) {
       arrayList.add(javaNumberFormatter);
@@ -112,7 +112,7 @@ public class JavaNumberFormat implements IJavaNumberFormat {
      * 
      * @return java number formatter for the submitted double value
      * 
-     * @author Andreas Brueker
+     * @author Andreas Bröker
      */
     public JavaNumberFormatter getJavaNumberFormatter(double value) {
       JavaNumberFormatter defaultJavaNumberFormatter = null;
@@ -138,7 +138,7 @@ public class JavaNumberFormat implements IJavaNumberFormat {
      * 
      * @return size of the registry
      * 
-     * @author Andreas Brueker
+     * @author Andreas Bröker
      */
     public int size() {
       return arrayList.size();
@@ -154,7 +154,7 @@ public class JavaNumberFormat implements IJavaNumberFormat {
    * 
    * @throws UtilException if the submitted pattern is not suitable
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public JavaNumberFormat(String formatPattern) throws UtilException {
     this.formatPattern = formatPattern;
@@ -270,7 +270,7 @@ public class JavaNumberFormat implements IJavaNumberFormat {
    * 
    * @throws UtilException if the format operation fails
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public IJavaFormattedNumber formatNumber(double value) throws UtilException {
     try {
@@ -297,7 +297,7 @@ public class JavaNumberFormat implements IJavaNumberFormat {
    * 
    * @throws UtilException if the format operation fails
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public IJavaFormattedNumber formatNumber(String value) throws UtilException {
     double doubleValue = -1;
@@ -328,7 +328,7 @@ public class JavaNumberFormat implements IJavaNumberFormat {
    * @param bracketContent content of a bracket   
    * @param javaNumberFormatter java number formatter to be used
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   private void analyzeBracketContent(String bracketContent, JavaNumberFormatter javaNumberFormatter) {
     Color color = isColor(bracketContent);
@@ -352,7 +352,7 @@ public class JavaNumberFormat implements IJavaNumberFormat {
    * 
    * @return color on the basis of the submitted bracket content
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   private Color isColor(String bracketContent) {
     /**
@@ -395,7 +395,7 @@ public class JavaNumberFormat implements IJavaNumberFormat {
    * 
    * @return java number format condition
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   private JavaNumberFormatCondition isJavaNumberFormatCondition(String bracketContent) {
     String operator = "";

@@ -70,8 +70,8 @@ import ag.ion.bion.officelayer.internal.text.TextTableService;
  * Implementation of the ICloneService for text table ranges.
  * 
  * @author Miriam Sutter
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public class TextTableCellRangeCloneService extends AbstractCloneService {
@@ -127,7 +127,7 @@ public class TextTableCellRangeCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneToPositionNoReturn(IDestinationPosition position, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     clonePreprocessor(position, true, false,propertyKeysContainer);
@@ -165,7 +165,7 @@ public class TextTableCellRangeCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneToPositionNoReturn(IDestinationPosition position , boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     clonePreprocessor(position, adoptContent, false,propertyKeysContainer);
@@ -184,7 +184,7 @@ public class TextTableCellRangeCloneService extends AbstractCloneService {
 	 * @throws CloneException if the object could not be cloned.
 	 * 
 	 * @author Miriam Sutter
-   * @author Markus Krueger
+   * @author Markus Krüger
 	 */
 	private IClonedObject clonePreprocessor (IDestinationPosition position, boolean adoptContent, boolean generateReturnValue, PropertyKeysContainer propertyKeysContainer) throws CloneException {
 		try {
@@ -342,7 +342,7 @@ public class TextTableCellRangeCloneService extends AbstractCloneService {
    * @throws CloneException if anything fails
 	 * 
 	 * @author Miriam Sutter
-   * @author Markus Krueger
+   * @author Markus Krüger
 	 */
 	private void getCloneCells() throws CloneException {    
 		cellCloneServices = new ICloneService[rowCount][columnCount];		
@@ -382,7 +382,7 @@ public class TextTableCellRangeCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public IClonedObject cloneAfterThisPosition(IDestinationPosition position, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     return cloneToPosition(position, true,propertyKeysContainer);
@@ -405,7 +405,7 @@ public class TextTableCellRangeCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneAfterThisPositionNoReturn(IDestinationPosition position, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     cloneToPositionNoReturn(position, true,propertyKeysContainer);
@@ -433,7 +433,7 @@ public class TextTableCellRangeCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */  
   public IClonedObject cloneAfterThisPosition(IDestinationPosition position, boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     return cloneToPosition(position, adoptContent,propertyKeysContainer);
@@ -459,7 +459,7 @@ public class TextTableCellRangeCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */  
   public void cloneAfterThisPositionNoReturn(IDestinationPosition position, boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     cloneToPositionNoReturn(position, adoptContent,propertyKeysContainer);

@@ -55,7 +55,7 @@ import com.sun.star.uno.UnoRuntime;
 /**
  * Bookmark service of a text document.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 11664 $
  */
 public class BookmarkService implements IBookmarkService {
@@ -70,7 +70,7 @@ public class BookmarkService implements IBookmarkService {
    * 
    * @throws IllegalArgumentException if the text document is not valid
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public BookmarkService(ITextDocument textDocument) throws IllegalArgumentException {
     if (textDocument == null)
@@ -84,7 +84,7 @@ public class BookmarkService implements IBookmarkService {
    * 
    * @return all bookmarks
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public IBookmark[] getBookmarks() {
     try {
@@ -124,7 +124,7 @@ public class BookmarkService implements IBookmarkService {
    * 
    * @return the bookmark for the specified name, or null
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public IBookmark getBookmark(String name) {
     try {

@@ -44,7 +44,7 @@ import ag.ion.bion.officelayer.filter.IFilter;
  * Filter in order to convert a presentation to a drawing in
  * OpenOffice.org 1.0 format.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 11619 $
  * @date 09.07.2006
  */ 
@@ -66,7 +66,7 @@ public class OOPresentationToDrawFilter extends AbstractFilter implements IFilte
    * @return definition of the filter or null if the filter
    * is not available for the submitted document type
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.03.2008
    */
   public String getFilterDefinition(String documentType) {
@@ -84,7 +84,7 @@ public class OOPresentationToDrawFilter extends AbstractFilter implements IFilte
    * 
    * @return file extension of the filter
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 03.04.2007
    */
   public String getFileExtension(String documentType) {
@@ -104,7 +104,7 @@ public class OOPresentationToDrawFilter extends AbstractFilter implements IFilte
    * 
    * @return name of the filter
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.03.2008
    */
   public String getName(String documentType) {

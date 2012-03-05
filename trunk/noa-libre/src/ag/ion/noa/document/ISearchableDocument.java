@@ -39,7 +39,7 @@ package ag.ion.noa.document;
 /**
  * A searchable document provides access to a search service.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  * @date 09.07.2006
  */ 
@@ -51,7 +51,7 @@ public interface ISearchableDocument {
 	 * 
 	 * @return search service of the searchable document
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public ISearchService getSearchService();

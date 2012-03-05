@@ -43,7 +43,7 @@ import ag.ion.bion.officelayer.document.IDocument;
 /**
  * Event of a document.
  * 
- * @author Andreas Brueker 
+ * @author Andreas Bröker 
  * @version $Revision: 10398 $
  */
 public interface IDocumentEvent extends IEvent {  
@@ -54,7 +54,7 @@ public interface IDocumentEvent extends IEvent {
    * 
    * @return the document of the event
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public IDocument getDocument();
   //----------------------------------------------------------------------------

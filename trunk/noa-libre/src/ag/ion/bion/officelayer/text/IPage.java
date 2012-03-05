@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.text;
 /**
  * Page of a text document.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public interface IPage {
@@ -54,7 +54,7 @@ public interface IPage {
    * 
    * @throws TextException if the page style is not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public IPageStyle getPageStyle() throws TextException;
   //----------------------------------------------------------------------------

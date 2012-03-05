@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.text;
 /**
  * Service for visible cursor.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public interface IViewCursorService {
@@ -52,7 +52,7 @@ public interface IViewCursorService {
    * 
    * @return view cursor
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public IViewCursor getViewCursor();
   //----------------------------------------------------------------------------

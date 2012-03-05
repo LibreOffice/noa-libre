@@ -49,7 +49,7 @@ import java.io.InputStream;
 /**
  * Information to be used for graphic operations.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public class GraphicInfo {
@@ -86,7 +86,7 @@ public class GraphicInfo {
    * 
    * @throws NOAException if creation by input stream fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 09.07.2007
    */
   public GraphicInfo(InputStream imageInputStream, int width, boolean widthPixel, int height, boolean heightPixel, short verticalAlignment,
@@ -129,7 +129,7 @@ public class GraphicInfo {
    * @param anchor the anchor type of the image.
    * Possible values are described in {@link TextContentAnchorType}
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 09.07.2007
    */
   public GraphicInfo(String url, int width, boolean widthPixel, int height, boolean heightPixel, short verticalAlignment,
@@ -142,7 +142,7 @@ public class GraphicInfo {
    * 
    * @return the url of the image
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 09.07.2007
    */
   public String getUrl() {
@@ -154,7 +154,7 @@ public class GraphicInfo {
    * 
    * @return the width of the image in tenth millimeter
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 09.07.2007
    */
   public int getWidth() {
@@ -166,7 +166,7 @@ public class GraphicInfo {
    * 
    * @return the height of the image in tenth millimeter
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 09.07.2007
    */
   public int getHeight() {
@@ -179,7 +179,7 @@ public class GraphicInfo {
    * 
    * @return the vertical alignment of the image
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 09.07.2007
    */
   public short getVerticalAlignment() {
@@ -192,7 +192,7 @@ public class GraphicInfo {
    * 
    * @return the horizontal alignment of the image
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 09.07.2007
    */
   public short getHorizontalAlignment() {
@@ -205,7 +205,7 @@ public class GraphicInfo {
    * 
    * @return the anchor of the image, or null
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 09.07.2007
    */
   public TextContentAnchorType getAnchor() {
@@ -215,7 +215,7 @@ public class GraphicInfo {
   /**
    * Cleans up the graphic info (i.e. deletes temporary file is it was used).
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 09.07.2007
    */
   public void cleanUp() {
@@ -240,7 +240,7 @@ public class GraphicInfo {
    * @param anchor the anchor type of the image.
    * Possible values are described in {@link TextContentAnchorType}
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 09.07.2007
    */
   private void init(String url, int width, boolean widthPixel, int height, boolean heightPixel, short verticalAlignment,

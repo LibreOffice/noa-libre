@@ -68,7 +68,7 @@ import junit.framework.TestCase;
 /**
  * Test case for the OpenOffice.org Bean.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */ 
 public class OfficeBeanTest extends TestCase {
@@ -84,7 +84,7 @@ public class OfficeBeanTest extends TestCase {
    *
    * @param args arguments of the test
    *
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 21.05.2006
    */
   public static void main(String[] args) {
@@ -116,7 +116,7 @@ public class OfficeBeanTest extends TestCase {
   /**
    * Test OpenOffice.org Bean.
    *
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 21.05.2006
    */
   public void testOfficeBean() {
@@ -129,7 +129,7 @@ public class OfficeBeanTest extends TestCase {
    *
    * @param officeHome home path to OpenOffice.org
    *
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 21.05.2006
    */
   public void test(String officeHome) {

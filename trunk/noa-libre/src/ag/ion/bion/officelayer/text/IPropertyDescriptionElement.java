@@ -42,7 +42,7 @@ package ag.ion.bion.officelayer.text;
  * The PropertyDescriptionElemet isextended by any kind of property-containing element
  * in the whole structure. This interface is especially important for the clone package.
  * 
- * @author Sebastian Ruesgen
+ * @author Sebastian Rösgen
  * 
  * @version $Revision: 10398 $
  */

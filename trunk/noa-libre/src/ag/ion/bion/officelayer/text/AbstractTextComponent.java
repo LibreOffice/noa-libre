@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.text;
 /**
  * Abstract component of a text document.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public abstract class AbstractTextComponent implements ITextComponent {
@@ -56,7 +56,7 @@ public abstract class AbstractTextComponent implements ITextComponent {
    * 
    * @throws IllegalArgumentException if the submitted text document is not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public AbstractTextComponent(ITextDocument textDocument) throws IllegalArgumentException {
     if(textDocument == null)
@@ -69,7 +69,7 @@ public abstract class AbstractTextComponent implements ITextComponent {
    * 
    * @return text document
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextDocument getTextDocument() {
     return textDocument;

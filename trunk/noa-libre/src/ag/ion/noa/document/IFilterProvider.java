@@ -41,7 +41,7 @@ import ag.ion.bion.officelayer.filter.IFilter;
 /**
  * Filter provider of a document.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  * @date 08.07.2006
  */ 
@@ -53,7 +53,7 @@ public interface IFilterProvider {
 	 * 
 	 * @return available save filters
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 08.07.2006
 	 */
 	public IFilter[] getFilters();

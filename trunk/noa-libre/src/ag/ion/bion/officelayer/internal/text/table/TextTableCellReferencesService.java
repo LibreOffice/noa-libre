@@ -46,8 +46,8 @@ import ag.ion.bion.officelayer.text.table.TextTableCellNameHelper;
 /**
  * Text table cell references service implementation.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public class TextTableCellReferencesService implements ITextTableCellReferencesService {
@@ -63,7 +63,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * 
    * @throws IllegalArgumentException if the submitted text table formula expression is not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public TextTableCellReferencesService(TextTableFormulaExpression textTableFormulaExpression) throws IllegalArgumentException {
     if(textTableFormulaExpression == null) 
@@ -81,7 +81,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * @return informations whether this formula has a reference to a text table cell
    * with the submitted name
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public boolean hasCellReferenceTo(String cellName) {    
     TextTableCellReference[] textTableCellReferences = textTableFormulaModel.getCellReferences();
@@ -105,7 +105,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * @return information whether this formula has a reference to a column with the 
    * submitted index
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public boolean hasColumnReferenceTo(int columnIndex) {   
     TextTableCellReference[] textTableCellReferences = textTableFormulaModel.getCellReferences();
@@ -129,7 +129,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * @return information whether this formula has a reference to a column after the 
    * submitted column index
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public boolean hasColumnReferenceAfter(int columnIndex) {   
     TextTableCellReference[] textTableCellReferences = textTableFormulaModel.getCellReferences();
@@ -153,7 +153,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * @return information whether this formula has a reference to the submitted row 
    * index
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public boolean hasRowReferenceTo(int rowIndex) {    
     TextTableCellReference[] textTableCellReferences = textTableFormulaModel.getCellReferences();
@@ -177,7 +177,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * @return information whether this formula has a reference to a row after the 
    * submitted row index
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public boolean hasRowReferenceAfter(int rowIndex) {   
     TextTableCellReference[] textTableCellReferences = textTableFormulaModel.getCellReferences();
@@ -200,7 +200,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * 
    * @throws TextException if the text table cell references can not be moved
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void moveColumnReferences(int columnCount) throws TextException {
     TextTableCellReference[] textTableCellReferences = textTableFormulaModel.getCellReferences();
@@ -222,7 +222,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * 
    * @throws TextException if the text table cell references can not be moved
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void moveColumnReferences(String cellName, int columnCount) throws TextException {
     moveColumnReferences(TextTableCellNameHelper.getColumnIndex(cellName), columnCount);
@@ -238,8 +238,8 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * 
    * @throws TextException if the text table cell references can not be moved
    * 
-   * @author Andreas Brueker
-   * @author Markus Krueger
+   * @author Andreas Bröker
+   * @author Markus Krüger
    */
   public void moveColumnReferences(int columnIndex, int columnCount) throws TextException {
     moveColumnReferences(columnIndex, columnCount, new int[0]);
@@ -257,7 +257,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * 
    * @throws TextException if the text table cell references can not be moved
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void moveColumnReferences(int columnIndex, int columnCount, int[] exceptRows) throws TextException {
     TextTableCellReference[] textTableCellReferences = textTableFormulaModel.getCellReferences();
@@ -287,7 +287,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * 
    * @throws TextException if the text table cell references can not be moved
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void moveRowReferences(int rowCount) throws TextException {
     TextTableCellReference[] textTableCellReferences = textTableFormulaModel.getCellReferences();
@@ -309,7 +309,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * 
    * @throws TextException if the text table cell references can not be moved
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */  
   public void moveRowReferences(String cellName, int rowCount) throws TextException {
     moveRowReferences(TextTableCellNameHelper.getRowIndex(cellName), rowCount);
@@ -325,8 +325,8 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * 
    * @throws TextException if the text table cell references can not be moved
    * 
-   * @author Andreas Brueker
-   * @author Markus Krueger
+   * @author Andreas Bröker
+   * @author Markus Krüger
    */
   public void moveRowReferences(int rowIndex, int rowCount) throws TextException {
     moveRowReferences(rowIndex, rowCount, new int[0]);
@@ -344,7 +344,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * 
    * @throws TextException if the text table cell references can not be moved
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void moveRowReferences(int rowIndex, int rowCount, int[] exceptCols) throws TextException {
     TextTableCellReference[] textTableCellReferences = textTableFormulaModel.getCellReferences();
@@ -376,7 +376,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * 
    * @throws TextException if the text table cell references can not be moved
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void moveColumnReferencesAfter(int columnIndex, int columnCount) throws TextException {
     TextTableCellReference[] textTableCellReferences = textTableFormulaModel.getCellReferences();
@@ -400,7 +400,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * 
    * @throws TextException if the text table cell references can not be moved
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void moveRowReferencesAfter(int rowIndex, int rowCount) throws TextException {
     TextTableCellReference[] textTableCellReferences = textTableFormulaModel.getCellReferences();
@@ -423,7 +423,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * 
    * @throws TextException if the text table cell references can not be extended
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */ 
   public void extendColumnReferences(String cellName, int columnCount) throws TextException {
     TextTableCellReference[] textTableCellReferences = textTableFormulaModel.getCellReferences();
@@ -446,7 +446,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * 
    * @throws TextException if the text table cell references can not be extended
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void extendColumnReferences(int columnIndex, int columnCount) throws TextException {
     extendColumnReferences(columnIndex, columnCount, new int[0]);
@@ -462,7 +462,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * 
    * @throws TextException if the text table cell references can not be extended
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void extendColumnReferences(int columnIndex, int columnCount, int[] exceptRows) throws TextException {
     TextTableCellReference[] textTableCellReferences = textTableFormulaModel.getCellReferences();
@@ -493,7 +493,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * 
    * @throws TextException if the text table cell references can not be extended
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void extendRowReferences(String cellName, int rowCount) throws TextException {   
     TextTableCellReference[] textTableCellReferences = textTableFormulaModel.getCellReferences();
@@ -516,7 +516,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * 
    * @throws TextException if the text table cell references can not be extended
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void extendRowReferences(int rowIndex, int rowCount) throws TextException {   
     extendRowReferences(rowIndex, rowCount, new int[0]);   
@@ -532,7 +532,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * 
    * @throws TextException if the text table cell references can not be extended
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void extendRowReferences(int rowIndex, int rowCount, int[] exceptCols) throws TextException {   
     TextTableCellReference[] textTableCellReferences = textTableFormulaModel.getCellReferences();
@@ -563,7 +563,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * 
    * @throws TextException if the text table cell references can not be extended
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void extendRowReferencesTo(int rowIndex, int rowIndexTo) throws TextException {
     TextTableCellReference[] textTableCellReferences = textTableFormulaModel.getCellReferences();
@@ -586,7 +586,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * 
    * @throws TextException if the text table cell references can not be extended
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void extendRowReferences(int rowIndex, int[] rowIndicesTo) throws TextException {
     TextTableCellReference[] textTableCellReferences = textTableFormulaModel.getCellReferences();
@@ -609,7 +609,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
   /**
    * Reverts the model to the state before replacing cell references with method extendRowReferences().
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void revertModelToOriginal() {
     textTableFormulaModel.revertToOriginal();
@@ -625,7 +625,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * 
    * @throws TextException if the text table cell references can not be extended
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void extendColumnAndRowReferences(String cellName, int columnCount, int rowCount) throws TextException {  
     TextTableCellReference[] textTableCellReferences = textTableFormulaModel.getCellReferences();
@@ -650,7 +650,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * 
    * @throws TextException if the text table cell references can not be modified
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void modifyCellReferences(int newColumnsStartIndex, int newColumnsCount, int newRowsStartIndex, int newRowsCount) throws TextException {
     TextTableCellReference[] textTableCellReferences = textTableFormulaModel.getCellReferences();
@@ -677,7 +677,7 @@ public class TextTableCellReferencesService implements ITextTableCellReferencesS
    * 
    * @throws TextException if any error occurs.
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void applyModifications() throws TextException {
     textTableFormulaExpression.setExpression(textTableFormulaModel.getExpression());

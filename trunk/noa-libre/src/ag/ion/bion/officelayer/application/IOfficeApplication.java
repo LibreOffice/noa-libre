@@ -49,7 +49,7 @@ import ag.ion.noa.service.IServiceProvider;
 /**
  * OpenOffice.org application.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 11684 $
  */
 public interface IOfficeApplication extends IDisposeable {
@@ -79,7 +79,7 @@ public interface IOfficeApplication extends IDisposeable {
    * 
    * @throws OfficeApplicationException if the submitted configuration is not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * 
    * @deprecated Use setConfiguration(Map configuration) instead.
    */
@@ -94,7 +94,7 @@ public interface IOfficeApplication extends IDisposeable {
    * 
    * @throws OfficeApplicationException if the configuration is not complete
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setConfiguration(Map configuration) throws OfficeApplicationException;
 
@@ -114,7 +114,7 @@ public interface IOfficeApplication extends IDisposeable {
    * 
    * @throws OfficeApplicationException if the office application can not be activated
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void activate() throws OfficeApplicationException;
 
@@ -126,7 +126,7 @@ public interface IOfficeApplication extends IDisposeable {
    * 
    * @throws OfficeApplicationException if the office application can not be activated
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void activate(IOfficeProgressMonitor officeProgressMonitor)
       throws OfficeApplicationException;
@@ -139,7 +139,7 @@ public interface IOfficeApplication extends IDisposeable {
    * 
    * @throws OfficeApplicationException if the office application can not be deactivated
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void deactivate() throws OfficeApplicationException;
 
@@ -150,7 +150,7 @@ public interface IOfficeApplication extends IDisposeable {
    * 
    * @return whether the office application is active or not
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public boolean isActive();
 
@@ -164,7 +164,7 @@ public interface IOfficeApplication extends IDisposeable {
    * 
    * @throws OfficeApplicationException if the document service is not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public IDocumentService getDocumentService() throws OfficeApplicationException;
 
@@ -176,7 +176,7 @@ public interface IOfficeApplication extends IDisposeable {
    * 
    * @throws OfficeApplicationException if the desktop service is not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public IDesktopService getDesktopService() throws OfficeApplicationException;
 
@@ -198,7 +198,7 @@ public interface IOfficeApplication extends IDisposeable {
    * @return service provider null if the application is not
    * active
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 15.08.2006
    */
   public IServiceProvider getServiceProvider();
@@ -212,7 +212,7 @@ public interface IOfficeApplication extends IDisposeable {
    * 
    * @throws Exception if return fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.11.2008
    */
   public IApplicationInfo getApplicationInfo() throws Exception;

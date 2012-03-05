@@ -39,7 +39,7 @@ package ag.ion.noa.frame;
 /**
  * Delegate for UI commands.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  * @date 07.07.2006
  */ 
@@ -51,7 +51,7 @@ public interface IDispatchDelegate {
 	 * 
 	 * @param objects arguments of the dispatch
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 07.07.2006
 	 */
 	public void dispatch(Object[] objects);

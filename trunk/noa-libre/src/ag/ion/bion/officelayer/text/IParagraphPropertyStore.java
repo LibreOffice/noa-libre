@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.text;
 /**
  * Interface for ParagraphPropertyStores.
  * 
- * @author Sebastian Ruesgen
+ * @author Sebastian Rösgen
  * @version $Revision: 10398 $
  */
 public interface IParagraphPropertyStore extends IParagraphProperties{

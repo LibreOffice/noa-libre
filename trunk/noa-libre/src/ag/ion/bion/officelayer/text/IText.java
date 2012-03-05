@@ -43,7 +43,7 @@ import com.sun.star.text.XText;
 /**
  * Text of a text document.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public interface IText {
@@ -54,7 +54,7 @@ public interface IText {
    * 
    * @return XText interface
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 19.09.2006
    */
   public XText getXText();  
@@ -64,7 +64,7 @@ public interface IText {
    * 
    * @return text content
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public String getText();
   //----------------------------------------------------------------------------
@@ -75,7 +75,7 @@ public interface IText {
    * 
    * @throws TextException if the content enumeration is not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextContentEnumeration getTextContentEnumeration() throws TextException;
   //----------------------------------------------------------------------------
@@ -95,7 +95,7 @@ public interface IText {
    * 
    * @param text text to be set
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void setText(String text);
   //----------------------------------------------------------------------------  

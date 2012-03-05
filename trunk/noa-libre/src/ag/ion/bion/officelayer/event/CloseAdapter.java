@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.event;
 /**
  * Adapter for close listener.
  * 
- * @author Andreas Brueker 
+ * @author Andreas Bröker 
  * @version $Revision: 10398 $
  */
 public class CloseAdapter extends EventAdapter {
@@ -53,7 +53,7 @@ public class CloseAdapter extends EventAdapter {
    * @param closeEvent close event
    * @param getsOwnership information about the ownership
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */ 
   public void queryClosing(ICloseEvent closeEvent, boolean getsOwnership) {
   }
@@ -63,7 +63,7 @@ public class CloseAdapter extends EventAdapter {
    * 
    * @param closeEvent close event
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void notifyClosing(ICloseEvent closeEvent) {
   }

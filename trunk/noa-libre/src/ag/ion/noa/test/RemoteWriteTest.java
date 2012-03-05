@@ -59,7 +59,7 @@ import java.util.logging.Logger;
 /**
  * Test case for a remote connection to OpenOffice.org.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  * @date 17.08.2006
  */ 
@@ -73,7 +73,7 @@ public class RemoteWriteTest extends TestCase {
    *
    * @param args arguments of the test
    *
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 17.08.2006
    */
   public static void main(String[] args) {
@@ -105,7 +105,7 @@ public class RemoteWriteTest extends TestCase {
   /**
    * Test OpenOffice.org remote writing.
    *
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 17.08.2006
    */
   public void testOfficeBean() {
@@ -118,7 +118,7 @@ public class RemoteWriteTest extends TestCase {
    *
    * @param officeHome home path to OpenOffice.org
    *
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 17.08.2006
    */
   public void test(String host, String port) {

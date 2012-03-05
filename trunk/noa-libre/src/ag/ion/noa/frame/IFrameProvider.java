@@ -41,7 +41,7 @@ import ag.ion.bion.officelayer.desktop.IFrame;
 /**
  * Provider of a frame.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  * @date 15.07.2006
  */
@@ -55,7 +55,7 @@ public interface IFrameProvider {
 	 * @return frame or null
 	 * if a frame is not available
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 15.07.2006
 	 */
 	public IFrame getFrame();

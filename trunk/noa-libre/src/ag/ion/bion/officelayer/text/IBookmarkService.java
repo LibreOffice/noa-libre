@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.text;
 /**
  * Bookmark service of a text document.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public interface IBookmarkService {
@@ -52,7 +52,7 @@ public interface IBookmarkService {
    * 
    * @return all bookmarks
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public IBookmark[] getBookmarks();
   //----------------------------------------------------------------------------
@@ -63,7 +63,7 @@ public interface IBookmarkService {
    * 
    * @return the bookmark for the specified name, or null
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public IBookmark getBookmark(String name);
   //----------------------------------------------------------------------------

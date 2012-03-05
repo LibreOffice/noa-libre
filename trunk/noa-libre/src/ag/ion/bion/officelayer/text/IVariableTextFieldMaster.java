@@ -46,7 +46,7 @@ import com.sun.star.beans.XPropertySet;
 /**
  * Master of a variable text field of a text document.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public interface IVariableTextFieldMaster {
@@ -59,7 +59,7 @@ public interface IVariableTextFieldMaster {
    * @return name of the master of a variable text field or null if a name is
    * not available
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 30.05.2007
    */
   public String getName();
@@ -69,7 +69,7 @@ public interface IVariableTextFieldMaster {
    * 
    * @return the property set of this master
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 18.07.2007
    */
   public XPropertySet getXPropertySet();
@@ -81,7 +81,7 @@ public interface IVariableTextFieldMaster {
    * 
    * @throws TextException if the variable text fields can not be fetched
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 30.05.2007
    */
   public ITextField[] getVariableTextFields() throws TextException;
@@ -97,7 +97,7 @@ public interface IVariableTextFieldMaster {
    * 
    * @throws NOAException if the new variable text field can not be constructed
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 30.05.2007
    */
   public ITextField constructNewVariableTextField(String content, boolean visible) throws NOAException;  
@@ -115,7 +115,7 @@ public interface IVariableTextFieldMaster {
    * 
    * @throws NOAException if the new variable text field can not be constructed
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 30.05.2007
    */
   public ITextField constructNewVariableTextField(String content, boolean visible,
@@ -124,7 +124,7 @@ public interface IVariableTextFieldMaster {
   /**
    * Removes the master of a variable text field from the document.
    *
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 30.05.2007
    */
   public void remove();

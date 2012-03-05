@@ -53,7 +53,7 @@ import ag.ion.noa.NOAException;
  * closed by the user. So there must be a possibility to notice the closing of the 
  * document. This is done via a listener, which will be discussed in this snippet.
  * 
- * @author Sebastian Ruesgen
+ * @author Sebastian Rösgen
  * @version $Revision: 10398 $
  * @date 17.03.2006
  */
@@ -71,7 +71,7 @@ public class Snippet4 {
 	 * The internal close listener of the document. It does not really 
 	 * make sense but is actually expedient enough to show how it works .
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	private static class InternalCloseListener implements ICloseListener {
 
@@ -83,7 +83,7 @@ public class Snippet4 {
 	   * @param closeEvent close event
 	   * @param getsOwnership information about the ownership
 	   * 
-	   * @author Sebastian Ruesgen
+	   * @author Sebastian Rösgen
 	   * @date 17.03.2006
 	   */ 
 		public void queryClosing(ICloseEvent closeEvent, boolean getsOwnership) {
@@ -95,7 +95,7 @@ public class Snippet4 {
 	   * 
 	   * @param closeEvent close event
 	   * 
-	   * @author Sebastian Ruesgen
+	   * @author Sebastian Rösgen
 	   * @date 17.03.2006
 	   */
 		public void notifyClosing(ICloseEvent closeEvent) {
@@ -114,7 +114,7 @@ public class Snippet4 {
 	   * 
 	   * @param event source event
 	   * 
-	   * @author Sebastian Ruesgen
+	   * @author Sebastian Rösgen
 	   * @date 17.03.2006
 	   */
 		public void disposing(IEvent event) {

@@ -48,7 +48,7 @@ import com.sun.star.uno.UnoRuntime;
 /**
  * OpenOffice.org database document.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 11637 $
  * @date 16.03.2006
  */
@@ -64,7 +64,7 @@ public class DatabaseDocument extends AbstractDocument implements IDatabaseDocum
    * be used
    * @param intitialProperties the properties that were used loading the document
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 16.03.2006
    */
   public DatabaseDocument(XOfficeDatabaseDocument xOfficeDatabaseDocument,
@@ -80,7 +80,7 @@ public class DatabaseDocument extends AbstractDocument implements IDatabaseDocum
    * 
    * @return XOfficeDatabaseDocument OpenOffice.org interface
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 16.03.2006
    */
   public XOfficeDatabaseDocument getOfficeDatabaseDocument() {
@@ -93,7 +93,7 @@ public class DatabaseDocument extends AbstractDocument implements IDatabaseDocum
    * 
    * @return type of the document
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 16.03.2006
    */
   public String getDocumentType() {
@@ -104,7 +104,7 @@ public class DatabaseDocument extends AbstractDocument implements IDatabaseDocum
   /**
    * Closes the document.
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 20.03.2006
    */
   public void close() {

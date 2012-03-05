@@ -47,7 +47,7 @@ import java.util.Map;
 /**
  * Runtime for OpenOffice.org applications.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public class OfficeApplicationRuntime {
@@ -59,7 +59,7 @@ public class OfficeApplicationRuntime {
    * 
    * @return remote OpenOffice.org application
    *   
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * 
    * @deprecated Use getApplication(...) instead.
    */
@@ -72,7 +72,7 @@ public class OfficeApplicationRuntime {
    * 
    * @return local office application
    *  
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * 
    * @deprecated Use getApplication(...) instead.
    */
@@ -89,7 +89,7 @@ public class OfficeApplicationRuntime {
    * 
    * @throws OfficeApplicationException if the office application can not be provided
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public static final IOfficeApplication getApplication(Map configuration) throws OfficeApplicationException {
     if(configuration == null)
@@ -116,7 +116,7 @@ public class OfficeApplicationRuntime {
    * @throws OfficeApplicationException if the office application assistant can
    * not be provided
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public static IApplicationAssistant getApplicationAssistant(String nativeLibPath) throws OfficeApplicationException {
     if(applicationAssistant == null) 
@@ -132,7 +132,7 @@ public class OfficeApplicationRuntime {
    * @throws OfficeApplicationException if the office application assistant can
    * not be provided
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public static IApplicationAssistant getApplicationAssistant() throws OfficeApplicationException {
     if(applicationAssistant == null) 

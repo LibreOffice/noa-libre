@@ -49,8 +49,8 @@ import com.sun.star.frame.XFrame;
 /**
  * OpenOffice.org frame.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 11506 $
  */
 public interface IFrame {
@@ -62,7 +62,7 @@ public interface IFrame {
    * 
    * @return OpenOffice.org XFrame interface
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public XFrame getXFrame();
   //----------------------------------------------------------------------------
@@ -75,7 +75,7 @@ public interface IFrame {
    * 
    * @throws NOAException if the layout manager can not be requested
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 2006/02/05
    */
   public ILayoutManager getLayoutManager() throws NOAException; 
@@ -88,8 +88,8 @@ public interface IFrame {
    * 
    * @see GlobalCommands
    * 
-   * @author Andreas Brueker
-   * @author Markus Krueger
+   * @author Andreas Bröker
+   * @author Markus Krüger
    * @date 07.07.2006
    */
   public void disableDispatch(String commandURL);  
@@ -101,8 +101,8 @@ public interface IFrame {
    * @param commandURL command URL to be used
    * @param dispatchDelegate dispatch delegate to be added
    * 
-   * @author Andreas Brueker
-   * @author Markus Krueger
+   * @author Andreas Bröker
+   * @author Markus Krüger
    * @date 07.07.2006
    */
   public void addDispatchDelegate(String commandURL, IDispatchDelegate dispatchDelegate);
@@ -113,8 +113,8 @@ public interface IFrame {
    * 
    * @param commandURL command URL to be used
    * 
-   * @author Andreas Brueker
-   * @author Markus Krueger
+   * @author Andreas Bröker
+   * @author Markus Krüger
    * @date 07.07.2006
    */
   public void removeDispatchDelegate(String commandURL);
@@ -129,7 +129,7 @@ public interface IFrame {
    * @throws NOAException if a dispatch for the submitted command URL
    * can not be provided
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 14.06.2006
    */
   public IDispatch getDispatch(String commandURL) throws NOAException;  
@@ -137,21 +137,21 @@ public interface IFrame {
   /**
    * Closes the frame.
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void close();  
   //----------------------------------------------------------------------------
   /**
    * Focuses the frame.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void setFocus();
   //---------------------------------------------------------------------------- 
   /**
    * Updates the current dispatches. 
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 24.08.2006
    */
   public void updateDispatches();
@@ -162,7 +162,7 @@ public interface IFrame {
    * 
    * @throws NOAException if there is an error showing the preview
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 09.07.2007
    */
   public void showPreview() throws NOAException;
@@ -175,7 +175,7 @@ public interface IFrame {
    * 
    * @throws NOAException if there is an error showing the preview
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 09.07.2007
    */
   public void showPreview(int columns, int rows) throws NOAException;

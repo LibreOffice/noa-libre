@@ -52,7 +52,7 @@ import java.util.Map;
 /**
  * Remote OpenOffice.org application.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public class RemoteOfficeApplication extends AbstractOfficeApplication implements IOfficeApplication {
@@ -70,7 +70,7 @@ public class RemoteOfficeApplication extends AbstractOfficeApplication implement
    * 
    * @param map configuration map to be used (can be null)
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public RemoteOfficeApplication(Map map) {
     if(map != null) {
@@ -90,7 +90,7 @@ public class RemoteOfficeApplication extends AbstractOfficeApplication implement
    * 
    * @throws OfficeApplicationException if the submitted configuration is not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * 
    * @deprecated Use setConfiguration(Map configuration) instead.
    */
@@ -113,7 +113,7 @@ public class RemoteOfficeApplication extends AbstractOfficeApplication implement
    * 
    * @throws OfficeApplicationException if the configuration is not complete
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setConfiguration(Map configuration) throws OfficeApplicationException {
     initConfiguration(configuration);
@@ -137,7 +137,7 @@ public class RemoteOfficeApplication extends AbstractOfficeApplication implement
    * 
    * @throws OfficeApplicationException if the connection can not be established
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   protected void openConnection(IOfficeProgressMonitor officeProgressMonitor) throws OfficeApplicationException {
    try {
@@ -162,7 +162,7 @@ public class RemoteOfficeApplication extends AbstractOfficeApplication implement
    * 
    * @throws OfficeApplicationException if the configuration is not complete
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   private void initConfiguration(Map configuration) throws OfficeApplicationException {
     if(configuration == null)
@@ -188,7 +188,7 @@ public class RemoteOfficeApplication extends AbstractOfficeApplication implement
    * @return application type
    * 
    * @author Miriam Sutter
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public String getApplicationType() {
     return IOfficeApplication.REMOTE_APPLICATION;

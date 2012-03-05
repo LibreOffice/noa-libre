@@ -45,7 +45,7 @@ import com.sun.star.presentation.XPresentationSupplier;
 /**
  * OpenOffice.org impress document.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 11611 $
  */
 public interface IPresentationDocument extends IDocument {
@@ -56,7 +56,7 @@ public interface IPresentationDocument extends IDocument {
    * 
    * @return OpenOffice.org XPresentationSupplier interface
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public XPresentationSupplier getPresentationSupplier();
   //----------------------------------------------------------------------------
@@ -65,7 +65,7 @@ public interface IPresentationDocument extends IDocument {
    * 
    * @return page service of the document
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 07.01.2008
    */
   public IPageService getPageService();

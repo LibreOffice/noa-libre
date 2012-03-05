@@ -39,7 +39,7 @@ package ag.ion.noa.script;
 /**
  * Provider for scripts.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 11525 $
  * @date 13.06.2006
  */ 
@@ -71,7 +71,7 @@ public interface IScriptProvider {
 	 * 
 	 * @return all scripts of the submitted type and library with the submitted name
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 13.06.2006
 	 */
 	public IScript[] getScripts(String type, String library);
@@ -93,7 +93,7 @@ public interface IScriptProvider {
    * 
    * @return  the script with the submitted type, library, module, and name, or null
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 13.06.2006
    */
   public IScript getScript(String type, String library, String module, String name);
@@ -105,7 +105,7 @@ public interface IScriptProvider {
 	 * 
 	 * @return all scripts of the library with the submitted name
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 13.06.2006
 	 */
 	public IScript[] getScripts(String library);
@@ -115,7 +115,7 @@ public interface IScriptProvider {
    * 
    * @return all scripts
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 17.07.2007
    */
   public IScript[] getScripts();

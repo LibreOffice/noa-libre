@@ -54,7 +54,7 @@ import com.sun.star.uno.UnoRuntime;
 /**
  * Page service of a presentation document.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 11494 $
  */
 public class PageService implements IPageService {
@@ -69,7 +69,7 @@ public class PageService implements IPageService {
    * 
    * @throws IllegalArgumentException if the submitted presentation document is not valid
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 07.01.2008
    */
   public PageService(IPresentationDocument presentationDocument) throws IllegalArgumentException {
@@ -83,7 +83,7 @@ public class PageService implements IPageService {
    * 
    * @return number of available pages
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 07.01.2008
    */
   public int getPageCount() {
@@ -104,7 +104,7 @@ public class PageService implements IPageService {
    * 
    * @throws PresentationException if the page is not available
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 07.01.2008
    */
   public void goToPage(int index) throws PresentationException {    

@@ -50,8 +50,8 @@ import java.awt.Container;
 /**
  * Desktop service of OpenOffice.org.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 11158 $
  */
 public interface IDesktopService extends IDisposeable {
@@ -62,7 +62,7 @@ public interface IDesktopService extends IDisposeable {
 	 * 
 	 * @throws NOAException if the termination can not be done
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 14.03.2006
 	 */
 	public void terminate() throws NOAException;  
@@ -72,7 +72,7 @@ public interface IDesktopService extends IDisposeable {
    * 
    * @param terminateListener new terminate listener
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void addTerminateListener(ITerminateListener terminateListener);
   //----------------------------------------------------------------------------
@@ -81,7 +81,7 @@ public interface IDesktopService extends IDisposeable {
    * 
    * @param terminateListener terminate listener to be removed
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void removeTerminateListener(ITerminateListener terminateListener);  
   //----------------------------------------------------------------------------
@@ -92,7 +92,7 @@ public interface IDesktopService extends IDisposeable {
    * 
    * @throws DesktopException if document listener can not be registered
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void addDocumentListener(IDocumentListener documentListener) throws DesktopException;  
   //----------------------------------------------------------------------------
@@ -101,7 +101,7 @@ public interface IDesktopService extends IDisposeable {
    * 
    * @param documentListener document listener to be removed
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void removeDocumentListener(IDocumentListener documentListener);  
   //----------------------------------------------------------------------------
@@ -117,7 +117,7 @@ public interface IDesktopService extends IDisposeable {
    * 
    * @throws DesktopException if the frame can not be constructed
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public IFrame constructNewOfficeFrame(Container container) throws DesktopException;
   //----------------------------------------------------------------------------
@@ -131,7 +131,7 @@ public interface IDesktopService extends IDisposeable {
    * 
    * @throws DesktopException if the frame can not be constructed
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 08.12.2006
    */
   public IFrame constructNewOfficeFrame(NativeView nativeView) throws DesktopException;
@@ -141,21 +141,21 @@ public interface IDesktopService extends IDisposeable {
    * 
    * @return the current number of frames, or -1 if an error occured returning it
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public int getFramesCount();
   //----------------------------------------------------------------------------
   /**
    * Activates the prevention of the termination.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void activateTerminationPrevention();
   //----------------------------------------------------------------------------
   /**
    * Deactivates the prevention of the termination.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void deactivateTerminationPrevention();
   //----------------------------------------------------------------------------

@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.application;
 /**
  * Abstract configuration for OpenOffice.org application.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  * 
  * @deprecated
@@ -58,7 +58,7 @@ public abstract class AbstractOfficeConfiguration implements IOfficeApplicationC
    * 
    * @throws IllegalArgumentException if the submitted port is not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setPort(String port) throws IllegalArgumentException {
     if(port == null)
@@ -71,7 +71,7 @@ public abstract class AbstractOfficeConfiguration implements IOfficeApplicationC
    * 
    * @return port on which OpenOffice.org is waiting for connections
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public String getPort() {
     return port;

@@ -46,7 +46,7 @@ import java.net.UnknownHostException;
  * in order to build valid document URLs for loading
  * and storing.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 11566 $
  * @date 25.08.2006
  */ 
@@ -73,8 +73,8 @@ public class URLAdapter {
    * @throws MalformedURLException if the URL can not be adapted
    * @throws UnknownHostException if the host is unknown
    * 
-   * @author Andreas Brueker
-   * @author Markus Krueger
+   * @author Andreas Bröker
+   * @author Markus Krüger
    * @author Sebastian Gibelius (contrubution by community)
    * @date 25.08.2006
    */

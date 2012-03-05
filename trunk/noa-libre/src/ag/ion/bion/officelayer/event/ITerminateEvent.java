@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.event;
 /**
  * Terminate event.
  * 
- * @author Andreas Brueker 
+ * @author Andreas Bröker 
  * @version $Revision: 10398 $
  */
 public interface ITerminateEvent extends IEvent {
@@ -52,7 +52,7 @@ public interface ITerminateEvent extends IEvent {
    * 
    * @param veto veto information
    * 
-   * @author Andreas Brueker 
+   * @author Andreas Bröker 
    */
   public void setVeto(boolean veto);
   //----------------------------------------------------------------------------
@@ -61,7 +61,7 @@ public interface ITerminateEvent extends IEvent {
    * 
    * @return information whether the terminate event should be stopped
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public boolean getVeto();
   //----------------------------------------------------------------------------

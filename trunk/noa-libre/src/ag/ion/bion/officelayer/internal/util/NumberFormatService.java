@@ -59,8 +59,8 @@ import java.util.List;
 /**
  * Number format service.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 11534 $
  */
 public class NumberFormatService implements INumberFormatService {
@@ -93,7 +93,7 @@ public class NumberFormatService implements INumberFormatService {
    * 
    * @throws IllegalArgumentException if the OpenOffice.org XNumberFormatsSupplier interface is not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public NumberFormatService(ITextDocument textDocument, XNumberFormatsSupplier xNumberFormatsSupplier) throws IllegalArgumentException {
     if(xNumberFormatsSupplier == null)
@@ -109,7 +109,7 @@ public class NumberFormatService implements INumberFormatService {
    * 
    * @return the OpenOffice.org XNumberFormatsSupplier interface it was created with
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.07.2007
    */
   public XNumberFormatsSupplier getXNumberFormatsSupplier() {
@@ -125,8 +125,8 @@ public class NumberFormatService implements INumberFormatService {
    * 
    * @throws UtilException if the number format is not available
    * 
-   * @author Andreas Brueker
-   * @author Markus Krueger
+   * @author Andreas Bröker
+   * @author Markus Krüger
    */
   public INumberFormat getNumberFormat(int key) throws UtilException {
     INumberFormat[] allFormats = getNumberFormats();
@@ -160,7 +160,7 @@ public class NumberFormatService implements INumberFormatService {
    * 
    * @throws UtilException if the number formats are not available
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.07.2007
    */
   public INumberFormat[] getNumberFormats() throws UtilException {
@@ -176,7 +176,7 @@ public class NumberFormatService implements INumberFormatService {
    * 
    * @throws UtilException if the number formats are not available
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.07.2007
    */
   public INumberFormat[] getNumberFormats(short type) throws UtilException {
@@ -221,7 +221,7 @@ public class NumberFormatService implements INumberFormatService {
    * 
    * @throws UtilException if the conversion fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.07.2007
    */
   public double convertStringToNumber(int key, String text) throws UtilException {
@@ -253,7 +253,7 @@ public class NumberFormatService implements INumberFormatService {
    * 
    * @throws UtilException if the conversion fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.07.2007
    */
   public String convertNumberToString(int key, double number) throws UtilException {
@@ -285,7 +285,7 @@ public class NumberFormatService implements INumberFormatService {
    * 
    * @throws UtilException if format fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 26.07.2007
    */
   public String applyFormat(String text, INumberFormat numberFormat) throws UtilException {

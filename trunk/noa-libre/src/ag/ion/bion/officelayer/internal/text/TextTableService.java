@@ -56,7 +56,7 @@ import com.sun.star.uno.UnoRuntime;
 /**
  * Service for text tables.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public class TextTableService implements ITextTableService {
@@ -71,7 +71,7 @@ public class TextTableService implements ITextTableService {
    * 
    * @throws IllegalArgumentException if the submitted text document is not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public TextTableService(ITextDocument textDocument) throws IllegalArgumentException {
     if(textDocument == null)
@@ -89,7 +89,7 @@ public class TextTableService implements ITextTableService {
    * 
    * @throws TextException if the new text table can not be constructed
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextTable constructTextTable(int rows, int columns) throws TextException {
   	if(columns > ITextTable.MAX_COLUMNS_IN_TABLE) {
@@ -116,7 +116,7 @@ public class TextTableService implements ITextTableService {
    * 
    * @return all available text tables
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextTable[] getTextTables() {
     XTextTablesSupplier xTextTablesSupplier = (XTextTablesSupplier)UnoRuntime.queryInterface(XTextTablesSupplier.class, textDocument.getXTextDocument());
@@ -147,7 +147,7 @@ public class TextTableService implements ITextTableService {
    * 
    * @throws TextException if the table does not exist
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextTable getTextTable(String name) throws TextException {
     try {

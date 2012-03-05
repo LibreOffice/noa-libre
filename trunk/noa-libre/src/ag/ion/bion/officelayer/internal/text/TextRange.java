@@ -70,8 +70,8 @@ import com.sun.star.view.XSelectionSupplier;
 /**
  * Range of text in a text document.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 11363 $
  */
 public class TextRange implements ITextRange {
@@ -89,7 +89,7 @@ public class TextRange implements ITextRange {
    *  
    * @throws IllegalArgumentException if one the OpenOffice.org interface is not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public TextRange(IDocument document, XTextRange xTextRange) throws IllegalArgumentException {
     if(xTextRange == null)
@@ -106,7 +106,7 @@ public class TextRange implements ITextRange {
    * 
    * @return OpenOffice.org XTextRange interface
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public XTextRange getXTextRange() {
     return xTextRange;
@@ -119,7 +119,7 @@ public class TextRange implements ITextRange {
    * 
    * @throws TextException if the page style is not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public IPageStyle getPageStyle() throws TextException {
     if(document == null || !(document instanceof ITextDocument))
@@ -147,7 +147,7 @@ public class TextRange implements ITextRange {
    * 
    * @param text text to be used
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setText(String text) {
     if(text == null)
@@ -161,7 +161,7 @@ public class TextRange implements ITextRange {
    * @return cell of the texttable if the text range is part of cell or null if
    * the text range is not part of a cell
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextTableCell getCell() {
   	if(document == null || !(document instanceof ITextDocument))
@@ -185,7 +185,7 @@ public class TextRange implements ITextRange {
    * 
    * @throws TextException if the text ranges to compare are not within the same text. 
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public short compareRange(ITextRange textRangeToCompare) throws TextException {
     try {
@@ -268,7 +268,7 @@ public class TextRange implements ITextRange {
    * 
    * @param document document to be used
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.01.2007
    */
   public void setDocument(IDocument document) {

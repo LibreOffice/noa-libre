@@ -50,7 +50,7 @@ import com.sun.star.uno.UnoRuntime;
 /**
  * Image of a text document.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public class TextDocumentImage extends AbstractTextComponent implements ITextDocumentImage {
@@ -69,7 +69,7 @@ public class TextDocumentImage extends AbstractTextComponent implements ITextDoc
    * @throws IllegalArgumentException if the OpenOffice.org interface or the document 
    * or grpahic info is not valid
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 09.07.2007
    */
   public TextDocumentImage(ITextDocument textDocument, XTextContent xTextContent,
@@ -89,7 +89,7 @@ public class TextDocumentImage extends AbstractTextComponent implements ITextDoc
    * 
    * @return OpenOffice.org XTextContent interface
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 09.07.2007
    */
   public XTextContent getXTextContent() {
@@ -102,7 +102,7 @@ public class TextDocumentImage extends AbstractTextComponent implements ITextDoc
    * 
    * @return graphic information of the image
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 09.07.2007
    */
   public GraphicInfo getGraphicInfo() {
@@ -115,7 +115,7 @@ public class TextDocumentImage extends AbstractTextComponent implements ITextDoc
    * 
    * @return the name of the image
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 02.11.2009
    */
   public String getName() {
@@ -129,7 +129,7 @@ public class TextDocumentImage extends AbstractTextComponent implements ITextDoc
    * 
    * @param name the name of the image
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 02.11.2009
    */
   public void setName(String name) {

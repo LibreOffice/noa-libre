@@ -39,7 +39,7 @@ package ag.ion.noa;
 /**
  * General exception of NOA.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  * @date 2006/02/05
  */ 
@@ -53,7 +53,7 @@ public class NOAException extends Exception {
   /**
    * Constructs new NOAException.
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 2006/02/05
    */
   public NOAException() {
@@ -65,7 +65,7 @@ public class NOAException extends Exception {
    * 
    * @param message exception message
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 2006/02/05
    */
   public NOAException(String message) {
@@ -77,7 +77,7 @@ public class NOAException extends Exception {
    * 
    * @param throwable throwable to be used
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 2006/02/05
    */
   public NOAException(Throwable throwable) {
@@ -91,7 +91,7 @@ public class NOAException extends Exception {
    * @param message message to be used
    * @param throwable throwable to be used
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 2006/02/05
    */
   public NOAException(String message, Throwable throwable) {

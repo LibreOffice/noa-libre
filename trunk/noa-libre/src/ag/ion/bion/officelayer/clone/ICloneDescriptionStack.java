@@ -44,7 +44,7 @@ import ag.ion.bion.officelayer.text.IPropertyDescriptionElement;
  * The ICloneDescriptionStack, should be implemented by all coleable structures
  * like tables and else.
  * 
- * @author Sebastian Ruesgen 
+ * @author Sebastian Rösgen 
  * @version $Revision: 10398 $
  */
 public interface ICloneDescriptionStack {

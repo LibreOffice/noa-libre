@@ -47,7 +47,7 @@ import com.sun.star.text.XText;
 /**
  * Cursor service of a text document.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public class TextCursorService implements ITextCursorService {
@@ -66,7 +66,7 @@ public class TextCursorService implements ITextCursorService {
    * @throws IllegalArgumentException if the submitted text document or OpenOffice.org XText 
    * interface is not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public TextCursorService(ITextDocument textDocument, XText xText) throws IllegalArgumentException {
     if(textDocument == null)
@@ -84,7 +84,7 @@ public class TextCursorService implements ITextCursorService {
 	 * @return text cursor
 	 * 
 	 * @author Miriam Sutter
-   * @author Andreas Brueker
+   * @author Andreas Bröker
 	 */
   public ITextCursor getTextCursor() {
   	return new TextCursor(textDocument, xText.createTextCursor());

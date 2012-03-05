@@ -46,7 +46,7 @@ import com.sun.star.table.XCell;
 /**
  * Formula service of text table cell.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public class TextTableFormulaService implements IFormulaService {
@@ -61,7 +61,7 @@ public class TextTableFormulaService implements IFormulaService {
    * 
    * @throws IllegalArgumentException if the submitted OpenOffice.org XCell interface is not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public TextTableFormulaService(XCell xCell) throws IllegalArgumentException {
     if(xCell == null)
@@ -74,7 +74,7 @@ public class TextTableFormulaService implements IFormulaService {
    * 
    * @param formulaExpression formula expression to be used
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setFormula(String formulaExpression) {
     xCell.setFormula(formulaExpression);
@@ -85,7 +85,7 @@ public class TextTableFormulaService implements IFormulaService {
    * 
    * @return formula of the text table cell
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public IFormula getFormula() {
   	String formulaExpression = xCell.getFormula();

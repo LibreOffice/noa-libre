@@ -41,7 +41,7 @@ import ag.ion.bion.officelayer.text.ITextRange;
 /**
  * Result of a search.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  * @date 09.07.2006
  */ 
@@ -53,7 +53,7 @@ public interface ISearchResult {
 	 * 
 	 * @return information whether the search result is empty
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public boolean isEmpty();
@@ -63,7 +63,7 @@ public interface ISearchResult {
 	 * 
 	 * @return text ranges of the search resul
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public ITextRange[] getTextRanges();

@@ -56,8 +56,8 @@ import com.sun.star.text.XText;
 /**
  * Text service implementation of a text document.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 11583 $
  */
 public class TextService implements ITextService {
@@ -82,9 +82,9 @@ public class TextService implements ITextService {
    *  
    * @throws IllegalArgumentException if the submitted text document or OpenOffice.org XText interface is not valid
    * 
-   * @author Andreas Brueker
-   * @author Sebastian Ruesgen
-   * @author Markus Krueger
+   * @author Andreas Bröker
+   * @author Sebastian Rösgen
+   * @author Markus Krüger
    */
   public TextService(ITextDocument textDocument, XMultiServiceFactory xMultiServiceFactory, XText xText) throws IllegalArgumentException {
     if(textDocument == null)
@@ -106,7 +106,7 @@ public class TextService implements ITextService {
    * 
    * @return text content service
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextContentService getTextContentService() {
     if(textContentService == null)
@@ -119,7 +119,7 @@ public class TextService implements ITextService {
    * 
    * @return cursor service
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextCursorService getCursorService() {
     if(cursorService == null) 
@@ -132,7 +132,7 @@ public class TextService implements ITextService {
    * 
    * @return bookmark service
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public IBookmarkService getBookmarkService() {
     if(bookmarkService == null) 
@@ -145,7 +145,7 @@ public class TextService implements ITextService {
    * 
    * @return annotation service
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.07.2006
    */
   public IAnnotationService getAnnotationService() {
@@ -159,7 +159,7 @@ public class TextService implements ITextService {
    * 
    * @return text
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public IText getText() {
     if(text == null)

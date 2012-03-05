@@ -46,7 +46,7 @@ import ag.ion.bion.officelayer.event.IEvent;
  * are discussed in Snippet04.
  * This listener is used in all Snippets starting from Snippet05.
  * 
- * @author Sebastian Ruesgen
+ * @author Sebastian Rösgen
  * @version $Revision: 10398 $
  * @date 17.03.2006
  */
@@ -58,7 +58,7 @@ public class SnippetDocumentCloseListener implements ICloseListener {
 	/**
 	 * Constructs a new SnippetDocumentCloseListener
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 * @date 17.03.2006
 	 */
 	public SnippetDocumentCloseListener(IOfficeApplication officeAplication) {
@@ -72,7 +72,7 @@ public class SnippetDocumentCloseListener implements ICloseListener {
    * @param closeEvent close event
    * @param getsOwnership information about the ownership
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
 	 * @date 17.03.2006
    */ 
 	public void queryClosing(ICloseEvent closeEvent, boolean getsOwnership) {
@@ -84,7 +84,7 @@ public class SnippetDocumentCloseListener implements ICloseListener {
    * 
    * @param closeEvent close event
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
 	 * @date 17.03.2006
    */
 	public void notifyClosing(ICloseEvent closeEvent) {
@@ -103,7 +103,7 @@ public class SnippetDocumentCloseListener implements ICloseListener {
    * 
    * @param event source event
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
 	 * @date 17.03.2006
    */
 	public void disposing(IEvent event) {

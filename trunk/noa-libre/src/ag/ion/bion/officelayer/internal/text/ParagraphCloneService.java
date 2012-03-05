@@ -61,8 +61,8 @@ import ag.ion.bion.officelayer.text.TextException;
 /**
  * Concrete implementation of the CloneService for paragraphs.
  * 
- * @author Sebastian Ruesgen
- * @author Markus Krueger
+ * @author Sebastian Rösgen
+ * @author Markus Krüger
  * @version $Revision: 11583 $
  */
 public class ParagraphCloneService extends AbstractCloneService {
@@ -81,7 +81,7 @@ public class ParagraphCloneService extends AbstractCloneService {
 	 * 
 	 * @throws CloneException if any error occurs
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public ParagraphCloneService (IParagraph paragraph, ITextDocument document) throws CloneException{
 		this.paragraph = paragraph;
@@ -121,7 +121,7 @@ public class ParagraphCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneToPositionNoReturn(IDestinationPosition position, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     clonePreprocessor(position, true, false,propertyKeysContainer);
@@ -141,7 +141,7 @@ public class ParagraphCloneService extends AbstractCloneService {
 	 * 
 	 * @throws CloneException if the object could not be cloned.
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public IClonedObject cloneToPosition(IDestinationPosition range, boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException {
 		return clonePreprocessor(range, adoptContent, true,propertyKeysContainer);
@@ -159,7 +159,7 @@ public class ParagraphCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneToPositionNoReturn(IDestinationPosition position , boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     clonePreprocessor(position, adoptContent, false,propertyKeysContainer);
@@ -177,7 +177,7 @@ public class ParagraphCloneService extends AbstractCloneService {
 	 * 
 	 * @throws CloneException if the object could not be cloned.
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	private IClonedObject clonePreprocessor(IDestinationPosition position, boolean adoptContent, boolean generateReturnValue, PropertyKeysContainer propertyKeysContainer) throws CloneException{
 		try {
@@ -258,7 +258,7 @@ public class ParagraphCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public IClonedObject cloneAfterThisPosition(IDestinationPosition position, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     return cloneToPosition(position, true,propertyKeysContainer);
@@ -281,7 +281,7 @@ public class ParagraphCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneAfterThisPositionNoReturn(IDestinationPosition position, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     cloneToPositionNoReturn(position, true,propertyKeysContainer);
@@ -309,7 +309,7 @@ public class ParagraphCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */  
   public IClonedObject cloneAfterThisPosition(IDestinationPosition position, boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     return cloneToPosition(position, adoptContent,propertyKeysContainer);
@@ -335,7 +335,7 @@ public class ParagraphCloneService extends AbstractCloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */  
   public void cloneAfterThisPositionNoReturn(IDestinationPosition position, boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     cloneToPositionNoReturn(position, adoptContent,propertyKeysContainer);

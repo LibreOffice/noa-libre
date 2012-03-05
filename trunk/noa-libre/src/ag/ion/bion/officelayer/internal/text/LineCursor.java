@@ -45,7 +45,7 @@ import com.sun.star.view.XLineCursor;
 /**
  * Line cursor of a text document.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public class LineCursor implements ILineCursor {
@@ -61,7 +61,7 @@ public class LineCursor implements ILineCursor {
    * @throws IllegalArgumentException if the submitted OpenOffice.org XLineCursor 
    * interface is not valid
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public LineCursor(XLineCursor xLineCursor) throws IllegalArgumentException {
     if (xLineCursor == null)
@@ -73,7 +73,7 @@ public class LineCursor implements ILineCursor {
   /**
    * Determines if the cursor is positioned at the start of a line. 
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 06.04.2009
    */
   public boolean isAtStartOfLine() {
@@ -84,7 +84,7 @@ public class LineCursor implements ILineCursor {
   /**
    * Determines if the cursor is positioned at the end of a line. 
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 06.04.2009
    */
   public boolean isAtEndOfLine() {
@@ -98,7 +98,7 @@ public class LineCursor implements ILineCursor {
    * @param mark indicates if the space between the current position and the end 
    * is to be marked
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 06.04.2009
    */
   public void gotoStartOfLine(boolean mark) {
@@ -112,7 +112,7 @@ public class LineCursor implements ILineCursor {
    * @param mark indicates if the space between the current position and the end 
    * is to be marked
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 06.04.2009
    */
   public void gotoEndOfLine(boolean mark) {

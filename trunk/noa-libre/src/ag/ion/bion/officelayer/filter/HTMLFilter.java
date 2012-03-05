@@ -44,7 +44,7 @@ import ag.ion.noa.filter.AbstractFilter;
 /**
  * Contains information in order to export an OpenOffice.org document to HTML.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 11619 $
  */
 public class HTMLFilter extends AbstractFilter implements IFilter {
@@ -64,7 +64,7 @@ public class HTMLFilter extends AbstractFilter implements IFilter {
    * @return definition of the filter or null if the filter
    * is not available for the submitted document type
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.03.2008
    */
   public String getFilterDefinition(String documentType) {
@@ -93,7 +93,7 @@ public class HTMLFilter extends AbstractFilter implements IFilter {
    * 
    * @return file extension of the filter
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 03.04.2007
    */
   public String getFileExtension(String documentType) {
@@ -122,7 +122,7 @@ public class HTMLFilter extends AbstractFilter implements IFilter {
    * 
    * @return name of the filter
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.03.2008
    */
   public String getName(String documentType) {

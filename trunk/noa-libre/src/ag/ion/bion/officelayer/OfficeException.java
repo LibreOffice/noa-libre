@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer;
 /**
  * Exception for the Office API.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public class OfficeException extends Exception {
@@ -52,7 +52,7 @@ public class OfficeException extends Exception {
   /**
    * Constructs new OfficeException.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public OfficeException() {
    super(); 
@@ -63,7 +63,7 @@ public class OfficeException extends Exception {
    * 
    * @param message exception message
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public OfficeException(String message) {
    super(message == null ? DEFAULT_EXCEPTION_MESSAGE : message); 
@@ -74,7 +74,7 @@ public class OfficeException extends Exception {
    * 
    * @param exception exception to be used
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public OfficeException(Exception exception) {
     super(exception.getMessage() == null ? DEFAULT_EXCEPTION_MESSAGE : exception.getMessage());
@@ -87,7 +87,7 @@ public class OfficeException extends Exception {
    * @param message message to be used
    * @param exception exception to be used
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public OfficeException(String message, Exception exception) {
     super(message == null ? DEFAULT_EXCEPTION_MESSAGE : message);

@@ -39,7 +39,7 @@ package ag.ion.noa.view;
 /**
  * Selection within a view a model.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  * @date 09.07.2006
  */ 
@@ -51,7 +51,7 @@ public interface ISelection {
 	 * 
 	 * @return information whether the selection is empty
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public boolean isEmpty();

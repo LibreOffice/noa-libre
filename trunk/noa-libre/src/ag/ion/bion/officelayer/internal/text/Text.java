@@ -49,7 +49,7 @@ import com.sun.star.text.XText;
 /**
  * Text of a text document.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 11550 $
  */
 public class Text implements IText {
@@ -68,8 +68,8 @@ public class Text implements IText {
    * @throws IllegalArgumentException if the submitted text document or OpenOffice.org XText 
    * interface is not valid
    * 
-   * @author Andreas Brueker
-   * @author Sebastian Ruesgen
+   * @author Andreas Bröker
+   * @author Sebastian Rösgen
    */
   public Text(ITextDocument textDocument, XText xText) throws IllegalArgumentException {
     if(textDocument == null)
@@ -86,7 +86,7 @@ public class Text implements IText {
    * 
    * @return XText interface
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 19.09.2006
    */
   public XText getXText() {
@@ -98,7 +98,7 @@ public class Text implements IText {
    * 
    * @return text content
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public String getText() {
     return xText.getString();
@@ -111,9 +111,9 @@ public class Text implements IText {
    * 
    * @throws TextException if the content enumeration is not available
    * 
-   * @author Andreas Brueker
-   * @author Sebastian Ruesgen
-   * @author Markus Krueger
+   * @author Andreas Bröker
+   * @author Sebastian Rösgen
+   * @author Markus Krüger
    */
   public ITextContentEnumeration getTextContentEnumeration() throws TextException {
     try {
@@ -151,7 +151,7 @@ public class Text implements IText {
    * 
    * @param text text to be set
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void setText(String text) {
     xText.setString(text);

@@ -41,8 +41,8 @@ package ag.ion.bion.officelayer.text;
 /**
  * Textfield service of a text document.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 11573 $
  */
 public interface ITextFieldService {
@@ -72,7 +72,7 @@ public interface ITextFieldService {
    * 
    * @throws TextException if the user textfield can not be provided
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextFieldMaster getUserTextFieldMaster(String name) throws TextException;
   //----------------------------------------------------------------------------
@@ -85,7 +85,7 @@ public interface ITextFieldService {
    * 
    * @throws TextException if the masters of the user textfields can not be constructed
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextFieldMaster[] getUserTextFieldMasters(String prefix) throws TextException;
   //----------------------------------------------------------------------------
@@ -99,7 +99,7 @@ public interface ITextFieldService {
    * 
    * @throws TextException if the masters of the user textfields can not be constructed
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public ITextFieldMaster[] getUserTextFieldMasters(String prefix, String suffix) throws TextException;
   //----------------------------------------------------------------------------
@@ -113,7 +113,7 @@ public interface ITextFieldService {
    * 
    * @throws TextException if any error occurs during textfield creation
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextField addUserTextField(String name, String content) throws TextException;
   //---------------------------------------------------------------------------- 
@@ -124,7 +124,7 @@ public interface ITextFieldService {
    * 
    * @throws TextException if the user textfields can not be constructed
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextField[] getUserTextFields() throws TextException;
   //----------------------------------------------------------------------------  
@@ -135,7 +135,7 @@ public interface ITextFieldService {
    * 
    * @throws TextException if the placeholder textfields can not be constructed
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 23.01.2007
    */
   public ITextField[] getPlaceholderFields() throws TextException;
@@ -152,7 +152,7 @@ public interface ITextFieldService {
    * 
    * @throws TextException if any error occurs during placeholder textfield creation
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 30.05.2007
    */
   public ITextField createPlaceholderTextField(String name, String hint, short placeholderType) throws TextException;
@@ -166,7 +166,7 @@ public interface ITextFieldService {
    * 
    * @throws TextException if the master can not be returned
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 30.05.2007
    */
   public IVariableTextFieldMaster getVariableTextFieldMaster(String masterName) throws TextException;
@@ -180,7 +180,7 @@ public interface ITextFieldService {
    * 
    * @throws TextException if the masters can not be returned
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 30.05.2007
    */
   public IVariableTextFieldMaster[] getVariableTextFieldMasters(String prefix) throws TextException;
@@ -198,7 +198,7 @@ public interface ITextFieldService {
    * 
    * @throws TextException if any error occurs during variable textfield master creation
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 30.05.2007
    */
   public IVariableTextFieldMaster createVariableTextFieldMaster(String name, short variableType) throws TextException;
@@ -212,7 +212,7 @@ public interface ITextFieldService {
    * 
    * @throws TextException if the variable textfields can not be constructed
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 29.05.2007
    */
   public ITextField[] getVariableFields(String prefix) throws TextException;
@@ -222,7 +222,7 @@ public interface ITextFieldService {
    * 
    * @throws TextException if refresh fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 29.05.2007
    */
   public void refresh() throws TextException;

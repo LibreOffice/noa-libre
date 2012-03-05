@@ -58,7 +58,7 @@ import java.util.HashMap;
  * This code snippet shows how it is possible to search
  * within a text document.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  * @date 16.07.2006
  */

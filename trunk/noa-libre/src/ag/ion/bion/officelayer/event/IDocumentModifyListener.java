@@ -58,7 +58,7 @@ package ag.ion.bion.officelayer.event;
  * hitting save ... and so forth.
  * </p>
  * 
- * @author Sebastian Ruesgen
+ * @author Sebastian Rösgen
  * @version $Revision: 10398 $
  */
 public interface IDocumentModifyListener extends IEventListener {
@@ -71,7 +71,7 @@ public interface IDocumentModifyListener extends IEventListener {
    *
    * @param eventObject the object containing the fired event
    *
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public void reactOnUnspecificEvent(IEvent eventObject);
   // -------------------------------------------------------------

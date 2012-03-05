@@ -43,7 +43,7 @@ import ag.ion.noa.graphic.GraphicInfo;
 /**
  * Image of a text document.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public interface ITextDocumentImage extends ITextContent {
@@ -54,7 +54,7 @@ public interface ITextDocumentImage extends ITextContent {
    * 
    * @return graphic information of the image
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 09.07.2007
    */
   public GraphicInfo getGraphicInfo();
@@ -65,7 +65,7 @@ public interface ITextDocumentImage extends ITextContent {
    * 
    * @return the name of the image
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 02.11.2009
    */
   public String getName();
@@ -76,7 +76,7 @@ public interface ITextDocumentImage extends ITextContent {
    * 
    * @param name the name of the image
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 02.11.2009
    */
   public void setName(String name);

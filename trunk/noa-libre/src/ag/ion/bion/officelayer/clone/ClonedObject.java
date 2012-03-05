@@ -44,7 +44,7 @@ package ag.ion.bion.officelayer.clone;
  * serves as store for cloned objects. hcih are used in several instances
  * of the cloneservice as return type.
  * 
- * @author Sebastian Ruesgen
+ * @author Sebastian Rösgen
  * 
  * @version $Revision: 10398 $
  */
@@ -71,7 +71,7 @@ public class ClonedObject implements IClonedObject {
 	 * 
 	 * @return the object stored.
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public Object getClonedObject() {
 		return storedObject;
@@ -83,7 +83,7 @@ public class ClonedObject implements IClonedObject {
 	 * 
 	 * @return the original class of the stored object
 	 * 
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 */
 	public Class getCloneClassType() {
 		return clazz;

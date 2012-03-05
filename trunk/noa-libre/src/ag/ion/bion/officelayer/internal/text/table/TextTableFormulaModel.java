@@ -44,8 +44,8 @@ import java.util.List;
 /**
  * A (really) simple model of a formula which was placed into a text table.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public class TextTableFormulaModel {
@@ -67,7 +67,7 @@ public class TextTableFormulaModel {
    * 
    * @throws IllegalArgumentException if the submitted formula expression is not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public TextTableFormulaModel(TextTableFormulaExpression textTableFormulaExpression) throws IllegalArgumentException {
     if(textTableFormulaExpression == null)
@@ -80,7 +80,7 @@ public class TextTableFormulaModel {
   /**
    * Inits all variables.
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   private void init() {
     formulaElements = new ArrayList();
@@ -92,7 +92,7 @@ public class TextTableFormulaModel {
    * 
    * @return text table cell references
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public TextTableCellReference[] getCellReferences() {
     TextTableCellReference[] cellReference = new TextTableCellReference[cellReferences.size()];
@@ -105,7 +105,7 @@ public class TextTableFormulaModel {
    * 
    * @return formula expression
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public String getExpression() {
     StringBuffer stringBuffer = new StringBuffer();
@@ -118,7 +118,7 @@ public class TextTableFormulaModel {
   /**
    * Parses the formula expression in order to create the model. 
    *
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   private void parse() {
     char formulaChars[] = formulaExpression.toCharArray();
@@ -160,7 +160,7 @@ public class TextTableFormulaModel {
    * @param textTableCellReferences the new cell references
    * 
    * @author Miriam Sutter
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void replaceCellReference(TextTableCellReference textTableCellReference,TextTableCellReference[] textTableCellReferences) {
   	if(formulaElementsOrig == null) {
@@ -210,7 +210,7 @@ public class TextTableFormulaModel {
   /**
    * Reverts the model to the state before replacing cell references.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void revertToOriginal() {
     if(formulaElementsOrig != null) {

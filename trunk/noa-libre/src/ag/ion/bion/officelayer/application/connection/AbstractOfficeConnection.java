@@ -52,7 +52,7 @@ import com.sun.star.uno.UnoRuntime;
  * Abstract connection in order to communicate with an OpenOffice.org 
  * application.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public abstract class AbstractOfficeConnection implements IOfficeConnection {
@@ -103,7 +103,7 @@ public abstract class AbstractOfficeConnection implements IOfficeConnection {
    * 
    * @param eventListener new event listener
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void addBridgeEventListener(IEventListener eventListener) {
   	if(xBridge != null) {  		

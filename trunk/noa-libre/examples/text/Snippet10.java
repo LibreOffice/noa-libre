@@ -49,7 +49,7 @@ import java.util.HashMap;
 /**
  * In this snippet we will open an already existing document.
  * 
- * @author Sebastian Ruesgen
+ * @author Sebastian Rösgen
  * @version $Revision: 10398 $
  * @date 17.03.2006
  */

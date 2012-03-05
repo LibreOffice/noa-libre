@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.presentation;
 /**
  * Exception for presentation parts of the Office API.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public class PresentationException extends Exception {
@@ -52,7 +52,7 @@ public class PresentationException extends Exception {
   /**
    * Constructs new TextException.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 07.01.2008
    */
   public PresentationException() {
@@ -64,7 +64,7 @@ public class PresentationException extends Exception {
    * 
    * @param message exception message
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 07.01.2008
    */
   public PresentationException(String message) {
@@ -76,7 +76,7 @@ public class PresentationException extends Exception {
    * 
    * @param exception exception to be used
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 07.01.2008
    */
   public PresentationException(Exception exception) {
@@ -90,7 +90,7 @@ public class PresentationException extends Exception {
    * @param message message to be used
    * @param exception exception to be used
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 07.01.2008
    */
   public PresentationException(String message, Exception exception) {

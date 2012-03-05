@@ -60,7 +60,7 @@ import java.util.List;
 /**
  * Result of a search.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 11615 $
  * @date 09.07.2006
  */ 
@@ -76,7 +76,7 @@ public class SearchResult implements ISearchResult {
 	 * 
    * @param document the document it is used in
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public SearchResult(IDocument document) {
@@ -90,7 +90,7 @@ public class SearchResult implements ISearchResult {
    * @param document the document it is used in
 	 * @param xIndexAccess OpenOffice.org XIndexAccess interface
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public SearchResult(IDocument document,XIndexAccess xIndexAccess) {
@@ -105,7 +105,7 @@ public class SearchResult implements ISearchResult {
    * @param document the document it is used in
 	 * @param xInterface OpenOffice.org XInterface interface
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public SearchResult(IDocument document,XInterface xInterface) {
@@ -119,7 +119,7 @@ public class SearchResult implements ISearchResult {
 	 * 
 	 * @return information whether the search result is empty
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public boolean isEmpty() {
@@ -138,7 +138,7 @@ public class SearchResult implements ISearchResult {
 	 * 
 	 * @return text ranges of the search resul
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public ITextRange[] getTextRanges() {

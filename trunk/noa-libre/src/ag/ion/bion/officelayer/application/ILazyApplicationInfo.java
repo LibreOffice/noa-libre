@@ -41,8 +41,8 @@ package ag.ion.bion.officelayer.application;
 /**
  * Lazy information provider of an office application.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 11681 $
  */
 public interface ILazyApplicationInfo {
@@ -56,7 +56,7 @@ public interface ILazyApplicationInfo {
    * 
    * @return home of the office application
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public String getHome();
 
@@ -69,7 +69,7 @@ public interface ILazyApplicationInfo {
    * @return properties of the office application or null
    * if the properties are not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public IApplicationProperties getProperties();
 
@@ -81,7 +81,7 @@ public interface ILazyApplicationInfo {
    * @return major version of the office application or <code>-1</code>
    * if the major version is not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public int getMajorVersion();
 
@@ -93,7 +93,7 @@ public interface ILazyApplicationInfo {
    * @return minor version of the office application or <code>-1</code>
    * if the minor version is not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public int getMinorVersion();
 
@@ -105,7 +105,7 @@ public interface ILazyApplicationInfo {
    * @return update version of the office application or <code>-1</code>
    * if the update version is not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public int getUpdateVersion();
   //----------------------------------------------------------------------------  

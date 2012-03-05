@@ -45,7 +45,7 @@ import com.sun.star.text.XDocumentIndex;
 /**
  * Index of a document.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 11503 $
  * @date 17.08.2006
  */ 
@@ -61,7 +61,7 @@ public class DocumentIndex implements IDocumentIndex {
    * 
    * @param documentIndex XDocumentIndex interface to be used
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 17.08.2006
    */
   public DocumentIndex(XDocumentIndex documentIndex) {
@@ -81,7 +81,7 @@ public class DocumentIndex implements IDocumentIndex {
    * @see TABLE_INDEX
    * @see BIBLIOGRAPHICAL_INDEX
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 17.08.2006
    */
   public String getType() {
@@ -93,7 +93,7 @@ public class DocumentIndex implements IDocumentIndex {
   /**
    * Updates the document index. 
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 17.08.2006
    */
   public void update() {

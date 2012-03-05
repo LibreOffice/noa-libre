@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.presentation;
 /**
  * Page service of a presentation document.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public interface IPageService {
@@ -52,7 +52,7 @@ public interface IPageService {
    * 
    * @return number of available pages
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 07.01.2008
    */
   public int getPageCount();
@@ -64,7 +64,7 @@ public interface IPageService {
    * 
    * @throws PresentationException if the page is not available
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 07.01.2008
    */
   public void goToPage(int index) throws PresentationException;

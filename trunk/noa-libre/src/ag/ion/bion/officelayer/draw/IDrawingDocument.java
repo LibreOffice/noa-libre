@@ -45,7 +45,7 @@ import ag.ion.bion.officelayer.document.IDocument;
 /**
  * OpenOffice.org draw document representation.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public interface IDrawingDocument extends IDocument {
@@ -56,7 +56,7 @@ public interface IDrawingDocument extends IDocument {
    * 
    * @return OpenOffice.org XDrawPagesSupplier interface
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public XDrawPagesSupplier getDrawPagesSupplier();
   //----------------------------------------------------------------------------

@@ -43,7 +43,7 @@ import ag.ion.bion.officelayer.beans.IPropertyKey;
 /**
  * A key for a property.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public class PropertyKey implements IPropertyKey {
@@ -62,7 +62,7 @@ public class PropertyKey implements IPropertyKey {
    * 
    * @throws IllegalArgumentException if the key is not valid
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public PropertyKey(String key, String text, String description) throws IllegalArgumentException {
     if(key == null)
@@ -77,7 +77,7 @@ public class PropertyKey implements IPropertyKey {
    * 
    * @return the key used with open office
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public String getKey() {
     return key;
@@ -88,7 +88,7 @@ public class PropertyKey implements IPropertyKey {
    * 
    * @return the text used for this key
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public String getText() {
     if(text == null)
@@ -101,7 +101,7 @@ public class PropertyKey implements IPropertyKey {
    * 
    * @return the description used for this key
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public String getDescription() {
     if(description == null) {

@@ -47,7 +47,7 @@ import com.sun.star.lang.XEventListener;
  * A wrapper to contain the listener structure which will be fired 
  * whenever changed (remvoes) of elements will occur. 
  * 
- * @author Sebastian Ruesgen
+ * @author Sebastian Rösgen
  */
 public class ElementDisposeListenerWrapper implements XEventListener  {
 
@@ -59,7 +59,7 @@ public class ElementDisposeListenerWrapper implements XEventListener  {
    * 
    * @param elementListener the element listener to be wrapped in here
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public ElementDisposeListenerWrapper(IElementDisposedListener elementListener) {
     this.elementListener = elementListener;

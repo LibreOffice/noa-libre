@@ -49,7 +49,7 @@ import java.net.URL;
 /**
  * Persistence service for office documents.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public interface IPersistenceService {
@@ -70,7 +70,7 @@ public interface IPersistenceService {
    * 
    * @return location URL of the document
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public URL getLocation();
   //----------------------------------------------------------------------------
@@ -81,7 +81,7 @@ public interface IPersistenceService {
    * @return informations whether the doccument is in read only state 
    * or not
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public boolean isReadOnly();
   //----------------------------------------------------------------------------
@@ -90,7 +90,7 @@ public interface IPersistenceService {
    * 
    * @throws DocumentException if the document can not be stored or no location URL is available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void store() throws DocumentException;
   //----------------------------------------------------------------------------
@@ -101,7 +101,7 @@ public interface IPersistenceService {
    * 
    * @throws DocumentException if the document can not be stored
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void store(String url) throws DocumentException;
   //----------------------------------------------------------------------------
@@ -135,7 +135,7 @@ public interface IPersistenceService {
    * 
    * @throws DocumentException if the document can not be exported
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void export(String url, IFilter filter) throws DocumentException;
   //----------------------------------------------------------------------------
@@ -147,7 +147,7 @@ public interface IPersistenceService {
    * 
    * @throws NOAException if the document can not be exported
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 25.08.2006
    */
   public void export(OutputStream outputStream, IFilter filter) throws NOAException;

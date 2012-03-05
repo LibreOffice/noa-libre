@@ -46,7 +46,7 @@ import ag.ion.bion.officelayer.clone.IDestinationPosition;
 /**
  * Abstract clone service.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public abstract class AbstractCloneService implements ICloneService {
@@ -60,7 +60,7 @@ public abstract class AbstractCloneService implements ICloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneToPositions(IDestinationPosition[] positions, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     for(int i = 0; i < positions.length; i++)
@@ -79,7 +79,7 @@ public abstract class AbstractCloneService implements ICloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneToPositions(IDestinationPosition[] positions, boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     for(int i = 0; i < positions.length; i++)
@@ -103,7 +103,7 @@ public abstract class AbstractCloneService implements ICloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneAfterThisPositions(IDestinationPosition[] positions, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     for(int i = 0; i < positions.length; i++)
@@ -130,7 +130,7 @@ public abstract class AbstractCloneService implements ICloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneAfterThisPositions(IDestinationPosition[] positions, boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException {
     for(int i = 0; i < positions.length; i++)

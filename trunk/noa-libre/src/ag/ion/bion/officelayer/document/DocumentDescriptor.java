@@ -44,8 +44,8 @@ import com.sun.star.document.MacroExecMode;
  * Descriptor of a document. A document descriptor can be used
  * in order control the load or store process of a document.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 11722 $
  */
 public class DocumentDescriptor implements IDocumentDescriptor {
@@ -74,7 +74,7 @@ public class DocumentDescriptor implements IDocumentDescriptor {
   /**
    * Constructs new DocumentDescriptor.
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 09.07.2006
    */
   public DocumentDescriptor() {
@@ -86,7 +86,7 @@ public class DocumentDescriptor implements IDocumentDescriptor {
    * 
    * @param hidden information whether the document is hidden
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 09.07.2006
    */
   public DocumentDescriptor(boolean hidden) {
@@ -99,7 +99,7 @@ public class DocumentDescriptor implements IDocumentDescriptor {
    * 
    * @param hidden information whether the document is hidden
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setHidden(boolean hidden) {
     this.hidden = hidden;
@@ -111,7 +111,7 @@ public class DocumentDescriptor implements IDocumentDescriptor {
    * 
    * @return information whether the document is hidden
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public boolean getHidden() {
     return hidden;
@@ -123,7 +123,7 @@ public class DocumentDescriptor implements IDocumentDescriptor {
    * 
    * @param asTemplate information whether the document is a template
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setAsTemplate(boolean asTemplate) {
     this.asTemplate = asTemplate;
@@ -136,7 +136,7 @@ public class DocumentDescriptor implements IDocumentDescriptor {
    * 
    * @return information whether the document is a template
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public boolean getAsTemplate() {
     return asTemplate;
@@ -149,7 +149,7 @@ public class DocumentDescriptor implements IDocumentDescriptor {
    * 
    * @param readOnly information whether the document should be opened read only
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 13.06.2006
    */
   public void setReadOnly(boolean readOnly) {
@@ -163,7 +163,7 @@ public class DocumentDescriptor implements IDocumentDescriptor {
    * 
    * @return information whether the document should be opened read only
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 13.06.2006
    */
   public boolean getReadOnly() {
@@ -177,7 +177,7 @@ public class DocumentDescriptor implements IDocumentDescriptor {
    * 
    * @param asPreview information whether the document should be opened as preview
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 13.06.2006
    */
   public void setAsPreview(boolean asPreview) {
@@ -191,7 +191,7 @@ public class DocumentDescriptor implements IDocumentDescriptor {
    * 
    * @return information whether the document should be opened as preview
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 13.06.2006
    */
   public boolean getAsPreview() {
@@ -204,7 +204,7 @@ public class DocumentDescriptor implements IDocumentDescriptor {
    * 
    * @param author the author of the document to be set
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 24.08.2006
    */
   public void setAuthor(String author) {
@@ -217,7 +217,7 @@ public class DocumentDescriptor implements IDocumentDescriptor {
    * 
    * @return the author of the document
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 24.08.2006
    */
   public String getAuthor() {
@@ -230,7 +230,7 @@ public class DocumentDescriptor implements IDocumentDescriptor {
    * 
    * @param comment the comment of the document to be set
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 24.08.2006
    */
   public void setComment(String comment) {
@@ -243,7 +243,7 @@ public class DocumentDescriptor implements IDocumentDescriptor {
    * 
    * @return the comment of the document
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 24.08.2006
    */
   public String getComment() {
@@ -256,7 +256,7 @@ public class DocumentDescriptor implements IDocumentDescriptor {
    * 
    * @param title the title of the document to be set
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 24.08.2006
    */
   public void setTitle(String title) {
@@ -269,7 +269,7 @@ public class DocumentDescriptor implements IDocumentDescriptor {
    * 
    * @return the title of the document
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 24.08.2006
    */
   public String getTitle() {
@@ -282,7 +282,7 @@ public class DocumentDescriptor implements IDocumentDescriptor {
    * 
    * @param baseURL the base URL of the document to be set
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 24.08.2006
    */
   public void setBaseURL(String baseURL) {
@@ -295,7 +295,7 @@ public class DocumentDescriptor implements IDocumentDescriptor {
    * 
    * @return the base URL of the document
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 24.08.2006
    */
   public String getBaseURL() {
@@ -309,7 +309,7 @@ public class DocumentDescriptor implements IDocumentDescriptor {
    * 
    * @param URL the URL of the document to be set
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 24.08.2006
    */
   public void setURL(String URL) {
@@ -323,7 +323,7 @@ public class DocumentDescriptor implements IDocumentDescriptor {
    * 
    * @return the URL of the document
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 24.08.2006
    */
   public String getURL() {
@@ -337,7 +337,7 @@ public class DocumentDescriptor implements IDocumentDescriptor {
    * 
    * @param filterDefinition the filter definition of the document to be set
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.03.2008
    */
   public void setFilterDefinition(String filterDefinition) {
@@ -351,7 +351,7 @@ public class DocumentDescriptor implements IDocumentDescriptor {
    * 
    * @return the filter definition of the document
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.03.2008
    */
   public String getFilterDefinition() {
@@ -364,7 +364,7 @@ public class DocumentDescriptor implements IDocumentDescriptor {
    * 
    * @param mode the macro execution mode of class com.sun.star.document.MacroExecMode
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.03.2010
    */
   public void setMacroExecutionMode(short mode) {
@@ -377,7 +377,7 @@ public class DocumentDescriptor implements IDocumentDescriptor {
    * 
    * @return the macro execution mode
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.03.2010
    */
   public short getMacroExecutionMode() {

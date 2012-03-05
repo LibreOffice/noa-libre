@@ -39,7 +39,7 @@ package ag.ion.noa.search;
 /**
  * Descriptor of a search.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  * @date 09.07.2006
  */ 
@@ -51,7 +51,7 @@ public interface ISearchDescriptor {
 	 * 
 	 * @return search content to be looked for
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public String getSearchContent();
@@ -63,7 +63,7 @@ public interface ISearchDescriptor {
 	 * @return information whether the search content
 	 * should be interpreted as regular expression
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public boolean useRegularExpression();
@@ -75,7 +75,7 @@ public interface ISearchDescriptor {
 	 * @return information whether the search content
 	 * is case sensitive
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public boolean isCaseSensitive();
@@ -87,7 +87,7 @@ public interface ISearchDescriptor {
 	 * @return information whether only complete words
 	 * should be searched
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public boolean useCompleteWords();
@@ -99,7 +99,7 @@ public interface ISearchDescriptor {
 	 * @return information whether a similarity search 
 	 * should be done
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 13.07.2006
 	 */
 	public boolean useSimilaritySearch();	

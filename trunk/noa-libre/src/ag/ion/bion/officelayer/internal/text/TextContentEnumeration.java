@@ -64,7 +64,7 @@ import java.util.ArrayList;
 /**
  * Enumeration over all text content parts.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 11551 $
  */
 public class TextContentEnumeration implements ITextContentEnumeration {
@@ -83,8 +83,8 @@ public class TextContentEnumeration implements ITextContentEnumeration {
    * @throws IllegalArgumentException IllegalArgumentException IllegalArgumentException if the OpenOffice.org interface 
    * is not valid
    * 
-   * @author Andreas Brueker
-   * @author Sebastian Ruesgen
+   * @author Andreas Bröker
+   * @author Sebastian Rösgen
    */
   public TextContentEnumeration(ITextDocument textDocument, XTextRange xTextRange) throws IllegalArgumentException {
     if(textDocument == null)
@@ -102,7 +102,7 @@ public class TextContentEnumeration implements ITextContentEnumeration {
    * 
    * @return all available text fields
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextField[] getTextFields() {
     ArrayList arrayList = new ArrayList();    
@@ -133,7 +133,7 @@ public class TextContentEnumeration implements ITextContentEnumeration {
    * @return all available paragraphs
    * 
    * @author Miriam Sutter
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public IParagraph[] getParagraphs() {
   	ArrayList arrayList = new ArrayList();

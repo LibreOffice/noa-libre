@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.text;
 /**
  * Line cursor of a text document.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public interface ILineCursor {
@@ -50,7 +50,7 @@ public interface ILineCursor {
   /**
    * Determines if the cursor is positioned at the start of a line. 
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 06.04.2009
    */
   public boolean isAtStartOfLine();
@@ -59,7 +59,7 @@ public interface ILineCursor {
   /**
    * Determines if the cursor is positioned at the end of a line. 
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 06.04.2009
    */
   public boolean isAtEndOfLine();
@@ -71,7 +71,7 @@ public interface ILineCursor {
    * @param mark indicates if the space between the current position and the end 
    * is to be marked
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 06.04.2009
    */
   public void gotoStartOfLine(boolean mark);
@@ -83,7 +83,7 @@ public interface ILineCursor {
    * @param mark indicates if the space between the current position and the end 
    * is to be marked
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 06.04.2009
    */
   public void gotoEndOfLine(boolean mark);

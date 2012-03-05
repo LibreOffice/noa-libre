@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.text;
 /**
  * Page service of a text document.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public interface IPageService {
@@ -52,7 +52,7 @@ public interface IPageService {
    * 
    * @return number of available pages
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public int getPageCount();
   //----------------------------------------------------------------------------
@@ -65,7 +65,7 @@ public interface IPageService {
    * 
    * @throws TextException if the page is not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public IPage getPage(int index) throws TextException;
   //----------------------------------------------------------------------------

@@ -41,7 +41,7 @@ import ag.ion.bion.officelayer.util.Assert;
 /**
  * Descriptor of a search.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 11606 $
  * @date 09.07.2006
  */ 
@@ -60,7 +60,7 @@ public class SearchDescriptor implements ISearchDescriptor {
 	 * 
 	 * @param searchContent search content to be used
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public SearchDescriptor(String searchContent) {
@@ -73,7 +73,7 @@ public class SearchDescriptor implements ISearchDescriptor {
 	 * 
 	 * @return search content to be looked for
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public String getSearchContent() {
@@ -87,7 +87,7 @@ public class SearchDescriptor implements ISearchDescriptor {
 	 * @return information whether the search content
 	 * is case sensitive
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public boolean useRegularExpression() {
@@ -101,7 +101,7 @@ public class SearchDescriptor implements ISearchDescriptor {
 	 * @param useRegularExpression information whether the search content
 	 * is case sensitive
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public void setUseRegularExpression(boolean useRegularExpression) {
@@ -115,7 +115,7 @@ public class SearchDescriptor implements ISearchDescriptor {
 	 * @return information whether the search content
 	 * is case sensitive
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public boolean isCaseSensitive() {
@@ -129,7 +129,7 @@ public class SearchDescriptor implements ISearchDescriptor {
 	 * @param isCaseSensitive information whether the search content
 	 * is case sensitive
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public void setIsCaseSensitive(boolean isCaseSensitive) {
@@ -143,7 +143,7 @@ public class SearchDescriptor implements ISearchDescriptor {
 	 * @return information whether only complete words
 	 * should be searched
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public boolean useCompleteWords() {
@@ -157,7 +157,7 @@ public class SearchDescriptor implements ISearchDescriptor {
 	 * @param useCompleteWords information whether only complete words
 	 * should be searched
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 09.07.2006
 	 */
 	public void setUseCompleteWords(boolean useCompleteWords) {
@@ -171,7 +171,7 @@ public class SearchDescriptor implements ISearchDescriptor {
 	 * @return information whether a similarity search 
 	 * should be done
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 13.07.2006
 	 */
 	public boolean useSimilaritySearch() {
@@ -185,7 +185,7 @@ public class SearchDescriptor implements ISearchDescriptor {
 	 * @param useSimilaritySearch information whether a similarity search 
 	 * should be done
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 13.07.2006
 	 */
 	public void setUseSimilaritySearch(boolean useSimilaritySearch) {

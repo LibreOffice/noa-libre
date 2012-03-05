@@ -47,7 +47,7 @@ import com.sun.star.text.XTextDocument;
  * OpenOffice.org web document.
  * 
  * @author Thomas Renken
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */ 
 public interface IWebDocument extends IDocument{
@@ -59,7 +59,7 @@ public interface IWebDocument extends IDocument{
    * @return OpenOffice.org XTextDocument interface
    * 
    * @author Thomas Renken
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
 	 public XTextDocument getWebDocument(); 
   //----------------------------------------------------------------------------

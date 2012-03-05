@@ -45,7 +45,7 @@ import com.sun.star.lang.EventObject;
 /**
  * Terminate event.
  * 
- * @author Andreas Brueker 
+ * @author Andreas Bröker 
  * @version $Revision: 10398 $
  */
 public class TerminateEvent extends Event implements ITerminateEvent {
@@ -60,7 +60,7 @@ public class TerminateEvent extends Event implements ITerminateEvent {
    * 
    * @throws IllegalArgumentException if the submitted OpenOffice.org EventObject
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public TerminateEvent(EventObject eventOject) throws IllegalArgumentException {
     super(eventOject);    
@@ -71,7 +71,7 @@ public class TerminateEvent extends Event implements ITerminateEvent {
    * 
    * @param veto veto information
    * 
-   * @author Andreas Brueker 
+   * @author Andreas Bröker 
    */
   public void setVeto(boolean veto) {
     this.veto = veto;
@@ -82,7 +82,7 @@ public class TerminateEvent extends Event implements ITerminateEvent {
    * 
    * @return information whether the terminate event should be stopped
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public boolean getVeto() {
     return veto;

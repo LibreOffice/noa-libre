@@ -70,7 +70,7 @@ public class CloneException extends Exception {
    * 
    * @param exception exception to be used
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public CloneException(Exception exception) {
     super(exception.getMessage() == null ? DEFAULT_EXCEPTION_MESSAGE : exception.getMessage());
@@ -83,7 +83,7 @@ public class CloneException extends Exception {
    * @param message message to be used
    * @param exception exception to be used
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public CloneException(String message, Exception exception) {
     super(message == null ? DEFAULT_EXCEPTION_MESSAGE : message);

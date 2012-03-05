@@ -51,7 +51,7 @@ import com.sun.star.view.XPrintable;
 /**
  * Service for printing documents.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */ 
 public class PrintService implements IPrintService {
@@ -64,7 +64,7 @@ public class PrintService implements IPrintService {
 	 * 
 	 * @param document the document using this print service
 	 * 
-	 * @author Markus Krueger
+	 * @author Markus Krüger
    * @date 16.08.2007
 	 */
 	public PrintService(IDocument document) {
@@ -78,7 +78,7 @@ public class PrintService implements IPrintService {
    * 
    * @throws DocumentException if printing fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 16.08.2007
    */
   public void print() throws DocumentException {
@@ -92,7 +92,7 @@ public class PrintService implements IPrintService {
    * 
    * @throws DocumentException if printing fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 16.08.2007
    */
   public void print(IPrintProperties printProperties) throws DocumentException {
@@ -129,7 +129,7 @@ public class PrintService implements IPrintService {
    * 
    * @throws NOAException if the busy state could not be retrieved
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 16.08.2007
    */
   public boolean isActivePrinterBusy() throws NOAException {
@@ -155,7 +155,7 @@ public class PrintService implements IPrintService {
    * 
    * @throws NOAException if printer could not be retrieved
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 16.08.2007
    */
   public IPrinter getActivePrinter() throws NOAException {
@@ -181,7 +181,7 @@ public class PrintService implements IPrintService {
    * 
    * @throws NOAException if printer could not be set
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 16.08.2007
    */
   public void setActivePrinter(IPrinter printer) throws NOAException {
@@ -209,7 +209,7 @@ public class PrintService implements IPrintService {
    * 
    * @throws NOAException if printer could not be constructed
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 16.08.2007
    */
   public IPrinter createPrinter(String name) throws NOAException {

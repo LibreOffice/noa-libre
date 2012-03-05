@@ -43,7 +43,7 @@ import ag.ion.bion.officelayer.event.IElementDisposedListener;
 /**
  * Text field of a text document.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public interface ITextField extends ITextContent {
@@ -54,7 +54,7 @@ public interface ITextField extends ITextContent {
    * 
    * @return display text of the text field
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public String getDisplayText();  
   //----------------------------------------------------------------------------
@@ -63,7 +63,7 @@ public interface ITextField extends ITextContent {
    * 
    * @return master of the text field.
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextFieldMaster getTextFieldMaster();
   //----------------------------------------------------------------------------
@@ -72,21 +72,21 @@ public interface ITextField extends ITextContent {
    * 
    * @return text range of the textfield
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextRange getTextRange();
   //----------------------------------------------------------------------------
   /**
    * Removes the text field from the document.
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void remove(); 
   //----------------------------------------------------------------------------
   /**
    * Adds a dispose listener to the field.
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public void addDisposeListener(IElementDisposedListener listener);
   //----------------------------------------------------------------------------  
@@ -94,14 +94,14 @@ public interface ITextField extends ITextContent {
    * Removes the dispose listener belonging to the field
    * (if there is any).
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public void removeDisposeListener(IElementDisposedListener listener);
   //----------------------------------------------------------------------------
   /**
    * Marks the field in the text.
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public void markTextField();
   //----------------------------------------------------------------------------

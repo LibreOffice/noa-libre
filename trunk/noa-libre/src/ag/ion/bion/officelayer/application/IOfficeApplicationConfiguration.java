@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.application;
 /**
  * Configuration for OpenOffice.org application.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  * 
  * @deprecated
@@ -56,7 +56,7 @@ public interface IOfficeApplicationConfiguration {
    * 
    * @throws IllegalArgumentException if the submitted port is not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setPort(String port) throws IllegalArgumentException;
   //----------------------------------------------------------------------------
@@ -65,7 +65,7 @@ public interface IOfficeApplicationConfiguration {
    * 
    * @return port on which OpenOffice.org is waiting for connections
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public String getPort();
   //----------------------------------------------------------------------------

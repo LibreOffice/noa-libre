@@ -39,7 +39,7 @@ package ag.ion.noa.text;
 /**
  * Index of a document.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  * @date 17.08.2006
  */ 
@@ -73,7 +73,7 @@ public interface IDocumentIndex {
    * @see TABLE_INDEX
    * @see BIBLIOGRAPHICAL_INDEX
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 17.08.2006
    */
   public String getType();  
@@ -81,7 +81,7 @@ public interface IDocumentIndex {
   /**
    * Updates the document index. 
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 17.08.2006
    */
   public void update();

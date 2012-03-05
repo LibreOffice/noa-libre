@@ -43,7 +43,7 @@ package ag.ion.bion.officelayer;
  * 
  * It is not allowed to dispose submitted resources!
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public interface IDisposeable {
@@ -52,7 +52,7 @@ public interface IDisposeable {
   /**
    * Disposes all allocated resources.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void dispose();
   //----------------------------------------------------------------------------

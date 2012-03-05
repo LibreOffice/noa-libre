@@ -43,7 +43,7 @@ import ag.ion.bion.officelayer.text.ITextTableCellName;
 /**
  * Name of a text table cell.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public class TextTableCellName implements ITextTableCellName {
@@ -58,7 +58,7 @@ public class TextTableCellName implements ITextTableCellName {
    * 
    * @throws IllegalArgumentException if the submitted cell name is not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public TextTableCellName(String cellName) throws IllegalArgumentException {
     if(cellName == null)
@@ -75,7 +75,7 @@ public class TextTableCellName implements ITextTableCellName {
    * 
    * @return name
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public String getName() {
     return cellName;
@@ -86,7 +86,7 @@ public class TextTableCellName implements ITextTableCellName {
    * 
    * @return row index
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public int getRowIndex() {
     char chars[] = cellName.toCharArray();
@@ -113,7 +113,7 @@ public class TextTableCellName implements ITextTableCellName {
    * 
    * @return column index
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public int getColumnIndex() {
     char chars[] = cellName.toCharArray();

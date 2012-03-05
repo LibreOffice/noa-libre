@@ -42,7 +42,7 @@ import ag.ion.bion.officelayer.filter.IFilter;
 /**
  * Abstract base filter.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 11619 $
  * @date 09.07.2006
  */ 
@@ -73,7 +73,7 @@ public abstract class AbstractFilter implements IFilter {
 	 * @return information whether the submitted document
 	 * is supported by the filter
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 08.07.2006
 	 */
 	public final boolean isSupported(IDocument document) {
@@ -91,7 +91,7 @@ public abstract class AbstractFilter implements IFilter {
    * @return information whether the submitted document type
    * is supported by the filter
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.03.2008
    */
   public final boolean isSupported(String documentType) {
@@ -107,7 +107,7 @@ public abstract class AbstractFilter implements IFilter {
 	 * @return information whether the filter constructs
 	 * a document which can not be interpreted again
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 08.07.2006
 	 */
 	public boolean isExternalFilter() {
@@ -122,7 +122,7 @@ public abstract class AbstractFilter implements IFilter {
    * 
    * @return file extension of the filter
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 03.04.2007
    */
   public final String getFileExtension(IDocument document) {
@@ -139,7 +139,7 @@ public abstract class AbstractFilter implements IFilter {
 	 * 
 	 * @return name of the filter
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 14.07.2006
 	 */
 	public final String getName(IDocument document) {
@@ -156,7 +156,7 @@ public abstract class AbstractFilter implements IFilter {
    * 
    * @return name of the filter
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 13.03.2008
    */
   public String getName(String documentType) {

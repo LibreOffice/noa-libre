@@ -41,7 +41,7 @@ import ag.ion.bion.officelayer.document.IDocument;
 /**
  * Provider for documents.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  * @date 12.07.2006
  */ 
@@ -55,7 +55,7 @@ public interface IDocumentProvider {
 	 * @return document or null if a document
 	 * is not available
 	 * 
-	 * @author Andreas Brueker
+	 * @author Andreas Bröker
 	 * @date 12.07.2006
 	 */
 	public IDocument getDocument();

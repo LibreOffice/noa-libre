@@ -44,7 +44,7 @@ import java.util.ResourceBundle;
 /**
  * Messages provider.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  * @date 21.02.2006
  */
@@ -62,7 +62,7 @@ public class Messages {
    * 
    * @return recognized message
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 21.02.2006
    */
   public static String getString(String key) {
@@ -82,7 +82,7 @@ public class Messages {
    * 
    * @return recognized message
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 21.02.2006
    */
   public static String getString(String key, Object argument) {
@@ -97,7 +97,7 @@ public class Messages {
    * 
    * @return recognized message
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 21.02.2006
    */
   public static String getString(String key, Object[] arguments) {
@@ -114,7 +114,7 @@ public class Messages {
   /**
    * Prevents instantiation.
    *
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 21.02.2006
    */
   private Messages() {

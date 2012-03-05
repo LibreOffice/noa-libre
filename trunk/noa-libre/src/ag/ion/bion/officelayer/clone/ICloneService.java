@@ -44,8 +44,8 @@ import ag.ion.bion.officelayer.beans.PropertyKeysContainer;
  * The ICloneService interface, should be implemented by all coleable structures
  * like tables and else.
  * 
- * @author Sebastian Ruesgen
- * @author Markus Krueger
+ * @author Sebastian Rösgen
+ * @author Markus Krüger
  * 
  * @version $Revision: 10398 $
  */
@@ -73,7 +73,7 @@ public interface ICloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneToPositionNoReturn(IDestinationPosition position, PropertyKeysContainer propertyKeysContainer) throws CloneException;
   //----------------------------------------------------------------------------
@@ -85,7 +85,7 @@ public interface ICloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneToPositions(IDestinationPosition[] positions, PropertyKeysContainer propertyKeysContainer) throws CloneException;
   //----------------------------------------------------------------------------
@@ -103,7 +103,7 @@ public interface ICloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public IClonedObject cloneToPosition(IDestinationPosition position , boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException;
   //----------------------------------------------------------------------------
@@ -119,7 +119,7 @@ public interface ICloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneToPositionNoReturn(IDestinationPosition position , boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException;
   //----------------------------------------------------------------------------
@@ -135,7 +135,7 @@ public interface ICloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneToPositions(IDestinationPosition[] positions, boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException;
   //----------------------------------------------------------------------------
@@ -159,7 +159,7 @@ public interface ICloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public IClonedObject cloneAfterThisPosition(IDestinationPosition position, PropertyKeysContainer propertyKeysContainer) throws CloneException;
   //----------------------------------------------------------------------------
@@ -180,7 +180,7 @@ public interface ICloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneAfterThisPositionNoReturn(IDestinationPosition position, PropertyKeysContainer propertyKeysContainer) throws CloneException;
   //----------------------------------------------------------------------------
@@ -201,7 +201,7 @@ public interface ICloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneAfterThisPositions(IDestinationPosition[] positions, PropertyKeysContainer propertyKeysContainer) throws CloneException;
   //----------------------------------------------------------------------------
@@ -227,7 +227,7 @@ public interface ICloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */  
   public IClonedObject cloneAfterThisPosition(IDestinationPosition position, boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException;
   //----------------------------------------------------------------------------
@@ -251,7 +251,7 @@ public interface ICloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */  
   public void cloneAfterThisPositionNoReturn(IDestinationPosition position, boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException;
   //----------------------------------------------------------------------------
@@ -275,7 +275,7 @@ public interface ICloneService {
    * 
    * @throws CloneException if the object could not be cloned.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void cloneAfterThisPositions(IDestinationPosition[] positions, boolean adoptContent, PropertyKeysContainer propertyKeysContainer) throws CloneException;
   //----------------------------------------------------------------------------

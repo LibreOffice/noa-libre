@@ -48,7 +48,7 @@ import java.util.HashMap;
 /**
  * This code snippet creates a table and makes the first three line table header style.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public class Snippet16 {

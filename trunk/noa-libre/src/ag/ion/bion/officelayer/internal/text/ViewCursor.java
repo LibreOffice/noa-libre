@@ -55,8 +55,8 @@ import com.sun.star.view.XLineCursor;
 /**
  * Visible cursor implementation of a text document.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 11732 $
  */
 public class ViewCursor implements IViewCursor {
@@ -79,7 +79,7 @@ public class ViewCursor implements IViewCursor {
    * @throws IllegalArgumentException if the submitted text document or OpenOffice.org XTextViewCursor 
    * interface is not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ViewCursor(ITextDocument textDocument, XTextViewCursor xTextViewCursor)
       throws IllegalArgumentException {
@@ -98,7 +98,7 @@ public class ViewCursor implements IViewCursor {
    * 
    * @return start text range of the cursor
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextRange getStartTextRange() {
     return new TextRange(textDocument, xTextViewCursor.getStart());
@@ -110,7 +110,7 @@ public class ViewCursor implements IViewCursor {
    * 
    * @return new text cursor from the start position of the view cursor
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextCursor getTextCursorFromStart() {
     XTextCursor xTextCursor = xTextViewCursor.getText().createTextCursorByRange(xTextViewCursor.getStart());
@@ -123,7 +123,7 @@ public class ViewCursor implements IViewCursor {
    * 
    * @return new text cursor from the end position of the view cursor
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ITextCursor getTextCursorFromEnd() {
     XTextCursor xTextCursor = xTextViewCursor.getText().createTextCursorByRange(xTextViewCursor.getEnd());
@@ -137,7 +137,7 @@ public class ViewCursor implements IViewCursor {
    * @param textRange the text range to go to
    * @param select if to extend the selection
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void goToRange(ITextRange textRange, boolean select) {
     XTextRange xTextRange = textRange.getXTextRange();
@@ -150,7 +150,7 @@ public class ViewCursor implements IViewCursor {
    * 
    * @return the page cursor for the view cursor, can be null
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public IPageCursor getPageCursor() {
     if (pageCursor == null) {
@@ -169,7 +169,7 @@ public class ViewCursor implements IViewCursor {
    * 
    * @return the line cursor for the view cursor, can be null
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public ILineCursor getLineCursor() {
     if (lineCursor == null) {

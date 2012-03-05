@@ -43,7 +43,7 @@ import ag.ion.bion.officelayer.clone.ICloneServiceProvider;
 /**
  * Column of a text table.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public interface ITextTableColumn extends ICloneServiceProvider {
@@ -56,7 +56,7 @@ public interface ITextTableColumn extends ICloneServiceProvider {
    * 
    * @throws TextException if the cell is not available
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public void setWidth(short width) throws TextException;  
   //----------------------------------------------------------------------------
@@ -65,7 +65,7 @@ public interface ITextTableColumn extends ICloneServiceProvider {
    * 
    * @throws TextException if the cell is not available
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    */
   public short getWidth() throws TextException;
   //----------------------------------------------------------------------------

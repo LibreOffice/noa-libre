@@ -43,8 +43,8 @@ import ag.ion.bion.officelayer.beans.IProperties;
 /**
  * Properties of cell of a text table.
  * 
- * @author Andreas Brueker
- * @author Markus Krueger
+ * @author Andreas Bröker
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public interface ITextTableCellProperties extends IPropertyDescriptionElement, IProperties {
@@ -65,7 +65,7 @@ public interface ITextTableCellProperties extends IPropertyDescriptionElement, I
    * 
    * @throws TextException if the property can not be modified
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setCellStyle(String cellStyle) throws TextException;
   //----------------------------------------------------------------------------
@@ -85,7 +85,7 @@ public interface ITextTableCellProperties extends IPropertyDescriptionElement, I
    * 
    * @throws TextException if the property can not be modified
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void setNumberFormat(int numberFormat) throws TextException;
   //----------------------------------------------------------------------------
@@ -96,7 +96,7 @@ public interface ITextTableCellProperties extends IPropertyDescriptionElement, I
    * 
    * @throws TextException if the property is not available
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public int getNumberFormat() throws TextException;
   //----------------------------------------------------------------------------
@@ -131,7 +131,7 @@ public interface ITextTableCellProperties extends IPropertyDescriptionElement, I
    * 
    * @throws TextException if the property is not available
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public void setBackColor(int color) throws TextException;
   //----------------------------------------------------------------------------
@@ -143,7 +143,7 @@ public interface ITextTableCellProperties extends IPropertyDescriptionElement, I
    * 
    * @throws TextException if the property is not available
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public void setVertOrient(short align) throws TextException;
   //----------------------------------------------------------------------------

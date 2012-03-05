@@ -60,7 +60,7 @@ import java.util.HashMap;
  * We will do the whole stuff as paragraphs which will be slighlty new to you since 
  * we used only TextCursors to place the text in the previous examples. 
  * 
- * @author Sebastian Ruesgen
+ * @author Sebastian Rösgen
  * @version $Revision: 10398 $
  * @date 17.03.2006
  */
@@ -109,7 +109,7 @@ public class Snippet9 {
 	 * 
 	 * @param textDocument the document to place the table in
 	 *
-	 * @author Sebastian Ruesgen
+	 * @author Sebastian Rösgen
 	 * @date 17.03.2006
 	 */
 	public static void placeSomeTextContent(ITextDocument textDocument) {

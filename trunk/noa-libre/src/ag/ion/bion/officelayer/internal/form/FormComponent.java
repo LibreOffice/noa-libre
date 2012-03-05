@@ -60,7 +60,7 @@ import com.sun.star.view.XControlAccess;
 /**
  * The implementation of a form component in a document.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision$
  */
 public class FormComponent implements IFormComponent {
@@ -80,7 +80,7 @@ public class FormComponent implements IFormComponent {
    * @throws IllegalArgumentException if the submitted document or the OpenOffice.org 
    * XFormComponent or XControlShape interface is not valid
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.01.2007
    */
   public FormComponent(IDocument document, XControlShape xControlShape, XFormComponent xFormComponent) throws IllegalArgumentException {
@@ -100,7 +100,7 @@ public class FormComponent implements IFormComponent {
    * 
    * @throws NOAException if the return fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.01.2007
    */
   public XPropertySet getXPropertySet() throws NOAException {
@@ -112,7 +112,7 @@ public class FormComponent implements IFormComponent {
    * 
    * @return the OpenOffice.org XFormComponent interface
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.01.2007
    */
   public XFormComponent getXFormComponent() {
@@ -124,7 +124,7 @@ public class FormComponent implements IFormComponent {
    * 
    * @return the OpenOffice.org XControlShape interface, or null
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.01.2007
    */
   public XControlShape getXControlShape() {
@@ -138,7 +138,7 @@ public class FormComponent implements IFormComponent {
    * 
    * @throws NOAException if the return fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 29.01.2007
    */
   public XControl getXControl() throws NOAException {
@@ -163,7 +163,7 @@ public class FormComponent implements IFormComponent {
    * 
    * @throws NOAException if the return fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 29.01.2007
    */
   public XTextComponent getXTextComponent() throws NOAException {
@@ -178,7 +178,7 @@ public class FormComponent implements IFormComponent {
    * 
    * @throws NOAException if the focus fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 29.01.2007
    */
   public void focus() throws NOAException {
@@ -200,7 +200,7 @@ public class FormComponent implements IFormComponent {
    * 
    * @throws NOAException if the return of text range fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.01.2007
    */
   public ITextRange getStartTextRange() throws NOAException {

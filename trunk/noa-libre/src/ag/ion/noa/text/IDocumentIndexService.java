@@ -39,7 +39,7 @@ package ag.ion.noa.text;
 /**
  * Service for document indices.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  * @date 17.08.2006
  */ 
@@ -51,7 +51,7 @@ public interface IDocumentIndexService {
    * 
    * @return available document indexes
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    * @date 17.08.2006
    */
   public IDocumentIndex[] getDocumentIndexes();

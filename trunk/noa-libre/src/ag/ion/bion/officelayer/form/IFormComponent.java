@@ -50,7 +50,7 @@ import com.sun.star.form.XFormComponent;
 /**
  * The interface for a form component in a document.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision$
  */
 public interface IFormComponent {
@@ -63,7 +63,7 @@ public interface IFormComponent {
    * 
    * @throws NOAException if the return fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.01.2007
    */
   public XPropertySet getXPropertySet() throws NOAException;  
@@ -73,7 +73,7 @@ public interface IFormComponent {
    * 
    * @return the OpenOffice.org XFormComponent interface
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.01.2007
    */
   public XFormComponent getXFormComponent();  
@@ -83,7 +83,7 @@ public interface IFormComponent {
    * 
    * @return the OpenOffice.org XControlShape interface, or null
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.01.2007
    */
   public XControlShape getXControlShape();  
@@ -95,7 +95,7 @@ public interface IFormComponent {
    * 
    * @throws NOAException if the return fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 29.01.2007
    */
   public XControl getXControl() throws NOAException;  
@@ -107,7 +107,7 @@ public interface IFormComponent {
    * 
    * @throws NOAException if the return fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 29.01.2007
    */
   public XTextComponent getXTextComponent() throws NOAException;  
@@ -117,7 +117,7 @@ public interface IFormComponent {
    * 
    * @throws NOAException if the focus fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 29.01.2007
    */
   public void focus() throws NOAException;  
@@ -129,7 +129,7 @@ public interface IFormComponent {
    * 
    * @throws NOAException if the return of text range fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 25.01.2007
    */
   public ITextRange getStartTextRange() throws NOAException; 

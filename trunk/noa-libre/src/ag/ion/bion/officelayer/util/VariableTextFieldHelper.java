@@ -48,7 +48,7 @@ import com.sun.star.util.NumberFormat;
 /**
  * Helper for variable text fields.
  * 
- * @author Markus Krueger
+ * @author Markus Krüger
  * @version $Revision: 10398 $
  */
 public final class VariableTextFieldHelper {
@@ -64,7 +64,7 @@ public final class VariableTextFieldHelper {
    * 
    * @throws NOAException if setting the content fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 27.07.2007
    */
   public static void setContent(String content, ITextField variableTextField, boolean isFormula,
@@ -142,7 +142,7 @@ public final class VariableTextFieldHelper {
    * 
    * @throws NOAException if setting the number format fails
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 27.07.2007
    */
   public static void applyNumberFormat(INumberFormat numberFormat, ITextField variableTextField,
@@ -164,7 +164,7 @@ public final class VariableTextFieldHelper {
   /**
    * Constructs new VariableTextFieldHelper.
    * 
-   * @author Markus Krueger
+   * @author Markus Krüger
    * @date 27.07.2007
    */
   private VariableTextFieldHelper() {

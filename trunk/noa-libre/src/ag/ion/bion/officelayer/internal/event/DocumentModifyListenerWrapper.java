@@ -47,7 +47,7 @@ import com.sun.star.util.XModifyListener;
  * A listener beeing implemented in an documenten to get
  * notified whenever there occurs a change.
  * 
- * @author Sebastian Ruesgen
+ * @author Sebastian Rösgen
  */
 public class DocumentModifyListenerWrapper implements XModifyListener  {
 
@@ -61,7 +61,7 @@ public class DocumentModifyListenerWrapper implements XModifyListener  {
    * 
    * @throws IllegalArgumentException if the submitted document listener is not valid
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public DocumentModifyListenerWrapper(IDocumentModifyListener documentListener) throws IllegalArgumentException {
     if (documentListener == null) 
@@ -75,7 +75,7 @@ public class DocumentModifyListenerWrapper implements XModifyListener  {
    * 
    * @param eventObject event object to be used
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public void disposing(EventObject eventObject) {
     documentListener.disposing(new Event(eventObject));
@@ -86,7 +86,7 @@ public class DocumentModifyListenerWrapper implements XModifyListener  {
    * 
    * @param eventObject event object to be used
    * 
-   * @author Sebastian Ruesgen
+   * @author Sebastian Rösgen
    */
   public void modified(EventObject eventObject) {
     documentListener.reactOnUnspecificEvent(new Event(eventObject));

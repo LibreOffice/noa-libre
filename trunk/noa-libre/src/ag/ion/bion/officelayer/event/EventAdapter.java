@@ -41,7 +41,7 @@ package ag.ion.bion.officelayer.event;
 /**
  * Adapter for base event listener.
  * 
- * @author Andreas Brueker 
+ * @author Andreas Bröker 
  * @version $Revision: 10398 $
  */
 public class EventAdapter implements IEventListener {
@@ -52,7 +52,7 @@ public class EventAdapter implements IEventListener {
    * 
    * @param event source event
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public void disposing(IEvent event) {    
   }

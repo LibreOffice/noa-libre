@@ -54,10 +54,10 @@ import ag.ion.bion.officelayer.application.IOfficeApplication;
  * Use JNI functions on already visible canvas objects only!
  * Otherwise they can make some trouble.
  * 
- * Integrated into NOA by Markus Krueger as it is needed for integration in Swing applications.
+ * Integrated into NOA by Markus Krüger as it is needed for integration in Swing applications.
  *
  * @author  Andreas Schl&uuml;ns
- * @author Markus Krueger
+ * @author Markus Krüger
  * @created 22.02.2002 08:47
  */
 public class NativeView extends Canvas {

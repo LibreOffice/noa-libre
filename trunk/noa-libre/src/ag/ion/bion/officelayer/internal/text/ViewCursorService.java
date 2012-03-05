@@ -51,7 +51,7 @@ import com.sun.star.uno.UnoRuntime;
 /**
  * Service for visible cursor.
  * 
- * @author Andreas Brueker
+ * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
 public class ViewCursorService implements IViewCursorService {
@@ -66,7 +66,7 @@ public class ViewCursorService implements IViewCursorService {
    * 
    * @throws IllegalArgumentException if the OpenOffice.org interface is not valid
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public ViewCursorService(ITextDocument textDocument) throws IllegalArgumentException {
     if(textDocument == null)
@@ -79,7 +79,7 @@ public class ViewCursorService implements IViewCursorService {
    * 
    * @return view cursor
    * 
-   * @author Andreas Brueker
+   * @author Andreas Bröker
    */
   public IViewCursor getViewCursor() {
     XController xController = textDocument.getXTextDocument().getCurrentController();
