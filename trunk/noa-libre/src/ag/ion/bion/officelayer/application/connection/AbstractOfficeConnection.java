@@ -106,13 +106,13 @@ public abstract class AbstractOfficeConnection implements IOfficeConnection {
    * @author Andreas Bröker
    */
   public void addBridgeEventListener(IEventListener eventListener) {
-  	if(xBridge != null) {  		
-  		if(eventListener != null) {
-  			EventListenerWrapper eventListenerWrapper = new EventListenerWrapper(eventListener); 
-        XComponent xComponent = (XComponent)UnoRuntime.queryInterface(XComponent.class, xBridge);
-  			xComponent.addEventListener(eventListenerWrapper);
-  		}
-  	}
+    if (xBridge != null) {
+      if (eventListener != null) {
+        EventListenerWrapper eventListenerWrapper = new EventListenerWrapper(eventListener, null);
+        XComponent xComponent = (XComponent) UnoRuntime.queryInterface(XComponent.class, xBridge);
+        xComponent.addEventListener(eventListenerWrapper);
+      }
+    }
   }
   //----------------------------------------------------------------------------
 }

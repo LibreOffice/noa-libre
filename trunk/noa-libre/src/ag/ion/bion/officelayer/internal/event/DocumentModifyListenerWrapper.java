@@ -39,6 +39,7 @@
 package ag.ion.bion.officelayer.internal.event;
 
 import ag.ion.bion.officelayer.event.IDocumentModifyListener;
+import ag.ion.noa.service.IServiceProvider;
 
 import com.sun.star.lang.EventObject;
 import com.sun.star.util.XModifyListener;
@@ -52,22 +53,27 @@ import com.sun.star.util.XModifyListener;
 public class DocumentModifyListenerWrapper implements XModifyListener  {
 
   IDocumentModifyListener  documentListener = null;
-  
+  private IServiceProvider serviceProvider  = null;
+
   //----------------------------------------------------------------------------
   /**
    * Constructs new DocumentListenerWrapper.
    * 
    * @param documentListener document listener to be wrapped
+   * @param serviceProvider the service provider to be used
    * 
    * @throws IllegalArgumentException if the submitted document listener is not valid
    * 
    * @author Sebastian Rösgen
    */
-  public DocumentModifyListenerWrapper(IDocumentModifyListener documentListener) throws IllegalArgumentException {
-    if (documentListener == null) 
+  public DocumentModifyListenerWrapper(IDocumentModifyListener documentListener,
+      IServiceProvider serviceProvider) throws IllegalArgumentException {
+    if (documentListener == null)
       throw new IllegalArgumentException("No listener specified, listener is null");
     this.documentListener = documentListener;
-  }    
+    this.serviceProvider = serviceProvider;
+  }
+
   // -----------------------------------------------------------------------
   /**
    * This will get called whenever the document is beeing disposed, 
@@ -78,7 +84,7 @@ public class DocumentModifyListenerWrapper implements XModifyListener  {
    * @author Sebastian Rösgen
    */
   public void disposing(EventObject eventObject) {
-    documentListener.disposing(new Event(eventObject));
+    documentListener.disposing(new Event(eventObject, getServiceProvider()));
   }
   // -----------------------------------------------------------------------
   /**
@@ -89,8 +95,20 @@ public class DocumentModifyListenerWrapper implements XModifyListener  {
    * @author Sebastian Rösgen
    */
   public void modified(EventObject eventObject) {
-    documentListener.reactOnUnspecificEvent(new Event(eventObject));
+    documentListener.reactOnUnspecificEvent(new Event(eventObject, getServiceProvider()));
   }
   // -----------------------------------------------------------------------
-  
+  /**
+   * Returns the service provider of the event.
+   * 
+   * @return the service provider of the event
+   * 
+   * @author Markus Krüger
+   * @date 06.09.2010
+   */
+  public IServiceProvider getServiceProvider() {
+    return serviceProvider;
+  }
+  //----------------------------------------------------------------------------   
+
 }

@@ -39,6 +39,7 @@
 package ag.ion.bion.officelayer.internal.event;
 
 import ag.ion.bion.officelayer.event.ICloseEvent;
+import ag.ion.noa.service.IServiceProvider;
 
 import com.sun.star.lang.EventObject;
 
@@ -62,8 +63,9 @@ public class CloseEvent extends Event implements ICloseEvent {
    * 
    * @author Andreas Bröker
    */
-  public CloseEvent(EventObject eventOject) throws IllegalArgumentException {
-    super(eventOject);    
+  public CloseEvent(EventObject eventOject, IServiceProvider serviceProvider)
+      throws IllegalArgumentException {
+    super(eventOject, serviceProvider);
   }
   //----------------------------------------------------------------------------
   /**

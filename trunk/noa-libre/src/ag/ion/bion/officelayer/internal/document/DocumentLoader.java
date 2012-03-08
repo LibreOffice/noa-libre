@@ -321,9 +321,11 @@ public class DocumentLoader {
       //XXX WORKAROUND: If you haven an app with more than one openoffice noa integrated frames, then the second frame and upwards is sometimes
       //not displayed under linux. The following lines of code works around this issue.
       if (!isHidden) {
-        XWindow containerWindow = document.getFrame().getXFrame().getContainerWindow();
-        containerWindow.setVisible(false);
-        containerWindow.setVisible(true);
+        if (document.getServiceProvider() != null) {
+          XWindow containerWindow = document.getFrame().getXFrame().getContainerWindow();
+          containerWindow.setVisible(false);
+          containerWindow.setVisible(true);
+        }
       }
     }
     return document;

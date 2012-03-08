@@ -32,17 +32,17 @@
  *  info@ion.ag                                                             *
  *                                                                          *
  ****************************************************************************/
- 
+
 /*
  * Last changes made by $Author: andreas $, $Date: 2006-10-04 14:14:28 +0200 (Mi, 04 Okt 2006) $
  */
 package ag.ion.bion.officelayer.internal.event;
 
 import ag.ion.bion.officelayer.event.ITerminateListener;
+import ag.ion.noa.service.IServiceProvider;
 
 import com.sun.star.frame.TerminationVetoException;
 import com.sun.star.frame.XTerminateListener;
-
 import com.sun.star.lang.EventObject;
 
 /**
@@ -51,53 +51,67 @@ import com.sun.star.lang.EventObject;
  * @author Andreas Bröker
  * @version $Revision: 10398 $
  */
-public class TerminateListenerWrapper extends EventListenerWrapper implements XTerminateListener {
+public class TerminateListenerWrapper extends EventListenerWrapper implements
+		XTerminateListener {
 
-  private ITerminateListener terminateListener = null;
-  
-  //----------------------------------------------------------------------------
-  /**
-   * Constructs new TerminateListenerWrapper.
-   * 
-   * @param terminateListener terminate listener to be used
-   *  
-   * @throws IllegalArgumentException if the submitted terminate listener is not valid
-   * 
-   * @author Andreas Bröker
-   */
-  public TerminateListenerWrapper(ITerminateListener terminateListener) throws IllegalArgumentException {
-    super(terminateListener);
-    this.terminateListener = terminateListener;
-  }  
-  //----------------------------------------------------------------------------
-  /**
-   * Is called when the master enviroment is about to terminate.
-   * 
-   * @param eventObject source of the event
-   * 
-   * @throws TerminationVetoException listener can disagree with this query by throwing a veto
-   * exception
-   * 
-   * @author Andreas Bröker
-   */
-  public void queryTermination(EventObject eventObject) throws TerminationVetoException {
-    TerminateEvent terminateEvent = new TerminateEvent(eventObject);
-    terminateListener.queryTermination(terminateEvent);
-    if(terminateEvent.getVeto())
-      throw new TerminationVetoException();
-  }
-  //----------------------------------------------------------------------------
-  /**
-   * Is called when the master enviroment is finally terminated.
-   * 
-   * @param eventObject of the event
-   * 
-   * @author Andreas Bröker
-   */
-  public void notifyTermination(EventObject eventObject) { 
-    TerminateEvent terminateEvent = new TerminateEvent(eventObject);
-    terminateListener.notifyTermination(terminateEvent);
-  }
-  //----------------------------------------------------------------------------
-  
+	private ITerminateListener terminateListener = null;
+
+	// ----------------------------------------------------------------------------
+	/**
+	 * Constructs new TerminateListenerWrapper.
+	 * 
+	 * @param terminateListener
+	 *            terminate listener to be used
+	 * @param serviceProvider
+	 *            the service provider to be used
+	 * 
+	 * @throws IllegalArgumentException
+	 *             if the submitted terminate listener is not valid
+	 * 
+	 * @author Andreas Bröker
+	 */
+	public TerminateListenerWrapper(ITerminateListener terminateListener,
+			IServiceProvider serviceProvider) throws IllegalArgumentException {
+		super(terminateListener, serviceProvider);
+		this.terminateListener = terminateListener;
+	}
+
+	// ----------------------------------------------------------------------------
+	/**
+	 * Is called when the master enviroment is about to terminate.
+	 * 
+	 * @param eventObject
+	 *            source of the event
+	 * 
+	 * @throws TerminationVetoException
+	 *             listener can disagree with this query by throwing a veto
+	 *             exception
+	 * 
+	 * @author Andreas Bröker
+	 */
+	public void queryTermination(EventObject eventObject)
+			throws TerminationVetoException {
+		TerminateEvent terminateEvent = new TerminateEvent(eventObject,
+				getServiceProvider());
+		terminateListener.queryTermination(terminateEvent);
+		if (terminateEvent.getVeto())
+			throw new TerminationVetoException();
+	}
+
+	// ----------------------------------------------------------------------------
+	/**
+	 * Is called when the master enviroment is finally terminated.
+	 * 
+	 * @param eventObject
+	 *            of the event
+	 * 
+	 * @author Andreas Bröker
+	 */
+	public void notifyTermination(EventObject eventObject) {
+		TerminateEvent terminateEvent = new TerminateEvent(eventObject,
+				getServiceProvider());
+		terminateListener.notifyTermination(terminateEvent);
+	}
+	// ----------------------------------------------------------------------------
+
 }

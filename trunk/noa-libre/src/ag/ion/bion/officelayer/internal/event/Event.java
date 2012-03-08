@@ -39,6 +39,7 @@
 package ag.ion.bion.officelayer.internal.event;
 
 import ag.ion.bion.officelayer.event.IEvent;
+import ag.ion.noa.service.IServiceProvider;
 
 import com.sun.star.lang.EventObject;
 
@@ -50,22 +51,26 @@ import com.sun.star.lang.EventObject;
  */
 public class Event implements IEvent {
 
-  private EventObject eventOject = null;
-  
+  private EventObject      eventOject      = null;
+  private IServiceProvider serviceProvider = null;
+
   //----------------------------------------------------------------------------  
   /**
    * Constructs new Event.
    * 
    * @param eventOject OpenOffice.org EventObject to be used
+   * @param serviceProvider the service provider to be used
    * 
    * @throws IllegalArgumentException if the submitted OpenOffice.org EventObject is not valid
    * 
    * @author Andreas Bröker
    */
-  public Event(EventObject eventOject) throws IllegalArgumentException {
-    if(eventOject == null)
+  public Event(EventObject eventOject, IServiceProvider serviceProvider)
+      throws IllegalArgumentException {
+    if (eventOject == null)
       throw new IllegalArgumentException("The submitted OpenOffice.org EventObject is not valid.");
     this.eventOject = eventOject;
+    this.serviceProvider = serviceProvider;
   }
   //----------------------------------------------------------------------------  
   /**
@@ -77,6 +82,19 @@ public class Event implements IEvent {
    */
   public Object getSourceObject() {
     return eventOject.Source;
+  }
+
+  //----------------------------------------------------------------------------  
+  /**
+   * Returns the service provider of the event.
+   * 
+   * @return the service provider of the event
+   * 
+   * @author Markus Krüger
+   * @date 06.09.2010
+   */
+  public IServiceProvider getServiceProvider() {
+    return serviceProvider;
   }
   //----------------------------------------------------------------------------    
   

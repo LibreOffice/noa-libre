@@ -38,6 +38,9 @@
  */
 package ag.ion.bion.officelayer.internal.desktop;
 
+import java.awt.Container;
+import java.util.Hashtable;
+
 import ag.ion.bion.officelayer.NativeView;
 import ag.ion.bion.officelayer.application.connection.IOfficeConnection;
 
@@ -52,6 +55,7 @@ import ag.ion.bion.officelayer.internal.application.connection.LocalOfficeConnec
 import ag.ion.bion.officelayer.internal.event.DocumentListenerWrapper;
 import ag.ion.bion.officelayer.internal.event.TerminateListenerWrapper;
 import ag.ion.noa.NOAException;
+import ag.ion.noa.internal.service.ServiceProvider;
 
 import com.sun.star.document.XEventBroadcaster;
 import com.sun.star.frame.XDesktop;
@@ -59,9 +63,6 @@ import com.sun.star.frame.XFrame;
 import com.sun.star.frame.XFrames;
 
 import com.sun.star.uno.UnoRuntime;
-
-import java.awt.Container;
-import java.util.Hashtable;
 
 /**
  * Desktop service of OpenOffice.org.
@@ -178,8 +179,9 @@ public class DesktopService implements IDesktopService {
   public void addTerminateListener(ITerminateListener terminateListener) {
     if(terminateListeners == null)
       terminateListeners = new Hashtable();
-    
-    TerminateListenerWrapper terminateListenerWrapper = new TerminateListenerWrapper(terminateListener);
+
+    TerminateListenerWrapper terminateListenerWrapper = new TerminateListenerWrapper(terminateListener,
+        new ServiceProvider(officeConnection));
     xDesktop.addTerminateListener(terminateListenerWrapper);
     terminateListeners.put(terminateListener, terminateListenerWrapper);
   }
@@ -217,8 +219,9 @@ public class DesktopService implements IDesktopService {
 	      Object globalEventBroadcaster = officeConnection.getXMultiServiceFactory().createInstance( "com.sun.star.frame.GlobalEventBroadcaster" );
 	      eventBroadcaster = (XEventBroadcaster) UnoRuntime.queryInterface(XEventBroadcaster.class, globalEventBroadcaster);
       }
-      DocumentListenerWrapper documentListenerWrapper = new DocumentListenerWrapper(documentListener);  
-      eventBroadcaster.addEventListener(documentListenerWrapper);  
+      DocumentListenerWrapper documentListenerWrapper = new DocumentListenerWrapper(documentListener,
+          new ServiceProvider(officeConnection));
+      eventBroadcaster.addEventListener(documentListenerWrapper);
       documentListeners.put(documentListener, documentListenerWrapper);
     } 
     catch (Exception exception) {
