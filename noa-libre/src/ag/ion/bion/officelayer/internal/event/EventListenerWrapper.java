@@ -39,6 +39,7 @@
 package ag.ion.bion.officelayer.internal.event;
 
 import ag.ion.bion.officelayer.event.IEventListener;
+import ag.ion.noa.service.IServiceProvider;
 
 import com.sun.star.lang.XEventListener;
 import com.sun.star.lang.EventObject;
@@ -50,24 +51,29 @@ import com.sun.star.lang.EventObject;
  * @version $Revision: 10398 $
  */
 public class EventListenerWrapper implements XEventListener {
-	
-  private IEventListener eventListener = null;
-  
+
+  private IEventListener   eventListener   = null;
+  private IServiceProvider serviceProvider = null;
+
   //----------------------------------------------------------------------------
   /**
    * Constructs new EventListenerWrapper.
    * 
    * @param eventListener event listener to be wrapped
+   * @param serviceProvider the service provider to be used
    * 
    * @throws IllegalArgumentException if the submitted event listener is not valid
    * 
    * @author Andreas Bröker
    */
-  public EventListenerWrapper(IEventListener eventListener) throws IllegalArgumentException {
-    if(eventListener == null)
+  public EventListenerWrapper(IEventListener eventListener, IServiceProvider serviceProvider)
+      throws IllegalArgumentException {
+    if (eventListener == null)
       throw new IllegalArgumentException("The submitted event listener is not valid.");
     this.eventListener = eventListener;
-  }  
+    this.serviceProvider = serviceProvider;
+  }
+
   //----------------------------------------------------------------------------
 	/**
 	 * Gets called when the broadcaster is about to be disposed. 
@@ -75,10 +81,36 @@ public class EventListenerWrapper implements XEventListener {
 	 * @param eventObject source event object
 	 * 
      * @author Andreas Bröker
-	 */
-	public void disposing(EventObject eventObject) {
-	  eventListener.disposing(new Event(eventObject));
-	}
-  //----------------------------------------------------------------------------
-  
+   */
+  public void disposing(EventObject eventObject) {
+    eventListener.disposing(new Event(eventObject, serviceProvider));
+  }
+
+  //---------------------------------------------------------------------------- 
+  /**
+   * Returns the service provider of the event.
+   * 
+   * @return the service provider of the event
+   * 
+   * @author Markus Krüger
+   * @date 06.09.2010
+   */
+  public IServiceProvider getServiceProvider() {
+    return serviceProvider;
+  }
+
+  //----------------------------------------------------------------------------  
+  /**
+   * Sets the service provider of the event.
+   * 
+   * @param serviceProvider the service provider of the event
+   * 
+   * @author Markus Krüger
+   * @date 06.09.2010
+   */
+  public void setServiceProvider(IServiceProvider serviceProvider) {
+    this.serviceProvider = serviceProvider;
+  }
+  //----------------------------------------------------------------------------    
+
 }

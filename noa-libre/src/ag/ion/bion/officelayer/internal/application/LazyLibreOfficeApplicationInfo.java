@@ -34,55 +34,46 @@
  ****************************************************************************/
 
 /*
- * Last changes made by $Author: markus $, $Date: 2008-08-18 10:30:49 +0200 (Mo, 18 Aug 2008) $
+ * Last changes made by $Author: markus $, $Date: 2008-11-18 11:22:42 +0100 (Di, 18 Nov 2008) $
  */
-package ag.ion.bion.officelayer.internal.event;
+package ag.ion.bion.officelayer.internal.application;
 
-import ag.ion.bion.officelayer.document.IDocument;
-import ag.ion.bion.officelayer.event.IDocumentEvent;
-import ag.ion.bion.officelayer.internal.document.DocumentLoader;
-import ag.ion.noa.service.IServiceProvider;
-
-import com.sun.star.document.EventObject;
-import com.sun.star.lang.XComponent;
-import com.sun.star.uno.UnoRuntime;
+import ag.ion.bion.officelayer.application.IApplicationProperties;
+import ag.ion.bion.officelayer.application.ILazyApplicationInfo;
 
 /**
- * Document event.
+ * Information provider of a LibreOffice application.
  * 
  * @author Andreas Bröker
- * @version $Revision: 11637 $
+ * @author Markus Krüger
+ * @version $Revision: 11681 $
  */
-public class DocumentEvent extends Event implements IDocumentEvent {
+public class LazyLibreOfficeApplicationInfo extends AbstractLazyApplicationInfo
+		implements ILazyApplicationInfo {
 
-  //----------------------------------------------------------------------------
-  /**
-   * Constructs new DocumentEvent.
-   * 
-   * @param eventOject OpenOffice.org EventObject to be used
-   * @param serviceProvider the service provider to be used
-   * 
-   * @throws IllegalArgumentException if the submitted OpenOffice.org event object is not valid
-   * 
-   * @author Andreas Bröker
-   */
-  public DocumentEvent(EventObject eventOject, IServiceProvider serviceProvider)
-      throws IllegalArgumentException {
-    super(eventOject, serviceProvider);
-  }
+	private static final String PRODUCT_NAME = "LibreOffice";
 
-  //----------------------------------------------------------------------------
-  /**
-   * Returns the document of the event.
-   * 
-   * @return the document of the event
-   * 
-   * @author Markus Krüger
-   */
-  public IDocument getDocument() {
-    Object object = getSourceObject();
-    XComponent xComponent = (XComponent) UnoRuntime.queryInterface(XComponent.class, object);
-    return DocumentLoader.getDocument(xComponent, getServiceProvider(), null);
-  }
-  //---------------------------------------------------------------------------- 
+	// ----------------------------------------------------------------------------
+	/**
+	 * Constructs new LazyLibreOfficeApplicationInfo.
+	 * 
+	 * @param home
+	 *            home of the office application to be used
+	 * @param applicationProperties
+	 *            application properties to be used
+	 * 
+	 * @throws IllegalArgumentException
+	 *             if the submitted home path is not valid
+	 * 
+	 * @author Andreas Bröker
+	 * @author Markus Krüger
+	 */
+	public LazyLibreOfficeApplicationInfo(String home,
+			IApplicationProperties applicationProperties)
+			throws IllegalArgumentException {
+		super(home, applicationProperties, PRODUCT_NAME);
+	}
+
+	// ----------------------------------------------------------------------------
+
 }

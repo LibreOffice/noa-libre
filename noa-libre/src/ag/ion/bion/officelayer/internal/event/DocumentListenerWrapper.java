@@ -40,6 +40,7 @@ package ag.ion.bion.officelayer.internal.event;
 
 import ag.ion.bion.officelayer.document.IDocument;
 import ag.ion.bion.officelayer.event.IDocumentListener;
+import ag.ion.noa.service.IServiceProvider;
 
 import com.sun.star.document.XEventListener;
 import com.sun.star.document.EventObject;
@@ -61,15 +62,18 @@ public class DocumentListenerWrapper extends EventListenerWrapper implements XEv
    * Constructs new DocumentListenerWrapper.
    * 
    * @param documentListener document listener to be wrapped
+   * @param serviceProvider the service provider to be used
    * 
    * @throws IllegalArgumentException if the submitted document listener is not valid
    * 
    * @author Andreas Bröker
    */
-  public DocumentListenerWrapper(IDocumentListener documentListener) throws IllegalArgumentException {
-    super(documentListener);
-    this.documentListener = documentListener;    
-  }    
+  public DocumentListenerWrapper(IDocumentListener documentListener,
+      IServiceProvider serviceProvider) throws IllegalArgumentException {
+    super(documentListener, serviceProvider);
+    this.documentListener = documentListener;
+  }
+
   //----------------------------------------------------------------------------
 	/**
 	 * Is called whenever a document event occurs. 
@@ -80,63 +84,63 @@ public class DocumentListenerWrapper extends EventListenerWrapper implements XEv
    * @author Markus Krüger
    * @author Alessandro Conte
    * @date 04.09.2006
-	 */
-	public final void notifyEvent(EventObject eventObject) {
-		if(eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_NEW)) {
-      documentListener.onNew(new DocumentEvent(eventObject));     
-		}
-		else if(eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_LOAD)) {
-      documentListener.onLoad(new DocumentEvent(eventObject));     
-		}
-		else if(eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_LOAD_DONE)) {
-      documentListener.onLoadDone(new DocumentEvent(eventObject));     
-		}
-		else if(eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_LOAD_FINISHED)) {
-      documentListener.onLoadFinished(new DocumentEvent(eventObject));     
-		}
-		else if(eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_SAVE_DONE)) {
-      documentListener.onSaveDone(new DocumentEvent(eventObject));     
-		}
-		else if(eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_SAVE_FINISHED)) {
-      documentListener.onSaveFinished(new DocumentEvent(eventObject));     
-		}
-    else if(eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_SAVE)) {
-      documentListener.onSave(new DocumentEvent(eventObject));     
+   */
+  public final void notifyEvent(EventObject eventObject) {
+    if (eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_NEW)) {
+      documentListener.onNew(new DocumentEvent(eventObject, getServiceProvider()));
     }
-		else if(eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_SAVE_AS)) {
-      documentListener.onSaveAs(new DocumentEvent(eventObject));     
-		}
-		else if(eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_SAVE_AS_DONE)) {
-      documentListener.onSaveAsDone(new DocumentEvent(eventObject));     
-		}
-		else if(eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_MODIFY_CHANGED)) {
-      documentListener.onModifyChanged(new DocumentEvent(eventObject));     
-		}
-		else if(eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_MOUSE_OVER)) {
-      documentListener.onMouseOver(new DocumentEvent(eventObject));     
-		}
-		else if(eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_MOUSE_OUT)) {
-      documentListener.onMouseOut(new DocumentEvent(eventObject));     
-		}
-		else if(eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_FOCUS)) {
-      documentListener.onFocus(new DocumentEvent(eventObject));     
-		}
-		else if(eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_ALPHA_CHAR_INPUT)) {
-      documentListener.onAlphaCharInput(new DocumentEvent(eventObject));     
-		}
-		else if(eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_NON_ALPHA_CHAR_INPUT)) {
-      documentListener.onNonAlphaCharInput(new DocumentEvent(eventObject));     
-		}
-		else if(eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_INSERT_START)) {
-      documentListener.onInsertStart(new DocumentEvent(eventObject));     
-		}
-		else if(eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_INSERT_DONE)) {
-      documentListener.onInsertDone(new DocumentEvent(eventObject));     
-		}
-		else if(eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_UNLOAD)) {
-      documentListener.onUnload(new DocumentEvent(eventObject));     
-		}
-	}
+    else if (eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_LOAD)) {
+      documentListener.onLoad(new DocumentEvent(eventObject, getServiceProvider()));
+    }
+    else if (eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_LOAD_DONE)) {
+      documentListener.onLoadDone(new DocumentEvent(eventObject, getServiceProvider()));
+    }
+    else if (eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_LOAD_FINISHED)) {
+      documentListener.onLoadFinished(new DocumentEvent(eventObject, getServiceProvider()));
+    }
+    else if (eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_SAVE_DONE)) {
+      documentListener.onSaveDone(new DocumentEvent(eventObject, getServiceProvider()));
+    }
+    else if (eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_SAVE_FINISHED)) {
+      documentListener.onSaveFinished(new DocumentEvent(eventObject, getServiceProvider()));
+    }
+    else if (eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_SAVE)) {
+      documentListener.onSave(new DocumentEvent(eventObject, getServiceProvider()));
+    }
+    else if (eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_SAVE_AS)) {
+      documentListener.onSaveAs(new DocumentEvent(eventObject, getServiceProvider()));
+    }
+    else if (eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_SAVE_AS_DONE)) {
+      documentListener.onSaveAsDone(new DocumentEvent(eventObject, getServiceProvider()));
+    }
+    else if (eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_MODIFY_CHANGED)) {
+      documentListener.onModifyChanged(new DocumentEvent(eventObject, getServiceProvider()));
+    }
+    else if (eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_MOUSE_OVER)) {
+      documentListener.onMouseOver(new DocumentEvent(eventObject, getServiceProvider()));
+    }
+    else if (eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_MOUSE_OUT)) {
+      documentListener.onMouseOut(new DocumentEvent(eventObject, getServiceProvider()));
+    }
+    else if (eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_FOCUS)) {
+      documentListener.onFocus(new DocumentEvent(eventObject, getServiceProvider()));
+    }
+    else if (eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_ALPHA_CHAR_INPUT)) {
+      documentListener.onAlphaCharInput(new DocumentEvent(eventObject, getServiceProvider()));
+    }
+    else if (eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_NON_ALPHA_CHAR_INPUT)) {
+      documentListener.onNonAlphaCharInput(new DocumentEvent(eventObject, getServiceProvider()));
+    }
+    else if (eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_INSERT_START)) {
+      documentListener.onInsertStart(new DocumentEvent(eventObject, getServiceProvider()));
+    }
+    else if (eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_INSERT_DONE)) {
+      documentListener.onInsertDone(new DocumentEvent(eventObject, getServiceProvider()));
+    }
+    else if (eventObject.EventName.equalsIgnoreCase(IDocument.EVENT_ON_UNLOAD)) {
+      documentListener.onUnload(new DocumentEvent(eventObject, getServiceProvider()));
+    }
+  }
   //----------------------------------------------------------------------------
 
 }

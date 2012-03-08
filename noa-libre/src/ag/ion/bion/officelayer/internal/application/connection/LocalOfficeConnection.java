@@ -84,6 +84,7 @@ public class LocalOfficeConnection extends AbstractOfficeConnection {
   private LocalOfficeConnectionGhost officeConnection = null;
 
   private String                     officePath       = null;
+  private String[]                     officeArguments       = null;
 
   private String                     host             = null;
   private String                     port             = null;
@@ -100,6 +101,18 @@ public class LocalOfficeConnection extends AbstractOfficeConnection {
    */
   public void setOfficePath(String officePath) {
     this.officePath = officePath;
+  }
+  //----------------------------------------------------------------------------
+  /**
+   * Sets arguments for OpenOffice.org.
+   * 
+   * @param arguments path to OpenOffice.org installation
+   * 
+   * @author Markus Krüger
+   * @date 09.08.2010
+   */
+  public void setOfficeArguments(String[] arguments) {
+    this.officeArguments = arguments;
   }
   //----------------------------------------------------------------------------
   /**
@@ -189,6 +202,8 @@ public class LocalOfficeConnection extends AbstractOfficeConnection {
             .beginSubTask(Messages
                 .getString("LocalOfficeConnection_monitor_loading_libraries_message")); //$NON-NLS-1$
       officeConnection = new LocalOfficeConnectionGhost(officeProgressMonitor);
+      if(officeArguments != null && officeArguments.length > 0)
+    	  officeConnection.setOfficeArguments(officeArguments); //$NON-NLS-1$
       if(officeProgressMonitor != null)
         officeProgressMonitor.worked(1);
       officeConnection.getComponentContext();

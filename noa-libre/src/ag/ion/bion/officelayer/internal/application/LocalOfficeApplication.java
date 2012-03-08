@@ -61,6 +61,7 @@ public class LocalOfficeApplication extends AbstractOfficeApplication implements
   private LocalOfficeApplicationConfiguration localOfficeApplicationConfiguration = null;
   
   private String home = null;
+  private String[] arguments = null;
      
   private boolean isConfigured = false;
   
@@ -152,6 +153,7 @@ public class LocalOfficeApplication extends AbstractOfficeApplication implements
     try {
       LocalOfficeConnection localOfficeConnection = new LocalOfficeConnection();
       localOfficeConnection.setOfficePath(home);
+      localOfficeConnection.setOfficeArguments(arguments);
       localOfficeConnection.setHost("localhost");
       localOfficeConnection.setUseBridge(true);
       localOfficeConnection.openConnection(officeProgressMonitor);
@@ -179,6 +181,10 @@ public class LocalOfficeApplication extends AbstractOfficeApplication implements
     Object home = configuration.get(IOfficeApplication.APPLICATION_HOME_KEY);
     if(home != null) {
       this.home = home.toString();      
+    }
+    Object arguments = configuration.get(IOfficeApplication.APPLICATION_ARGUMENTS_KEY);
+    if(arguments != null) {
+      this.arguments = (String[])arguments;      
     }
     isConfigured = true;
     //else

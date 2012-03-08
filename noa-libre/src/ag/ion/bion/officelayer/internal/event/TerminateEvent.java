@@ -39,6 +39,7 @@
 package ag.ion.bion.officelayer.internal.event;
 
 import ag.ion.bion.officelayer.event.ITerminateEvent;
+import ag.ion.noa.service.IServiceProvider;
 
 import com.sun.star.lang.EventObject;
 
@@ -57,13 +58,15 @@ public class TerminateEvent extends Event implements ITerminateEvent {
    * Constructs new TerminateEvent.
    * 
    * @param eventOject OpenOffice.org EventObject to be used
+   * @param serviceProvider the service provider to be used
    * 
    * @throws IllegalArgumentException if the submitted OpenOffice.org EventObject
    * 
    * @author Andreas Bröker
    */
-  public TerminateEvent(EventObject eventOject) throws IllegalArgumentException {
-    super(eventOject);    
+  public TerminateEvent(EventObject eventOject, IServiceProvider serviceProvider)
+      throws IllegalArgumentException {
+    super(eventOject, serviceProvider);
   }
   //----------------------------------------------------------------------------
   /**

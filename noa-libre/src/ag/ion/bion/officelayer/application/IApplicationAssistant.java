@@ -48,69 +48,143 @@ import ag.ion.bion.officelayer.runtime.IOfficeProgressMonitor;
  */
 public interface IApplicationAssistant {
 
-  //----------------------------------------------------------------------------
-  /**
-   * Returns informations about latest available local office application, or null
-   * if none was found.
-   * 
-   * @return informations about latest available local office application, or null
-   * if none was found
-   * 
-   * @author Markus Krüger
-   * @date 07.07.2010
-   */
-  public ILazyApplicationInfo getLatestLocalApplication();
+	// ----------------------------------------------------------------------------
+	/**
+	 * Returns informations about latest available local OpenOffice.org
+	 * application, or null if none was found.
+	 * 
+	 * @return informations about latest available local OpenOffice.org
+	 *         application, or null if none was found
+	 * 
+	 * @author Markus Krüger
+	 * @date 04.03.2012
+	 */
+	public ILazyApplicationInfo getLatestLocalOpenOfficeOrgApplication();
 
-  //----------------------------------------------------------------------------
-  /**
-   * Returns informations about latest available local office application, or null
-   * if none was found.
-   * 
-   * @param officeProgressMonitor office progress monitor to be used, can be null
-   * 
-   * @return informations about latest available local office application, or null
-   * if none was found
-   * 
-   * @author Markus Krüger
-   * @date 07.07.2010
-   */
-  public ILazyApplicationInfo getLatestLocalApplication(IOfficeProgressMonitor officeProgressMonitor);
+	// ----------------------------------------------------------------------------
+	/**
+	 * Returns informations about latest available local OpenOffice.org
+	 * application, or null if none was found.
+	 * 
+	 * @param officeProgressMonitor
+	 *            office progress monitor to be used, can be null
+	 * 
+	 * @return informations about latest available local OpenOffice.org
+	 *         application, or null if none was found
+	 * 
+	 * @author Markus Krüger
+	 * @date 04.03.2012
+	 */
+	public ILazyApplicationInfo getLatestLocalOpenOfficeOrgApplication(
+			IOfficeProgressMonitor officeProgressMonitor);
 
-  //----------------------------------------------------------------------------
-  /**
-   * Returns informations about available local office applications.
-   * 
-   * @return informations about available local office applications
-   * 
-   * @author Andreas Bröker
-   */
-  public ILazyApplicationInfo[] getLocalApplications();
+	// ----------------------------------------------------------------------------
+	/**
+	 * Returns informations about latest available local LibreOffice
+	 * application, or null if none was found.
+	 * 
+	 * @return informations about latest available local LibreOffice
+	 *         application, or null if none was found
+	 * 
+	 * @author Markus Krüger
+	 * @date 04.03.2012
+	 */
+	public ILazyApplicationInfo getLatestLocalLibreOfficeApplication();
 
-  //----------------------------------------------------------------------------
-  /**
-   * Returns informations about available local office applications.
-   * 
-   * @param officeProgressMonitor office progress monitor to be used
-   * 
-   * @return informations about available local office applications
-   * 
-   * @author Andreas Bröker
-   */
-  public ILazyApplicationInfo[] getLocalApplications(IOfficeProgressMonitor officeProgressMonitor);
+	// ----------------------------------------------------------------------------
+	/**
+	 * Returns informations about latest available local LibreOffice
+	 * application, or null if none was found.
+	 * 
+	 * @param officeProgressMonitor
+	 *            office progress monitor to be used, can be null
+	 * 
+	 * @return informations about latest available local LibreOffice
+	 *         application, or null if none was found
+	 * 
+	 * @author Markus Krüger
+	 * @date 04.03.2012
+	 */
+	public ILazyApplicationInfo getLatestLocalLibreOfficeApplication(
+			IOfficeProgressMonitor officeProgressMonitor);
 
-  //----------------------------------------------------------------------------
-  /**
-   * Looks for application info on the basis of the submitted application 
-   * home path. Returns null if the application info can not be provided.
-   * 
-   * @param home home path to be used
-   * 
-   * @return application info on the basis of the submitted application 
-   * home path or null if the application info can not be provided
-   * 
-   * @author Andreas Bröker
-   */
-  public ILazyApplicationInfo findLocalApplicationInfo(String home);
-  //----------------------------------------------------------------------------
+	// ----------------------------------------------------------------------------
+	/**
+	 * Returns informations about latest available local office application, or
+	 * null if none was found.
+	 * 
+	 * @return informations about latest available local office application, or
+	 *         null if none was found
+	 * 
+	 * @deprecated As now also LibreOffice is supported, this method is only
+	 *             keept for compatibility reasons and returns the same as
+	 *             {@link #getLatestLocalOpenOfficeOrgApplication()}
+	 * 
+	 * @author Markus Krüger
+	 * @date 07.07.2010
+	 */
+	public ILazyApplicationInfo getLatestLocalApplication();
+
+	// ----------------------------------------------------------------------------
+	/**
+	 * Returns informations about latest available local office application, or
+	 * null if none was found.
+	 * 
+	 * @param officeProgressMonitor
+	 *            office progress monitor to be used, can be null
+	 * 
+	 * @return informations about latest available local office application, or
+	 *         null if none was found
+	 * 
+	 * @deprecated As now also LibreOffice is supported, this method is only
+	 *             keept for compatibility reasons and returns the same as
+	 *             {@link #getLatestLocalOpenOfficeOrgApplication(IOfficeProgressMonitor)
+	 *             )}
+	 * 
+	 * @author Markus Krüger
+	 * @date 07.07.2010
+	 */
+	public ILazyApplicationInfo getLatestLocalApplication(
+			IOfficeProgressMonitor officeProgressMonitor);
+
+	// ----------------------------------------------------------------------------
+	/**
+	 * Returns informations about available local office applications.
+	 * 
+	 * @return informations about available local office applications
+	 * 
+	 * @author Andreas Bröker
+	 */
+	public ILazyApplicationInfo[] getLocalApplications();
+
+	// ----------------------------------------------------------------------------
+	/**
+	 * Returns informations about available local office applications.
+	 * 
+	 * @param officeProgressMonitor
+	 *            office progress monitor to be used
+	 * 
+	 * @return informations about available local office applications
+	 * 
+	 * @author Andreas Bröker
+	 */
+	public ILazyApplicationInfo[] getLocalApplications(
+			IOfficeProgressMonitor officeProgressMonitor);
+
+	// ----------------------------------------------------------------------------
+	/**
+	 * Looks for application info on the basis of the submitted application home
+	 * path. Returns null if the application info can not be provided.
+	 * 
+	 * @param home
+	 *            home path to be used
+	 * 
+	 * @return application info on the basis of the submitted application home
+	 *         path or null if the application info can not be provided
+	 * 
+	 * @author Andreas Bröker
+	 */
+	public ILazyApplicationInfo findLocalApplicationInfo(String home);
+	// ----------------------------------------------------------------------------
 
 }
