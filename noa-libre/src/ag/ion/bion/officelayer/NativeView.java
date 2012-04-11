@@ -225,15 +225,15 @@ public class NativeView extends Canvas {
       }
       boolean is64Bit = Integer.valueOf(System.getProperties().getProperty("sun.arch.data.model")) == 64;
       if (is64Bit) {
-        if (new File(libPath + "/"
+        if (new File(libPath + File.separator
             + folder64bit
-            + "/"
+            + File.separator
             + libName).exists()) {
-          libPath = libPath + "/"
+          libPath = libPath + File.separator
               + folder64bit;
         }
       }
-      System.load(libPath + "/"
+      System.load(libPath + File.separator
           + libName);
     }
   }
