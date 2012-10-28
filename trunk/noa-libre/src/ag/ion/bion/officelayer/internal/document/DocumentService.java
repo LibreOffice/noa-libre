@@ -290,6 +290,7 @@ public class DocumentService implements IDocumentService {
   //----------------------------------------------------------------------------
   /**
    * Loads document on the basis of the submitted stream.
+   * May be <b>significantly slower</b> than the load* variants which take an URL String as parameter.
    * 
    * @param inputStream input stream to be used
    * @param documentDescriptor document descriptor to be used
@@ -315,6 +316,8 @@ public class DocumentService implements IDocumentService {
    * OpenOffice.org can not recognize if the document is already open - 
    * therefore the document will be never opened in <code>ReadOnly</code> mode.</b>
    * 
+   * May be <b>significantly slower</b> than the load* variants which take an URL String as parameter.
+   * 
    * @param frame frame to be used for the document
    * @param inputStream input stream to be used
    * @param documentDescriptor document descriptor to be used
@@ -333,6 +336,7 @@ public class DocumentService implements IDocumentService {
   //----------------------------------------------------------------------------
   /**
    * Loads document on the basis of the submitted stream.
+   * May be <b>significantly slower</b> than the load* variants which take an URL String as parameter.
    * 
    * @param officeProgressMonitor office progress monitor to be used
    * @param inputStream input stream to be used
@@ -357,6 +361,8 @@ public class DocumentService implements IDocumentService {
    * the store() method of the <code>IPersistenceService</code>. Furthermore
    * OpenOffice.org can not recognize if the document is already open - 
    * therefore the document will be never opened in <code>ReadOnly</code> mode.</b>
+   * 
+   * May be <b>significantly slower</b> than the load* variants which take an URL String as parameter.
    * 
    * @param officeProgressMonitor office progress monitor to be used
    * @param frame frame to be used for the document
