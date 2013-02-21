@@ -4,12 +4,448 @@
 	<meta charset=utf-8>
 <!-- Documentation: version 0.1 from Jochen Stärk, 21.02.2013 -->
     <title>NOA4Libre Documentation</title>
+    <style type="text/css">
+    body {font-family:arial,verdana,sans}
+    ul {list-style-type: none}
+    pre, code {background-color:#f0f0f0}
+    </style>
 	</head>
 <body>
-<a href='#top'>Back to top</a><br/>
 <a name="top"></a>
+<h1>Table of contents</h1>
+
+<ul>
+
+<li><a href='#tutorial'>Tutorial</a>
+<ul>
+	<li><a href='#step1'>Step 1: Simple SWING application</a></li>
+	<li><a href='#step2'>Step 2: Add OpenOffice.org Writer</a></li>
+	<li><a href='#step3'>Step 3: Change Writer to Calc</a></li>
+	<li><a href='#final'>Final result</a></li>
+</ul>
+</li>
+
+<li><a href='#snippets'>Snippets</a>
+<ul>
+	<li><a href='#find_installation'>Find installation</a></li>
+	<li><a href='#change_font'>Change font</a></li>
+	<li><a href='#spreadsheet'>Spreadsheet</a></li>
+	<li><a href='#spreadsheet_in_swing'>Spreadsheet in SWING</a></li>
+	<li><a href='#search_and_replace'>Search and replace</a></li>
+	<li><a href='#calc_example'>Calc example</a></li>
+	<li><a href='#db'>DB</a></li>
+	<li><a href='#text'>Text</a></li>
+	<li><a href='#tables'>Tables</a></li>
+	<li><a href='#add_images'>Add images</a></li>
+	<li><a href='#set_texts'>Set texts</a></li>
+	<li><a href='#close_listener'>Close listener</a></li>
+	<li><a href='#construct_and_fill_table'>Construct and fill table</a></li>
+	<li><a href='#more_table_operations'>More table operations</a></li>
+	<li><a href='#place_text_content'>Place text content</a></li>
+	<li><a href='#set_font_and_text_properties'>Set font and text properties</a></li>
+	<li><a href='#paragraphs_and_text_formatting'>Paragraphs and text formatting</a></li>
+	<li><a href='#formulas'>Formulas</a></li>
+	<li><a href='#ui_disable_commands'>UI: Disable commands</a></li>
+</ul>
+<li><a href='#license'>License</a>
+
 <h1>Tutorial</h1>
-<!--  still missing -->
+
+<a name='step1'></a>
+<h2>Step 1: Simple SWING application</h2>
+
+
+<pre>
+<code>
+import java.awt.GridLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+//(2a)
+//(3a)
+
+public class Loewe extends JFrame {
+
+	private JPanel NOApanel;
+//(2b)
+//(3b)
+	public Loewe() {
+		setVisible(true);
+		setSize(500,500);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		addWindowListener(new WindowAdapter() {
+
+			@Override
+			public void windowClosing(WindowEvent e) {
+//(2c)
+				super.windowClosing(e);
+			}
+			
+			
+		});
+		
+		NOApanel=new JPanel();
+		
+		getContentPane().setLayout(new GridLayout());
+		getContentPane().add(NOApanel);
+//(2d)
+//(3d)
+	}
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Loewe l=new Loewe();
+
+	}
+
+}
+</code>
+</pre>
+
+<a href='#top'>Back to top</a><br/>
+<a name='step2'></a>
+<h2>Step 2: Add OpenOffice.org Writer</h2>
+
+
+Replace //(2a) with
+<pre>
+<code>
+import java.io.File;
+import java.util.HashMap;
+
+</code>
+</pre>
+
+
+Replace //(2b) with
+<pre>
+<code>
+         private IOfficeApplication officeApplication=null;
+         private NativeView nat;
+         private IFrame officeFrame;
+         private ISpreadsheetDocument document=null;
+ 
+</code>
+</pre>
+
+Replace //(2c) with
+<pre>
+<code>
+                                 if (document!=null) {
+                                         document.close();
+                                 }
+                                 if (officeApplication!=null) {
+                                         try {
+                                                 officeApplication.deactivate();
+                                         } catch (OfficeApplicationException e1) {
+                                                 // TODO Auto-generated catch block
+                                                 e1.printStackTrace();
+                                         }
+                                 }
+ 
+</code>
+</pre>
+
+Replace //(2d) with
+<pre>
+<code>
+                 IApplicationAssistant ass;
+                 try {
+                         ass = new ApplicationAssistant(System.getProperty("user.dir")
+                         	+File.separator+"lib");
+                         ILazyApplicationInfo[] ila=ass.getLocalApplications();
+ 
+                         HashMap<String, String> configuration=new HashMap<String, String>();
+                         configuration.put(IOfficeApplication.APPLICATION_HOME_KEY,
+ 				   ila[0].getHome());
+                         configuration.put(IOfficeApplication.APPLICATION_TYPE_KEY, 
+ 				   IOfficeApplication.LOCAL_APPLICATION);
+                         
+                         officeApplication = OfficeApplicationRuntime.
+                         getApplication(configuration);
+                         officeApplication.activate();
+                         nat=new NativeView(System.getProperty("user.dir")+File.separator+"lib");
+                         nat.setSize(NOApanel.getWidth(), NOApanel.getHeight());
+                         NOApanel.addComponentListener(new ComponentAdapter() {
+ 
+                                 @Override
+                                 public void componentResized(ComponentEvent e) {
+                                         nat.setPreferredSize(new
+                                          Dimension(NOApanel.getWidth(),
+ 							NOApanel.getHeight()));
+                                         NOApanel.getLayout().layoutContainer(NOApanel);
+                                         super.componentResized(e);
+                                 }
+                                 
+                         });
+ 
+                  NOApanel.add(nat);
+                  NOApanel.setVisible(true);
+ 		 	  officeFrame=officeApplication.getDesktopService().
+ 				constructNewOfficeFrame(nat);
+                  document=(ISpreadsheetDocument)officeApplication.
+ 				GetDocumentService().
+ 				constructNewDocument(officeFrame,  Idocument.CALC,
+ 							DocumentDescriptor.DEFAULT);
+//(3c)
+          } catch (OfficeApplicationException e1) {
+                         e1.printStackTrace();
+          } catch (DesktopException e1) {
+                         e1.printStackTrace();
+          } catch (NOAException e1) {
+ 
+</code>
+</pre>
+
+
+<a href='#top'>Back to top</a><br/>
+<a name='step3'></a>
+<h2>Step 3: Change Writer to Calc</h2>
+
+Replace //(3a) with
+<pre>
+<code>
+ import com.sun.star.container.NoSuchElementException;
+ import com.sun.star.lang.IndexOutOfBoundsException;
+ import com.sun.star.lang.WrappedTargetException;
+ import com.sun.star.sheet.XSheetCellCursor;
+ import com.sun.star.sheet.XSpreadsheet;
+ import com.sun.star.sheet.XSpreadsheets;
+ import com.sun.star.table.XCell;
+ import com.sun.star.text.XText;
+ import com.sun.star.uno.UnoRuntime;
+ import ag.ion.bion.officelayer.application.OfficeApplicationRuntime;
+ import ag.ion.bion.officelayer.desktop.DesktopException;
+ import ag.ion.bion.officelayer.document.DocumentDescriptor;
+ import ag.ion.bion.officelayer.document.DocumentException;
+ import ag.ion.bion.officelayer.internal.application.ApplicationAssistant;
+ import ag.ion.bion.officelayer.spreadsheet.ISpreadsheetDocument;
+
+
+</code>
+</pre>
+
+Replace //(4b) with
+<pre>
+<code>
+    private XSpreadsheets spreadsheets;
+    private XSpreadsheet spreadSheet1;
+    private XSheetCellCursor cellCursor;
+ 
+</code>
+</pre>
+
+Replace //(4c) with
+<pre>
+<code>
+                  spreadsheets=document.getSpreadsheetDocument().getSheets();
+                  spreadSheet1=(XSpreadsheet)
+                          UnoRuntime.queryInterface(XSpreadsheet.class,
+       		  spreadsheets.getByName(spreadsheets.getElementNames()[0]));
+                         
+                  cellCursor = spreadSheet1.createCursor();
+                  XCell cell=null;
+                  cell=cellCursor.getCellByPosition(0, 1);
+                  cell.setValue(10);
+                  cell=cellCursor.getCellByPosition(0, 2);
+                  cell.setValue(12.2);
+                  cell=cellCursor.getCellByPosition(1, 1);
+                  cell.setValue(22.2);
+                  cell=cellCursor.getCellByPosition(0, 0);
+                  XText cellText=UnoRuntime.queryInterface(XText.class, cell);
+                         
+                  cellText.setString("Accounts receivables");
+</code>
+</pre>
+
+Replace //(4d) with
+<pre>
+<code>
+                         e1.printStackTrace();
+          } catch (IndexOutOfBoundsException e1) {
+                         e1.printStackTrace();
+          } catch (NoSuchElementException e1) {
+                         e1.printStackTrace();
+          } catch (WrappedTargetException e1) {
+                         e1.printStackTrace();
+          }
+                 
+</code>
+</pre>
+
+<a href='#top'>Back to top</a><br/>
+<a name='final'></a>
+<h2>Final result</h2>
+
+Final result
+<pre>
+<code>
+
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.File;
+import java.util.HashMap;
+
+import javax.management.InvalidApplicationException;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+import com.sun.star.container.NoSuchElementException;
+import com.sun.star.lang.IndexOutOfBoundsException;
+import com.sun.star.lang.WrappedTargetException;
+import com.sun.star.sheet.XSheetCellCursor;
+import com.sun.star.sheet.XSpreadsheet;
+import com.sun.star.sheet.XSpreadsheets;
+import com.sun.star.table.XCell;
+import com.sun.star.text.XText;
+import com.sun.star.uno.UnoRuntime;
+
+import ag.ion.bion.officelayer.NativeView;
+import ag.ion.bion.officelayer.application.IApplicationAssistant;
+import ag.ion.bion.officelayer.application.ILazyApplicationInfo;
+import ag.ion.bion.officelayer.application.IOfficeApplication;
+import ag.ion.bion.officelayer.application.OfficeApplicationException;
+import ag.ion.bion.officelayer.application.OfficeApplicationRuntime;
+import ag.ion.bion.officelayer.desktop.DesktopException;
+import ag.ion.bion.officelayer.desktop.IFrame;
+import ag.ion.bion.officelayer.document.DocumentDescriptor;
+import ag.ion.bion.officelayer.document.DocumentException;
+import ag.ion.bion.officelayer.document.IDocument;
+import ag.ion.bion.officelayer.internal.application.ApplicationAssistant;
+import ag.ion.bion.officelayer.spreadsheet.ISpreadsheetDocument;
+import ag.ion.bion.officelayer.text.ITextDocument;
+import ag.ion.noa.NOAException;
+
+
+public class Loewe extends JFrame {
+
+	private JPanel NOApanel;
+	private IOfficeApplication officeApplication=null;
+	private NativeView nat;
+	private IFrame officeFrame;
+	private ISpreadsheetDocument document=null;
+	private XSpreadsheets spreadsheets;
+	private XSpreadsheet spreadSheet1;
+	private XSheetCellCursor cellCursor;
+
+	public Loewe() {
+		setVisible(true);
+		setSize(500,500);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		addWindowListener(new WindowAdapter() {
+
+			@Override
+			public void windowClosing(WindowEvent e) {
+				if (document!=null) {
+					document.close();
+				}
+				if (officeApplication!=null) {
+					try {
+						officeApplication.deactivate();
+					} catch (OfficeApplicationException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+				super.windowClosing(e);
+			}
+			
+			
+		});
+		
+		NOApanel=new JPanel();
+		
+		getContentPane().setLayout(new GridLayout());
+		getContentPane().add(NOApanel);
+		
+		IApplicationAssistant ass;
+		try {
+			ass = new ApplicationAssistant(System.getProperty("user.dir")+File.separator+"lib");
+			ILazyApplicationInfo[] ila=ass.getLocalApplications();
+
+			HashMap<String, String> configuration=new HashMap<String, String>();
+			configuration.put(IOfficeApplication.APPLICATION_HOME_KEY, ila[0].getHome());
+			configuration.put(IOfficeApplication.APPLICATION_TYPE_KEY, IOfficeApplication.LOCAL_APPLICATION);
+			
+			officeApplication = OfficeApplicationRuntime.getApplication(configuration);
+			officeApplication.activate();
+			nat=new NativeView(System.getProperty("user.dir")+File.separator+"lib");
+			nat.setSize(NOApanel.getWidth(), NOApanel.getHeight());
+			NOApanel.addComponentListener(new ComponentAdapter() {
+
+				@Override
+				public void componentResized(ComponentEvent e) {
+					nat.setPreferredSize(new Dimension(NOApanel.getWidth(), NOApanel.getHeight()));
+					NOApanel.getLayout().layoutContainer(NOApanel);
+					super.componentResized(e);
+				}
+				
+			});
+			NOApanel.add(nat);
+			NOApanel.setVisible(true);
+			officeFrame=officeApplication.getDesktopService().constructNewOfficeFrame(nat);
+			document=(ISpreadsheetDocument)officeApplication.getDocumentService().constructNewDocument(officeFrame,  IDocument.CALC, DocumentDescriptor.DEFAULT);
+			spreadsheets=document.getSpreadsheetDocument().getSheets();
+			spreadSheet1=(XSpreadsheet) UnoRuntime.queryInterface(XSpreadsheet.class, spreadsheets.getByName(spreadsheets.getElementNames()[0]));
+			
+			cellCursor = spreadSheet1.createCursor();
+			XCell cell=null;
+			cell=cellCursor.getCellByPosition(0, 1);
+			cell.setValue(10);
+			cell=cellCursor.getCellByPosition(0, 2);
+			cell.setValue(12.2);
+			cell=cellCursor.getCellByPosition(1, 1);
+			cell.setValue(22.2);
+			cell=cellCursor.getCellByPosition(0, 0);
+			XText cellText=UnoRuntime.queryInterface(XText.class, cell);
+			
+			cellText.setString("Accounts receivables");
+			
+			
+		} catch (OfficeApplicationException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (DesktopException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (NOAException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IndexOutOfBoundsException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (NoSuchElementException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (WrappedTargetException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+	}
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Loewe l=new Loewe();
+
+	}
+
+}
+
+</code>
+</pre>
+
+
 <!--
 Ideas for structurizing
 Setup
@@ -26,28 +462,9 @@ Writer
 		Formeln
 Calc
 -->
-
-<ul>
-	<li><a href='#find_installation'>Find installation</a></li>
-	<li><a href='#change_font'>Change font</a></li>
-	<li><a href='#spreadsheet'>Spreadsheet</a></li>
-	<li><a href='#spreadsheet_in_swing'>Spreadsheet in SWING</a></li>
-	<li><a href='#search_and_replace'>Search and replace</a></li>
-	<li><a href='#calc_example'>Calc example</a></li>
-	<li><a href='#db'>DB</a></li>
-	<li><a href='#text'>Text</a></li>
-	<li><a href='#tables'>Tables</a></li>
-	<li><a href='#add_image'>Add image</a></li>
-	<li><a href='#set_texts'>Set texts</a></li>
-	<li><a href='#close_listener'>Close listener</a></li>
-	<li><a href='#construct_and_fill_table'>Construct and fill table</a></li>
-	<li><a href='#more_table_operations'>More table operations</a></li>
-	<li><a href='#place_text_content'>Place text content</a></li>
-	<li><a href='#set_font_and_text_properties'>Set font and text properties</a></li>
-	<li><a href='#paragraphs_and_text_formatting'>Paragraphs and text formatting</a></li>
-	<li><a href='#formulas'>Formulas</a></li>
-	<li><a href='#ui_disable_commands'>UI: Disable commands</a></li>
-</ul>
+<a href='#top'>Back to top</a><br/>
+<a name="snippets"></a>
+<h2>Snippets</h2>
 
 
 
@@ -717,7 +1134,7 @@ public class Snippet1 {
 <a href='#top'>Back to top</a><br/>
 <a name="text"></a><h3>
 Text
-</a>
+</h3>
 
 <pre>
 <code>
@@ -945,7 +1362,7 @@ public class Snippet16 {
 <a href='#top'>Back to top</a><br/>
 <a name="add_images"></a><h3>
 Add images
-</a>
+</h3>
 
 <pre>
 <code>
@@ -2213,7 +2630,9 @@ public class Snippet14 {
 </code>
 </pre>
 
-<h2>License</h2>
+<a href='#top'>Back to top</a><br/>
+<a name='license'></a>
+<h1>License</h1>
 <pre>
 /****************************************************************************
  *                                                                          *
