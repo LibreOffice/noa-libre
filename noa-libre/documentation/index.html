@@ -1,0 +1,2255 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+<!-- Documentation: version 0.1 from Jochen Stärk, 21.02.2013 -->
+    <title>NOA4Libre Documentation</title>
+	</head>
+<body>
+<a href='#top'>Back to top</a><br/>
+<a name="top"></a>
+<h1>Tutorial</h1>
+<!--  still missing -->
+<!--
+Ideas for structurizing
+Setup
+Writer
+	Ein- und Ausgabe
+	UI
+		Abschalten von Befehlen
+	Manipulation
+		Einfügen von Text
+		Ändern von Textattributen
+		Bilder
+		Tabellen
+		Platzhalter
+		Formeln
+Calc
+-->
+
+<ul>
+	<li><a href='#find_installation'>Find installation</a></li>
+	<li><a href='#change_font'>Change font</a></li>
+	<li><a href='#spreadsheet'>Spreadsheet</a></li>
+	<li><a href='#spreadsheet_in_swing'>Spreadsheet in SWING</a></li>
+	<li><a href='#search_and_replace'>Search and replace</a></li>
+	<li><a href='#calc_example'>Calc example</a></li>
+	<li><a href='#db'>DB</a></li>
+	<li><a href='#text'>Text</a></li>
+	<li><a href='#tables'>Tables</a></li>
+	<li><a href='#add_image'>Add image</a></li>
+	<li><a href='#set_texts'>Set texts</a></li>
+	<li><a href='#close_listener'>Close listener</a></li>
+	<li><a href='#construct_and_fill_table'>Construct and fill table</a></li>
+	<li><a href='#more_table_operations'>More table operations</a></li>
+	<li><a href='#place_text_content'>Place text content</a></li>
+	<li><a href='#set_font_and_text_properties'>Set font and text properties</a></li>
+	<li><a href='#paragraphs_and_text_formatting'>Paragraphs and text formatting</a></li>
+	<li><a href='#formulas'>Formulas</a></li>
+	<li><a href='#ui_disable_commands'>UI: Disable commands</a></li>
+</ul>
+
+
+
+<a href='#top'>Back to top</a><br/>
+<a name="find_installation"></a><h3>Find installation</h3>
+
+This will look for OpenOffice in it's default locations and print where it has been found.
+<pre>
+<code>
+	import ag.ion.bion.officelayer.application.IApplicationAssistant;
+	import ag.ion.bion.officelayer.application.ILazyApplicationInfo;
+
+//...
+
+	IApplicationAssistant applicationAssistant = new ApplicationAssistant();
+	ILazyApplicationInfo appInfo = applicationAssistant.getLatestLocalApplication();
+	if (appInfo!=null) { // A Openoffice.org was found
+		System.out.println(appInfo.getHome());
+	}
+
+</code>
+</pre>
+Please note in noa-libre getLatestLocalApplication has to be replaced by getLatestLocalLibreOfficeApplication respectively getLatestLocalOpenOfficeOrgApplication.
+
+This is some source code which should obtain the libreoffice/openoffice installation with the highest version number:
+<pre>
+<code>
+public static ILazyApplicationInfo getOfficeInfo() {
+		IApplicationAssistant applicationAssistant;
+		ILazyApplicationInfo appInfo=null, LappInfo=null, OappInfo=null; 
+		try {
+			applicationAssistant = new ApplicationAssistant();
+			LappInfo = applicationAssistant.getLatestLocalLibreOfficeApplication();
+			OappInfo = applicationAssistant.getLatestLocalOpenOfficeOrgApplication();
+			appInfo=LappInfo;// take the latest libreoffice installation unless openoffice is also installed in a higher version
+			if (appInfo==null) {
+				appInfo=OappInfo;
+			}
+			if ((LappInfo!=null)&&(OappInfo!=null)) {
+				if (LappInfo.getMajorVersion()>OappInfo.getMajorVersion()) {
+					appInfo=LappInfo;	
+				}
+				if (LappInfo.getMajorVersion()==OappInfo.getMajorVersion()) {
+					if (LappInfo.getMinorVersion()>OappInfo.getMinorVersion()) {
+						appInfo=LappInfo;	
+					}
+				}
+			}
+		} catch (OfficeApplicationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return appInfo;
+	}
+</code>
+</pre>
+<a href='#top'>Back to top</a><br/>
+<a name="change_font"></a><h3>Change Font</h3>
+
+Source: http://ubion.ion.ag/mainForumFolder/noa_forum/0099/
+
+You should know snippet9:
+<pre>
+<code>
+/*snippet9*/
+paragraphPropoerties3.getCharacterProperties().setFontSize(10);
+paragraphPropoerties3.getCharacterProperties().setFontUnderline(true); paragraphPropoerties3.getCharacterProperties().setFontColor(300);
+/**/ 
+</code>
+</pre>
+Just in case you have asked yourself how to change the font family, it works like this:
+<pre>
+<code>
+paragraphPropoerties3.getCharacterProperties().getXPropertySet().setPropertyValue("CharFontName","Arial";);
+</code>
+</pre>
+
+<a href='#top'>Back to top</a><br/>
+<a name="spreadsheet"></a><h3>
+Spreadsheet
+</h3>
+
+According to Snippet 15 and http://ubion.ion.ag/mainForumFolder/noa_forum/0048/ you can load a spreadsheet (and fill it with data) like this:
+
+<pre>
+<code>
+			IFrame officeFrame = officeApplication.getDesktopService().constructNewOfficeFrame(panel);
+			IDocument document=officeApplication.getDocumentService().constructNewDocument(officeFrame, IDocument.CALC, DocumentDescriptor.DEFAULT);
+			ISpreadsheetDocument spreadDocument=(ISpreadsheetDocument) document;
+			spreadDocument.addCloseListener(new OOoCloseListener(configs.getOfficeApplication()));
+			XSpreadsheets spreadsheets =  spreadDocument.getSpreadsheetDocument().getSheets();
+				String sheetName= "Tabelle1";
+				Object rows[][] = {
+				  new Object[]{new String("DataCell1"),new String("DataCell2"),new String("DataCell3"),new String("DataCell4")},
+				  new Object[]{new Integer(10),new Integer(20),new Integer(30),new Integer(40)},
+				  new Object[]{new Double(11.11),new Double(22.22),new Double(33.33),new Double(44.44)}
+				  };
+				String sheetName= "Tabelle1";
+				XSpreadsheet spreadsheet1 = 
+				  (XSpreadsheet)UnoRuntime.queryInterface(
+				      XSpreadsheet.class,spreadsheets.getByName(sheetName));
+
+//				insert your Data
+				XSheetCellCursor cellCursor = spreadsheet1.createCursor();
+				for(int i = 0; i &lt; rows.length; i++) {
+				  Object[] cols = rows[i] ;
+				  for(int j = 0; j &lt; cols.length; j++) {
+				    XCell cell= cellCursor.getCellByPosition(j,i);
+				    XText cellText = (XText)UnoRuntime.queryInterface(XText.class, cell);
+				    Object insert = cols[j];
+				    if(insert instanceof Number)
+				      cell.setValue(((Number)insert).doubleValue());
+				    else if(insert instanceof String)
+				      cellText.setString((String)insert);
+				    else
+				      cellText.setString(insert.toString());          
+				  }
+				}
+
+			 * */
+
+			frame.validate();
+
+//			Now it is time to disable two commands in the frame
+			officeFrame.disableDispatch(GlobalCommands.CLOSE_DOCUMENT);
+			officeFrame.disableDispatch(GlobalCommands.QUIT_APPLICATION);
+		} 
+		catch (Throwable throwable) {
+			throwable.printStackTrace();
+		} 
+</code>
+</pre>
+of course officeApplication.getDocumentService().constructNewDocument will construct a new document, you could as well load one by using (analogue to writer documents)
+<pre>
+<code>
+IDocument document=officeApplication.getDocumentService().loadDocument(officeFrame,IDocument.CALC);
+</code>
+</pre>
+
+instead of using
+<pre>
+<code>
+XSpreadsheet spreadsheet1 = 
+				  (XSpreadsheet)UnoRuntime.queryInterface(
+				      XSpreadsheet.class,spreadsheets.getByName(sheetName));
+</code>
+</pre>
+I personally recommend getElementNames, otherwise you might be subject to localization if your user uses a different language version of OOO.o:
+<pre>
+<code>
+    				  XSpreadsheet.class,spreadsheets.getByName(spreadsheets.getElementNames()[0]));
+</code>
+</pre>
+
+<a href='#top'>Back to top</a><br/>
+<a name="spreadsheet_in_swing"></a><h3>
+Spreadsheet in SWING
+</h3>
+
+
+According to Markus on http://ubion.ion.ag/mainForumFolder/noa_forum/0199?b_start:int=0#0016, this source will create a OpenOffice.org Calc window in a SWING frame
+<pre>
+<code>
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.HashMap;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import ag.ion.bion.officelayer.NativeView;
+import ag.ion.bion.officelayer.application.IApplicationAssistant;
+import ag.ion.bion.officelayer.application.ILazyApplicationInfo;
+import ag.ion.bion.officelayer.application.IOfficeApplication;
+import ag.ion.bion.officelayer.application.OfficeApplicationRuntime;
+import ag.ion.bion.officelayer.desktop.IFrame;
+import ag.ion.bion.officelayer.document.DocumentDescriptor;
+import ag.ion.bion.officelayer.document.IDocument;
+import ag.ion.bion.officelayer.internal.application.ApplicationAssistant;
+import ag.ion.bion.officelayer.spreadsheet.ISpreadsheetDocument;
+import ag.ion.bion.officelayer.text.table.TextTableCellNameHelper;
+
+import com.sun.star.sheet.XSheetCellCursor;
+import com.sun.star.sheet.XSpreadsheet;
+import com.sun.star.sheet.XSpreadsheets;
+import com.sun.star.table.XCell;
+import com.sun.star.text.XText;
+import com.sun.star.uno.UnoRuntime;
+
+public class SimpleApp extends JFrame {
+
+  private static final String  CELL_NAME         = "C1";
+  private static final String  SHEET_NAME        = "Tabelle1"; //or Table1
+
+  private IOfficeApplication   officeApplication = null;
+  private IFrame               officeFrame       = null;
+  private ISpreadsheetDocument document          = null;
+  private JPanel               noaPanel          = null;
+  private JTextField           textField         = null;
+
+  public SimpleApp() {
+    super(SimpleApp.class.getName());
+    getContentPane().setLayout(new GridBagLayout());
+    GridBagConstraints c = new GridBagConstraints();
+
+    JLabel label = new JLabel("Value: ");
+    c.fill = GridBagConstraints.HORIZONTAL;
+    c.insets = new Insets(10, 0, 0, 0);
+    c.weightx = 0.1;
+    c.gridx = 0;
+    c.gridy = 0;
+    getContentPane().add(label, c);
+    textField = new JTextField();
+    label.setLabelFor(textField);
+    c.fill = GridBagConstraints.HORIZONTAL;
+    c.weightx = 0.7;
+    c.gridx = 1;
+    c.gridy = 0;
+    getContentPane().add(textField, c);
+    JButton buttonRead = new JButton("Read Value Of " + CELL_NAME);
+    c.fill = GridBagConstraints.HORIZONTAL;
+    c.weightx = 0.1;
+    c.gridx = 2;
+    c.gridy = 0;
+    getContentPane().add(buttonRead, c);
+
+    buttonRead.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        try {
+          XSpreadsheets sheets = document.getSpreadsheetDocument().getSheets();
+          XSpreadsheet spreadsheet1 = (XSpreadsheet) UnoRuntime.queryInterface(XSpreadsheet.class,
+              sheets.getByName(SHEET_NAME));
+          XSheetCellCursor cellCursor = spreadsheet1.createCursor();
+          XCell cell = cellCursor.getCellByPosition(TextTableCellNameHelper.getColumnIndex(CELL_NAME),
+              TextTableCellNameHelper.getRowIndex(CELL_NAME));
+          XText cellText = (XText) UnoRuntime.queryInterface(XText.class, cell);
+          textField.setText(cellText.getString());
+        }
+        catch (Exception exception) {
+          exception.printStackTrace();
+        }
+      }
+    });
+
+    JButton buttonReadFormula = new JButton("Read Formula Of " + CELL_NAME);
+    c.fill = GridBagConstraints.HORIZONTAL;
+    c.weightx = 0.1;
+    c.gridx = 3;
+    c.gridy = 0;
+    getContentPane().add(buttonReadFormula, c);
+
+    buttonReadFormula.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        try {
+          XSpreadsheets sheets = document.getSpreadsheetDocument().getSheets();
+          XSpreadsheet spreadsheet1 = (XSpreadsheet) UnoRuntime.queryInterface(XSpreadsheet.class,
+              sheets.getByName(SHEET_NAME));
+          XSheetCellCursor cellCursor = spreadsheet1.createCursor();
+          XCell cell = cellCursor.getCellByPosition(TextTableCellNameHelper.getColumnIndex(CELL_NAME),
+              TextTableCellNameHelper.getRowIndex(CELL_NAME));
+          String formula = cell.getFormula();
+          if (formula != null && formula.startsWith("=")) {
+            textField.setText(formula);
+          }
+          else {
+            textField.setText("NO FORMULA");
+          }
+        }
+        catch (Exception exception) {
+          exception.printStackTrace();
+        }
+      }
+    });
+
+    JButton buttonUpdate = new JButton("Update Formula/Value Of " + CELL_NAME);
+    c.fill = GridBagConstraints.HORIZONTAL;
+    c.weightx = 0.1;
+    c.gridx = 4;
+    c.gridy = 0;
+    getContentPane().add(buttonUpdate, c);
+
+    buttonUpdate.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        try {
+          XSpreadsheets sheets = document.getSpreadsheetDocument().getSheets();
+          XSpreadsheet spreadsheet1 = (XSpreadsheet) UnoRuntime.queryInterface(XSpreadsheet.class,
+              sheets.getByName(SHEET_NAME));
+          XSheetCellCursor cellCursor = spreadsheet1.createCursor();
+          XCell cell = cellCursor.getCellByPosition(TextTableCellNameHelper.getColumnIndex(CELL_NAME),
+              TextTableCellNameHelper.getRowIndex(CELL_NAME));
+          XText cellText = (XText) UnoRuntime.queryInterface(XText.class, cell);
+          String valueStr = textField.getText();
+          Object valueObj = valueStr;
+          try {
+            valueObj = Double.valueOf(Double.parseDouble(valueStr));
+          }
+          catch (NumberFormatException nfe) {
+            //nu number
+          }
+          if (valueObj instanceof Double)
+            cell.setValue(((Double) valueObj).doubleValue());
+          else if (valueStr.startsWith("="))
+            cell.setFormula(valueStr);
+          else
+            cellText.setString(valueStr);
+        }
+        catch (Exception exception) {
+          exception.printStackTrace();
+        }
+      }
+    });
+
+    JButton buttonNewDoc = new JButton("Open new Document/Close old one");
+    c.fill = GridBagConstraints.HORIZONTAL;
+    c.weightx = 0.1;
+    c.gridx = 5;
+    c.gridy = 0;
+    getContentPane().add(buttonNewDoc, c);
+
+    buttonNewDoc.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        try {
+          IDocument oldDoc = document;
+          document = (ISpreadsheetDocument) officeApplication.getDocumentService().constructNewDocument(officeFrame,
+              IDocument.CALC,
+              DocumentDescriptor.DEFAULT);
+          oldDoc.close();
+        }
+        catch (Exception exception) {
+          exception.printStackTrace();
+        }
+      }
+    });
+
+    noaPanel = new JPanel();
+    c.weighty = 1.0;
+    c.anchor = GridBagConstraints.PAGE_END;
+    c.insets = new Insets(10, 0, 0, 0);
+    c.fill = GridBagConstraints.BOTH;
+    c.gridx = 0;
+    c.gridy = 1;
+    c.gridwidth = 6;
+    getContentPane().add(noaPanel, c);
+    setSize(1024, 800);
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    setVisible(true);
+    fillNOAPanel();
+    addWindowListener(new WindowAdapter() {
+      public void windowClosing(WindowEvent windowEvent) {
+        try {
+          if (document != null)
+            document.close();
+          document = null;
+          /*if (officeApplication != null) {
+            officeApplication.deactivate();
+            officeApplication.dispose();
+            officeApplication = null;
+          }*/
+        }
+        catch (Exception exception) {
+          //do not consume
+        }
+      }
+    });
+  }
+
+  private void fillNOAPanel() {
+    if (noaPanel != null) {
+      try {
+        if (officeApplication == null)
+          officeApplication = startOOO();
+        officeFrame = constructOOOFrame(officeApplication, noaPanel);
+        document = (ISpreadsheetDocument) officeApplication.getDocumentService().constructNewDocument(officeFrame,
+            IDocument.CALC,
+            DocumentDescriptor.DEFAULT);
+
+        noaPanel.setVisible(true);
+      }
+      catch (Throwable throwable) {
+        noaPanel.add(new JLabel("An error occured while creating the NOA panel: " + throwable.getMessage()));
+      }
+    }
+  }
+
+  private IOfficeApplication startOOO() throws Throwable {
+    IApplicationAssistant applicationAssistant = new ApplicationAssistant(System.getProperty("user.dir") + "\\lib");
+    ILazyApplicationInfo[] appInfos = applicationAssistant.getLocalApplications();
+    if (appInfos.length &lt; 1)
+      throw new Throwable("No OpenOffice.org Application found.");
+    HashMap configuration = new HashMap();
+    configuration.put(IOfficeApplication.APPLICATION_HOME_KEY, appInfos[0].getHome());
+    configuration.put(IOfficeApplication.APPLICATION_TYPE_KEY, IOfficeApplication.LOCAL_APPLICATION);
+    IOfficeApplication officeAplication = OfficeApplicationRuntime.getApplication(configuration);
+
+    officeAplication.setConfiguration(configuration);
+    officeAplication.activate();
+    return officeAplication;
+  }
+
+  private IFrame constructOOOFrame(IOfficeApplication officeApplication, final Container parent)
+      throws Throwable {
+    final NativeView nativeView = new NativeView(System.getProperty("user.dir") + "\\lib");
+    parent.add(nativeView);
+    parent.addComponentListener(new ComponentAdapter() {
+      public void componentResized(ComponentEvent e) {
+        nativeView.setPreferredSize(new Dimension(parent.getWidth() - 5, parent.getHeight() - 5));
+        parent.getLayout().layoutContainer(parent);
+      }
+    });
+    nativeView.setPreferredSize(new Dimension(parent.getWidth() - 5, parent.getHeight() - 5));
+    parent.getLayout().layoutContainer(parent);
+    IFrame officeFrame = officeApplication.getDesktopService().constructNewOfficeFrame(nativeView);
+    parent.validate();
+    return officeFrame;
+  }
+
+  public static void main(String[] argv) {
+    new SimpleApp();
+  }
+}
+
+</code>
+</pre>
+<a href='#top'>Back to top</a><br/>
+<a name="search_and_replace"></a><h3>
+Search and replace</h3>
+
+
+Searching is demonstrated in Snippet 12, here is a sample how you can search and replace:
+<pre>
+<code>
+	String keywords[] = {"SearchItem1", "SearchItem2"};
+	String keyvalues[] = {"ReplaceItem1", "ReplaceItem2"};
+		
+		
+		
+		
+		for (int keywordIndex = 0; keywordIndex &lt; keywords.length; keywordIndex++) {
+			// replace all keywords by their respective keyValues
+			
+			// noa does not seem to support replacements(XReplaceable), so lets initiate a search and replace the occurences individually
+			SearchDescriptor searchDescriptor = new SearchDescriptor(keywords[keywordIndex]);
+			searchDescriptor.setIsCaseSensitive(true);
+			
+			ISearchResult searchResult = this.parentWizard.getDocument().getSearchService().findAll(searchDescriptor);
+			
+			if(!searchResult.isEmpty()) {
+				//...and now select the result
+				ITextRange[] textRanges = searchResult.getTextRanges();
+				for (int resultIndex=0; resultIndex&lt;textRanges.length; resultIndex++) {
+					textRanges[resultIndex].setText(keyvalues[keywordIndex]);
+					
+				}
+			}
+		}
+
+
+</code>
+</pre>
+		
+<a href='#top'>Back to top</a><br/>
+<a name="calc_example"></a><h3>Calc example</h3>
+
+<pre>
+<code>
+
+/*
+ * Last changes made by $Author: andreas $, $Date: 2006-10-04 14:14:28 +0200 (Mi, 04 Okt 2006) $
+ */
+import ag.ion.bion.officelayer.application.IOfficeApplication;
+import ag.ion.bion.officelayer.application.OfficeApplicationRuntime;
+
+import ag.ion.bion.officelayer.document.DocumentDescriptor;
+import ag.ion.bion.officelayer.document.IDocument;
+import ag.ion.bion.officelayer.document.IDocumentService;
+
+import ag.ion.bion.officelayer.spreadsheet.ISpreadsheetDocument;
+
+import com.sun.star.sheet.XSheetCellCursor;
+import com.sun.star.sheet.XSpreadsheet;
+import com.sun.star.sheet.XSpreadsheets;
+
+import com.sun.star.table.XCell;
+
+import com.sun.star.text.XText;
+
+import com.sun.star.uno.UnoRuntime;
+
+import java.util.HashMap;
+
+/**
+ * This code snippet shows how to insert data in a calc document.
+ * Currently with UNO API access as it is not yet implemented in NOA.
+ * 
+ * @author Markus Krüger
+ * @version $Revision: 10398 $
+ * @date 09.03.2007
+ */
+public class Snippet15 {
+
+	/*
+	 * The path to the office application, in this case on a windows system.
+	 * 
+	 * On a Linux system this would look like: 
+	 * => private final static String officeHome = "/usr/lib/ooo-2.1"; 
+	 */
+	private final static String OPEN_OFFICE_ORG_PATH = "C:\\Programme\\OpenOffice.org 2.1"; 
+		
+	public static void main(String[] args) {
+		try {
+			HashMap configuration = new HashMap();
+			configuration.put(IOfficeApplication.APPLICATION_HOME_KEY, OPEN_OFFICE_ORG_PATH);
+			configuration.put(IOfficeApplication.APPLICATION_TYPE_KEY, IOfficeApplication.LOCAL_APPLICATION);
+			IOfficeApplication officeAplication = OfficeApplicationRuntime.getApplication(configuration);	
+			officeAplication.setConfiguration(configuration);
+			officeAplication.activate();
+			IDocumentService documentService = officeAplication.getDocumentService();
+			IDocument document = documentService.constructNewDocument(IDocument.CALC, DocumentDescriptor.DEFAULT);
+			ISpreadsheetDocument spreadsheetDocument = (ISpreadsheetDocument) document;
+      XSpreadsheets spreadsheets = spreadsheetDocument.getSpreadsheetDocument().getSheets();
+      String sheetName= "Tabelle1";
+      Object[][] rows = new Object[][]{
+          new Object[]{"DataCell1","DataCell2","DataCell3","DataCell4"},
+          new Object[]{new Integer(10),new Integer(20),new Integer(30),new Integer(40)},
+          new Object[]{new Double(11.11),new Double(22.22),new Double(33.33),new Double(44.44)}};
+      XSpreadsheet spreadsheet1 = (XSpreadsheet)UnoRuntime.queryInterface(XSpreadsheet.class,spreadsheets.getByName(sheetName));
+      //insert your Data
+      XSheetCellCursor cellCursor = spreadsheet1.createCursor();
+      for(int i = 0; i &lt; rows.length; i++) {
+        Object[] cols = rows[i];
+        for(int j = 0; j &lt; cols.length; j++) {
+          XCell cell= cellCursor.getCellByPosition(j,i);
+          XText cellText = (XText)UnoRuntime.queryInterface(XText.class, cell);
+          Object insert = cols[j];
+          if(insert instanceof Number)
+            cell.setValue(((Number)insert).doubleValue());
+          else if(insert instanceof String)
+            cellText.setString((String)insert);
+          else
+            cellText.setString(insert.toString());          
+        }
+      }
+		} 
+		catch (Throwable exception) {
+			exception.printStackTrace();
+		} 
+	}
+
+}
+</code>
+</pre>
+
+<a href='#top'>Back to top</a><br/>
+<a name="db"></a><h3>
+DB
+</h3>
+<pre>
+<code>
+import ag.ion.bion.officelayer.application.IOfficeApplication;
+import ag.ion.bion.officelayer.application.OfficeApplicationRuntime;
+
+import ag.ion.bion.officelayer.document.IDocument;
+
+import java.util.HashMap;
+
+/**
+ * This code snippet creates a base document
+ * and stores it.
+ * 
+ * @author Andreas Bröker
+ * @version $Revision: 10398 $
+ * @date 16.03.2006
+ */
+public class Snippet13 {
+	
+	public static void main(String args[]) {		
+		String officeHome = "C:\\Programme\\OpenOffice.org 2.0"; //define your office home here
+		String storePath = "C:\\MyDB.odb"; //define your db target path
+		
+		HashMap hashMap = new HashMap(2);
+		hashMap.put(IOfficeApplication.APPLICATION_TYPE_KEY, IOfficeApplication.LOCAL_APPLICATION);
+		hashMap.put(IOfficeApplication.APPLICATION_HOME_KEY, officeHome);
+
+		try {
+			IOfficeApplication application = OfficeApplicationRuntime.getApplication(hashMap);
+			application.activate();
+			IDocument document = application.getDocumentService().constructNewHiddenDocument(IDocument.BASE);
+			
+			document.getPersistenceService().store(storePath);
+			application.deactivate();
+			application.dispose();
+		}
+		catch(Throwable throwable) {
+			throwable.printStackTrace();
+		}
+	}
+	
+}
+</code>
+</pre>
+
+<a href='#top'>Back to top</a><br/>
+<a name="export_pdf"></a><h3>
+Export PDF
+</h3>
+<pre>
+<code>
+
+/*
+ * Last changes made by $Author: andreas $, $Date: 2006-10-04 14:14:28 +0200 (Mi, 04 Okt 2006) $
+ */
+import ag.ion.bion.officelayer.application.IOfficeApplication;
+import ag.ion.bion.officelayer.application.OfficeApplicationRuntime;
+
+import ag.ion.bion.officelayer.document.IDocument;
+
+import ag.ion.bion.officelayer.filter.PDFFilter;
+
+import java.util.HashMap;
+
+/**
+ * This code snippet creates an inpress document
+ * and exports the new document to pdf.
+ * 
+ * @author Andreas Bröker
+ * @version $Revision: 10398 $
+ * @date 16.03.2006
+ */
+public class Snippet1 {
+	
+	public static void main(String args[]) {
+		String officeHome = "C:\\Programme\\OpenOffice.org 2.0"; //define your office home here
+		String pdfExportPath = "C:\\MyImpressPDF.pdf"; //define your pdf target path
+		
+		HashMap hashMap = new HashMap(2);
+		hashMap.put(IOfficeApplication.APPLICATION_TYPE_KEY, IOfficeApplication.LOCAL_APPLICATION);
+		hashMap.put(IOfficeApplication.APPLICATION_HOME_KEY, officeHome);
+		
+		try {
+			IOfficeApplication application = OfficeApplicationRuntime.getApplication(hashMap);
+			application.activate();
+			IDocument document = application.getDocumentService().constructNewHiddenDocument(IDocument.IMPRESS);
+			document.getPersistenceService().export(pdfExportPath, PDFFilter.FILTER);
+			application.deactivate();
+		}
+		catch(Throwable throwable) {
+			throwable.printStackTrace();
+		}
+	}
+	
+}
+
+</code>
+</pre>
+<a href='#top'>Back to top</a><br/>
+<a name="text"></a><h3>
+Text
+</a>
+
+<pre>
+<code>
+/*
+ * Last changes made by $Author: andreas $, $Date: 2006-10-04 14:14:28 +0200 (Mi, 04 Okt 2006) $
+ */
+import ag.ion.bion.officelayer.application.IOfficeApplication;
+import ag.ion.bion.officelayer.application.OfficeApplicationException;
+import ag.ion.bion.officelayer.application.OfficeApplicationRuntime;
+
+import ag.ion.bion.officelayer.document.DocumentDescriptor;
+import ag.ion.bion.officelayer.document.IDocument;
+import ag.ion.bion.officelayer.document.IDocumentService;
+
+import ag.ion.bion.officelayer.internal.application.LocalOfficeApplication;
+
+import ag.ion.bion.officelayer.text.ITextDocument;
+
+import ag.ion.noa.NOAException;
+
+import java.util.HashMap;
+
+/**
+ * This code snippet creates a new text document.
+ * 
+ * @author Sebastian Rösgen
+ * @version $Revision: 10398 $
+ * @date 17.03.2006
+ */
+public class Snippet2 {
+
+	/*
+	 * The path to the office application, in this case on a(n OpenSUSE)Linux system.
+	 * 
+	 * On a Windows system this would look like: 
+	 * => private final static String officeHome = "C:\\Programme\\OpenOffice.org 2.0"; 
+	 */
+	private final static String OPEN_OFFICE_ORG_PATH = "/usr/lib/ooo-2.0"; 
+		
+	public static void main(String[] args) {
+		try {
+			HashMap configuration = new HashMap();
+			configuration.put(IOfficeApplication.APPLICATION_HOME_KEY, OPEN_OFFICE_ORG_PATH);
+			configuration.put(IOfficeApplication.APPLICATION_TYPE_KEY, IOfficeApplication.LOCAL_APPLICATION);
+			final IOfficeApplication officeAplication = OfficeApplicationRuntime.getApplication(configuration);	
+			officeAplication.setConfiguration(configuration);
+			officeAplication.activate();
+			IDocumentService documentService = officeAplication.getDocumentService();
+			IDocument document = documentService.constructNewDocument(IDocument.WRITER, DocumentDescriptor.DEFAULT);
+			ITextDocument textDocument = (ITextDocument)document;
+			
+			/*
+			 * Now do something with the textDocument ....
+			 * (Examples in other snippets)
+			 */
+		} 
+		catch (OfficeApplicationException exception) {
+			exception.printStackTrace();
+		} 
+		catch (NOAException exception) {
+			exception.printStackTrace();
+		}
+	}
+
+}
+</code>
+</pre>
+
+<a href='#top'>Back to top</a><br/>
+<a name="find"></a><h3>
+Find
+</h3>
+
+<pre>
+<code>
+/*
+ * Last changes made by $Author: andreas $, $Date: 2006-10-04 14:14:28 +0200 (Mi, 04 Okt 2006) $
+ */
+import ag.ion.bion.officelayer.application.IOfficeApplication;
+import ag.ion.bion.officelayer.application.OfficeApplicationException;
+import ag.ion.bion.officelayer.application.OfficeApplicationRuntime;
+
+import ag.ion.bion.officelayer.document.DocumentDescriptor;
+import ag.ion.bion.officelayer.document.IDocument;
+import ag.ion.bion.officelayer.document.IDocumentService;
+
+import ag.ion.bion.officelayer.text.ITextDocument;
+import ag.ion.bion.officelayer.text.ITextRange;
+
+import ag.ion.noa.NOAException;
+
+import ag.ion.noa.search.ISearchResult;
+import ag.ion.noa.search.SearchDescriptor;
+
+import ag.ion.noa.text.TextRangeSelection;
+
+import java.util.HashMap;
+
+/**
+ * This code snippet shows how it is possible to search
+ * within a text document.
+ * 
+ * @author Andreas Bröker
+ * @version $Revision: 10398 $
+ * @date 16.07.2006
+ */
+public class Snippet12 {
+
+	/*
+	 * The path to the office application, in this case on a windows system.
+	 * 
+	 * On a Linux system this would look like: 
+	 * => private final static String officeHome = "/usr/lib/ooo-2.0"; 
+	 */
+	private final static String OPEN_OFFICE_ORG_PATH = "C:\\Programme\\OpenOffice.org 2.0"; 
+		
+	public static void main(String[] args) {
+		try {
+			HashMap configuration = new HashMap();
+			configuration.put(IOfficeApplication.APPLICATION_HOME_KEY, OPEN_OFFICE_ORG_PATH);
+			configuration.put(IOfficeApplication.APPLICATION_TYPE_KEY, IOfficeApplication.LOCAL_APPLICATION);
+			IOfficeApplication officeAplication = OfficeApplicationRuntime.getApplication(configuration);	
+			officeAplication.setConfiguration(configuration);
+			officeAplication.activate();
+			IDocumentService documentService = officeAplication.getDocumentService();
+			IDocument document = documentService.constructNewDocument(IDocument.WRITER, DocumentDescriptor.DEFAULT);
+			ITextDocument textDocument = (ITextDocument)document;
+			//First some text ...
+			textDocument.getTextService().getText().setText("This is a text content for a search example with NOA.");
+			
+			//OK - now we need a search query
+			SearchDescriptor searchDescriptor = new SearchDescriptor("NOA");
+			searchDescriptor.setIsCaseSensitive(true);
+			//Perform the search ...
+			ISearchResult searchResult = textDocument.getSearchService().findFirst(searchDescriptor);
+			if(!searchResult.isEmpty()) {
+				//...and now select the result
+				ITextRange[] textRanges = searchResult.getTextRanges();
+				textDocument.setSelection(new TextRangeSelection(textRanges[0]));
+			}
+		} 
+		catch (OfficeApplicationException exception) {
+			exception.printStackTrace();
+		} 
+		catch (NOAException exception) {
+			exception.printStackTrace();
+		}
+	}
+
+}
+</code>
+</pre>
+
+<a href='#top'>Back to top</a><br/>
+<a name="tables"></a><h3>
+Tables</h3>
+
+
+<pre>
+<code>
+/*
+ * Last changes made by $Author: andreas $, $Date: 2006-10-04 14:14:28 +0200 (Mi, 04 Okt 2006) $
+ */
+import ag.ion.bion.officelayer.application.IOfficeApplication;
+import ag.ion.bion.officelayer.application.OfficeApplicationRuntime;
+import ag.ion.bion.officelayer.document.DocumentDescriptor;
+import ag.ion.bion.officelayer.document.IDocument;
+import ag.ion.bion.officelayer.document.IDocumentService;
+import ag.ion.bion.officelayer.text.IText;
+import ag.ion.bion.officelayer.text.ITextDocument;
+import ag.ion.bion.officelayer.text.ITextTable;
+
+import java.util.HashMap;
+
+/**
+ * This code snippet creates a table and makes the first three line table header style.
+ * 
+ * @author Markus Krüger
+ * @version $Revision: 10398 $
+ */
+public class Snippet16 {
+
+  /*
+   * The path to the office application, in this case on a Windows system.
+   * 
+   * On a (n OpenSUSE)Linux system this would look like: 
+   * => private final static String officeHome = "/usr/lib/OpenOffice.org2.1"; 
+   */
+  private final static String OPEN_OFFICE_ORG_PATH = "C:\\Programme\\OpenOffice.org 2.1"; 
+    
+  public static void main(String[] args) {
+    try {
+      HashMap configuration = new HashMap();
+      configuration.put(IOfficeApplication.APPLICATION_HOME_KEY, OPEN_OFFICE_ORG_PATH);
+      configuration.put(IOfficeApplication.APPLICATION_TYPE_KEY, IOfficeApplication.LOCAL_APPLICATION);
+      final IOfficeApplication officeAplication = OfficeApplicationRuntime.getApplication(configuration); 
+      officeAplication.setConfiguration(configuration);
+      officeAplication.activate();
+      IDocumentService documentService = officeAplication.getDocumentService();
+      ITextDocument textDocument = (ITextDocument)documentService.constructNewDocument(IDocument.WRITER, DocumentDescriptor.DEFAULT);
+
+      //construct table
+      int rows = 15;
+      int cols = 5;
+      ITextTable textTable = textDocument.getTextTableService().constructTextTable(rows, cols);       
+      textDocument.getTextService().getTextContentService().insertTextContent(textTable);
+      textTable.setHeaderRows(3);
+      //set some text
+      for(int i = 0, n = rows; i &lt; n; i++) {
+        for(int j = 0, m = cols; j &lt; m; j++) {
+          IText cellText = textTable.getCell(j,i).getTextService().getText();
+          cellText.setText("Line "+(i+1)+" Col "+(j+1));
+        }
+      }
+    } 
+    catch (Throwable exception) {
+      exception.printStackTrace();
+    } 
+  }
+
+}
+
+</code>
+</pre>
+<a href='#top'>Back to top</a><br/>
+<a name="add_images"></a><h3>
+Add images
+</a>
+
+<pre>
+<code>
+/*
+ * Last changes made by $Author: andreas $, $Date: 2006-10-04 14:14:28 +0200 (Mi, 04 Okt 2006) $
+ */
+import ag.ion.bion.officelayer.application.IOfficeApplication;
+import ag.ion.bion.officelayer.application.OfficeApplicationException;
+import ag.ion.bion.officelayer.application.OfficeApplicationRuntime;
+import ag.ion.bion.officelayer.document.DocumentDescriptor;
+import ag.ion.bion.officelayer.document.IDocument;
+import ag.ion.bion.officelayer.document.IDocumentService;
+import ag.ion.bion.officelayer.text.ITextContentService;
+import ag.ion.bion.officelayer.text.ITextCursor;
+import ag.ion.bion.officelayer.text.ITextDocument;
+import ag.ion.bion.officelayer.text.ITextDocumentImage;
+import ag.ion.noa.graphic.GraphicInfo;
+
+import com.sun.star.text.HoriOrientation;
+import com.sun.star.text.TextContentAnchorType;
+import com.sun.star.text.VertOrientation;
+
+import java.io.FileInputStream;
+import java.util.HashMap;
+
+/** 
+ * This code snippet creates an image inside a text document. 
+ *  
+ * @author Markus Krüger
+ * @version $Revision: 10398 $ 
+ */
+public class Snippet17 {
+
+  /* 
+   * The path to the office application, in this case on a(n OpenSUSE)Linux system. On a Windows system this 
+   * would look like: => private final static String officeHome = "C:\\Programme\\OpenOffice.org 2.0"; 
+   */
+  private final static String OPEN_OFFICE_ORG_PATH = "C:\\Programme\\OpenOffice.org 2.2";
+
+  public static void main(String[] args) {
+    try {
+      HashMap configuration = new HashMap();
+      configuration.put(IOfficeApplication.APPLICATION_HOME_KEY,
+          OPEN_OFFICE_ORG_PATH);
+      configuration.put(IOfficeApplication.APPLICATION_TYPE_KEY,
+          IOfficeApplication.LOCAL_APPLICATION);
+      final IOfficeApplication officeAplication = OfficeApplicationRuntime
+          .getApplication(configuration);
+      officeAplication.setConfiguration(configuration);
+      officeAplication.activate();
+      IDocumentService documentService = officeAplication.getDocumentService();
+      IDocument document = documentService.constructNewDocument(
+          IDocument.WRITER, new DocumentDescriptor());
+
+      ITextDocument textDocument = (ITextDocument) document;
+
+      boolean useStream = true;
+      GraphicInfo graphicInfo = null;
+
+      String imagePath = "d:\\my_image.gif";
+      int pixelWidth = 265;
+      int pixelHeight = 256;
+
+      if(!useStream) {
+        //with url
+        graphicInfo = new GraphicInfo(imagePath, pixelWidth, true, pixelHeight, true,
+            VertOrientation.TOP, HoriOrientation.LEFT,
+            TextContentAnchorType.AT_PARAGRAPH);
+      }
+      else {
+        //with stream
+        graphicInfo = new GraphicInfo(new FileInputStream(imagePath), pixelWidth,
+            true, pixelHeight, true, VertOrientation.TOP, HoriOrientation.LEFT,
+            TextContentAnchorType.AT_PARAGRAPH);
+      }
+
+      ITextContentService textContentService = textDocument.getTextService()
+          .getTextContentService();
+
+      ITextCursor textCursor = textDocument.getTextService().getText()
+          .getTextCursorService().getTextCursor();
+
+      ITextDocumentImage textDocumentImage = textContentService
+          .constructNewImage(graphicInfo);
+      textContentService.insertTextContent(textCursor.getEnd(),
+          textDocumentImage);
+
+      officeAplication.deactivate();
+    }
+    catch(OfficeApplicationException exception) {
+      exception.printStackTrace();
+    }
+    catch(Throwable exception) {
+      exception.printStackTrace();
+    }
+  }
+
+}
+</code>
+</pre>
+
+<a href='#top'>Back to top</a><br/>
+<a name="set_texts"></a><h3>
+Set texts
+</h3>
+
+<pre>
+<code>
+/*
+ * Last changes made by $Author: andreas $, $Date: 2006-10-04 14:14:28 +0200 (Mi, 04 Okt 2006) $
+ */
+import java.util.HashMap;
+import ag.ion.bion.officelayer.application.IOfficeApplication;
+import ag.ion.bion.officelayer.application.OfficeApplicationException;
+import ag.ion.bion.officelayer.application.OfficeApplicationRuntime;
+import ag.ion.bion.officelayer.document.DocumentDescriptor;
+import ag.ion.bion.officelayer.document.IDocument;
+import ag.ion.bion.officelayer.document.IDocumentService;
+import ag.ion.bion.officelayer.text.ITextDocument;
+import ag.ion.noa.NOAException;
+
+
+/**
+ * Since we have done some work with tables now, it is a good idea to 
+ * do some work with simple text. More examples for tales and texts can follow after we 
+ * just get used to the basics a little bit more.
+ * 
+ * @author Sebastian Rösgen
+ * @version $Revision: 10398 $
+ * @date 17.03.2006
+ */
+public class Snippet3 {
+
+	/*
+	 * The path to the office application, in this case on a(n OpenSUSE)Linux system.
+	 * 
+	 * On a Windows system this would look like: 
+	 * => private final static String officeHome = "C:\\Programme\\OpenOffice.org 2.0"; 
+	 */
+	private final static String OPEN_OFFICE_ORG_PATH = "/usr/lib/ooo-2.0"; 
+	
+	
+	public static void main(String[] args) {
+		HashMap configuration = new HashMap();
+		configuration.put(IOfficeApplication.APPLICATION_HOME_KEY, OPEN_OFFICE_ORG_PATH);
+		configuration.put(IOfficeApplication.APPLICATION_TYPE_KEY, IOfficeApplication.LOCAL_APPLICATION);
+		
+		try {
+			IOfficeApplication officeAplication = OfficeApplicationRuntime.getApplication(configuration);
+			officeAplication.activate();
+			IDocumentService documentService = officeAplication.getDocumentService();
+			IDocument document = documentService.constructNewDocument(IDocument.WRITER, DocumentDescriptor.DEFAULT);
+			ITextDocument textDocument = (ITextDocument)document;
+			
+			/*
+			 * Now we just place some text in the document
+			 */
+			textDocument.getTextService().getText().setText("Hello World Test Text");
+			
+			String temp = textDocument.getTextService().getText().getText();
+			textDocument.getTextService().getText().setText(temp + "\n" + "Next Line in text");	
+			
+			/*
+			 * This was very ugly so lets later see how this can be done better, with cursors
+			 * (Look on Snippet7 to learn more stuff about creating and working
+			 * with text in the dcoument)
+			 */
+		} 
+		catch (OfficeApplicationException exception) {
+			exception.printStackTrace();
+		} 
+		catch (NOAException exception) {
+			exception.printStackTrace();
+		}
+	}
+
+}
+</code>
+</pre>
+<a href='#top'>Back to top</a><br/>
+<a name="close_listener"></a><h3>
+Close listener 
+</h3>
+<pre>
+<code>
+/*
+ * Last changes made by $Author: andreas $, $Date: 2006-10-04 14:14:28 +0200 (Mi, 04 Okt 2006) $
+ */
+import java.util.HashMap;
+import ag.ion.bion.officelayer.application.IOfficeApplication;
+import ag.ion.bion.officelayer.application.OfficeApplicationException;
+import ag.ion.bion.officelayer.application.OfficeApplicationRuntime;
+import ag.ion.bion.officelayer.document.DocumentDescriptor;
+import ag.ion.bion.officelayer.document.IDocument;
+import ag.ion.bion.officelayer.document.IDocumentService;
+import ag.ion.bion.officelayer.event.ICloseEvent;
+import ag.ion.bion.officelayer.event.ICloseListener;
+import ag.ion.bion.officelayer.event.IEvent;
+import ag.ion.bion.officelayer.text.ITextDocument;
+import ag.ion.noa.NOAException;
+
+
+/**
+ * You may have noticed it already: there may occur problems if the opened document is 
+ * closed by the user. So there must be a possibility to notice the closing of the 
+ * document. This is done via a listener, which will be discussed in this snippet.
+ * 
+ * @author Sebastian Rösgen
+ * @version $Revision: 10398 $
+ * @date 17.03.2006
+ */
+public class Snippet4 {
+
+	/*
+	 * The path to the office application, in this case on a(n OpenSUSE)Linux system.
+	 * 
+	 * On a Windows system this would look like: 
+	 * => private final static String officeHome = "C:\\Programme\\OpenOffice.org 2.0"; 
+	 */
+	private final static String OPEN_OFFICE_ORG_PATH = "/usr/lib/ooo-2.0"; 
+	
+	/**
+	 * The internal close listener of the document. It does not really 
+	 * make sense but is actually expedient enough to show how it works .
+	 * 
+	 * @author Sebastian Rösgen
+	 */
+	private static class InternalCloseListener implements ICloseListener {
+
+	  //----------------------------------------------------------------------------
+	  /**
+	   * Is called when someone tries to close a listened object. Not needed in
+	   * here.
+	   * 
+	   * @param closeEvent close event
+	   * @param getsOwnership information about the ownership
+	   * 
+	   * @author Sebastian Rösgen
+	   * @date 17.03.2006
+	   */ 
+		public void queryClosing(ICloseEvent closeEvent, boolean getsOwnership) {
+			//nothing to do in here
+		}
+	  //----------------------------------------------------------------------------
+	  /**
+	   * Is called when the listened object is closed really.
+	   * 
+	   * @param closeEvent close event
+	   * 
+	   * @author Sebastian Rösgen
+	   * @date 17.03.2006
+	   */
+		public void notifyClosing(ICloseEvent closeEvent) {
+			try {
+				officeAplication.deactivate(); // this is really necessary
+				System.out.println("Office application deactivated.");
+			} 
+			catch (OfficeApplicationException exception) {
+				System.err.println("Error closing office application!");
+				exception.printStackTrace();
+			}			
+		}		
+	  //----------------------------------------------------------------------------
+	  /**
+	   * Is called when the broadcaster is about to be disposed. 
+	   * 
+	   * @param event source event
+	   * 
+	   * @author Sebastian Rösgen
+	   * @date 17.03.2006
+	   */
+		public void disposing(IEvent event) {
+			//nothing to do in here
+		}
+	  //----------------------------------------------------------------------------
+	}
+		
+	public static IOfficeApplication officeAplication = null;
+	
+	public static void main(String[] args) {
+		HashMap configuration = new HashMap();
+		configuration.put(IOfficeApplication.APPLICATION_HOME_KEY, OPEN_OFFICE_ORG_PATH);
+		configuration.put(IOfficeApplication.APPLICATION_TYPE_KEY, IOfficeApplication.LOCAL_APPLICATION);
+		
+		try {
+			officeAplication = OfficeApplicationRuntime.getApplication(configuration);
+			officeAplication.activate();
+			IDocumentService documentService = officeAplication.getDocumentService();
+			IDocument document = documentService.constructNewDocument(IDocument.WRITER, DocumentDescriptor.DEFAULT);
+			ITextDocument textDocument = (ITextDocument)document;
+			textDocument.addCloseListener(new InternalCloseListener());
+		} 
+		catch (OfficeApplicationException exception) {
+			exception.printStackTrace();
+		} 
+		catch (NOAException exception) {
+			exception.printStackTrace();
+		}
+	}
+
+}
+
+</code>
+</pre>
+<a href='#top'>Back to top</a><br/>
+<a name="construct_and_fill_table"></a><h3>
+Construct and fill table
+</h3>
+
+<pre>
+<code>
+/*
+ * Last changes made by $Author: andreas $, $Date: 2006-10-04 14:14:28 +0200 (Mi, 04 Okt 2006) $
+ */
+import ag.ion.bion.officelayer.application.IOfficeApplication;
+import ag.ion.bion.officelayer.application.OfficeApplicationException;
+import ag.ion.bion.officelayer.application.OfficeApplicationRuntime;
+
+import ag.ion.bion.officelayer.document.DocumentDescriptor;
+import ag.ion.bion.officelayer.document.IDocument;
+import ag.ion.bion.officelayer.document.IDocumentService;
+
+import ag.ion.bion.officelayer.text.IText;
+import ag.ion.bion.officelayer.text.ITextDocument;
+import ag.ion.bion.officelayer.text.ITextService;
+import ag.ion.bion.officelayer.text.ITextTable;
+import ag.ion.bion.officelayer.text.TextException;
+
+import ag.ion.noa.NOAException;
+
+import java.util.HashMap;
+
+/**
+ * This code snippet creates a new text document (like in Snippet2). Furthermore
+ * we will place a table in the document and add some content to it.
+ * 
+ * @author Sebastian Rösgen
+ * @version $Revision: 10398 $
+ * @date 17.03.2006
+ */
+public class Snippet5 {
+
+	/*
+	 * The path to the office application, in this case on a(n OpenSUSE)Linux system.
+	 * 
+	 * On a Windows system this would look like: 
+	 * => private final static String officeHome = "C:\\Programme\\OpenOffice.org 2.0"; 
+	 */
+	private final static String OPEN_OFFICE_ORG_PATH = "/usr/lib/ooo-2.0"; 
+		
+	public static void main(String[] args) {
+   	HashMap configuration = new HashMap();
+		configuration.put(IOfficeApplication.APPLICATION_HOME_KEY, OPEN_OFFICE_ORG_PATH);
+		configuration.put(IOfficeApplication.APPLICATION_TYPE_KEY, IOfficeApplication.LOCAL_APPLICATION);
+		
+		try {
+			IOfficeApplication officeAplication = OfficeApplicationRuntime.getApplication(configuration);
+			officeAplication.activate();
+			IDocumentService documentService = officeAplication.getDocumentService();
+			IDocument document = documentService.constructNewDocument(IDocument.WRITER, DocumentDescriptor.DEFAULT);
+			ITextDocument textDocument = (ITextDocument)document;
+			textDocument.addCloseListener(new SnippetDocumentCloseListener(officeAplication));
+			
+			/*
+			 * This stuff has already been discussed in Snippet2 but now lets begin to
+			 * work with tables in text documents
+			 */
+			constructAndFillTable(textDocument);
+
+		} 
+		catch (OfficeApplicationException exception) {
+			exception.printStackTrace();
+		} 
+		catch (NOAException exception) {
+			exception.printStackTrace();
+		}
+	}
+	//----------------------------------------------------------------------------
+	/**
+	 * The first table example. We will create a table and then place some values in the cells.
+	 * 
+	 * @param textDocument the document to place the table in
+	 *
+	 * @author Sebastian Rösgen
+	 * @date 17.03.2006
+	 */
+	public static void constructAndFillTable(ITextDocument textDocument) {
+	  try {
+			// create the table
+			ITextTable textTable = textDocument.getTextTableService().constructTextTable(3, 5);				
+			textDocument.getTextService().getTextContentService().insertTextContent(textTable);
+		
+			// and place some double values in it			
+		  textTable.getCell(0,0).setValue(12412);
+		  textTable.getCell(0,1).setValue(4444444);
+		  
+		  // to place text in a cell we need the text service of the individual cell.
+		  ITextService textService = textTable.getCell(0,2).getTextService();
+		  IText cellText = textService.getText();
+		  cellText.setText("Hello World!");
+		  
+		  // so now that we have seen it in detail, there is no problem in doing
+		  // it the short way.
+		  textTable.getCell(2,2).getTextService().getText().setText("A");
+		  textTable.getCell(3,2).getTextService().getText().setText("Simple");
+		  textTable.getCell(4,2).getTextService().getText().setText("Test");
+		  
+		} 
+	  catch (TextException exception) {
+	  	exception.printStackTrace();
+		}
+	}
+	//----------------------------------------------------------------------------
+	
+}
+</code>
+</pre>
+
+<a href='#top'>Back to top</a><br/>
+<a name="more_table_operations"></a><h3>
+More table operations
+</h3>
+<pre>
+<code>
+/*
+ * Last changes made by $Author: andreas $, $Date: 2006-10-04 14:14:28 +0200 (Mi, 04 Okt 2006) $
+ */
+import ag.ion.bion.officelayer.application.IOfficeApplication;
+import ag.ion.bion.officelayer.application.OfficeApplicationException;
+import ag.ion.bion.officelayer.application.OfficeApplicationRuntime;
+
+import ag.ion.bion.officelayer.document.DocumentDescriptor;
+import ag.ion.bion.officelayer.document.IDocument;
+import ag.ion.bion.officelayer.document.IDocumentService;
+
+import ag.ion.bion.officelayer.text.ITextDocument;
+import ag.ion.bion.officelayer.text.ITextTable;
+import ag.ion.bion.officelayer.text.ITextTableCell;
+import ag.ion.bion.officelayer.text.ITextTableRow;
+import ag.ion.bion.officelayer.text.TextException;
+
+import ag.ion.noa.NOAException;
+
+import java.util.HashMap;
+
+/**
+ * This code snippet creates a new text document and do some stuff with tables.
+ * 
+ * We will create two tables, put some content in them (iterating through all cells)
+ * and then add some new rows and columns to the second table.
+ * 
+ * @author Sebastian Rösgen
+ * @version $Revision: 10398 $
+ * @date 17.03.2006
+ */
+public class Snippet6 {
+
+	/*
+	 * The path to the office application, in this case on a(n OpenSUSE)Linux system.
+	 * 
+	 * On a Windows system this would look like: 
+	 * => private final static String officeHome = "C:\\Programme\\OpenOffice.org 2.0"; 
+	 */
+	private final static String OPEN_OFFICE_ORG_PATH = "/usr/lib/ooo-2.0"; 
+		
+	public static void main(String[] args) {
+		HashMap configuration = new HashMap();
+		configuration.put(IOfficeApplication.APPLICATION_HOME_KEY, OPEN_OFFICE_ORG_PATH);
+		configuration.put(IOfficeApplication.APPLICATION_TYPE_KEY, IOfficeApplication.LOCAL_APPLICATION);
+		
+		try {
+			IOfficeApplication officeAplication = OfficeApplicationRuntime.getApplication(configuration);
+			officeAplication.activate();
+			IDocumentService documentService = officeAplication.getDocumentService();
+			IDocument document = documentService.constructNewDocument(IDocument.WRITER, DocumentDescriptor.DEFAULT);
+			ITextDocument textDocument = (ITextDocument)document;
+			textDocument.addCloseListener(new SnippetDocumentCloseListener(officeAplication));
+			
+			/*
+			 * This stuff was already discussed in Snippet2 but now lets begin to
+			 * work with tables in text documents
+			 */
+			constructAndFillTables(textDocument);
+
+		} 
+		catch (OfficeApplicationException exception) {
+			exception.printStackTrace();
+		} 
+		catch (NOAException exception) {
+			exception.printStackTrace();
+		}
+	}
+	//----------------------------------------------------------------------------
+	/**
+	 * The second table example. We will place some content in the table, after the creation.
+	 * 
+	 * @param textDocument the document to place the table in
+	 *
+	 * @author Sebastian Rösgen
+	 * @date 17.03.2006
+	 */
+	public static void constructAndFillTables(ITextDocument textDocument) {
+	  try {
+			// create the first table
+			ITextTable firstTextTable = textDocument.getTextTableService().constructTextTable(3, 5);				
+			textDocument.getTextService().getTextContentService().insertTextContent(firstTextTable);
+		
+			int firstTableRowCount = firstTextTable.getRowCount();
+			int firstTableColumnCount = firstTextTable.getColumnCount();
+			
+			int counter=0; // just to fill some value inside the cells
+			
+			// we will just fill it with double values
+			for(int i=0;i&lt;firstTableRowCount;i++) {
+				for(int j=0;j&lt;firstTableColumnCount;j++) {
+					firstTextTable.getCell(j,i).setValue(++counter);
+				}
+			}
+			
+			// create the second table
+			ITextTable secondTextTable = textDocument.getTextTableService().constructTextTable(4, 4);				
+			textDocument.getTextService().getTextContentService().insertTextContent(secondTextTable);
+			ITextTableRow[] rows = secondTextTable.getRows();
+			
+			// we will iterate through it in a different manner than before
+			for(int i=0;i&lt;rows.length;i++) {
+				ITextTableRow currentRow = rows[i];
+				ITextTableCell[] cellsOfRow = currentRow.getCells();
+				for(int j=0;j&lt;cellsOfRow.length;j++) {
+					String cellContent = "Column: " + (j+1) + " Row: " + (i+1);
+					//that which follows is alrady known from Snippet3
+					cellsOfRow[j].getTextService().getText().setText(cellContent);
+				}
+			}
+			
+			// add two new rows at the end of the table
+			secondTextTable.addRow(2);
+			
+			// add a new row after the second row
+			secondTextTable.addRow(2,1);
+								  
+		} 
+	  catch (TextException exception) {
+	  	exception.printStackTrace();
+		}
+	}
+	//----------------------------------------------------------------------------
+	
+}
+</code>
+</pre>
+
+<a href='#top'>Back to top</a><br/>
+<a name="place_text_content"></a><h3>
+Place text content
+</h3>
+<pre>
+<code>
+/*
+ * Last changes made by $Author: andreas $, $Date: 2006-10-04 14:14:28 +0200 (Mi, 04 Okt 2006) $
+ */
+import ag.ion.bion.officelayer.application.IOfficeApplication;
+import ag.ion.bion.officelayer.application.OfficeApplicationException;
+import ag.ion.bion.officelayer.application.OfficeApplicationRuntime;
+
+import ag.ion.bion.officelayer.document.DocumentDescriptor;
+import ag.ion.bion.officelayer.document.IDocument;
+import ag.ion.bion.officelayer.document.IDocumentService;
+
+import ag.ion.bion.officelayer.text.ITextCursor;
+import ag.ion.bion.officelayer.text.ITextDocument;
+import ag.ion.bion.officelayer.text.TextException;
+import ag.ion.noa.NOAException;
+
+import java.util.HashMap;
+
+/**
+ * Since we have done some work with tables now, it is a good idea to 
+ * do some work with simple text. More examples for tables and texts can follow after we 
+ * just get used to the basics a little bit more.
+ * 
+ * @author Sebastian Rösgen
+ * @version $Revision: 10398 $
+ * @date 17.03.2006
+ */
+public class Snippet7 {
+
+	/*
+	 * The path to the office application, in this case on a(n OpenSUSE)Linux system.
+	 * 
+	 * On a Windows system this would look like: 
+	 * => private final static String officeHome = "C:\\Programme\\OpenOffice.org 2.0"; 
+	 */
+	private final static String OPEN_OFFICE_ORG_PATH = "/usr/lib/ooo-2.0"; 
+		
+	public static void main(String[] args) {
+		HashMap configuration = new HashMap();
+		configuration.put(IOfficeApplication.APPLICATION_HOME_KEY, OPEN_OFFICE_ORG_PATH);
+		configuration.put(IOfficeApplication.APPLICATION_TYPE_KEY, IOfficeApplication.LOCAL_APPLICATION);
+		
+		try {
+			IOfficeApplication officeAplication = OfficeApplicationRuntime.getApplication(configuration);
+			officeAplication.activate();
+			IDocumentService documentService = officeAplication.getDocumentService();
+			IDocument document = documentService.constructNewDocument(IDocument.WRITER, DocumentDescriptor.DEFAULT);
+			ITextDocument textDocument = (ITextDocument)document;
+			textDocument.addCloseListener(new SnippetDocumentCloseListener(officeAplication));
+
+			/*
+			 * Now do the work with text content.
+			 */
+			placeSomeTextContent(textDocument);
+
+		} 
+		catch (OfficeApplicationException exception) {
+			exception.printStackTrace();
+		} 
+		catch (NOAException exception) {
+			exception.printStackTrace();
+		}
+	}
+	//----------------------------------------------------------------------------
+	/**
+	 * Now we will write a text to the document. After that is done (we already
+	 * shoud now how to write text down to the document) we will use a new 
+	 * method to append more text content.
+	 * 
+	 * @param textDocument the document to place the table in
+	 *
+	 * @author Sebastian Rösgen
+	 * @date 17.03.2006
+	 */
+	public static void placeSomeTextContent(ITextDocument textDocument) {
+	  	
+  	textDocument.getTextService().getText().setText("The Raven (excerpt)\n\n");		
+  	
+  	String[] text2BePlaced = { 
+  		// since there is no better poem than Edgar Allan Poe's the Raven
+  		// we will use some staves from it
+			"Once upon a midnight dreary, while I pondered weak and weary,",
+			"Over many a quaint and curious volume of forgotten lore,",
+			"While I nodded, nearly napping, suddenly there came a tapping,",
+			"As of some one gently rapping, rapping at my chamber door.",
+			"`'Tis some visitor,' I muttered, `tapping at my chamber door -",
+			"Only this, and nothing more.'",
+			"",
+			"...",
+			"",
+			"Then this ebony bird beguiling my sad fancy into smiling,",
+			"By the grave and stern decorum of the countenance it wore,",
+			"`Though thy crest be shorn and shaven, thou,' I said, `art sure no craven.",
+			"Ghastly grim and ancient raven wandering from the nightly shore -",
+			"Tell me what thy lordly name is on the Night's Plutonian shore!'",
+			"Quoth the raven, `Nevermore.'",
+			"",
+			"Much I marvelled this ungainly fowl to hear discourse so plainly,",
+			"Though its answer little meaning - little relevancy bore;",
+			"For we cannot help agreeing that no living human being",
+			"Ever yet was blessed with seeing bird above his chamber door -",
+			"Bird or beast above the sculptured bust above his chamber door,",
+			"With such name as `Nevermore.'",
+			"",
+			"...",
+			"",
+			"But the raven, sitting lonely on the placid bust, spoke only,",
+			"That one word, as if his soul in that one word he did outpour.",
+			"Nothing further then he uttered - not a feather then he fluttered -",
+			"Till I scarcely more than muttered `Other friends have flown before -",
+			"On the morrow will he leave me, as my hopes have flown before.'",
+			"Then the bird said, `Nevermore.'",
+			"",
+			"Startled at the stillness broken by reply so aptly spoken,",
+			"`Doubtless,' said I, `what it utters is its only stock and store,",
+			"Caught from some unhappy master whom unmerciful disaster",
+			"Followed fast and followed faster till his songs one burden bore -",
+			"Till the dirges of his hope that melancholy burden bore",
+			"Of \"Never-nevermore.\"'"
+  	};
+  	
+  	try {
+	  	ITextCursor textCursor = 
+	  		textDocument.getTextService().getText().getTextCursorService().getTextCursor();
+	  	
+	  	textCursor.gotoEnd(false);
+	  	
+	  	for(int i=0;i&lt;text2BePlaced.length;i++ ) {
+	  		textCursor.getEnd().setText(text2BePlaced[i]); //we place the text
+	  		textCursor.getEnd().setText("\n"); // and we wrap the line
+	  	}
+	  }
+  	catch(TextException exception) {
+  		exception.printStackTrace();
+  	}
+
+
+	}
+	//----------------------------------------------------------------------------
+	
+}
+</code>
+</pre>
+<a href='#top'>Back to top</a><br/>
+<a name="set_font_and_text_properties"></a><h3>
+Set font and text properties
+</h3>
+<pre>
+<code>
+/*
+ * Last changes made by $Author: andreas $, $Date: 2006-10-04 14:14:28 +0200 (Mi, 04 Okt 2006) $
+ */
+import ag.ion.bion.officelayer.application.IOfficeApplication;
+import ag.ion.bion.officelayer.application.OfficeApplicationException;
+import ag.ion.bion.officelayer.application.OfficeApplicationRuntime;
+
+import ag.ion.bion.officelayer.document.DocumentDescriptor;
+import ag.ion.bion.officelayer.document.IDocument;
+import ag.ion.bion.officelayer.document.IDocumentService;
+
+import ag.ion.bion.officelayer.text.IParagraph;
+import ag.ion.bion.officelayer.text.IParagraphProperties;
+import ag.ion.bion.officelayer.text.ITextCursor;
+import ag.ion.bion.officelayer.text.ITextDocument;
+import ag.ion.bion.officelayer.text.TextException;
+
+import ag.ion.noa.NOAException;
+
+import java.util.HashMap;
+
+/**
+ * In this snippet we will do some text formatting. 
+ * 
+ * @author Sebastian Rösgen
+ * @version $Revision: 10398 $
+ * @date 17.03.2006
+ */
+public class Snippet8 {
+
+	/*
+	 * The path to the office application, in this case on a(n OpenSUSE)Linux system.
+	 * 
+	 * On a Windows system this would look like: 
+	 * => private final static String officeHome = "C:\\Programme\\OpenOffice.org 2.0"; 
+	 */
+	private final static String OPEN_OFFICE_ORG_PATH = "/usr/lib/ooo-2.0"; 
+	
+	
+	public static void main(String[] args) {
+		HashMap configuration = new HashMap();
+		configuration.put(IOfficeApplication.APPLICATION_HOME_KEY, OPEN_OFFICE_ORG_PATH);
+		configuration.put(IOfficeApplication.APPLICATION_TYPE_KEY, IOfficeApplication.LOCAL_APPLICATION);
+		
+		try {
+			IOfficeApplication officeAplication = OfficeApplicationRuntime.getApplication(configuration);
+			officeAplication.activate();
+			IDocumentService documentService = officeAplication.getDocumentService();
+			IDocument document = documentService.constructNewDocument(IDocument.WRITER, DocumentDescriptor.DEFAULT);
+			ITextDocument textDocument = (ITextDocument)document;
+			textDocument.addCloseListener(new SnippetDocumentCloseListener(officeAplication));
+
+			/*
+			 * Now do the work with text content.
+			 */
+			placeSomeTextContent(textDocument);
+
+		} 
+		catch (OfficeApplicationException exception) {
+			exception.printStackTrace();
+		} 
+		catch (NOAException exception) {
+			exception.printStackTrace();
+		}
+	}
+	//----------------------------------------------------------------------------
+	/**
+	 * We will now format the text, we create, a little bit.
+	 * 
+	 * @param textDocument the document to place the table in
+	 *
+	 * @author Sebastian Rösgen
+	 * @date 17.03.2006
+	 */
+	public static void placeSomeTextContent(ITextDocument textDocument) {
+	  	
+  	String[] text2BePlaced = { 
+  		"The Raven (excerpt)\n",
+			"",
+			"...",
+			"...",
+			"",
+			"But the raven, sitting lonely on the placid bust, spoke only,",
+			"That one word, as if his soul in that one word he did outpour.",
+			"Nothing further then he uttered - not a feather then he fluttered -",
+			"Till I scarcely more than muttered `Other friends have flown before -",
+			"On the morrow will he leave me, as my hopes have flown before.'",
+			"Then the bird said, `Nevermore.'",
+			"",
+			"Startled at the stillness broken by reply so aptly spoken,",
+			"`Doubtless,' said I, `what it utters is its only stock and store,",
+			"Caught from some unhappy master whom unmerciful disaster",
+			"Followed fast and followed faster till his songs one burden bore -",
+			"Till the dirges of his hope that melancholy burden bore",
+			"Of \"Never-nevermore.\"'"
+  	};
+  	
+  	try {
+	  	ITextCursor textCursor = 
+	  		textDocument.getTextService().getText().getTextCursorService().getTextCursor();
+	  	
+	  	textCursor.gotoEnd(false);
+	  	
+	  	for(int i=0;i&lt;text2BePlaced.length;i++ ) {
+	  		textCursor.getEnd().setText(text2BePlaced[i]); //we place the text
+	  		textCursor.getEnd().setText("\n"); // and we wrap the line
+	  	}
+	  	
+	  	// Now some new stuff. We will set the align of the poem -- which should be centered
+	  	// as it fits for a good poem -- afterwards we will	  	
+	  	IParagraph[] paragraphs = 
+	  		textDocument.getTextService().getText().getTextContentEnumeration().getParagraphs();
+	  	
+	  	
+	  	// there should be only one paragraph, since we did not insert any additional ones
+	  	// so we use index 0 of the array.	  	
+	  	IParagraphProperties paragraphPropoerties = paragraphs[0].getParagraphProperties();
+	  	paragraphPropoerties.setParaAdjust(IParagraphProperties.ALIGN_CENTER);
+	  	
+	  	// set the font bold and italic, set size to 9 and color the text blue, 
+	  	paragraphPropoerties.getCharacterProperties().setFontBold(true);
+	  	paragraphPropoerties.getCharacterProperties().setFontSize(9);
+	  	paragraphPropoerties.getCharacterProperties().setFontItalic(true);
+	  	paragraphPropoerties.getCharacterProperties().setFontColor(150);
+	  	
+	  }
+  	catch(TextException exception) {
+  		exception.printStackTrace();
+  	}
+
+	}
+	//----------------------------------------------------------------------------
+	
+}
+</code>
+</pre>
+<a href='#top'>Back to top</a><br/>
+<a name="paragraphs_and_text_formatting"></a><h3>
+Paragraphs and text formatting
+</h3>
+
+<pre>
+<code>
+/*
+ * Last changes made by $Author: andreas $, $Date: 2006-10-04 14:14:28 +0200 (Mi, 04 Okt 2006) $
+ */
+import ag.ion.bion.officelayer.application.IOfficeApplication;
+import ag.ion.bion.officelayer.application.OfficeApplicationException;
+import ag.ion.bion.officelayer.application.OfficeApplicationRuntime;
+
+import ag.ion.bion.officelayer.document.DocumentDescriptor;
+import ag.ion.bion.officelayer.document.IDocument;
+import ag.ion.bion.officelayer.document.IDocumentService;
+
+import ag.ion.bion.officelayer.text.IParagraph;
+import ag.ion.bion.officelayer.text.IParagraphProperties;
+import ag.ion.bion.officelayer.text.ITextCursor;
+import ag.ion.bion.officelayer.text.ITextDocument;
+import ag.ion.bion.officelayer.text.TextException;
+
+import ag.ion.noa.NOAException;
+
+import java.util.HashMap;
+
+/**
+ * We will experiment a little bit more with texts in this example. We will experiment
+ * with paragraphs and formatting of the text. This snippet is more complex than the previous
+ * ones, so it is recommended that you already worked the other snippets over.
+ * 
+ * We will do the whole stuff as paragraphs which will be slighlty new to you since 
+ * we used only TextCursors to place the text in the previous examples. 
+ * 
+ * @author Sebastian Rösgen
+ * @version $Revision: 10398 $
+ * @date 17.03.2006
+ */
+public class Snippet9 {
+
+	/*
+	 * The path to the office application, in this case on a(n OpenSUSE)Linux system.
+	 * 
+	 * On a Windows system this would look like: 
+	 * => private final static String officeHome = "C:\\Programme\\OpenOffice.org 2.0"; 
+	 */
+	private final static String OPEN_OFFICE_ORG_PATH = "/usr/lib/ooo-2.0"; 
+	
+	
+	public static void main(String[] args) {
+		HashMap configuration = new HashMap();
+		configuration.put(IOfficeApplication.APPLICATION_HOME_KEY, OPEN_OFFICE_ORG_PATH);
+		configuration.put(IOfficeApplication.APPLICATION_TYPE_KEY, IOfficeApplication.LOCAL_APPLICATION);
+		
+		try {
+			IOfficeApplication officeAplication = OfficeApplicationRuntime.getApplication(configuration);
+			officeAplication.activate();
+			IDocumentService documentService = officeAplication.getDocumentService();
+			IDocument document = documentService.constructNewDocument(IDocument.WRITER, DocumentDescriptor.DEFAULT);
+			ITextDocument textDocument = (ITextDocument)document;
+			textDocument.addCloseListener(new SnippetDocumentCloseListener(officeAplication));
+			
+			/*
+			 * Now do the work with text content.
+			 */
+			placeSomeTextContent(textDocument);
+
+		} 
+		catch (OfficeApplicationException exception) {
+			exception.printStackTrace();
+		} 
+		catch (NOAException exception) {
+			exception.printStackTrace();
+		}
+	}
+	//----------------------------------------------------------------------------
+	/**
+	 * Now we will write a text to the document. After that is done (we already
+	 * shoud now how to write text down to the document) we will use a new 
+	 * method to append more text content.
+	 * 
+	 * @param textDocument the document to place the table in
+	 *
+	 * @author Sebastian Rösgen
+	 * @date 17.03.2006
+	 */
+	public static void placeSomeTextContent(ITextDocument textDocument) {
+	  	
+  	String[] firstText2BePlaced = { 
+  		"The Raven (excerpt)",
+			"",
+			"Once upon a midnight dreary, while I pondered weak and weary,",
+			"Over many a quaint and curious volume of forgotten lore,",
+			"While I nodded, nearly napping, suddenly there came a tapping,",
+			"As of some one gently rapping, rapping at my chamber door.",
+			"`'Tis some visitor,' I muttered, `tapping at my chamber door -",
+			"Only this, and nothing more.'"
+		};
+  	
+  	String[] secondText2BePlaced = { 
+    		"Ah, distinctly I remember it was in the bleak December,",
+  			"And each separate dying ember wrought its ghost upon the floor.",
+				"Eagerly I wished the morrow; - vainly I had sought to borrow",
+				"From my books surcease of sorrow - sorrow for the lost Lenore -",
+				"For the rare and radiant maiden whom the angels named Lenore -",
+				"Nameless here for evermore."
+  		};
+  	
+  	String[] thirdText2BePlaced = { 
+  			"And the silken sad uncertain rustling of each purple curtain",
+  			"Thrilled me - filled me with fantastic terrors never felt before;",
+  			"So that now, to still the beating of my heart, I stood repeating",
+  			"`'Tis some visitor entreating entrance at my chamber door -",
+  			"Some late visitor entreating entrance at my chamber door; -",
+  			"This it is, and nothing more,'"
+  		};
+  	
+  	String allTexts2BePlaced[][] = 
+  		new String[][]{firstText2BePlaced,secondText2BePlaced,thirdText2BePlaced};
+  	
+  	try {
+  		
+  		/*
+  		 * Ok, now we gonna place the text in the document, each of the staves (stanzas)
+  		 * of the poem will be a separate paragprah. This will serve us well since our 
+  		 * intention is to format every paragprah in a different way.
+  		 */
+  		for(int i=0;i&lt;allTexts2BePlaced.length;i++) {
+		  	ITextCursor textCursor = 
+		  		textDocument.getTextService().getText().getTextCursorService().getTextCursor();
+		  	
+		  	textCursor.gotoEnd(false);	  	
+		  	IParagraph paragraph = 
+		  		textDocument.getTextService().getTextContentService().constructNewParagraph();	  	
+		  	textCursor.gotoEnd(false);
+		  	textDocument.getTextService().getTextContentService().insertTextContent(textCursor.getEnd(),paragraph);
+		  	StringBuffer bufferedString = new StringBuffer();
+		  	for(int j=0;j&lt;allTexts2BePlaced[i].length;j++ ) {
+		  		bufferedString.append(allTexts2BePlaced[i][j] +"\n"); 
+		  	}
+		  	
+	  		paragraph.setParagraphText(bufferedString.toString());
+  		}
+  		
+  		/* After we wrote the paragraphs down to the document we will fetch them again
+  		 * out of the document and format them a little bit. 
+  		 * For sure it would have been easy for us just to store the newly created paragraphs
+  		 * into an array or arraylist or something like that, but it makes sense as well
+  		 * to use the already built-in functions of NOA. 
+  		 */ 
+  		
+  		IParagraph paragraphs[] = 
+  			textDocument.getTextService().getText().getTextContentEnumeration().getParagraphs();
+  		
+  		// we actually know that there are only four paragraphs, the one that is 
+  		// initially placed in the document and our own three added paras. The last
+  		// paragraph is of no interest for us, because it is the empty initial paragraph
+  		
+	  	/*
+	  	 * Format paragraph 1
+	  	 */
+	  	IParagraphProperties paragraphPropoerties = paragraphs[0].getParagraphProperties();
+	  	paragraphPropoerties.setParaAdjust(IParagraphProperties.ALIGN_RIGHT);
+	  	paragraphPropoerties.getCharacterProperties().setFontBold(true);
+	  	paragraphPropoerties.getCharacterProperties().setFontSize(8);
+	  	paragraphPropoerties.getCharacterProperties().setFontItalic(true);
+	  	paragraphPropoerties.getCharacterProperties().setFontColor(150);
+  		
+	  	/*
+	  	 * Format paragraph 2
+	  	 */
+	  	IParagraphProperties paragraphPropoerties2 = paragraphs[1].getParagraphProperties();
+	  	paragraphPropoerties2.setParaAdjust(IParagraphProperties.ALIGN_CENTER);
+	  	paragraphPropoerties2.getCharacterProperties().setFontBold(true);
+	  	paragraphPropoerties2.getCharacterProperties().setFontSize(12);
+	  	paragraphPropoerties2.getCharacterProperties().setFontUnderline(true);
+	  	paragraphPropoerties2.getCharacterProperties().setFontColor(10);
+	  	
+	  	/*
+	  	 * Format paragraph 3
+	  	 */
+	  	IParagraphProperties paragraphPropoerties3 = paragraphs[2].getParagraphProperties();
+	  	paragraphPropoerties3.setParaAdjust(IParagraphProperties.ALIGN_LEFT); 
+	  	paragraphPropoerties3.getCharacterProperties().setFontSize(10);
+	  	paragraphPropoerties3.getCharacterProperties().setFontUnderline(true);
+	  	paragraphPropoerties3.getCharacterProperties().setFontColor(300);
+	  	 	
+	  }
+  	catch(TextException exception) {
+  		exception.printStackTrace();
+  	}
+	}
+	//----------------------------------------------------------------------------
+	
+}
+</code>
+</pre>
+<a href='#top'>Back to top</a><br/>
+<a name="formulas"></a><h3>
+Formulas</h3>
+<pre>
+<code>
+/*
+ * Last changes made by $Author: andreas $, $Date: 2006-10-04 14:14:28 +0200 (Mi, 04 Okt 2006) $
+ */
+import ag.ion.bion.officelayer.application.IOfficeApplication;
+import ag.ion.bion.officelayer.application.OfficeApplicationException;
+import ag.ion.bion.officelayer.application.OfficeApplicationRuntime;
+
+import ag.ion.bion.officelayer.document.DocumentDescriptor;
+import ag.ion.bion.officelayer.document.IDocument;
+import ag.ion.bion.officelayer.document.IDocumentService;
+
+import ag.ion.bion.officelayer.text.ITextDocument;
+import ag.ion.bion.officelayer.text.ITextTable;
+import ag.ion.bion.officelayer.text.ITextTableCell;
+import ag.ion.bion.officelayer.text.ITextTableColumn;
+import ag.ion.bion.officelayer.text.ITextTableRow;
+import ag.ion.bion.officelayer.text.TextException;
+
+import ag.ion.noa.NOAException;
+
+import java.util.HashMap;
+
+/**
+ * In here we will do some more stuff with tables especially with formulas.
+ *  
+ * @author Sebastian Rösgen
+ * @version $Revision: 10398 $
+ * @date 17.03.2006
+ */
+public class Snippet11 {
+
+	/*
+	 * The path to the office application, in this case on a(n OpenSUSE)Linux system.
+	 * 
+	 * On a Windows system this would look like: 
+	 * => private final static String officeHome = "C:\\Programme\\OpenOffice.org 2.0"; 
+	 */
+	private final static String OPEN_OFFICE_ORG_PATH = "/usr/lib/ooo-2.0"; 
+		
+	public static void main(String[] args) {
+		DocumentDescriptor documentDescriptor = new DocumentDescriptor();
+		documentDescriptor.setHidden(false); // set hidden=false so that the document is opened
+		
+		HashMap configuration = new HashMap();
+		configuration.put(IOfficeApplication.APPLICATION_HOME_KEY, OPEN_OFFICE_ORG_PATH);
+		configuration.put(IOfficeApplication.APPLICATION_TYPE_KEY, IOfficeApplication.LOCAL_APPLICATION);
+		
+		try {
+			IOfficeApplication officeAplication = OfficeApplicationRuntime.getApplication(configuration);
+			officeAplication.activate();
+			IDocumentService documentService = officeAplication.getDocumentService();
+			IDocument document = documentService.constructNewDocument("TestDocument",documentDescriptor);
+			ITextDocument textDocument = (ITextDocument)document;
+			textDocument.addCloseListener(new SnippetDocumentCloseListener(officeAplication));
+			
+			/*
+			 * This stuff was already discussed in Snippet2 but now lets begin to
+			 * work with tables in text documents
+			 */
+			constructAndFillTables(textDocument);
+
+		} 
+		catch (OfficeApplicationException exception) {
+			exception.printStackTrace();
+		} 
+		catch (NOAException exception) {
+			exception.printStackTrace();
+		}
+	}
+	//----------------------------------------------------------------------------
+	/**
+	 * A table example in which we will create a table and the let calculate the
+	 * sum of each column.
+	 * 
+	 * @param textDocument the document to place the table in
+	 *
+	 * @author Sebastian Rösgen
+	 * @date 17.03.2006
+	 */
+	public static void constructAndFillTables(ITextDocument textDocument) {
+	  try {
+			// create the first table
+			ITextTable textTable = textDocument.getTextTableService().constructTextTable(3, 5);				
+			textDocument.getTextService().getTextContentService().insertTextContent(textTable);
+		
+			int tableRowCount = textTable.getRowCount();
+			int tableColumnCount = textTable.getColumnCount();
+			
+			int counter=0; // just to fill some value inside the cells
+			
+			// we will just fill it with double values
+			for(int i=0;i&lt;tableRowCount;i++) {
+				for(int j=0;j&lt;tableColumnCount;j++) {
+					textTable.getCell(j,i).setValue(++counter);
+				}
+			}
+			
+			// add a new row at the end of the table
+			textTable.addRow(1);
+			
+			ITextTableRow row = textTable.getRow(textTable.getRowCount()-1);
+			ITextTableColumn[] columns = textTable.getColumns();
+			// we want the sum of each column in the last row
+			for(int i=0;i&lt;columns.length;i++) {
+				ITextTableCell[][] cells = columns[i].getCellRange().getCells();
+				
+				//we need all but the last cell in the column (the last will be the formula)				
+				StringBuffer cellNames = new StringBuffer();				
+				for(int x=0;x&lt;cells.length-1;x++) {
+						cellNames.append("<"+cells[x][0].getName().getName()+">");
+						if(x&lt;cells.length-2) {
+							cellNames.append("+");
+						}
+				}
+				
+				ITextTableCell formulaCell= row.getCells()[i];
+				formulaCell.getFormulaService().setFormula(cellNames.toString());
+			}
+		} 
+	  catch (TextException exception) {
+	  	exception.printStackTrace();
+		}
+	}
+	//----------------------------------------------------------------------------
+	
+}
+</code>
+</pre>
+<a href='#top'>Back to top</a><br/>
+<a name="ui_disable_commands"></a><h3>
+UI: Disable commands</h3>
+
+<pre>
+<code>
+/*
+ * Last changes made by $Author: andreas $, $Date: 2006-11-22 09:31:27 +0100 (Mi, 22 Nov 2006) $
+ */
+import ag.ion.bion.officelayer.application.IOfficeApplication;
+import ag.ion.bion.officelayer.application.OfficeApplicationException;
+import ag.ion.bion.officelayer.application.OfficeApplicationRuntime;
+
+import ag.ion.bion.officelayer.desktop.GlobalCommands;
+import ag.ion.bion.officelayer.desktop.IFrame;
+
+import ag.ion.bion.officelayer.document.DocumentDescriptor;
+import ag.ion.bion.officelayer.document.IDocument;
+
+import java.awt.BorderLayout;
+import java.awt.Frame;
+import java.awt.Panel;
+
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+import java.util.HashMap;
+
+/**
+ * This code snippet disables commands within the OpenOffice.org
+ * User Interface.
+ * 
+ * @author Andreas Bröker
+ * @version $Revision: 11063 $
+ * @date 16.07.2006
+ */
+public class Snippet14 {
+
+	/*
+	 * The path to the office application, in this case on a windows system.
+	 * 
+	 * On a Linux system this would look like: 
+	 * => private final static String officeHome = "/usr/lib/ooo-2.0"; 
+	 */
+	private final static String OPEN_OFFICE_ORG_PATH = "C:\\Programme\\OpenOffice.org 2.0"; 
+		
+	public static void main(String[] args) {				
+		try {
+			HashMap configuration = new HashMap();
+			configuration.put(IOfficeApplication.APPLICATION_HOME_KEY, OPEN_OFFICE_ORG_PATH);
+			configuration.put(IOfficeApplication.APPLICATION_TYPE_KEY, IOfficeApplication.LOCAL_APPLICATION);
+			final IOfficeApplication officeAplication = OfficeApplicationRuntime.getApplication(configuration);	
+			
+			officeAplication.setConfiguration(configuration);
+			officeAplication.activate();
+			
+			final Frame frame = new Frame();
+      frame.setVisible(true);
+      frame.setSize(400, 400);
+      frame.validate();
+      Panel panel = new Panel(new BorderLayout());
+      frame.add(panel);  
+      panel.setVisible(true);
+      frame.addWindowListener(new WindowAdapter() {
+        public void windowClosing(WindowEvent windowEvent) {
+          frame.dispose();
+          try {
+            officeAplication.deactivate();
+          }
+          catch (OfficeApplicationException applicationException) {            
+          }
+        }        
+      }); 
+      
+      IFrame officeFrame = officeAplication.getDesktopService().constructNewOfficeFrame(panel);
+      officeAplication.getDocumentService().constructNewDocument(officeFrame, IDocument.WRITER, DocumentDescriptor.DEFAULT);
+      frame.validate();
+      
+      //Now it is time to disable two commands in the frame
+      officeFrame.disableDispatch(GlobalCommands.CLOSE_DOCUMENT);
+      officeFrame.disableDispatch(GlobalCommands.QUIT_APPLICATION);
+      officeFrame.updateDispatches();
+		} 
+		catch (Throwable throwable) {
+			throwable.printStackTrace();
+		} 
+	}
+}
+
+</code>
+</pre>
+
+<h2>License</h2>
+<pre>
+/****************************************************************************
+ *                                                                          *
+ * NOA-libre                                        						*
+ * ------------------------------------------------------------------------ *
+ *                                                                          *
+ * The Contents of this file are made available subject to                  *
+ * the terms of GNU Lesser General Public License Version 2.1.              *
+ *                                                                          * 
+ * GNU Lesser General Public License Version 2.1                            *
+ * ======================================================================== *
+ * Copyright 2013 by NOA-Libre                                              *
+ *                                                                          *
+ * This library is free software; you can redistribute it and/or            *
+ * modify it under the terms of the GNU Lesser General Public               *
+ * License version 2.1, as published by the Free Software Foundation.       *
+ *                                                                          *
+ * This library is distributed in the hope that it will be useful,          *
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of           *
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU        *
+ * Lesser General Public License for more details.                          *
+ *                                                                          *
+ * You should have received a copy of the GNU Lesser General Public         *
+ * License along with this library; if not, write to the Free Software      *
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston,                    *
+ * MA  02111-1307  USA                                                      *
+ *                                                                          *
+ * Contact us:                                                              *
+ *  http://code.google.com/p/noa-libre/										*
+ *                                                                          *
+ ****************************************************************************/
+</pre>
+
+NOA-Libre is based on <a href="http://ubion.ion.ag/loesungen/004niceofficeaccess">Nice Office Access</a>, NOA, gratefully LGPLed by the ION AG.<br/>
+Parts of this documentation were based on the LGPLed NOA example files (snippets) and 
+on public <a href='http://ubion.ion.ag/mainForumFolder/noa_forum'>forum</a> entries collected by Jochen Stärk on <a href='http://www.usegroup.de/software/noa/'>his wiki</a>.
+
+</body>
+</html>
