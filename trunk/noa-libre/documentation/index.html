@@ -16,11 +16,14 @@
 
 <ul>
 
+
+<li><a href='#what_is_noa-libre'>What is NOA-libre?</a>
 <li><a href='#tutorial'>Tutorial</a>
 <ul>
 	<li><a href='#step1'>Step 1: Simple SWING application</a></li>
 	<li><a href='#step2'>Step 2: Add OpenOffice.org Writer</a></li>
 	<li><a href='#step3'>Step 3: Change Writer to Calc</a></li>
+	<li><a href='#troubleshooting'>Troubleshooting</a></li>
 	<li><a href='#final'>Final result</a></li>
 </ul>
 </li>
@@ -49,10 +52,52 @@
 </ul>
 <li><a href='#license'>License</a>
 
+<h1>What is NOA-libre?</h1>
+<a name='what_is_noa-libre'></a>
+OpenOffice/LibreOffice have a great <abbr title="Application Programming Interface">API</abbr>, called <abbr title="Universal Network Objects">UNO</abbr>. 
+As it is available over the network, it is actually much more than just an API, it's a fully-fledged middleware. 
+<abbr title="Nice Office Access">NOA</abbr>-libre is a java wrapper around the client part of UNO, provides its own classes and methods but still allows to access the underlying UNO layer. 
+By concentrating on Java, NOA-libre can take care of java-specific deployment
+issues and it can be object oriented - one of UNO's primary target languages is ordinary C, so UNO can't be object oriented.
+If you call UNO a middleware you could call NOA-libre the underwear: using NOA-libre you can access UNO much easier.
+<br/>
+This allows for the following use cases:
+
+<ol>
+<li><em>embedding</em> OpenOffice</li>
+<li><em>remote-controlling</em> OpenOffice</li>
+<li><em>extending</em> OpenOffice</li>
+</ol>
+
+Most of this documentation will focus on the most frequently used parts, embedding OpenOffice windows in your applications and remote controlling OpenOffice.
+Remote-controlling means the OpenOffice window is - visible or hidden, as a separate window on your computer or anywhere else on the network - 
+performing tasks in real time, like converting documents or replacing placeholders in OpenOffice templates and exporting <abbr title="Portable Document Format">PDFs</abbr>.
+But with UNO/NOA-libre it is also possible to write functionality in Java and add this functionality in the OpenOffice window, e.g. as a button to
+insert your mail footer or a selectbox to select the addressee from the list of your company's contacts obtained via LDAP. Your imagination is the limit :-)
+
+<br/>
+<a href='#top'>Back to top</a><br/>
+<a name='tutorial'></a>
 <h1>Tutorial</h1>
 
 <a name='step1'></a>
 <h2>Step 1: Simple SWING application</h2>
+
+<ol>
+
+<li>Start Eclipse.</li>
+<li>Select file|new|java project, choose a 32 bit JDK, in my case e.g. 1.7, call the project LOEWE.</li>
+
+<li>file|new|class. Name Loewe, superclass: javax.swing.JFrame, leave the  public static void main checkbox checked.</li>
+<li>name Libre Office Embed Window Example, Loewe. Click finish.</li>
+<li>Download and extract the noa-libre package. Copy noa-libre.jar from "dist" to "dist/lib" and copy the "lib" subdirectory below the "dist" directory to the workspace of your eclipse project,
+as a sibling to the "src" folder created by eclipse, i.e. to  i.e. workspace/LOEWE/lib.</li>
+<li>Right-click LOEWE in the package explorer, click properties and select "Java Build Path". In the tab libraries you should add external JAR files,
+namely all JAR files in workspace/LOEWE/lib. Click OK to close the properties.</li>
+
+<li> In the constructor we now add a JPanel, called NOApanel, to our screen and use <code>setVisible</code>, <code>setSize</code> and <code>setDefaultCloseOperation</code> to actually
+show the window. We also alread add a WindowClosing listener - and we make sure the constructor is actually invoked. CTRL+O helps you import the classes you need.
+Your code should now look like this:
 
 
 <pre>
@@ -63,14 +108,14 @@ import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-//(2a)
-//(3a)
+//(2a*)
+//(3a*)
 
 public class Loewe extends JFrame {
 
 	private JPanel NOApanel;
-//(2b)
-//(3b)
+//(2b*)
+//(3b*)
 	public Loewe() {
 		setVisible(true);
 		setSize(500,500);
@@ -91,7 +136,7 @@ public class Loewe extends JFrame {
 		getContentPane().setLayout(new GridLayout());
 		getContentPane().add(NOApanel);
 //(2d)
-//(3d)
+//(3d*)
 	}
 	
 	/**
@@ -105,52 +150,41 @@ public class Loewe extends JFrame {
 }
 </code>
 </pre>
+</li>
 
+<li>(Please note that I have added comments like //(2d) to mark the places for later insertions.)<br/>We now create a new run configuration: Run|Run configurations, click the new icon at the top left over the input field
+("New launch configuration"). Click run and you should see an empty, gray window. Nothing yet spectacular.
+<br/>
+<img src='step1.png' alt='Results of Step 1, a empty java window.'><br/>
+
+</li>
+</ol>
 <a href='#top'>Back to top</a><br/>
 <a name='step2'></a>
 <h2>Step 2: Add OpenOffice.org Writer</h2>
+<ol>
+<li>
+We'll now use an IApplicationAssistant to find the local installation of your OpenOffice instance.
+This will be put in a HashMap we call configuration as IOfficeApplication.APPLICATION_HOME_KEY. 
+IOfficeApplication.APPLICATION_TYPE_KEY is always IOfficeApplication.LOCAL_APPLICATION unless you want to connect 
+to a different OpenOffice instance running over the network.
+</li>
+<li>
+With this "configuration" hasmap we can use <code>OfficeApplicationRuntime.getApplication(configuration);</code> to obtain 
+the <em>officeApplication</em> from NOA-libre. We will activate the connection and add a <em>NativeView</em>.
+We will need to tell the NativeView (and the IApplicationAssistant in the very first place) where to find it's NOA-libre libraries.
+</li>
+<li>
+We add this NativeView to our NOApanel and construct a new <em>OfficeFrame</em> from it. And this OfficeFrame is now finally the
+parameter we need to invoke <code>(ITextDocument)officeApplication.GetDocumentService().constructNewDocument(officeFrame,  Idocument.WRITER, DocumentDescriptor.DEFAULT);</code>
+which will finally and visually embed OpenOffice. We're almost there:
+</li>
+<li>
+If you started the application by now you would be able to resize the window - but that would not propagate to the embedded OpenOffice.
+so we add a ComponentListener on the componentResized event and tell our NativeView to adapt.
+<br/>We'll do this after adding the panel to the content pane, i.e. replace //(2d)
+by
 
-
-Replace //(2a) with
-<pre>
-<code>
-import java.io.File;
-import java.util.HashMap;
-
-</code>
-</pre>
-
-
-Replace //(2b) with
-<pre>
-<code>
-         private IOfficeApplication officeApplication=null;
-         private NativeView nat;
-         private IFrame officeFrame;
-         private ISpreadsheetDocument document=null;
- 
-</code>
-</pre>
-
-Replace //(2c) with
-<pre>
-<code>
-                                 if (document!=null) {
-                                         document.close();
-                                 }
-                                 if (officeApplication!=null) {
-                                         try {
-                                                 officeApplication.deactivate();
-                                         } catch (OfficeApplicationException e1) {
-                                                 // TODO Auto-generated catch block
-                                                 e1.printStackTrace();
-                                         }
-                                 }
- 
-</code>
-</pre>
-
-Replace //(2d) with
 <pre>
 <code>
                  IApplicationAssistant ass;
@@ -159,7 +193,7 @@ Replace //(2d) with
                          	+File.separator+"lib");
                          ILazyApplicationInfo[] ila=ass.getLocalApplications();
  
-                         HashMap<String, String> configuration=new HashMap<String, String>();
+                         HashMap&lt;String, String&gt; configuration=new HashMap&lt;String, String&gt;();
                          configuration.put(IOfficeApplication.APPLICATION_HOME_KEY,
  				   ila[0].getHome());
                          configuration.put(IOfficeApplication.APPLICATION_TYPE_KEY, 
@@ -187,9 +221,9 @@ Replace //(2d) with
                   NOApanel.setVisible(true);
  		 	  officeFrame=officeApplication.getDesktopService().
  				constructNewOfficeFrame(nat);
-                  document=(ISpreadsheetDocument)officeApplication.
- 				GetDocumentService().
- 				constructNewDocument(officeFrame,  Idocument.CALC,
+                  document=/*(3f)*/(ITextDocument)officeApplication.
+ 				getDocumentService().
+ 				constructNewDocument(officeFrame, /*(3g)*/ IDocument.WRITER,
  							DocumentDescriptor.DEFAULT);
 //(3c)
           } catch (OfficeApplicationException e1) {
@@ -197,49 +231,165 @@ Replace //(2d) with
           } catch (DesktopException e1) {
                          e1.printStackTrace();
           } catch (NOAException e1) {
- 
+						e1.printStackTrace();
+		  }
 </code>
 </pre>
+</li>
+<li>
+If you pasted the above code some CTRL+SHIFT+O will get you the imports you need - something we would otherwise have to do by
+replacing //(2a*) with
+<pre>
+<code>
+import java.io.File;
+import java.util.HashMap;
+import ag.ion.bion.officelayer.NativeView;
+import ag.ion.bion.officelayer.application.IApplicationAssistant;
+import ag.ion.bion.officelayer.application.ILazyApplicationInfo;
+import ag.ion.bion.officelayer.application.IOfficeApplication;
+import ag.ion.bion.officelayer.application.OfficeApplicationException;
+import ag.ion.bion.officelayer.application.OfficeApplicationRuntime;
+import ag.ion.bion.officelayer.desktop.DesktopException;
+import ag.ion.bion.officelayer.document.DocumentDescriptor;
+import ag.ion.bion.officelayer.document.IDocument;
+import ag.ion.bion.officelayer.internal.application.ApplicationAssistant;
+import ag.ion.bion.officelayer.text.ITextDocument;
+import ag.ion.noa.NOAException;
 
+</code>
+</pre>
+. Four quick fixes (create field) will also take the burden from us to 
+replace //(2b*) with
+<pre>
+<code>
+         private IOfficeApplication officeApplication=null;
+         private NativeView nat;
+         private IFrame officeFrame;
+         private /*(3e)*/ITextDocument document=null;
+ 
+</code>
+</pre>. 
+Please just note - and maybe add - the /*(3e)*/ replacement indicator.
+You might already have thought that the replacement indicators marked with asterisk, i.e. //(2b*) can be conducted by eclipse itself.
+</li>
+<li>
+There is one last thing: The connection between the OpenOffice front end and middleware is delicate, i.e. the connections
+must be managed properly because many of them require OpenOffice to start - and listen - when they open (activate) and
+close down when they deactivate. <br/>
+
+
+<br/>
+
+
+So we do not only <em>want</em>, we urgently <em>need</em> to be nice and helpful and close the document as well as deactivate the officeApplication when 
+we go, i.e. in our windowClosing event. So please add in the windowClosing before the <code>super.windowClosing(e);</code>, i.e. replace //(2c) with
+<pre>
+<code>
+                                 if (document!=null) {
+                                         document.close();
+                                 }
+                                 if (officeApplication!=null) {
+                                         try {
+                                                 officeApplication.deactivate();
+                                         } catch (OfficeApplicationException e1) {
+                                                 // TODO Auto-generated catch block
+                                                 e1.printStackTrace();
+                                         }
+                                 }
+ 
+</code>
+</pre>That's it.<br/>
+Start and you will have a OpenOffice embedded in your Java Frame. It will even react - as you can see I typed "Hello World!".
+<br/>
+<img src='step2.png' alt='Results of Step 2, a embedded OpenOffice Writer.'><br/>
+This is it, most of you (I hope) are already eager to get started. The good news is: after this foundation everything is much easier.
+On this basis you can now programmatically set text, change attributes or load writer documents, insert tables or images, change which options the
+embedded OpenOffice offers to the users, print, export and import files and much more.<br/>
+
+
+
+
+</li></ol>
 
 <a href='#top'>Back to top</a><br/>
 <a name='step3'></a>
 <h2>Step 3: Change Writer to Calc</h2>
 
-Replace //(3a) with
+In the last step of this tutorial we switch from OpenOffice Writer to OpenOffice Calc.
+This is easy but the Calc functions in NOA-libre do not completely cover what you usually need for 
+your work on spreadsheets, which is a great opportunity to have a look how to access the underlying UNO layer with NOA-libre.
+
+<ol>
+<li>Change 	
 <pre>
 <code>
- import com.sun.star.container.NoSuchElementException;
- import com.sun.star.lang.IndexOutOfBoundsException;
- import com.sun.star.lang.WrappedTargetException;
- import com.sun.star.sheet.XSheetCellCursor;
- import com.sun.star.sheet.XSpreadsheet;
- import com.sun.star.sheet.XSpreadsheets;
- import com.sun.star.table.XCell;
- import com.sun.star.text.XText;
- import com.sun.star.uno.UnoRuntime;
- import ag.ion.bion.officelayer.application.OfficeApplicationRuntime;
- import ag.ion.bion.officelayer.desktop.DesktopException;
- import ag.ion.bion.officelayer.document.DocumentDescriptor;
- import ag.ion.bion.officelayer.document.DocumentException;
- import ag.ion.bion.officelayer.internal.application.ApplicationAssistant;
- import ag.ion.bion.officelayer.spreadsheet.ISpreadsheetDocument;
+private ITextDocument /*(3e)*/ document; 
+</code>
+</pre>
+to 	
+<pre>
+<code>
+private ISpreadsheetDocument /*(3e)*/ document;
+</code>
+</pre>
+and
 
-
+<pre>
+<code>
+document=/*(3f)*/(ITextDocument)officeApplication.
+</code>
+</pre>
+to 	
+<pre>
+<code>
+document=/*(3f)*/(ISpreadsheetDocument)officeApplication.
 </code>
 </pre>
 
-Replace //(4b) with
+as well as 
+
 <pre>
 <code>
-    private XSpreadsheets spreadsheets;
-    private XSpreadsheet spreadSheet1;
-    private XSheetCellCursor cellCursor;
- 
+		constructNewDocument(officeFrame, /*(3g)*/ IDocument.WRITER,
+
 </code>
 </pre>
+to 	
+<pre>
+<code>
+		constructNewDocument(officeFrame, /*(3g)*/ IDocument.CALC,
 
-Replace //(4c) with
+</code>
+</pre>
+CTRL+SHIFT+O to import ISpreadsheetDocument and you accomplished 
+an important first step - if you started it you would already see an empty OpenOffice Calc.
+<br/>
+<img src='step3a.png' alt='Results of Step 3a, a embedded OpenOffice Calc.'><br/>
+
+
+<br/>
+But this is just where the fun starts, unlike with text documents where much functionality is covered by
+NOA-libre itself, to add some content to our spread sheet we have to dive into UNO.
+<br/>
+
+For further information, download <a href='http://www.openoffice.org/download/other.html#tested-sdk'>OpenOffice's SDK</a> and/or
+have a look at the according <a href='http://wiki.openoffice.org/wiki/Documentation/DevGuide/OpenOffice.org_Developers_Guide'>
+Developer's Guide</a> for a comprehensive UNO reference.
+
+
+</li>
+
+<li>
+Now, as a spreadsheet document consists of different spread sheets (shown in the tabs at the 
+bottom of Calc) we're going to get all Sheets (<code>document.getSpreadsheetDocument().getSheets()</code>), 
+and then we get the name of the first one (getElementNames()) to
+have it stored in a spreadSheet1 variable. Then we can create a cellCursor, get the cells by
+position and set their integer or float value. To set a string value, we have to create
+a XText with <code>UnoRuntime.queryInterface(XText.class, cell)</code> first.
+The fun thing is that all types prefixed with X are from the UNO-Layer of NOA-libre, so 
+we're already using UNO functionality.<br/>
+
+Or, in other words, replace //(3c) with
 <pre>
 <code>
                   spreadsheets=document.getSpreadsheetDocument().getSheets();
@@ -262,10 +412,52 @@ Replace //(4c) with
 </code>
 </pre>
 
-Replace //(4d) with
+</li>
+<li>
+Intuitively using CTRL+SHIFT+O you should already have replace //(3a*) with
 <pre>
 <code>
-                         e1.printStackTrace();
+ import com.sun.star.container.NoSuchElementException;
+ import com.sun.star.lang.IndexOutOfBoundsException;
+ import com.sun.star.lang.WrappedTargetException;
+ import com.sun.star.sheet.XSheetCellCursor;
+ import com.sun.star.sheet.XSpreadsheet;
+ import com.sun.star.sheet.XSpreadsheets;
+ import com.sun.star.table.XCell;
+ import com.sun.star.text.XText;
+ import com.sun.star.uno.UnoRuntime;
+ import ag.ion.bion.officelayer.application.OfficeApplicationRuntime;
+ import ag.ion.bion.officelayer.desktop.DesktopException;
+ import ag.ion.bion.officelayer.document.DocumentDescriptor;
+ import ag.ion.bion.officelayer.document.DocumentException;
+ import ag.ion.bion.officelayer.internal.application.ApplicationAssistant;
+ import ag.ion.bion.officelayer.spreadsheet.ISpreadsheetDocument;
+
+
+</code>
+</pre>
+</li>
+<li>
+and applied the quick fixes to create the fields mentioned in //(3b*) with
+<pre>
+<code>
+    private XSpreadsheets spreadsheets;
+    private XSpreadsheet spreadSheet1;
+    private XSheetCellCursor cellCursor;
+ 
+</code>
+</pre>
+Just watch out that spreadsheets is a XSpreadsheets and not a Object.<br/>
+As you can see: they are all UNO.
+</li>
+<li>
+
+A bit of try/catch quick fixing (add catch to surrounding try) should also have added the neccessary catches , i.e. 
+<br/>
+replace //(3d*) with
+<pre>
+<code>
+
           } catch (IndexOutOfBoundsException e1) {
                          e1.printStackTrace();
           } catch (NoSuchElementException e1) {
@@ -276,7 +468,27 @@ Replace //(4d) with
                  
 </code>
 </pre>
+Save, run, lean back and enjoy: You have completed the tutorial.
+<br/>
+<img src='step3b.png' alt='The finished OpenOffice Calc with sample values.'><br/>
 
+
+<a href='#top'>Back to top</a><br/>
+<a name='toubleshooting'></a>
+<h2>Troubleshooting</h2>
+
+If everything remains red, you might not have copied noa-libre.jar from dist/ to workspace/LOEWE/lib - or you forgot to
+include it in the project options.
+
+If you don't <strong>close and deactivate</strong>, the old zombie openoffice listening instance from the test before will greedily 
+eat all data supposed to be sent to the currently running instance, which will make this - current - instance of your test program
+a zombie as well if this accidentally happens, reboot - or check the process list for "soffice" or "soffice.bin" and kill your 
+zombies - and start and close a clean standalone OpenOffice Writer after you did because the zombies usually corrupted the 
+documents which OpenOffice would assist you to recover. You can manually skip this recovery if you like but if your program
+embeds OpenOffice while it is still in "recovery pending" mode it might just fail because your software does not understand what
+OpenOffice says and OpenOffice does not understand what your program answers.
+
+<br/>
 <a href='#top'>Back to top</a><br/>
 <a name='final'></a>
 <h2>Final result</h2>
@@ -468,7 +680,6 @@ Calc
 
 
 
-<a href='#top'>Back to top</a><br/>
 <a name="find_installation"></a><h3>Find installation</h3>
 
 This will look for OpenOffice in it's default locations and print where it has been found.
