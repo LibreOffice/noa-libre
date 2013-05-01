@@ -3,7 +3,7 @@
 <head>
 	<meta charset=utf-8>
 <!-- Documentation: version 0.2 from Jochen Stärk, 23.02.2013 
-todo: show/hide menu bars, add wiki:
+todo: show/hide menu bars, check classnames of new snippets, add from wiki:
  Show print preview
 
 Zooming text documents
@@ -944,7 +944,7 @@ public static ILazyApplicationInfo getOfficeInfo() {
 			OappInfo = applicationAssistant.getLatestLocalOpenOfficeOrgApplication();
 			appInfo=OappInfo;// take the latest openoffice installation unless libreoffice is also installed in a higher version
 			if (appInfo==null) {
-				appInfo=OappInfo;
+				appInfo=LappInfo;
 			}
 			if ((LappInfo!=null)&&(OappInfo!=null)) {
 				if (LappInfo.getMajorVersion()>OappInfo.getMajorVersion()) {
