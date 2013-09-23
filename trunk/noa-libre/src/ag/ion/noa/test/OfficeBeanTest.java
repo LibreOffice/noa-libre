@@ -1,36 +1,25 @@
-/****************************************************************************
+/**
+ * **************************************************************************
  *                                                                          *
- * NOA (Nice Office Access)                                                 *
- * ------------------------------------------------------------------------ *
- *                                                                          *
- * The Contents of this file are made available subject to                  *
- * the terms of GNU Lesser General Public License Version 2.1.              *
- *                                                                          * 
- * GNU Lesser General Public License Version 2.1                            *
+ * NOA (Nice Office Access) *
+ * ------------------------------------------------------------------------ * *
+ * The Contents of this file are made available subject to * the terms of GNU
+ * Lesser General Public License Version 2.1. * * GNU Lesser General Public
+ * License Version 2.1 *
  * ======================================================================== *
- * Copyright 2003-2006 by IOn AG                                            *
- *                                                                          *
- * This library is free software; you can redistribute it and/or            *
- * modify it under the terms of the GNU Lesser General Public               *
- * License version 2.1, as published by the Free Software Foundation.       *
- *                                                                          *
- * This library is distributed in the hope that it will be useful,          *
- * but WITHOUT ANY WARRANTY; without even the implied warranty of           *
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU        *
- * Lesser General Public License for more details.                          *
- *                                                                          *
- * You should have received a copy of the GNU Lesser General Public         *
- * License along with this library; if not, write to the Free Software      *
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston,                    *
- * MA  02111-1307  USA                                                      *
- *                                                                          *
- * Contact us:                                                              *
- *  http://www.ion.ag                                                       *
- *  http://ubion.ion.ag                                                     *
- *  info@ion.ag                                                             *
- *                                                                          *
- ****************************************************************************/
- 
+ * Copyright 2003-2006 by IOn AG * * This library is free software; you can
+ * redistribute it and/or * modify it under the terms of the GNU Lesser General
+ * Public * License version 2.1, as published by the Free Software Foundation. *
+ * * This library is distributed in the hope that it will be useful, * but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of * MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE. See the GNU * Lesser General Public
+ * License for more details. * * You should have received a copy of the GNU
+ * Lesser General Public * License along with this library; if not, write to the
+ * Free Software * Foundation, Inc., 59 Temple Place, Suite 330, Boston, * MA
+ * 02111-1307 USA * * Contact us: * http://www.ion.ag * http://ubion.ion.ag *
+ * info@ion.ag * *
+ ***************************************************************************
+ */
 /*
  * Last changes made by $Author: andreas $, $Date: 2006-10-04 14:14:28 +0200 (Mi, 04 Okt 2006) $
  */
@@ -46,8 +35,13 @@ import ag.ion.bion.officelayer.desktop.IFrame;
 
 import ag.ion.bion.officelayer.document.DocumentDescriptor;
 import ag.ion.bion.officelayer.document.IDocument;
+import ag.ion.bion.officelayer.filter.PDFFilter;
 import ag.ion.bion.officelayer.internal.application.ApplicationAssistant;
 import ag.ion.bion.officelayer.internal.application.ApplicationInfo;
+import ag.ion.noa.document.URLAdapter;
+import com.sun.star.beans.PropertyValue;
+import com.sun.star.frame.XStorable;
+import com.sun.star.uno.UnoRuntime;
 
 import java.awt.BorderLayout;
 import java.awt.Frame;
@@ -58,6 +52,7 @@ import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.net.URL;
 
 import java.util.HashMap;
 
@@ -71,70 +66,70 @@ import junit.framework.TestCase;
 
 /**
  * Test case for the OpenOffice.org Bean.
- * 
+ *
  * @author Andreas Bröker
  * @version $Revision: 10398 $
- */ 
+ */
 public class OfficeBeanTest extends TestCase {
 
-  private static Logger LOGGER = Logger.getLogger("ag.ion");
-  
-  private IDocument document  = null;
-  private File      file      = null;
-  
-  //----------------------------------------------------------------------------
-  /**
-   * Main entry point for the OpenOffice.org Bean Test.
-   *
-   * @param args arguments of the test
-   *
-   * @author Andreas Bröker
-   * @date 21.05.2006
-   */
-  public static void main(String[] args) throws OfficeApplicationException {
-     
+   private static Logger LOGGER = Logger.getLogger("ag.ion");
+
+   private IDocument document = null;
+   private File file = null;
+
+   //----------------------------------------------------------------------------
+   /**
+    * Main entry point for the OpenOffice.org Bean Test.
+    *
+    * @param args arguments of the test
+    *
+    * @author Andreas Bröker
+    * @date 21.05.2006
+    */
+   public static void main(String[] args) throws OfficeApplicationException {
+
       LogManager.getLogManager().reset();
       ConsoleHandler consoleHandler = new ConsoleHandler();
       consoleHandler.setLevel(Level.FINEST);
       LOGGER.addHandler(consoleHandler);
       LOGGER.setLevel(Level.FINEST);
-      
+
       try {
-        FileHandler fileHandler = new FileHandler("log.xml");
-        fileHandler.setLevel(Level.FINEST);
-        LOGGER.addHandler(fileHandler);
-      }
-      catch (Throwable throwable) {
+         FileHandler fileHandler = new FileHandler("log.xml");
+         fileHandler.setLevel(Level.FINEST);
+         LOGGER.addHandler(fileHandler);
+      } catch (Throwable throwable) {
       }
       OfficeBeanTest testOfficeBean = new OfficeBeanTest();
       String home = null;
-      if(args.length != 0)
-         home=args[0];
+      if (args.length != 0) {
+         home = args[0];
+      }
       testOfficeBean.test(home);
-  }
-  //----------------------------------------------------------------------------
-  /**
-   * Test OpenOffice.org Bean.
-   *
-   * @author Andreas Bröker
-   * @param home
-   * @throws ag.ion.bion.officelayer.application.OfficeApplicationException
-   * @date 21.05.2006
-   */
+   }
+   //----------------------------------------------------------------------------
+   /**
+    * Test OpenOffice.org Bean.
+    *
+    * @author Andreas Bröker
+    * @param home
+    * @throws ag.ion.bion.officelayer.application.OfficeApplicationException
+    * @date 21.05.2006
+    */
    public void testOfficeBean(String home) throws OfficeApplicationException {
       OfficeBeanTest testOfficeBean = new OfficeBeanTest();
       System.out.println("testOfficeBean: " + home);
       testOfficeBean.test(home);
    }
    //----------------------------------------------------------------------------
-  /**
-   * Test the OpenOffice.org Bean.
-   *
-   * @param officeHome home path to OpenOffice.org
-   *
-   * @author Andreas Bröker
-   * @date 21.05.2006
-   */
+   /**
+    * Test the OpenOffice.org Bean by creating an empty odt file, opening it, creating a pdf and cleanup
+    *
+    * @param officeHome home path to OpenOffice.org
+    *
+    * @author Andreas Bröker
+    * @date 21.05.2006
+    */
    public void test(String officeHome) throws OfficeApplicationException {
       System.out.println("NOA Office Bean Test");
 
@@ -145,7 +140,6 @@ public class OfficeBeanTest extends TestCase {
             appInfo = applicationAssistant.getLatestLocalLibreOfficeApplication();
          }
          System.out.println(appInfo.getClass() + " - Office major version:" + appInfo.getMajorVersion());
-
 
          officeHome = appInfo.getHome();
       }
@@ -188,6 +182,33 @@ public class OfficeBeanTest extends TestCase {
          System.out.println("Loading document for test ...");
          document = application.getDocumentService().loadDocument(officeFrame, new FileInputStream(file), new DocumentDescriptor());
          System.out.println("Document for test loaded.");
+
+         System.out.println("Document export to pdf..");
+         PDFFilter pdfFilter = PDFFilter.FILTER;
+         File pdf = new File("OfficeBeanTestPdfa.pdf");
+         pdf.delete();
+//FIXME commented out is special for pdf/A, will become part of noalibre 
+//         PropertyValue[] filterData = new PropertyValue[1];
+//         filterData[0] = new PropertyValue();
+//         filterData[0].Name = "SelectPdfVersion";
+//         filterData[0].Value = new Integer(1); //0: normal 1.4, 1: PDF/A
+//
+//         String filterDefinition = pdfFilter.getFilterDefinition(document);
+//         PropertyValue[] properties = new PropertyValue[2];
+//         properties[0] = new PropertyValue();
+//         properties[0].Name = "FilterName"; //$NON-NLS-1$
+//         properties[0].Value = filterDefinition;
+//         properties[1] = new PropertyValue();
+//         properties[1].Name = "FilterData";
+//         properties[1].Value = filterData;
+//
+
+//         URL url = pdf.toURI().toURL();
+//         XStorable xStorable = UnoRuntime.queryInterface(XStorable.class, document.getXComponent());
+//         xStorable.storeToURL(url.toString(), properties);
+         application.getDocumentService().loadDocument(file.getAbsolutePath()).getPersistenceService().export(pdf.getAbsolutePath(), pdfFilter);
+         System.out.println("Document export to pdf done. " + pdf.getCanonicalPath());
+ 
          frame.validate();
          officeFrame.getXFrame().getController().suspend(true);
          document.close();
@@ -197,8 +218,9 @@ public class OfficeBeanTest extends TestCase {
             document.close();
          }
          file.delete();
+         pdf.delete();
          try {
-            System.out.println("Deactivating OpenOffice.org connection ...");
+            System.out.println("Deactivating Office connection ...");
             application.deactivate();
          } catch (OfficeApplicationException applicationException) {
          }
@@ -209,5 +231,5 @@ public class OfficeBeanTest extends TestCase {
       System.out.println("NOA Office Bean Test successfully.");
    }
   //----------------------------------------------------------------------------
-  
+
 }
