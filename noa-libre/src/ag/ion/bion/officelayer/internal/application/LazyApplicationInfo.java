@@ -46,6 +46,7 @@ import ag.ion.bion.officelayer.application.ILazyApplicationInfo;
  * 
  * @author Andreas Bröker
  * @version $Revision: 11681 $
+ * @deprecated
  */
 public class LazyApplicationInfo implements ILazyApplicationInfo {
 
@@ -77,7 +78,7 @@ public class LazyApplicationInfo implements ILazyApplicationInfo {
     this.home = home;
     this.applicationProperties = applicationProperties;
     if (applicationProperties != null)
-      intitVersion(applicationProperties);
+      initVersion(applicationProperties);
   }
 
   //----------------------------------------------------------------------------
@@ -173,32 +174,24 @@ public class LazyApplicationInfo implements ILazyApplicationInfo {
    * 
    * @author Andreas Bröker
    */
-  private void intitVersion(IApplicationProperties applicationProperties) {
-    String productKey = applicationProperties.getPropertyValue(IApplicationProperties.PRODUCT_KEY_PROPERTY);
-    if (productKey != null) {
-      String version = productKey.substring(PRODUCT_NAME.length()).trim();
-      String[] versionParts = version.split("\\.");
-      int majorVersion = 0;
-      int minorVersion = 0;
-      int updateVersion = 0;
-      for (int i = 0, n = versionParts.length; i < n; i++) {
-        int number = -1;
-        try {
-          number = Integer.parseInt(versionParts[i]);
-        }
-        catch (Throwable throwable) {
-          // do not consume
-        }
-        if (i == 0)
-          majorVersion = number;
-        else if (i == 1)
-          minorVersion = number;
-        else if (i == 2)
-          updateVersion = number;
+   private void initVersion(IApplicationProperties applicationProperties) {
+      String productKey = applicationProperties.getPropertyValue(IApplicationProperties.PRODUCT_MAJOR_VERSION_PROPERTY);
+      if (productKey != null) {
+         String version = productKey.substring(PRODUCT_NAME.length()).trim();
+         String[] versionParts = version.split("\\.");
+         int majorVersion = 0;
+         int minorVersion = 0;
+         int updateVersion = 0;
+         //only major version is important, minor amd update version are included anyway.. 350, 400 .. cannot find another consistent oo/lo version property
+         try {
+            majorVersion = Integer.parseInt(productKey);
+         } catch (Throwable throwable) {
+            // do not consume
+         }
+
       }
       setVersion(majorVersion, minorVersion, updateVersion);
-    }
-  }
+   }
   //----------------------------------------------------------------------------  
 
 }
