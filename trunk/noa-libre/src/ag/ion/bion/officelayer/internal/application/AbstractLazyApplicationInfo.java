@@ -51,14 +51,14 @@ import ag.ion.bion.officelayer.application.ILazyApplicationInfo;
 public abstract class AbstractLazyApplicationInfo implements
 		ILazyApplicationInfo {
 
-	private IApplicationProperties applicationProperties = null;
+	protected IApplicationProperties applicationProperties = null;
 
-	private String home = null;
-	private String productNameInProperties = null;
+	protected String home = null;
+	protected String productNameInProperties = null;
 
-	private int majorVersion = -1;
-	private int minorVersion = -1;
-	private int updateVersion = -1;
+	protected int majorVersion = -1;
+	protected int minorVersion = -1;
+	protected int updateVersion = -1;
 
 	// ----------------------------------------------------------------------------
 	/**
@@ -87,8 +87,7 @@ public abstract class AbstractLazyApplicationInfo implements
 		this.home = home;
 		this.applicationProperties = applicationProperties;
 		this.productNameInProperties = productNameInProperties;
-		if (applicationProperties != null)
-			initVersion(applicationProperties);
+		initVersion(applicationProperties);
 	}
 
 	// ----------------------------------------------------------------------------
@@ -181,40 +180,30 @@ public abstract class AbstractLazyApplicationInfo implements
 
 	// ----------------------------------------------------------------------------
 	/**
-	 * Inits version number.
-	 * 
-	 * @param applicationProperties
-	 *            application properties to be used
-	 * 
-	 * @author Andreas Bröker
-	 */
-	private void initVersion(IApplicationProperties applicationProperties) {
-		String productKey = applicationProperties
-				.getPropertyValue(IApplicationProperties.PRODUCT_KEY_PROPERTY);
-		if (productKey != null) {
-			String version = productKey.substring(
-					productNameInProperties.length()).trim();
-			String[] versionParts = version.split("\\.");
-			int majorVersion = 0;
-			int minorVersion = 0;
-			int updateVersion = 0;
-			for (int i = 0, n = versionParts.length; i < n; i++) {
-				int number = -1;
-				try {
-					number = Integer.parseInt(versionParts[i]);
-				} catch (Throwable throwable) {
-					// do not consume
-				}
-				if (i == 0)
-					majorVersion = number;
-				else if (i == 1)
-					minorVersion = number;
-				else if (i == 2)
-					updateVersion = number;
-			}
-			setVersion(majorVersion, minorVersion, updateVersion);
-		}
-	}
+    * Inits version number.
+    *
+    * @param applicationProperties application properties to be used
+    *
+    * @author Andreas Bröker
+    */
+   protected void initVersion(IApplicationProperties applicationProperties) {
+      String productKey = applicationProperties.getPropertyValue(IApplicationProperties.PRODUCT_MAJOR_VERSION_PROPERTY);
+      //System.out.println(productKey);
+      if (productKey != null) {
+
+         int majorVersion = 0;
+         int minorVersion = 0;
+         int updateVersion = 0;
+         //only major version is important, minor amd update version are included anyway.. 350, 400 .. cannot find another consistent oo/lo version property
+         try {
+            majorVersion = Integer.parseInt(productKey);
+         } catch (Throwable throwable) {
+            // do not consume
+         }
+         setVersion(majorVersion, minorVersion, updateVersion);
+      }
+
+   }
 	// ----------------------------------------------------------------------------
 
 }

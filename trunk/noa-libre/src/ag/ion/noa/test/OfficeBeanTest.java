@@ -36,6 +36,8 @@
  */
 package ag.ion.noa.test;
 
+import ag.ion.bion.officelayer.application.IApplicationAssistant;
+import ag.ion.bion.officelayer.application.ILazyApplicationInfo;
 import ag.ion.bion.officelayer.application.IOfficeApplication;
 import ag.ion.bion.officelayer.application.OfficeApplicationException;
 import ag.ion.bion.officelayer.application.OfficeApplicationRuntime;
@@ -44,6 +46,8 @@ import ag.ion.bion.officelayer.desktop.IFrame;
 
 import ag.ion.bion.officelayer.document.DocumentDescriptor;
 import ag.ion.bion.officelayer.document.IDocument;
+import ag.ion.bion.officelayer.internal.application.ApplicationAssistant;
+import ag.ion.bion.officelayer.internal.application.ApplicationInfo;
 
 import java.awt.BorderLayout;
 import java.awt.Frame;
@@ -87,14 +91,8 @@ public class OfficeBeanTest extends TestCase {
    * @author Andreas Bröker
    * @date 21.05.2006
    */
-  public static void main(String[] args) {
-    if(args.length == 0) {
-      System.out.println("NOA Office Bean Test");
-      System.out.println("-------------------");
-      System.out.println("Usage:");
-      System.out.println("OfficeBeanTest <OfficeHomePath>");
-    }
-    else { 
+  public static void main(String[] args) throws OfficeApplicationException {
+     
       LogManager.getLogManager().reset();
       ConsoleHandler consoleHandler = new ConsoleHandler();
       consoleHandler.setLevel(Level.FINEST);
@@ -109,21 +107,26 @@ public class OfficeBeanTest extends TestCase {
       catch (Throwable throwable) {
       }
       OfficeBeanTest testOfficeBean = new OfficeBeanTest();
-      testOfficeBean.test(args[0]);
-    }
+      String home = null;
+      if(args.length != 0)
+         home=args[0];
+      testOfficeBean.test(home);
   }
   //----------------------------------------------------------------------------
   /**
    * Test OpenOffice.org Bean.
    *
    * @author Andreas Bröker
+   * @param home
+   * @throws ag.ion.bion.officelayer.application.OfficeApplicationException
    * @date 21.05.2006
    */
-  public void testOfficeBean() {
-    OfficeBeanTest testOfficeBean = new OfficeBeanTest();
-    testOfficeBean.test("C:\\Programme\\OpenOffice.org 2.0");
-  }
-  //----------------------------------------------------------------------------
+   public void testOfficeBean(String home) throws OfficeApplicationException {
+      OfficeBeanTest testOfficeBean = new OfficeBeanTest();
+      System.out.println("testOfficeBean: " + home);
+      testOfficeBean.test(home);
+   }
+   //----------------------------------------------------------------------------
   /**
    * Test the OpenOffice.org Bean.
    *
@@ -132,68 +135,79 @@ public class OfficeBeanTest extends TestCase {
    * @author Andreas Bröker
    * @date 21.05.2006
    */
-  public void test(String officeHome) {
-    System.out.println("NOA Office Bean Test");
-    System.out.println("Office home: " + officeHome);
-    HashMap hashMap = new HashMap(2);
-    hashMap.put(IOfficeApplication.APPLICATION_TYPE_KEY, IOfficeApplication.LOCAL_APPLICATION);
-    hashMap.put(IOfficeApplication.APPLICATION_HOME_KEY, officeHome);
-   
-    try {
-      System.out.println("Activating OpenOffice.org connection ...");
-      final IOfficeApplication application = OfficeApplicationRuntime.getApplication(hashMap);
-      application.activate();            
-      final Frame frame = new Frame();
-      frame.setVisible(true);
-      frame.setSize(400, 400);
-      frame.validate();
-      Panel panel = new Panel(new BorderLayout());
-      frame.add(panel);  
-      panel.setVisible(true);
-      frame.addWindowListener(new WindowAdapter() {
-        public void windowClosing(WindowEvent e) {
-          frame.dispose();
-          document.close();
-          file.delete();
-          try {
+   public void test(String officeHome) throws OfficeApplicationException {
+      System.out.println("NOA Office Bean Test");
+
+      if (officeHome == null) {
+         IApplicationAssistant applicationAssistant = new ApplicationAssistant();
+         ILazyApplicationInfo appInfo = applicationAssistant.getLatestLocalOpenOfficeOrgApplication();
+         if (appInfo == null) {
+            appInfo = applicationAssistant.getLatestLocalLibreOfficeApplication();
+         }
+         System.out.println(appInfo.getClass() + " - Office major version:" + appInfo.getMajorVersion());
+
+
+         officeHome = appInfo.getHome();
+      }
+      System.out.println("Office home: " + officeHome);
+      HashMap hashMap = new HashMap(2);
+      hashMap.put(IOfficeApplication.APPLICATION_TYPE_KEY, IOfficeApplication.LOCAL_APPLICATION);
+      hashMap.put(IOfficeApplication.APPLICATION_HOME_KEY, officeHome);
+
+      try {
+         System.out.println("Activating OpenOffice.org connection ...");
+         final IOfficeApplication application = OfficeApplicationRuntime.getApplication(hashMap);
+         application.activate();
+         final Frame frame = new Frame();
+         frame.setVisible(true);
+         frame.setSize(400, 400);
+         frame.validate();
+         Panel panel = new Panel(new BorderLayout());
+         frame.add(panel);
+         panel.setVisible(true);
+         frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+               frame.dispose();
+               document.close();
+               file.delete();
+               try {
+                  System.out.println("Deactivating OpenOffice.org connection ...");
+                  application.deactivate();
+               } catch (OfficeApplicationException applicationException) {
+               }
+            }
+         });
+
+         System.out.println("Constructing document for test ...");
+         IFrame officeFrame = application.getDesktopService().constructNewOfficeFrame(panel);
+         document = application.getDocumentService().constructNewHiddenDocument(IDocument.WRITER);
+         System.out.println("Document for test constructed.");
+         file = new File("OfficeBeanTest.odt");
+         document.getPersistenceService().store(new FileOutputStream(file));
+         document.close();
+         System.out.println("Loading document for test ...");
+         document = application.getDocumentService().loadDocument(officeFrame, new FileInputStream(file), new DocumentDescriptor());
+         System.out.println("Document for test loaded.");
+         frame.validate();
+         officeFrame.getXFrame().getController().suspend(true);
+         document.close();
+
+         frame.dispose();
+         if (document.isOpen()) {
+            document.close();
+         }
+         file.delete();
+         try {
             System.out.println("Deactivating OpenOffice.org connection ...");
             application.deactivate();
-          }
-          catch (OfficeApplicationException applicationException) {            
-          }
-        }        
-      });      
-      
-      System.out.println("Constructing document for test ...");
-      IFrame officeFrame = application.getDesktopService().constructNewOfficeFrame(panel);      
-      document = application.getDocumentService().constructNewHiddenDocument(IDocument.WRITER);
-      System.out.println("Document for test constructed.");
-      file = new File("OfficeBeanTest.odt");
-      document.getPersistenceService().store(new FileOutputStream(file));
-      document.close();  
-      System.out.println("Loading document for test ...");
-      document = application.getDocumentService().loadDocument(officeFrame, new FileInputStream(file), new DocumentDescriptor());
-      System.out.println("Document for test loaded.");
-      frame.validate();
-      officeFrame.getXFrame().getController().suspend(true);
-      document.close();
-
-      frame.dispose();
-      document.close();
-      file.delete();
-      try {
-        System.out.println("Deactivating OpenOffice.org connection ...");
-        application.deactivate();
+         } catch (OfficeApplicationException applicationException) {
+         }
+      } catch (Throwable throwable) {
+         throwable.printStackTrace();
+         fail(throwable.getMessage());
       }
-      catch (OfficeApplicationException applicationException) {            
-      }         
-    }
-    catch(Throwable throwable) {
-      throwable.printStackTrace();
-      fail(throwable.getMessage());
-    }
-    System.out.println("NOA Office Bean Test successfully.");
-  }
+      System.out.println("NOA Office Bean Test successfully.");
+   }
   //----------------------------------------------------------------------------
   
 }

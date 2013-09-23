@@ -57,6 +57,7 @@ import ag.ion.bion.officelayer.runtime.IOfficeProgressMonitor;
 import com.ice.jni.registry.NoSuchValueException;
 import com.ice.jni.registry.Registry;
 import com.ice.jni.registry.RegistryKey;
+import java.io.IOException;
 
 /**
  * Assistant for office applications.
@@ -77,6 +78,7 @@ public class ApplicationAssistant implements IApplicationAssistant {
 	private static final String RELATIVE_BOOTSTRAP = PROGRAM_FOLDER
 			+ File.separator + "bootstrap"; //$NON-NLS-1$ //$NON-NLS-2$
 	private static final String APPLICATION_EXECUTEABLE = "soffice"; //$NON-NLS-1$
+      private static final String VERSIONRC = PROGRAM_FOLDER + File.separator + "versionrc";
 
 	// ----------------------------------------------------------------------------
 	/**
@@ -596,42 +598,73 @@ public class ApplicationAssistant implements IApplicationAssistant {
 		}
 	}
 
-	// ----------------------------------------------------------------------------
-	/**
-	 * Returns application properties on the basis of the submitted office home
-	 * path. Returns null if the application properties can not be found.
-	 * 
-	 * @param home
-	 *            home of the office application
-	 * 
-	 * @return application properties on the basis of the submitted office home
-	 *         path or null if the application properties can not be found
-	 * 
-	 * @author Andreas Bröker
-	 */
-	private IApplicationProperties findApplicationProperties(String home) {
-		File file = null;
-		if (OSHelper.IS_WINDOWS) {
-			file = new File(home + File.separator + RELATIVE_BOOTSTRAP + ".ini"); //$NON-NLS-1$
-		} else if (OSHelper.IS_MAC) {
-			file = new File(home + File.separator + PRE_PROGRAM_FOLDER_MAC
-					+ File.separator + RELATIVE_BOOTSTRAP + "rc"); //$NON-NLS-1$
-		} else {
-			// linux,unix
-			file = new File(home + File.separator + RELATIVE_BOOTSTRAP + "rc"); //$NON-NLS-1$
-		}
-		if (file.canRead()) {
-			try {
-				FileInputStream fileInputStream = new FileInputStream(file);
-				Properties properties = new Properties();
-				properties.load(fileInputStream);
-				return new ApplicationProperties(properties);
-			} catch (Throwable throwable) {
-				return null;
-			}
-		}
-		return null;
-	}
+   // ----------------------------------------------------------------------------
+   /**
+    * Returns application properties on the basis of the submitted office home
+    * path. Returns null if the application properties can not be found.
+    *
+    * @param home home of the office application
+    *
+    * @return application properties on the basis of the submitted office home
+    * path or null if the application properties can not be found
+    *
+    * @author Andreas Bröker
+    */
+   private IApplicationProperties findApplicationProperties(String home) {
+      File file = null;
+      Properties properties = new Properties();
+      if (OSHelper.IS_WINDOWS) {
+         file = new File(home + File.separator + RELATIVE_BOOTSTRAP + ".ini"); //$NON-NLS-1$
+      } else if (OSHelper.IS_MAC) {
+         file = new File(home + File.separator + PRE_PROGRAM_FOLDER_MAC
+                 + File.separator + RELATIVE_BOOTSTRAP + "rc"); //$NON-NLS-1$
+      } else {
+         // linux,unix
+         file = new File(home + File.separator + RELATIVE_BOOTSTRAP + "rc"); //$NON-NLS-1$
+      }
+      if (file.canRead()) {
+         FileInputStream fileInputStream = null;
+         try {
+            fileInputStream = new FileInputStream(file);
+            properties.load(fileInputStream); 
+         } catch (Throwable throwable) {
+            throwable.printStackTrace();//FIXME use logger
+            return null;
+         } finally {
+            if (fileInputStream != null) {
+               try {
+                  fileInputStream.close();
+               } catch (IOException iOException) {
+                  iOException.printStackTrace();//FIXME use logger
+               }
+            }
+         }
+      }
+      
+      //Seems new
+      file = new File(home + File.separator + VERSIONRC); //$NON-NLS-1$
+      //System.out.println(file);
+      if (file.canRead()) {
+         FileInputStream fileInputStream = null;
+         try {
+            fileInputStream = new FileInputStream(file);
+            properties.load(fileInputStream); 
+         } catch (Throwable throwable) {
+            throwable.printStackTrace();//FIXME use logger
+            return null;
+         } finally {
+            if (fileInputStream != null) {
+               try {
+                  fileInputStream.close();
+               } catch (IOException iOException) {
+                  iOException.printStackTrace();//FIXME use logger
+               }
+            }
+         }
+      }
+      System.out.println(properties);
+      return new ApplicationProperties(properties);
+   }
 
 	// ----------------------------------------------------------------------------
 	/**

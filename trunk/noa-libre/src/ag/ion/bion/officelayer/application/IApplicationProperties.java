@@ -48,6 +48,9 @@ public interface IApplicationProperties {
   
   /** Name of the product key property. */
   public static final String PRODUCT_KEY_PROPERTY = "ProductKey";
+  public static final String PRODUCT_MAJOR_VERSION_PROPERTY = "ProductMajor";
+  public static final String PRODUCT_REVISION_PROPERTY = "Revision";
+  
   
   //----------------------------------------------------------------------------
   /**
