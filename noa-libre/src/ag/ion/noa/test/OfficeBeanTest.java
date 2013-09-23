@@ -18,7 +18,7 @@
  * Free Software * Foundation, Inc., 59 Temple Place, Suite 330, Boston, * MA
  * 02111-1307 USA * * Contact us: * http://www.ion.ag * http://ubion.ion.ag *
  * info@ion.ag * *
- ***************************************************************************
+ * **************************************************************************
  */
 /*
  * Last changes made by $Author: andreas $, $Date: 2006-10-04 14:14:28 +0200 (Mi, 04 Okt 2006) $
@@ -55,6 +55,7 @@ import java.io.FileOutputStream;
 import java.net.URL;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import java.util.logging.ConsoleHandler;
 import java.util.logging.FileHandler;
@@ -101,11 +102,16 @@ public class OfficeBeanTest extends TestCase {
       } catch (Throwable throwable) {
       }
       OfficeBeanTest testOfficeBean = new OfficeBeanTest();
-      String home = null;
-      if (args.length != 0) {
-         home = args[0];
+
+      if (args.length == 0) {
+         testOfficeBean.test(null);
+      }else if (args.length == 1) {
+         testOfficeBean.test(args[0]);
+      }else if(args.length==4){
+         testOfficeBean.remoteTestPDF(new File(args[2]), new File(args[3]), args[0], Integer.valueOf(args[1]));
+      }else{
+         System.out.println("usage:\nOfficeBeanTest host port source-odt target-pdf\nOfficeBeanTest officeHome");
       }
-      testOfficeBean.test(home);
    }
    //----------------------------------------------------------------------------
    /**
@@ -121,9 +127,43 @@ public class OfficeBeanTest extends TestCase {
       System.out.println("testOfficeBean: " + home);
       testOfficeBean.test(home);
    }
+
+   public void remoteTestPDF(File source, File target, String host, int port) {
+      Map<String, String> configuration = new HashMap<String, String>();
+      configuration.put(IOfficeApplication.APPLICATION_TYPE_KEY, IOfficeApplication.REMOTE_APPLICATION);
+      configuration.put(IOfficeApplication.APPLICATION_HOST_KEY, host.replace("http://", ""));
+      configuration.put(IOfficeApplication.APPLICATION_PORT_KEY, String.valueOf(port));
+      configuration.put(IOfficeApplication.APPLICATION_ARGUMENTS_KEY, String.valueOf(port));
+      System.out.println("Office host: " + host);
+
+      try {
+         System.out.println("Activating OpenOffice.org connection ...");
+         final IOfficeApplication application = OfficeApplicationRuntime.getApplication(configuration);
+         application.activate();
+
+         System.out.println("Document stream to pdf..");
+         application.getDocumentService().loadDocument(source.getAbsolutePath()).getPersistenceService().export(new FileOutputStream(target), PDFFilter.FILTER);
+         System.out.println("Document export to pdf done. " + target.getCanonicalPath());
+
+         document.close();
+         if (document.isOpen()) {
+            document.close();
+         }
+         try {
+            System.out.println("Deactivating Office connection ...");
+            application.deactivate();
+         } catch (OfficeApplicationException applicationException) {
+         }
+      } catch (Throwable throwable) {
+         throwable.printStackTrace();
+         fail(throwable.getMessage());
+      }
+      System.out.println("NOA Office Bean Test successfully.");
+   }
    //----------------------------------------------------------------------------
    /**
-    * Test the OpenOffice.org Bean by creating an empty odt file, opening it, creating a pdf and cleanup
+    * Test the OpenOffice.org Bean by creating an empty odt file, opening it,
+    * creating a pdf and cleanup
     *
     * @param officeHome home path to OpenOffice.org
     *
@@ -208,7 +248,7 @@ public class OfficeBeanTest extends TestCase {
 //         xStorable.storeToURL(url.toString(), properties);
          application.getDocumentService().loadDocument(file.getAbsolutePath()).getPersistenceService().export(pdf.getAbsolutePath(), pdfFilter);
          System.out.println("Document export to pdf done. " + pdf.getCanonicalPath());
- 
+
          frame.validate();
          officeFrame.getXFrame().getController().suspend(true);
          document.close();
@@ -230,6 +270,6 @@ public class OfficeBeanTest extends TestCase {
       }
       System.out.println("NOA Office Bean Test successfully.");
    }
-  //----------------------------------------------------------------------------
+   //----------------------------------------------------------------------------
 
 }
