@@ -37,11 +37,6 @@ import ag.ion.bion.officelayer.document.DocumentDescriptor;
 import ag.ion.bion.officelayer.document.IDocument;
 import ag.ion.bion.officelayer.filter.PDFFilter;
 import ag.ion.bion.officelayer.internal.application.ApplicationAssistant;
-import ag.ion.bion.officelayer.internal.application.ApplicationInfo;
-import ag.ion.noa.document.URLAdapter;
-import com.sun.star.beans.PropertyValue;
-import com.sun.star.frame.XStorable;
-import com.sun.star.uno.UnoRuntime;
 
 import java.awt.BorderLayout;
 import java.awt.Frame;
@@ -52,7 +47,6 @@ import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.net.URL;
 
 import java.util.HashMap;
 import java.util.Map;
