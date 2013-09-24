@@ -662,7 +662,7 @@ public class ApplicationAssistant implements IApplicationAssistant {
             }
          }
       }
-      System.out.println(properties);
+      //System.out.println(properties);
       return new ApplicationProperties(properties);
    }
 
