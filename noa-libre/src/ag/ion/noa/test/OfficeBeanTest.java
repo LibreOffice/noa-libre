@@ -173,6 +173,9 @@ public class OfficeBeanTest extends TestCase {
          if (appInfo == null) {
             appInfo = applicationAssistant.getLatestLocalLibreOfficeApplication();
          }
+         if (appInfo == null) {
+            throw new IllegalStateException("No OO/LO found.");
+         }
          System.out.println(appInfo.getClass() + " - Office major version:" + appInfo.getMajorVersion());
 
          officeHome = appInfo.getHome();
