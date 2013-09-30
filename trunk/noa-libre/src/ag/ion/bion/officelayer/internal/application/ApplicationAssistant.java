@@ -156,7 +156,7 @@ public class ApplicationAssistant implements IApplicationAssistant {
             // nimm das neuste
             for (int i = 0; i < lazyApplicationInfos.length; i++) {
                 ILazyApplicationInfo appInfo = lazyApplicationInfos[i];
-                if (appInfo instanceof LazyOpenOfficeOrgApplicationInfo) {
+                if (appInfo instanceof LazyOpenOfficeOrgApplicationInfo || appInfo instanceof LazyOpenOfficeApplicationInfo) {//for now, they are mostly compatible
                     if (latestLazyApplicationInfo == null) {
                         latestLazyApplicationInfo = appInfo;
                     } else if (appInfo.getMajorVersion() > latestLazyApplicationInfo
@@ -467,6 +467,8 @@ public class ApplicationAssistant implements IApplicationAssistant {
 
     // ----------------------------------------------------------------------------
     /**
+     * //FIXME stop relying on installation path names!
+     * 
      * Looks for application info on the basis of the submitted application home
      * path. Returns null if the application info can not be provided.
      *
@@ -501,7 +503,11 @@ public class ApplicationAssistant implements IApplicationAssistant {
                 return new LazyLibreOfficeApplicationInfo(home,
                         findApplicationProperties(home));
             }
-            return new LazyOpenOfficeOrgApplicationInfo(home,
+            if (home.toLowerCase().indexOf("org") > -1) {
+                return new LazyOpenOfficeOrgApplicationInfo(home,
+                        findApplicationProperties(home));
+            }//fixme uh this part i like the most
+            return new LazyOpenOfficeApplicationInfo(home,
                     findApplicationProperties(home));
         }
 
