@@ -172,9 +172,14 @@ public abstract class AbstractLazyApplicationInfo implements
             int majorVersion = 0;
             int minorVersion = 0;
             int updateVersion = 0;
-            //only major version is important, minor amd update version are included anyway.. 350, 400 .. cannot find another consistent oo/lo version property
             try {
-                majorVersion = Integer.parseInt(productKey);
+                int fullVersion = Integer.parseInt(productKey);
+                //ok its an int, lets do the 'math' :-)
+                majorVersion = Integer.parseInt(productKey.substring(0, 1));
+                if(fullVersion>99){
+                   minorVersion = Integer.parseInt(productKey.substring(1, 2));
+                   updateVersion = Integer.parseInt(productKey.substring(2, 3));
+                }
             } catch (Throwable throwable) {
                 // do not consume
             }
