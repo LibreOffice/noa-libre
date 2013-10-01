@@ -274,7 +274,7 @@ public class ApplicationAssistant implements IApplicationAssistant {
      * null if none was found
      *
      * @deprecated As now also LibreOffice is supported, this method is only
-     * keept for compatibility reasons and returns the same as null     {@link #getLatestLocalOpenOfficeOrgApplication(IOfficeProgressMonitor)
+     * keept for compatibility reasons and returns the same as null null null null     {@link #getLatestLocalOpenOfficeOrgApplication(IOfficeProgressMonitor)
 	 *             )}
      *
      * @author Markus Krüger
@@ -347,7 +347,9 @@ public class ApplicationAssistant implements IApplicationAssistant {
                     for (int j = 0; j < ROOTS.length; j++) {
                         RegistryKey registryKey = Registry.openSubkey(ROOTS[j],
                                 possibleKeys[i], RegistryKey.ACCESS_READ);
+                        System.out.println(possibleKeys[i]);
                         if (registryKey != null) {
+
                             String path = null;
                             if (path == null) {
                                 try {
@@ -468,7 +470,7 @@ public class ApplicationAssistant implements IApplicationAssistant {
     // ----------------------------------------------------------------------------
     /**
      * //FIXME stop relying on installation path names!
-     * 
+     *
      * Looks for application info on the basis of the submitted application home
      * path. Returns null if the application info can not be provided.
      *
@@ -480,6 +482,7 @@ public class ApplicationAssistant implements IApplicationAssistant {
      * @author Andreas Bröker
      */
     public ILazyApplicationInfo findLocalApplicationInfo(String home) {
+        //System.out.println(home);
         if (home == null) {
             return null;
         }
@@ -499,6 +502,7 @@ public class ApplicationAssistant implements IApplicationAssistant {
         }
 
         if (file.canRead()) {
+
             if (home.toLowerCase().indexOf("libre") > -1) {
                 return new LazyLibreOfficeApplicationInfo(home,
                         findApplicationProperties(home));
@@ -688,40 +692,24 @@ public class ApplicationAssistant implements IApplicationAssistant {
      * @author Markus Krüger
      */
     private String[] getPossibleKeys(String keyMainPart) {
-        /**
-         * Is this too much ????
-         */
+
         ArrayList arrayList = new ArrayList();
-        int majorVersion = 1;
-        int minorVersion = 0;
-        int updateVersion = 0;
+        int majorVersion;
+        int minorVersion;
+        int updateVersion;
 
-        for (; majorVersion <= 4; minorVersion = 0, majorVersion++) {
-            arrayList.add("Applications\\" + keyMainPart + " " + majorVersion + "." + minorVersion + "\\shell\\edit\\command"); //$NON-NLS-1$ //$NON-NLS-2$  //$NON-NLS-4$
-            arrayList.add("Applications\\" + keyMainPart + " " + majorVersion + "." + minorVersion + "." + updateVersion + "\\shell\\edit\\command"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
-            arrayList.add("Software\\" + keyMainPart + "\\" + keyMainPart + "\\" + majorVersion + "." + minorVersion); //$NON-NLS-1$ //$NON-NLS-2$  //$NON-NLS-4$
-            arrayList.add("Software\\" + keyMainPart + "\\" + keyMainPart + "\\" + majorVersion + "." + minorVersion + "." + updateVersion); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
-
-            for (updateVersion = 1; updateVersion <= 150; updateVersion++) {
-                if (updateVersion < 10 || updateVersion > 80) {//FIXME what is this?
-                    arrayList.add("Applications\\" + keyMainPart + " " + majorVersion + "." + minorVersion + "." + updateVersion + "\\shell\\edit\\command"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
-                    arrayList.add("Software\\" + keyMainPart + "\\" + keyMainPart + "\\" + majorVersion + "." + minorVersion + "." + updateVersion); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
-                }
-            }
-
-            for (minorVersion = 1, updateVersion = 0; minorVersion <= 10; updateVersion = 0, minorVersion++) {
-                arrayList.add("Applications\\" + keyMainPart + " " + majorVersion + "." + minorVersion + "\\shell\\edit\\command"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-                arrayList.add("Applications\\" + keyMainPart + " " + majorVersion + "." + minorVersion + "." + updateVersion + "\\shell\\edit\\command"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
-                arrayList.add("Software\\" + keyMainPart + "\\" + keyMainPart + "\\" + majorVersion + "." + minorVersion); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-                arrayList.add("Software\\" + keyMainPart + "\\" + keyMainPart + "\\" + majorVersion + "." + minorVersion + "." + updateVersion); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
-                for (updateVersion = 2; updateVersion <= 150; updateVersion++) {
-                    if (updateVersion < 10 || updateVersion > 80) {//FIXME what is this?
-                        arrayList.add("Applications\\" + keyMainPart + " " + majorVersion + "." + minorVersion + "." + updateVersion + "\\shell\\edit\\command"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
-                        arrayList.add("Software\\" + keyMainPart + "\\" + keyMainPart + "\\" + majorVersion + "." + minorVersion + "." + updateVersion); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
-                    }
+        //judging from the oo and lo release pages, the possible release numbers are yet limited to [1-9].[0-9].[0-9] so keep it simple
+        for (majorVersion = 1; majorVersion < 10; majorVersion++) {
+            for (minorVersion = 0; minorVersion < 10; minorVersion++) {
+                for (updateVersion = 0; updateVersion < 10; updateVersion++) {
+                    arrayList.add("Applications\\" + keyMainPart + " " + majorVersion + "." + minorVersion + "\\shell\\edit\\command");
+                    arrayList.add("Applications\\" + keyMainPart + " " + majorVersion + "." + minorVersion + "." + updateVersion + "\\shell\\edit\\command");
+                    arrayList.add("Software\\" + keyMainPart + "\\" + keyMainPart + "\\" + majorVersion + "." + minorVersion);
+                    arrayList.add("Software\\" + keyMainPart + "\\" + keyMainPart + "\\" + majorVersion + "." + minorVersion + "." + updateVersion);
                 }
             }
         }
+
         return (String[]) arrayList.toArray(new String[arrayList.size()]);
     }
     // ----------------------------------------------------------------------------
