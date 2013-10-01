@@ -347,7 +347,7 @@ public class ApplicationAssistant implements IApplicationAssistant {
                     for (int j = 0; j < ROOTS.length; j++) {
                         RegistryKey registryKey = Registry.openSubkey(ROOTS[j],
                                 possibleKeys[i], RegistryKey.ACCESS_READ);
-                        System.out.println(possibleKeys[i]);
+                        //System.out.println(possibleKeys[i]);
                         if (registryKey != null) {
 
                             String path = null;
