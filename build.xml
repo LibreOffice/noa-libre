@@ -7,8 +7,16 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="noa-libre" default="default" basedir=".">
+<project name="noa-libre" default="default" basedir="." xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+   <path id="maven-ant-tasks.classpath" path="${ant.home}/lib/maven-ant-tasks.jar" />
+   <typedef resource="org/apache/maven/artifact/ant/antlib.xml"
+            uri="antlib:org.apache.maven.artifact.ant"
+            classpathref="maven-ant-tasks.classpath" />
     <description>Builds, tests, and runs the project noa-libre.</description>
+    <artifact:dependencies pathId="dependency.classpath">
+      <dependency groupId="junit" artifactId="junit" version="3.8.2" scope="test"/>
+    </artifact:dependencies>
+    <echo message="JUnit jar file downloaded to ${junit:junit:jar}" level="debug"/>
     <import file="nbproject/build-impl.xml"/>
     <!--
 
