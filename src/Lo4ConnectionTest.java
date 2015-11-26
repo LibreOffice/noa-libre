@@ -31,7 +31,7 @@ public class Lo4ConnectionTest {
         String unoConnectString = "uno:socket;host=localhost,port=8100;urp;StarOffice.ComponentContext";
 			// get the remote office component context
 			xContext = BootstrapSocketConnector
-					.bootstrap("C:/Program Files (x86)/LOdev 4.0/program");
+					.bootstrap("C:\\Program Files (x86)\\LibreOffice 4\\program");
 			if (xContext != null)
 				System.out.println("Connected to a running office ...");
 			com.sun.star.lang.XMultiComponentFactory xMCF = xContext
