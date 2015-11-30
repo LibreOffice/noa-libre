@@ -12,7 +12,27 @@
    <typedef resource="org/apache/maven/artifact/ant/antlib.xml"
             uri="antlib:org.apache.maven.artifact.ant"
             classpathref="maven-ant-tasks.classpath" />
+
     <description>Builds, tests, and runs the project noa-libre.</description>
+
+    <!-- Note: this only works for Debian derivatives, all other Linux distros
+	 have too sloppy or non-existent packaging of Java UNO stuff -->
+    <condition property="ure.dir" value="/usr/share/java">
+        <os family="unix" />
+    </condition>
+    <condition property="ure.dir" value="C:\\Program Files\\LibreOffice 4\\URE\\java">
+        <os family="windows" />
+    </condition>
+    <echo message="${ure.dir}"/>
+
+    <condition property="liboclass.dir" value="/usr/lib/libreoffice/program/classes/">
+        <os family="unix" />
+    </condition>
+    <condition property="liboclass.dir" value="C:\\Program Files\\LibreOffice 4\\program\\classes">
+        <os family="windows" />
+    </condition>
+    <echo message="${liboclass.dir}"/>
+
     <artifact:dependencies pathId="dependency.classpath">
       <dependency groupId="junit" artifactId="junit" version="3.8.2" scope="test"/>
     </artifact:dependencies>
