@@ -424,7 +424,7 @@ public class LocalOfficeConnectionGhost implements OfficeConnection {
 			setUnoUrl("uno:pipe,name=" + getPipeName() //$NON-NLS-1$
 					+ ";urp;StarOffice.ServiceManager"); //$NON-NLS-1$
 		} catch (java.net.MalformedURLException malformedURLException) {
-			// do not consume
+			throw new RuntimeException(malformedURLException);
 		}
 	}
 
