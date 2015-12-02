@@ -47,8 +47,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
 
-import ooo.connector.BootstrapSocketConnector;
-import ooo.connector.server.OOoServer;
 import ag.ion.bion.officelayer.OSHelper;
 import ag.ion.bion.officelayer.runtime.IOfficeProgressMonitor;
 
@@ -56,6 +54,7 @@ import com.sun.star.comp.beans.ContainerFactory;
 import com.sun.star.comp.beans.LocalOfficeWindow;
 import com.sun.star.comp.beans.OfficeConnection;
 import com.sun.star.comp.beans.OfficeWindow;
+import com.sun.star.comp.helper.Bootstrap;
 import com.sun.star.lang.XEventListener;
 import com.sun.star.lib.uno.helper.UnoUrl;
 import com.sun.star.lib.util.NativeLibraryLoader;
@@ -85,7 +84,6 @@ public class LocalOfficeConnectionGhost implements OfficeConnection {
 	private static String mProgramPath = null;
 	private String[] officeArguments = null;
 
-	private BootstrapSocketConnector bootstrapSocketConnector = null;
 	private Process process = null;
 	private ContainerFactory containerFactory = null;
 	private XComponentContext context = null;
@@ -576,10 +574,6 @@ public class LocalOfficeConnectionGhost implements OfficeConnection {
 		}
 		components.clear();
 
-		if (bootstrapSocketConnector != null) {
-			bootstrapSocketConnector.disconnect();
-		}
-
 		containerFactory = null;
 		context = null;
 	}
@@ -628,44 +622,9 @@ public class LocalOfficeConnectionGhost implements OfficeConnection {
 				officeProgressMonitor
 						.beginSubTask(Messages
 								.getString("LocalOfficeConnectionGhost_monitor_constructing_initial_context_message")); //$NON-NLS-1$
-			OOoServer oooServer = null;
-			String programPath = getProgramPath();
-			boolean isLibreOffice = isLibreOffice(programPath);
-			if (officeArguments != null && officeArguments.length > 0) {
-				oooServer = new OOoServer(programPath,
-						Arrays.asList(officeArguments));
-			} else {
-				List defaultOOoOptions = OOoServer.getDefaultOOoOptions();
-				if (isLibreOffice) {
-					List defaultLibreOfficeOptions = new ArrayList();
-					for (int i = 0, n = defaultOOoOptions.size(); i < n; i++) {
-						defaultLibreOfficeOptions.add("-"
-								+ defaultOOoOptions.get(i));
-					}
-					defaultOOoOptions = defaultLibreOfficeOptions;
-				}
-				oooServer = new OOoServer(programPath, defaultOOoOptions);
-			}
-			bootstrapSocketConnector = new BootstrapSocketConnector(oooServer);
 
-			String host = "localhost";
-			int port = 8100;
-			String hostAndPort = "host=" + host + ",port=" + port;
-			String oooAcceptOption = "-accept=socket," + hostAndPort + ";urp;";
-			if (isLibreOffice) {
-				oooAcceptOption = "-" + oooAcceptOption;
-			}
-			String unoConnectString = "uno:socket," + hostAndPort
-					+ ";urp;StarOffice.ComponentContext";
-			XComponentContext xContext = bootstrapSocketConnector.connect(
-					oooAcceptOption, unoConnectString);
+			XComponentContext xContext = Bootstrap.bootstrap();
 			return xContext;
-		} catch (com.sun.star.uno.RuntimeException exception) {
-			System.out.println("--- RuntimeException:"); //$NON-NLS-1$
-			System.out.println(exception.getMessage());
-			exception.printStackTrace();
-			System.out.println("--- end."); //$NON-NLS-1$
-			throw exception;
 		} catch (java.lang.Exception exception) {
 			System.out.println("java.lang.Exception: "); //$NON-NLS-1$
 			System.out.println(exception);
@@ -673,22 +632,6 @@ public class LocalOfficeConnectionGhost implements OfficeConnection {
 			System.out.println("--- end."); //$NON-NLS-1$
 			throw new com.sun.star.uno.RuntimeException(exception.toString());
 		}
-	}
-
-	// ----------------------------------------------------------------------------
-	/**
-	 * Returns if the program path seems to point to a libre office
-	 * installation.
-	 * 
-	 * @param programPath
-	 *            The path to analyse.
-	 * 
-	 * @return if the program path seems to point to a libre office installation
-	 * @author Markus Krüger
-	 */
-	private boolean isLibreOffice(String programPath) {
-		return programPath != null
-				&& programPath.toLowerCase().indexOf("libre") > -1;
 	}
 
 	// ----------------------------------------------------------------------------
