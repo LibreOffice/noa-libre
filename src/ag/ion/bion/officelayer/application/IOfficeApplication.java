@@ -40,8 +40,6 @@ package ag.ion.bion.officelayer.application;
 
 import java.util.Map;
 
-import ooo.connector.server.OOoServer;
-
 import ag.ion.bion.officelayer.IDisposeable;
 import ag.ion.bion.officelayer.desktop.IDesktopService;
 import ag.ion.bion.officelayer.document.IDocumentService;
@@ -67,15 +65,6 @@ public interface IOfficeApplication extends IDisposeable {
   /** 
    * Configuration key for the application arguments (only for local applications). <br>
    * Value must be of type string array String[]!<br><br>
-   * 
-   * If not set the default options will be user see {@link OOoServer#getDefaultOOoOptions()}.<br>
-   * You can also use the default list of {@link OOoServer#getDefaultOOoOptions()} and change it to<br>
-   * your needs, for example:<br><br>
-   * List list = OOoServer.getDefaultOOoOptions();<br>
-   * list.remove("-nologo");<br>
-   * list.add("-nofirststartwizard ");<br>
-   * configuration.put(IOfficeApplication.APPLICATION_ARGUMENTS_KEY, list.toArray(new String[list.size()]));<br>
-   * 
    */
   public static final String APPLICATION_ARGUMENTS_KEY = "arguments";
 
