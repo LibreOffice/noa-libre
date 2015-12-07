@@ -33,10 +33,28 @@
     </condition>
     <echo message="${liboclass.dir}"/>
 
+    <path id="runtime.classpath">
+      <fileset dir="${ure.dir}">
+          <include name="**/juh.jar" />
+          <include name="**/jurt.jar" />
+          <include name="**/ridl.jar" />
+          <include name="**/unoloader.jar" />
+      </fileset>
+      <fileset dir="${liboclass.dir}">
+          <include name="**/officebean.jar" />
+          <include name="**/unoil.jar" />
+      </fileset>
+    </path>
+
+    <pathconvert property="mf.classpath" pathsep=" ">
+        <path refid="runtime.classpath" />
+    </pathconvert>
+
     <artifact:dependencies pathId="dependency.classpath">
       <dependency groupId="junit" artifactId="junit" version="3.8.2" scope="test"/>
     </artifact:dependencies>
     <echo message="JUnit jar file downloaded to ${junit:junit:jar}" level="debug"/>
+
     <import file="nbproject/build-impl.xml"/>
     <!--
 
