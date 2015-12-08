@@ -56,6 +56,14 @@
 
     <artifact:dependencies pathId="dependency.classpath">
       <dependency groupId="junit" artifactId="junit" version="3.8.2" scope="test"/>
+      <!-- Uncomment when those artifact are available from maven central
+      <dependency groupId="org.libreoffice" artifactId="officebean" version="@version" scope="compile"/>
+      <dependency groupId="org.libreoffice" artifactId="juh" version="@version" scope="compile"/>
+      <dependency groupId="org.libreoffice" artifactId="jurt" version="@version" scope="compile"/>
+      <dependency groupId="org.libreoffice" artifactId="ridl" version="@version" scope="compile"/>
+      <dependency groupId="org.libreoffice" artifactId="unoloader" version="@version" scope="compile"/>
+      <dependency groupId="org.libreoffice" artifactId="unoil" version="@version" scope="compile"/>
+      -->
     </artifact:dependencies>
     <echo message="JUnit jar file downloaded to ${junit:junit:jar}" level="debug"/>
 
