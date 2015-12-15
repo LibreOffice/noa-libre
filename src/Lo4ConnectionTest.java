@@ -2,9 +2,9 @@
 /*
  * Last changes made by $Author: andreas $, $Date: 2006-11-22 09:31:27 +0100 (Mi, 22 Nov 2006) $
  */
-import ooo.connector.BootstrapSocketConnector;
 
 import com.sun.star.beans.PropertyValue;
+import com.sun.star.comp.helper.Bootstrap;
 import com.sun.star.document.EventObject;
 import com.sun.star.document.XEventBroadcaster;
 import com.sun.star.document.XEventListener;
@@ -21,17 +21,8 @@ public class Lo4ConnectionTest {
 		com.sun.star.uno.XComponentContext xContext = null;
 
 		try {
-               // host and port
-        String hostAndPort = "host=localhost,port=8100";
-
-        // accept option
-        String oooAcceptOption = "-accept=socket,"+hostAndPort+";urp;";
-
-        // connection string,
-        String unoConnectString = "uno:socket;host=localhost,port=8100;urp;StarOffice.ComponentContext";
 			// get the remote office component context
-			xContext = BootstrapSocketConnector
-					.bootstrap("C:\\Program Files (x86)\\LibreOffice 4\\program");
+			xContext = Bootstrap.bootstrap();
 			if (xContext != null)
 				System.out.println("Connected to a running office ...");
 			com.sun.star.lang.XMultiComponentFactory xMCF = xContext

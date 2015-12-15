@@ -12,11 +12,61 @@
    <typedef resource="org/apache/maven/artifact/ant/antlib.xml"
             uri="antlib:org.apache.maven.artifact.ant"
             classpathref="maven-ant-tasks.classpath" />
+
     <description>Builds, tests, and runs the project noa-libre.</description>
+
+    <!-- Note: this only works for Debian derivatives, all other Linux distros
+	 have too sloppy or non-existent packaging of Java UNO stuff -->
+    <condition property="ure.dir" value="/usr/share/java">
+        <os family="unix" />
+    </condition>
+    <condition property="ure.dir" value="C:\\Program Files\\LibreOffice 4\\URE\\java">
+        <os family="windows" />
+    </condition>
+    <echo message="${ure.dir}"/>
+
+    <condition property="liboclass.dir" value="/usr/lib/libreoffice/program/classes/">
+        <os family="unix" />
+    </condition>
+    <condition property="liboclass.dir" value="C:\\Program Files\\LibreOffice 4\\program\\classes">
+        <os family="windows" />
+    </condition>
+    <echo message="${liboclass.dir}"/>
+
+    <path id="runtime.classpath">
+      <fileset dir="${ure.dir}">
+          <include name="**/juh.jar" />
+          <include name="**/jurt.jar" />
+          <include name="**/ridl.jar" />
+          <include name="**/unoloader.jar" />
+      </fileset>
+      <fileset dir="${liboclass.dir}">
+          <include name="**/officebean.jar" />
+          <include name="**/unoil.jar" />
+      </fileset>
+    </path>
+
+    <pathconvert property="mf.classpath" pathsep=" ">
+        <path refid="runtime.classpath" />
+    </pathconvert>
+
+    <manifest file="manifest.mf">
+	<attribute name="Class-Path" value="${mf.classpath}" />
+    </manifest>
+
     <artifact:dependencies pathId="dependency.classpath">
       <dependency groupId="junit" artifactId="junit" version="3.8.2" scope="test"/>
+      <!-- Uncomment when those artifact are available from maven central
+      <dependency groupId="org.libreoffice" artifactId="officebean" version="@version" scope="compile"/>
+      <dependency groupId="org.libreoffice" artifactId="juh" version="@version" scope="compile"/>
+      <dependency groupId="org.libreoffice" artifactId="jurt" version="@version" scope="compile"/>
+      <dependency groupId="org.libreoffice" artifactId="ridl" version="@version" scope="compile"/>
+      <dependency groupId="org.libreoffice" artifactId="unoloader" version="@version" scope="compile"/>
+      <dependency groupId="org.libreoffice" artifactId="unoil" version="@version" scope="compile"/>
+      -->
     </artifact:dependencies>
     <echo message="JUnit jar file downloaded to ${junit:junit:jar}" level="debug"/>
+
     <import file="nbproject/build-impl.xml"/>
     <!--
 
