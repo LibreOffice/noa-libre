@@ -25,7 +25,7 @@
     </condition>
     <echo message="${ure.dir}"/>
 
-    <condition property="liboclass.dir" value="/usr/lib/libreoffice/program/classes/">
+    <condition property="liboclass.dir" value="/usr/lib64/libreoffice/program/classes/">
         <os family="unix" />
     </condition>
     <condition property="liboclass.dir" value="C:\\Program Files\\LibreOffice 4\\program\\classes">
@@ -54,16 +54,18 @@
 	<attribute name="Class-Path" value="${mf.classpath}" />
     </manifest>
 
+    <!-- Minimal LibreOffice version you want to build against. Beware,
+         LibreOffice sometimes removes API in major releases -->
+    <property name="libojars.version" value="5.0.3"/>
+
     <artifact:dependencies pathId="dependency.classpath">
       <dependency groupId="junit" artifactId="junit" version="3.8.2" scope="test"/>
-      <!-- Uncomment when those artifact are available from maven central
-      <dependency groupId="org.libreoffice" artifactId="officebean" version="@version" scope="compile"/>
-      <dependency groupId="org.libreoffice" artifactId="juh" version="@version" scope="compile"/>
-      <dependency groupId="org.libreoffice" artifactId="jurt" version="@version" scope="compile"/>
-      <dependency groupId="org.libreoffice" artifactId="ridl" version="@version" scope="compile"/>
-      <dependency groupId="org.libreoffice" artifactId="unoloader" version="@version" scope="compile"/>
-      <dependency groupId="org.libreoffice" artifactId="unoil" version="@version" scope="compile"/>
-      -->
+      <dependency groupId="org.libreoffice" artifactId="officebean" version="${libojars.version}" scope="compile"/>
+      <dependency groupId="org.libreoffice" artifactId="juh" version="${libojars.version}" scope="compile"/>
+      <dependency groupId="org.libreoffice" artifactId="jurt" version="${libojars.version}" scope="compile"/>
+      <dependency groupId="org.libreoffice" artifactId="ridl" version="${libojars.version}" scope="compile"/>
+      <dependency groupId="org.libreoffice" artifactId="unoloader" version="${libojars.version}" scope="compile"/>
+      <dependency groupId="org.libreoffice" artifactId="unoil" version="${libojars.version}" scope="compile"/>
     </artifact:dependencies>
     <echo message="JUnit jar file downloaded to ${junit:junit:jar}" level="debug"/>
 
