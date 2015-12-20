@@ -21,15 +21,24 @@
         <os family="unix" />
     </condition>
     <condition property="ure.dir" value="C:\\Program Files\\LibreOffice 4\\URE\\java">
-        <os family="windows" />
+        <os family="windows" arch="x86"/>
+    </condition>
+    <condition property="ure.dir" value="C:\\Program Files (x86)\\LibreOffice 4\\URE\\java">
+        <os family="windows" arch="x64"/>
     </condition>
     <echo message="${ure.dir}"/>
 
+    <condition property="liboclass.dir" value="/usr/lib/libreoffice/program/classes/">
+        <os family="unix" arch="x86"/>
+    </condition>
     <condition property="liboclass.dir" value="/usr/lib64/libreoffice/program/classes/">
-        <os family="unix" />
+        <os family="unix" arch="amd64"/>
     </condition>
     <condition property="liboclass.dir" value="C:\\Program Files\\LibreOffice 4\\program\\classes">
-        <os family="windows" />
+        <os family="windows" arch="x86"/>
+    </condition>
+    <condition property="liboclass.dir" value="C:\\Program Files (x86)\\LibreOffice 4\\program\\classes">
+        <os family="windows" arch="x64"/>
     </condition>
     <echo message="${liboclass.dir}"/>
 
