@@ -1,0 +1,33 @@
+v3.0.0-beta1:
+
+ - Andreas Weber:
+      Added patches by jSteinhilber and removed Umlauts
+      Added some helper classes
+      Fixed issue 1
+      Use File.separartor vs. hardcoded /
+      Added convenience method to get local office app
+      load native library from /usr/lib if no other path is specified
+      Added javadoc warning about slowness
+      Added test class by a Bröker
+      Use correct version property instead of product name parsing
+      Added pdf export to test
+      Added remote test
+      Install path registry lookup rework
+      Switched to more common LibreOffice path
+      Ignore build files
+
+ - Katarina Behrens:
+      Removed jut, sandbox and java_uno_accessbridge jars
+      Replace BootstrapSocketConnector with javaunohelper's bootstrap
+      Use javaunohelper's bootstrap also in test/example
+      Generate manifest dynamically & put runtime classpath in
+      Download ure, officebean and unoil artifacts from maven, remove checked-in ones
+      Create README.md
+
+ - Thorsten Behrens:
+      Ignore some more build artifacts
+      Make manifest classpath depend on build machine arch
+      Mention manifest.mf classpath setup in README
+
+ - Jochen Staerk:
+      Merge Markus patch for issue 2
