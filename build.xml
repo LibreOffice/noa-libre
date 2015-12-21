@@ -8,13 +8,13 @@
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
 <project name="noa-libre" default="default" basedir="." xmlns:artifact="antlib:org.apache.maven.artifact.ant">
-   <path id="maven-ant-tasks.classpath" path="${ant.home}/lib/maven-ant-tasks.jar" />
+   <path id="maven-ant-tasks.classpath" path="${basedir}/nbproject/maven-ant-tasks.jar" />
    <typedef resource="org/apache/maven/artifact/ant/antlib.xml"
             uri="antlib:org.apache.maven.artifact.ant"
             classpathref="maven-ant-tasks.classpath" />
-
+   
     <description>Builds, tests, and runs the project noa-libre.</description>
-
+ 
     <!-- Note: this only works for Debian derivatives, all other Linux distros
 	 have too sloppy or non-existent packaging of Java UNO stuff -->
     <condition property="ure.dir" value="/usr/share/java">
@@ -24,7 +24,7 @@
         <os family="windows" arch="x86"/>
     </condition>
     <condition property="ure.dir" value="C:\\Program Files (x86)\\LibreOffice 4\\URE\\java">
-        <os family="windows" arch="x64"/>
+        <os family="windows" arch="amd64"/>
     </condition>
     <echo message="${ure.dir}"/>
 
@@ -38,7 +38,7 @@
         <os family="windows" arch="x86"/>
     </condition>
     <condition property="liboclass.dir" value="C:\\Program Files (x86)\\LibreOffice 4\\program\\classes">
-        <os family="windows" arch="x64"/>
+        <os family="windows" arch="amd64"/>
     </condition>
     <echo message="${liboclass.dir}"/>
 
