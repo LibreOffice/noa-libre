@@ -24,7 +24,7 @@
         <os family="windows" arch="x86"/>
     </condition>
     <condition property="ure.dir" value="C:\\Program Files (x86)\\LibreOffice 4\\URE\\java">
-        <os family="windows" arch="x64"/>
+        <os family="windows" arch="amd64"/>
     </condition>
     <echo message="${ure.dir}"/>
 
@@ -38,7 +38,7 @@
         <os family="windows" arch="x86"/>
     </condition>
     <condition property="liboclass.dir" value="C:\\Program Files (x86)\\LibreOffice 4\\program\\classes">
-        <os family="windows" arch="x64"/>
+        <os family="windows" arch="amd64"/>
     </condition>
     <echo message="${liboclass.dir}"/>
 
