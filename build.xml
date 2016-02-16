@@ -59,10 +59,6 @@
         <path refid="runtime.classpath" />
     </pathconvert>
 
-    <manifest file="manifest.mf">
-	<attribute name="Class-Path" value="${mf.classpath}" />
-    </manifest>
-
     <!-- Minimal LibreOffice version you want to build against. Beware,
          LibreOffice sometimes removes API in major releases -->
     <property name="libojars.version" value="5.0.3"/>
