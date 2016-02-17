@@ -187,14 +187,7 @@ public final class OfficeLoader {
     private static void addUrls(ArrayList<URL> urls, String data, String delimiter) {
         StringTokenizer tokens = new StringTokenizer( data, delimiter );
         while ( tokens.hasMoreTokens() ) {
-            try {
-                urls.add( new File( tokens.nextToken() ).toURI().toURL() );
-            } catch ( MalformedURLException e ) {
-                // don't add this class path entry to the list of class loader
-                // URLs
-                System.err.println( "ag.ion.bion.officelayer.util.OfficeLoader::" +
-                    "getCustomLoader: bad pathname: " + e );
-            }
+            addUrl( urls, tokens.nextToken() );
         }
     }
 
