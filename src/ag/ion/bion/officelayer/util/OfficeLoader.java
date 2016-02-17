@@ -28,10 +28,13 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.jar.Attributes;
 import java.util.jar.Manifest;
 import java.util.StringTokenizer;
 import java.util.ArrayList;
+
+import ag.ion.bion.officelayer.application.IOfficeApplication;
 
 /**
  * This class can be used as a loader for application classes which use UNO.
@@ -44,10 +47,22 @@ public final class OfficeLoader {
 
     private static ClassLoader m_Loader = null;
 
+    private static String m_OfficePath = null;
+
     /**
      * do not instantiate
      */
     private OfficeLoader() {}
+
+    public static void init( HashMap config) {
+        if ( config.containsKey( IOfficeApplication.APPLICATION_HOME_KEY) ) {
+            Object home = config.get( IOfficeApplication.APPLICATION_HOME_KEY );
+
+	    if ( home != null ) {
+                m_OfficePath = home.toString();
+	    }
+	}
+    }
 
     /**
      * The main method instantiates a customized class loader with the
@@ -158,7 +173,8 @@ public final class OfficeLoader {
 
             // get the urls from which to load classes and resources
             // from the UNO installation
-            String path = InstallationFinder.getPath();
+            String path = (m_OfficePath != null) ? m_OfficePath : InstallationFinder.getPath();
+
             if ( path != null ) {
                 callUnoinfo(path, vec);
             } else {
