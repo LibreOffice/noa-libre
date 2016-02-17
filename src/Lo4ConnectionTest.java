@@ -8,11 +8,13 @@ import ag.ion.bion.officelayer.util.OfficeLoader;
 public class Lo4ConnectionTest {
 
     private final static String LIBREOFFICE_PATH = "/usr/lib64/libreoffice/program";
-    public static HashMap configuration = new HashMap();
-
-    public static void main(String[] args){
+    public static HashMap<String, String> configuration = new HashMap<String, String>();
+    static {
         configuration.put(IOfficeApplication.APPLICATION_HOME_KEY, LIBREOFFICE_PATH);
         configuration.put(IOfficeApplication.APPLICATION_TYPE_KEY, IOfficeApplication.LOCAL_APPLICATION);
+    }
+
+    public static void main(String[] args){
 
         String testClass = Lo4ConnectionTestCore.class.getName();
         String[] tmpArgs = new String[1];
