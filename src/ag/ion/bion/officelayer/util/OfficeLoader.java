@@ -65,15 +65,12 @@ public final class OfficeLoader {
     }
 
     /**
-     * The main method instantiates a customized class loader with the
+     * This method instantiates a customized class loader with the
      * UNO jar files added to the search path and loads the application class,
-     * which is specified in the Main-Class attribute of the
-     * com/sun/star/lib/Loader.class entry of the manifest file or
-     * as first parameter in the argument list.
+     * which is specified as the first parameter in the argument list.
      */
     public static void run( String  [] arguments ) throws Exception {
 
-        // get the name of the class to be loaded from the manifest
         String className = null;
         Class clazz = OfficeLoader.class;
         ClassLoader loader = clazz.getClassLoader();
@@ -83,54 +80,21 @@ public final class OfficeLoader {
             while ( en.hasMoreElements() ) {
                 res.add( en.nextElement() );
             }
-            // the jarfile with the com/sun/star/lib/loader/Loader.class
-            // per-entry attribute is most probably the last resource in the
-            // list, therefore search backwards
-            for ( int i = res.size() - 1; i >= 0; i-- ) {
-                URL jarurl = res.get( i );
-                try {
-                    JarURLConnection jarConnection =
-                        (JarURLConnection) jarurl.openConnection();
-                    Manifest mf = jarConnection.getManifest();
-                    Attributes attrs = mf.getAttributes(
-                        "com/sun/star/lib/loader/Loader.class" );
-                    if ( attrs != null ) {
-                        className = attrs.getValue( "Application-Class" );
-                        if ( className != null )
-                            break;
-                    }
-                } catch ( IOException e ) {
-                    // if an I/O error occurs when opening a new
-                    // JarURLConnection, ignore this manifest file
-                    System.err.println( "ag.ion.bion.officelayer.util.OfficeLoader::" +
-                                        "main: bad manifest file: " + e );
-                }
-            }
         } catch ( IOException e ) {
-            // if an I/O error occurs when getting the manifest resources,
-            // try to get the name of the class to be loaded from the argument
-            // list
             System.err.println( "ag.ion.bion.officelayer.util.OfficeLoader::" +
                                 "main: cannot get manifest resources: " + e );
         }
 
-        // if no manifest entry was found, get the name of the class
-        // to be loaded from the argument list
-        String[] args;
-        if ( className == null ) {
-            if ( arguments.length > 0 ) {
-                className = arguments[0];
-                args = new String[arguments.length - 1];
-                System.arraycopy( arguments, 1, args, 0, args.length );
-            } else {
-                throw new IllegalArgumentException(
-                    "The name of the class to be loaded must be either " +
-                    "specified in the Main-Class attribute of the " +
-                    "com/sun/star/lib/loader/Loader.class entry " +
-                    "of the manifest file or as a command line argument." );
-            }
+        // get the name of the class to be loaded from the argument list
+	String[] args;
+        if ( arguments.length > 0 ) {
+            className = arguments[0];
+            args = new String[arguments.length - 1];
+            System.arraycopy( arguments, 1, args, 0, args.length );
         } else {
-            args = arguments;
+            throw new IllegalArgumentException(
+                "The name of the class to be loaded must be " +
+                "specified as a command line argument." );
         }
 
         // load the class with the customized class loader and
