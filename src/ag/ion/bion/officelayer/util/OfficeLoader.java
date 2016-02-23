@@ -169,10 +169,6 @@ public final class OfficeLoader {
             URL[] urls = new URL[vec.size()];
             vec.toArray( urls );
 
-	    for( int i=0; i < vec.size(); i++) {
-		System.out.println("xxx " + vec.get(i));
-	    }
-
             // instantiate class loader
             m_Loader = new CustomURLClassLoader( urls );
         }
