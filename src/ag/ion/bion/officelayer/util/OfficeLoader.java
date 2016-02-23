@@ -82,7 +82,7 @@ public final class OfficeLoader {
             }
         } catch ( IOException e ) {
             System.err.println( OfficeLoader.class.getName() +
-                                "::main: cannot get manifest resources: " + e );
+                                "::run: cannot get manifest resources: " + e );
         }
 
         // get the name of the class to be loaded from the argument list

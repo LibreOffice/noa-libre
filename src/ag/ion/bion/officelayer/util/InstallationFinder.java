@@ -96,6 +96,9 @@ final class InstallationFinder {
         } catch ( SecurityException e ) {
             // if a SecurityException was thrown,
             // return <code>null</code>
+            System.err.println( InstallationFinder.class.getName() +
+                    "::getPath: cannot get system property " +
+		    "os.name" + e );
             return null;
         }
         if ( osname == null ) {
@@ -146,6 +149,9 @@ final class InstallationFinder {
             path = System.getProperty( prop );
         } catch ( SecurityException e ) {
             // if a SecurityException was thrown, return <code>null</code>
+            System.err.println( InstallationFinder.class.getName() +
+                    "::getPathFromProperty: cannot get system property " +
+		    prop + ": " + e );
         }
 
         return path;
@@ -170,9 +176,15 @@ final class InstallationFinder {
             path = System.getenv( var );
         } catch ( SecurityException e ) {
             // if a SecurityException was thrown, return <code>null</code>
+            System.err.println( InstallationFinder.class.getName() +
+                    "::getPathFromEnvVar: cannot get environment variable " +
+		    var + ": " + e );
         } catch ( java.lang.Error err ) {
             // System.getenv() throws java.lang.Error in Java 1.3.1 and
             // Java 1.4
+            System.err.println( InstallationFinder.class.getName() +
+                    "::getPathFromEnvVar: getting environment variables "
+		    + "not supported " + err );
         }
 
         return path;
@@ -236,10 +248,16 @@ final class InstallationFinder {
             str = System.getenv( PATH_ENVVAR_NAME );
         } catch ( SecurityException e ) {
             // if a SecurityException was thrown, return <code>null</code>
+            System.err.println( InstallationFinder.class.getName() +
+                    "::getPathFromPathEnvVar: cannot get environment variable " +
+		    PATH_ENVVAR_NAME + ": " + e );
             return null;
         } catch ( java.lang.Error err ) {
             // System.getenv() throws java.lang.Error in Java 1.3.1 and
             // Java 1.4
+            System.err.println( InstallationFinder.class.getName() +
+                    "::getPathFromPathEnvVar: getting environment variables "
+		    + "not supported " + err );
             return null;
         }
 
@@ -259,13 +277,16 @@ final class InstallationFinder {
                             // if an I/O exception is thrown, ignore this
                             // path entry and try the next one
                             System.err.println( InstallationFinder.class.getName() +
-                                "::getPathFromEnvVar: " +
+                                "::getPathFromPathEnvVar: " +
                                 "bad path: " + e );
                         }
                     }
                 } catch ( SecurityException e ) {
                     // if a SecurityException was thrown, ignore this path
                     // entry and try the next one
+                    System.err.println( InstallationFinder.class.getName() +
+                        "::getPathFromPathEnvVar: " + 
+			"security exception accessing path: "+ e );
                 }
             }
         }
@@ -297,6 +318,9 @@ final class InstallationFinder {
         try {
             proc = rt.exec( cmdArray );
         } catch ( SecurityException e ) {
+            System.err.println( InstallationFinder.class.getName() +
+                "::getPathFromWhich: " +
+                "security exception while executing which command: " + e );
             return null;
         } catch ( IOException e ) {
             // if an I/O exception is thrown, return <code>null</null>
@@ -332,6 +356,9 @@ final class InstallationFinder {
                                             break;
                                     }
                                 } catch ( SecurityException e ) {
+                                    System.err.println( InstallationFinder.class.getName() +
+                                        "::getPathFromWhich: " +
+                                        "security exception accessing file: " + e );
                                     return null;
                                 }
                             }
@@ -349,6 +376,9 @@ final class InstallationFinder {
                     br.close();
                 } catch ( IOException e ) {
                     // closing standard input stream failed, ignore
+                    System.err.println( InstallationFinder.class.getName() +
+                                        "::getPathFromWhich: " +
+                                        "reading which command output failed: " + e );
                 }
             }
         } catch ( UnsupportedEncodingException e ) {
@@ -438,6 +468,9 @@ final class InstallationFinder {
                 }
             }
         } catch ( SecurityException e ) {
+            System.err.println( InstallationFinder.class.getName() +
+                "::getPathFromSVersionFile: " +
+                "security exception accessing file: " + e );
             return null;
         }
 
@@ -510,6 +543,9 @@ final class InstallationFinder {
                         try {
                             s = new String(bytes, 0, len, "UTF-8");
                         } catch (UnsupportedEncodingException e) {
+                             System.err.println( InstallationFinder.class.getName() +
+                                                 "::getCanonicalPathFromFileURL: " +
+                                                 "encoding failed: " + e );
                             return null;
                         }
                         buf.append(s);
@@ -530,6 +566,9 @@ final class InstallationFinder {
         try {
             url = new URL(buf.toString());
         } catch (MalformedURLException e) {
+             System.err.println( InstallationFinder.class.getName() +
+                                 "::getCanonicalPathFromFileURL: " +
+                                 "invalid URL: " + e );
             return null;
         }
         String path = url.getFile();
@@ -545,10 +584,15 @@ final class InstallationFinder {
                     // resolve symlink
                     ret = file.getCanonicalFile().getParent();
                 } catch ( IOException e ) {
+                     System.err.println( InstallationFinder.class.getName() +
+                                         "::getCanonicalPathFromFileURL: " +
+                                         "error accessing file: " + e );
                     return null;
                 }
             }
         } catch ( SecurityException e ) {
+            System.err.println( InstallationFinder.class.getName() +
+                "::getCanonicalPathFromFileURL: security exception accessing file: "+ e );
             return null;
         }
 
@@ -579,8 +623,12 @@ final class InstallationFinder {
                 br.close();
             } catch (UnsupportedEncodingException e) {
                 // cannot read from input stream
+                System.err.println( StreamGobbler.class.getName() +
+                                    "::run: encoding failed: " + e );
             } catch ( IOException e ) {
                 // stop reading from input stream
+                System.err.println( StreamGobbler.class.getName() +
+                                    "::run: read from input stream failed: " + e );
             }
         }
     }
