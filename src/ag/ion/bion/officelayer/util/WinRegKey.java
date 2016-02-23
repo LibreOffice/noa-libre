@@ -81,8 +81,8 @@ final class WinRegKey {
                 System.loadLibrary( "unowinreg" );
             }
         } catch ( java.lang.Exception e ) {
-            System.err.println( "ag.ion.bion.officelayer.util.WinRegKey: " +
-                "loading of native library failed!" + e );
+            System.err.println( WinRegKey.class.getName() +
+                " loading of native library failed!" + e );
         }
     }
 

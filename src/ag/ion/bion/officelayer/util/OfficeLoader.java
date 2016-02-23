@@ -81,8 +81,8 @@ public final class OfficeLoader {
                 res.add( en.nextElement() );
             }
         } catch ( IOException e ) {
-            System.err.println( "ag.ion.bion.officelayer.util.OfficeLoader::" +
-                                "main: cannot get manifest resources: " + e );
+            System.err.println( OfficeLoader.class.getName() +
+                                "::main: cannot get manifest resources: " + e );
         }
 
         // get the name of the class to be loaded from the argument list
@@ -127,8 +127,8 @@ public final class OfficeLoader {
             } catch ( SecurityException e ) {
                 // don't add the class path entries to the list of class
                 // loader URLs
-                System.err.println( "ag.ion.bion.officelayer.util.OfficeLoader::" +
-                    "getCustomLoader: cannot get system property " +
+                System.err.println( OfficeLoader.class.getName() +
+                    "::getCustomLoader: cannot get system property " +
                     "java.class.path: " + e );
             }
             if ( classpath != null ) {
@@ -142,8 +142,8 @@ public final class OfficeLoader {
             if ( path != null ) {
                 callUnoinfo(path, vec);
             } else {
-                System.err.println( "ag.ion.bion.officelayer.util.OfficeLoader::" +
-                    "getCustomLoader: no UNO installation found!" );
+                System.err.println( OfficeLoader.class.getName() +
+                    "::getCustomLoader: no UNO installation found!" );
             }
 
             //add path to officebean jar
@@ -177,8 +177,8 @@ public final class OfficeLoader {
         } catch ( MalformedURLException e ) {
             // don't add this class path entry to the list of class loader
             // URLs
-            System.err.println( "ag.ion.bion.officelayer.util.OfficeLoader::" +
-                "getCustomLoader: bad pathname: " + e );
+            System.err.println( OfficeLoader.class.getName() +
+                "::getCustomLoader: bad pathname: " + e );
         }
     }
 
@@ -190,7 +190,7 @@ public final class OfficeLoader {
                 new String[] { new File(path, "unoinfo").getPath(), "java" });
         } catch (IOException e) {
             System.err.println(
-                "ag.ion.bion.officelayer.util.OfficeLoader::getCustomLoader: exec" +
+                OfficeLoader.class.getName() + "::getCustomLoader: exec" +
                 " unoinfo: " + e);
             return;
         }
@@ -205,7 +205,7 @@ public final class OfficeLoader {
                 if (n == buf.length) {
                     if (n > Integer.MAX_VALUE / 2) {
                         System.err.println(
-                            "ag.ion.bion.officelayer.util.OfficeLoader::getCustomLoader:" +
+                            OfficeLoader.class.getName() + "::getCustomLoader:" +
                             " too much unoinfo output");
                         return;
                     }
@@ -221,7 +221,7 @@ public final class OfficeLoader {
             }
         } catch (IOException e) {
             System.err.println(
-                "ag.ion.bion.officelayer.util.OfficeLoader::getCustomLoader: reading" +
+                OfficeLoader.class.getName() + "::getCustomLoader: reading" +
                 " unoinfo output: " + e);
             return;
         }
@@ -231,13 +231,13 @@ public final class OfficeLoader {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             System.err.println(
-                "ag.ion.bion.officelayer.util.OfficeLoader::getCustomLoader: waiting for" +
+                OfficeLoader.class.getName() + "::getCustomLoader: waiting for" +
                 " unoinfo: " + e);
             return;
         }
         if (ev != 0) {
             System.err.println(
-                "ag.ion.bion.officelayer.util.OfficeLoader::getCustomLoader: unoinfo"
+                OfficeLoader.class.getName() + "::getCustomLoader: unoinfo"
                 + " exit value " + n);
             return;
         }
@@ -249,13 +249,13 @@ public final class OfficeLoader {
                 s = new String(buf, "UTF-16LE");
             } catch (UnsupportedEncodingException e) {
                 System.err.println(
-                    "ag.ion.bion.officelayer.util.OfficeLoader::getCustomLoader:" +
+                    OfficeLoader.class.getName() + "::getCustomLoader:" +
                     " transforming unoinfo output: " + e);
                 return;
             }
         } else {
             System.err.println(
-                "ag.ion.bion.officelayer.util.OfficeLoader::getCustomLoader: bad unoinfo"
+                OfficeLoader.class.getName() + "::getCustomLoader: bad unoinfo"
                 + " output");
             return;
         }

@@ -203,8 +203,8 @@ final class InstallationFinder {
                                                SUBKEYNAME );
                 path = key.getStringValue( "" ); // default
             } catch ( WinRegKeyException we ) {
-                System.err.println( "ag.ion.bion.officelayer.util." +
-                    "InstallationFinder::getPathFromWindowsRegistry: " +
+                System.err.println( InstallationFinder.class.getName() +
+                    "::getPathFromWindowsRegistry: " +
                     "reading key from Windows Registry failed: " + we );
             }
         }
@@ -258,8 +258,8 @@ final class InstallationFinder {
                         } catch ( IOException e ) {
                             // if an I/O exception is thrown, ignore this
                             // path entry and try the next one
-                            System.err.println( "ag.ion.bion.officelayer.util." +
-                                "InstallationFinder::getPathFromEnvVar: " +
+                            System.err.println( InstallationFinder.class.getName() +
+                                "::getPathFromEnvVar: " +
                                 "bad path: " + e );
                         }
                     }
@@ -300,8 +300,8 @@ final class InstallationFinder {
             return null;
         } catch ( IOException e ) {
             // if an I/O exception is thrown, return <code>null</null>
-            System.err.println( "ag.ion.bion.officelayer.util." +
-                "InstallationFinder::getPathFromWhich: " +
+            System.err.println( InstallationFinder.class.getName() +
+                "::getPathFromWhich: " +
                 "which command failed: " + e );
             return null;
         }
@@ -340,8 +340,8 @@ final class InstallationFinder {
                 }
             } catch ( IOException e ) {
                 // if an I/O exception is thrown, return <code>null</null>
-                System.err.println( "ag.ion.bion.officelayer.util." +
-                                    "InstallationFinder::getPathFromWhich: " +
+                System.err.println( InstallationFinder.class.getName() +
+                                    "::getPathFromWhich: " +
                                     "reading which command output failed: " + e );
                 return null;
             } finally {
@@ -353,8 +353,8 @@ final class InstallationFinder {
             }
         } catch ( UnsupportedEncodingException e ) {
             // if an Encoding exception is thrown, return <code>null</null>
-            System.err.println( "ag.ion.bion.officelayer.util." +
-                                "InstallationFinder::getPathFromWhich: " +
+            System.err.println( InstallationFinder.class.getName() +
+                                "::getPathFromWhich: " +
                                 "encoding failed: " + e );
             return null;
         }
@@ -413,8 +413,8 @@ final class InstallationFinder {
                 } catch ( IOException e ) {
                     // if an I/O exception is thrown, try to analyze the lines
                     // read so far
-                    System.err.println( "ag.ion.bion.officelayer.util" +
-                        "InstallationFinder::getPathFromSVersionFile: " +
+                    System.err.println( InstallationFinder.class.getName() +
+                        "::getPathFromSVersionFile: " +
                         "reading .sversionrc file failed: " + e );
                 } finally {
                     if ( br != null ) {
