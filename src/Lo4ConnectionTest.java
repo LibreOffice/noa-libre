@@ -16,14 +16,10 @@ public class Lo4ConnectionTest {
 
     public static void main(String[] args){
 
-        String testClass = Lo4ConnectionTestCore.class.getName();
-        String[] tmpArgs = new String[1];
-        tmpArgs[0] = testClass;
-
         OfficeLoader.init(configuration);
 
         try {
-           OfficeLoader.run( tmpArgs );
+           OfficeLoader.run( new String[]{"lo4connectiontest.Lo4ConnectionTest$Lo4ConnectionTestCore"});
         } catch (Exception e) {
             e.printStackTrace();
         }

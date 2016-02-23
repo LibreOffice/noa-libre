@@ -5,7 +5,7 @@
  * @author Markus Krüger
  */
 
-package testapp;
+package simplecalctest;
 
 import java.util.HashMap;
 
@@ -36,14 +36,10 @@ public class SimpleCalcTest {
 
     public static void main(String[] args)
     {
-        String testClass = SimpleCalcTestCore.class.getName();
-        String[] tmpArgs = new String[1];
-        tmpArgs[0] = testClass;
-
         OfficeLoader.init(configuration);
 
         try {
-           OfficeLoader.run( tmpArgs);
+           OfficeLoader.run( new String[]{"simplecalctest.SimpleCalcTest$SimpleCalcTestCore"});
         } catch (Exception e) {
             e.printStackTrace();
         }
