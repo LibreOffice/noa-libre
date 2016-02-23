@@ -69,6 +69,7 @@ final class WinRegKey {
         long[] maxValueLen, long[] secDescriptor );
 
     // load the native library unowinreg.dll
+    // FIXME: drop dependency on unowinreg.dll and use com.ice.jni.registry instead
     static {
         try {
             ClassLoader cl = WinRegKey.class.getClassLoader();

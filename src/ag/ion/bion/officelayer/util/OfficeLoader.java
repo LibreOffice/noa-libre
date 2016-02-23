@@ -210,6 +210,8 @@ public final class OfficeLoader {
                 " unoinfo: " + e);
             return;
         }
+	//FIXME: perhaps remove this one & the whole Drain class entirely
+	//we're not doing anything w/ content of stderr anyway
         new Drain(p.getErrorStream()).start();
         int code;
         byte[] buf = new byte[1000];

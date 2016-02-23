@@ -73,6 +73,7 @@ import java.util.ArrayList;
  * the user's home directory. Note, that the .sversionrc file will be omitted
  * for OOo 2.0</p>
  */
+//FIXME: split this class into InstallationFinderUnix and InstallationFinderWindows
 final class InstallationFinder {
 
     private static final String SYSPROP_NAME =
@@ -124,6 +125,8 @@ final class InstallationFinder {
         if ( osname.startsWith( "Windows" ) ) {
             // get the installation path from the Windows Registry
             // (Windows platform only)
+	    // FIXME: this doesn't work currently as it needs unowinreg.dll
+	    // (part of Libreoffice SDK) which we don't have
             path = getPathFromWindowsRegistry();
         } else {
             // get the installation path from the PATH environment
