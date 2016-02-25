@@ -15,50 +15,6 @@
 
     <description>Builds, tests, and runs the project noa-libre.</description>
 
-    <!-- Note: this only works for Debian derivatives, all other Linux distros
-	 have too sloppy or non-existent packaging of Java UNO stuff -->
-    <condition property="ure.dir" value="/usr/share/java">
-        <os family="unix" />
-    </condition>
-    <condition property="ure.dir" value="C:\\Program Files\\LibreOffice 4\\URE\\java">
-        <os family="windows" arch="x86"/>
-    </condition>
-    <condition property="ure.dir" value="C:\\Program Files (x86)\\LibreOffice 4\\URE\\java">
-        <os family="windows" arch="amd64"/>
-    </condition>
-    <echo message="${ure.dir}"/>
-
-    <condition property="liboclass.dir" value="/usr/lib/libreoffice/program/classes/">
-        <os family="unix" arch="x86"/>
-    </condition>
-    <condition property="liboclass.dir" value="/usr/lib64/libreoffice/program/classes/">
-        <os family="unix" arch="amd64"/>
-    </condition>
-    <condition property="liboclass.dir" value="C:\\Program Files\\LibreOffice 4\\program\\classes">
-        <os family="windows" arch="x86"/>
-    </condition>
-    <condition property="liboclass.dir" value="C:\\Program Files (x86)\\LibreOffice 4\\program\\classes">
-        <os family="windows" arch="amd64"/>
-    </condition>
-    <echo message="${liboclass.dir}"/>
-
-    <path id="runtime.classpath">
-      <fileset dir="${ure.dir}">
-          <include name="**/juh.jar" />
-          <include name="**/jurt.jar" />
-          <include name="**/ridl.jar" />
-          <include name="**/unoloader.jar" />
-      </fileset>
-      <fileset dir="${liboclass.dir}">
-          <include name="**/officebean.jar" />
-          <include name="**/unoil.jar" />
-      </fileset>
-    </path>
-
-    <pathconvert property="mf.classpath" pathsep=" ">
-        <path refid="runtime.classpath" />
-    </pathconvert>
-
     <!-- Minimal LibreOffice version you want to build against. Beware,
          LibreOffice sometimes removes API in major releases -->
     <property name="libojars.version" value="5.0.3"/>
