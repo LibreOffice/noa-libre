@@ -1,3 +1,20 @@
+v3.0.0-RC1:
+
+ - Johannes Poeckl:
+      Remove static classpath guessing again.
+
+ - Katarina Behrens:
+      Don't put build-time classpath into manifest
+      Add new helper classes that'll try to find UNO on the system
+      Kill some duplicated code
+      Allow passing preferred path to OfficeLoader
+      Rework connection test to use the new OfficeLoader mechanism
+      Rework simple Calc example to use the new OfficeLoader
+      More error logging
+
+ - Oliver Specht:
+      Fix issue #2: os.arch is 'amd64'
+
 v3.0.0-beta1:
 
  - Andreas Weber:
