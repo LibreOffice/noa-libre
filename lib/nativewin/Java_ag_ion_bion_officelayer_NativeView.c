@@ -201,8 +201,11 @@ static LRESULT APIENTRY OpenOfficeWndProc(
 #pragma warning(push)
 #pragma warning(disable: 4152) /* function/data pointer conversion: */
 #endif
-    return CallWindowProc(GetProp(hWnd, OLD_PROC_KEY),
-                          hWnd, uMsg, wParam, lParam);
+    if (GetProp(hWnd, OLD_PROC_KEY) && IsWindow(hWnd) && uMsg != WM_IME_NOTIFY)
+        return CallWindowProc(GetProp(hWnd, OLD_PROC_KEY),
+                              hWnd, uMsg, wParam, lParam);
+    else
+        return DefWindowProc(hWnd, uMsg, wParam, lParam);
 #if defined _MSC_VER
 #pragma warning(pop)
 #endif
