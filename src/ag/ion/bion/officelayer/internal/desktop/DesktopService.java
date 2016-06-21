@@ -38,6 +38,8 @@
  */
 package ag.ion.bion.officelayer.internal.desktop;
 
+import org.eclipse.swt.widgets.Composite;
+
 import java.awt.Container;
 import java.util.Hashtable;
 
@@ -262,6 +264,29 @@ public class DesktopService implements IDesktopService {
   public IFrame constructNewOfficeFrame(Container container) throws DesktopException {
     if(officeConnection instanceof LocalOfficeConnection) {
       XFrame xFrame = ((LocalOfficeConnection)officeConnection).getOfficeFrame(container);
+      Frame frame = new Frame(xFrame, officeConnection);
+      return frame;
+    }
+    throw new DesktopException("New frames can only constructed for local OpenOffice.org applications.");
+  }
+  //----------------------------------------------------------------------------
+  /**
+   * Constructs new OpenOffice.org frame which is integrated into the 
+   * submitted SWT container. This method works only on local OpenOffice.org
+   * applications.
+   * 
+   * @param container SWT container to be used
+   * 
+   * @return new OpenOffice.org frame which is integrated into the 
+   * submitted SWT container
+   * 
+   * @throws DesktopException if the frame can not be constructed
+   * 
+   * @author Thorsten Behrens
+   */
+    public IFrame constructNewOfficeFrame(Composite composite) throws DesktopException {
+    if(officeConnection instanceof LocalOfficeConnection) {
+      XFrame xFrame = ((LocalOfficeConnection)officeConnection).getOfficeFrame(composite);
       Frame frame = new Frame(xFrame, officeConnection);
       return frame;
     }

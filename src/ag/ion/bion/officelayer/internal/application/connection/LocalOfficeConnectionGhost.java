@@ -47,6 +47,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
 
+import org.eclipse.swt.widgets.Composite;
+
 import ag.ion.bion.officelayer.OSHelper;
 import ag.ion.bion.officelayer.runtime.IOfficeProgressMonitor;
 
@@ -184,7 +186,12 @@ public class LocalOfficeConnectionGhost implements OfficeConnection {
 			return LocalOfficeConnectionGhost.this
 					.createOfficeWindow(container);
 		}
+		// ----------------------------------------------------------------------------
 
+		public OfficeWindow createOfficeWindow(Composite container) {
+			return LocalOfficeConnectionGhost.this
+					.createOfficeWindow(container);
+		}
 		// ----------------------------------------------------------------------------
 		/**
 		 * Closes the connection.
@@ -424,6 +431,12 @@ public class LocalOfficeConnectionGhost implements OfficeConnection {
 		} catch (java.net.MalformedURLException malformedURLException) {
 			// do not consume
 		}
+	}
+
+	public OfficeWindow createOfficeWindow(Composite container) {
+		if (officeConnectionWrapper == null)
+			officeConnectionWrapper = new OfficeConnectionWrapper();
+		return new LocalOfficeWindowWrapper(officeConnectionWrapper);
 	}
 
 	// ----------------------------------------------------------------------------
@@ -1005,6 +1018,4 @@ public class LocalOfficeConnectionGhost implements OfficeConnection {
 			// do not consume
 		}
 	}
-	// ----------------------------------------------------------------------------
-
 }
