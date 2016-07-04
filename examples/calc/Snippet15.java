@@ -27,7 +27,7 @@ import ag.ion.bion.officelayer.util.OfficeLoader;
 
 public class SimpleCalcTest {
 
-    private final static String OPEN_OFFICE_ORG_PATH = "/usr/lib64/libreoffice/program";
+    private final static String OPEN_OFFICE_ORG_PATH = "/usr/lib64/libreoffice";
     public static HashMap<String, String> configuration = new HashMap<String, String>();
     static {
         configuration.put(IOfficeApplication.APPLICATION_HOME_KEY, OPEN_OFFICE_ORG_PATH);

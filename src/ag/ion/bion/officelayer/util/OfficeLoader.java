@@ -199,7 +199,9 @@ public final class OfficeLoader {
         Process p;
         try {
             p = Runtime.getRuntime().exec(
-                new String[] { new File(path, "unoinfo").getPath(), "java" });
+                new String[] {
+                    new File( new File(path, "program"),
+                              "unoinfo").getPath(), "java" });
         } catch (IOException e) {
             System.err.println(
                 OfficeLoader.class.getName() + "::getCustomLoader: exec" +

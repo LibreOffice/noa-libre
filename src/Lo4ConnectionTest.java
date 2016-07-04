@@ -7,7 +7,7 @@ import ag.ion.bion.officelayer.util.OfficeLoader;
 
 public class Lo4ConnectionTest {
 
-    private final static String LIBREOFFICE_PATH = "/usr/lib64/libreoffice/program";
+    private final static String LIBREOFFICE_PATH = "/usr/lib64/libreoffice";
     public static HashMap<String, String> configuration = new HashMap<String, String>();
     static {
         configuration.put(IOfficeApplication.APPLICATION_HOME_KEY, LIBREOFFICE_PATH);
