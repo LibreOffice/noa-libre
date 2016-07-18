@@ -1,3 +1,16 @@
+v3.0.1-RC1:
+ - Thorsten Behrens:
+      Remove workaround for embedded window viewing
+      Add sources for NativeView DLL from LibO Bean
+      Fix crash in awt.dll
+      Update binary version of Windows nativeview DLL
+      Add option for Libreoffice embedding via SWT
+      Add snippet example for SWT embedding
+
+v3.0.0:
+ - Thorsten Behrens:
+      Use toplevel LibO dir for APPLICATION_HOME_KEY again
+
 v3.0.0-RC1:
 
  - Johannes Poeckl:
