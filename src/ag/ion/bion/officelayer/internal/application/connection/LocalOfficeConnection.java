@@ -51,6 +51,7 @@ import com.sun.star.uno.XComponentContext;
 
 import com.sun.star.lang.XMultiComponentFactory;
 import com.sun.star.lang.XMultiServiceFactory;
+import com.sun.star.lang.SystemDependent;
 
 import com.sun.star.awt.XSystemChildFactory;
 import com.sun.star.awt.XToolkit;
@@ -59,10 +60,9 @@ import com.sun.star.awt.XWindowPeer;
 
 import com.sun.star.comp.beans.OfficeWindow;
 
+import org.eclipse.swt.widgets.Composite;
+
 import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
 import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -355,6 +355,19 @@ public class LocalOfficeConnection extends AbstractOfficeConnection {
   }
   //----------------------------------------------------------------------------
   /**
+   * Constructs new local window for OpenOffice.org.
+   * 
+   * @param composite java SWT container
+   * 
+   * @return new new local window for OpenOffice.org
+   * 
+   * @author Thorsten Behrens
+   */
+  public OfficeWindow createLocalOfficeWindow(Composite container) {
+    return officeConnection.createOfficeWindow(container);
+  }
+  //----------------------------------------------------------------------------
+  /**
    * Returns OpenOffice.org frame integrated into the submitted Java AWT container. 
    * 
    * @param container java AWT container
@@ -376,6 +389,75 @@ public class LocalOfficeConnection extends AbstractOfficeConnection {
         final NativeView nativeView = new NativeView(System.getProperty("user.dir")+"/lib");
         container.add(nativeView);
         return getOfficeFrame(nativeView);    
+      }
+      catch(Exception exception) {
+        LOGGER.throwing(this.getClass().getName(), "getOfficeFrame", exception);
+        //exception.printStackTrace();
+        return null;
+      }
+    }
+    else {
+      return null;
+    }
+  }
+  //----------------------------------------------------------------------------
+  /**
+   * Returns OpenOffice.org frame integrated into the submitted Java SWT container. 
+   * 
+   * @param container java SWT container
+   * 
+   * @return OpenOffice.org frame integrated into the submitted Java SWT container
+   * 
+   * @author Thorsten Behrens
+   */
+  public XFrame getOfficeFrame(final Composite container) {
+    if(officeConnection != null) {      
+      try {
+        //TODO needs to be changed in later version as the dispose listener can be used.
+        if(!isConnected())
+          openConnection();  
+        
+        if(LOGGER.isLoggable(Level.FINEST))
+          LOGGER.finest("Creating local office window.");        
+        
+        XToolkit xToolkit = (XToolkit) UnoRuntime.queryInterface(
+            XToolkit.class, getXMultiServiceFactory().createInstance(
+                "com.sun.star.awt.Toolkit"));
+
+    	// initialise le xChildFactory
+        XSystemChildFactory xChildFactory = (XSystemChildFactory) UnoRuntime
+                .queryInterface(XSystemChildFactory.class, xToolkit);
+
+        long handle = container.handle;
+        byte[] procID = new byte[0];
+
+        XWindowPeer xWindowPeer = xChildFactory.createSystemChild(
+            (Object) handle, procID, SystemDependent.SYSTEM_WIN32);
+
+        XWindow xWindow = (XWindow) UnoRuntime.queryInterface(XWindow.class,
+            xWindowPeer);
+
+        Object object = getXMultiServiceFactory().createInstance(
+                "com.sun.star.frame.Task"); //$NON-NLS-1$
+        if(object == null)
+          object = getXMultiServiceFactory().createInstance(
+              "com.sun.star.frame.Frame"); //$NON-NLS-1$
+        if(LOGGER.isLoggable(Level.FINEST))
+          LOGGER.finest("Creating UNO XFrame interface.");
+        XFrame xFrame = (XFrame) UnoRuntime
+            .queryInterface(XFrame.class, object);
+        xFrame.getContainerWindow();
+        xFrame.initialize(xWindow);
+        xFrame.setName(xFrame.toString());
+        if(LOGGER.isLoggable(Level.FINEST))
+          LOGGER.finest("Creating desktop service.");
+        Object desktop = getXMultiServiceFactory().createInstance(
+            "com.sun.star.frame.Desktop"); //$NON-NLS-1$
+        com.sun.star.frame.XFrames xFrames = ((com.sun.star.frame.XFramesSupplier) UnoRuntime
+            .queryInterface(com.sun.star.frame.XFramesSupplier.class, desktop))
+            .getFrames();
+        xFrames.append(xFrame);
+        return xFrame;
       }
       catch(Exception exception) {
         LOGGER.throwing(this.getClass().getName(), "getOfficeFrame", exception);

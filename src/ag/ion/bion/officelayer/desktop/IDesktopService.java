@@ -46,6 +46,7 @@ import ag.ion.bion.officelayer.event.ITerminateListener;
 import ag.ion.noa.NOAException;
 
 import java.awt.Container;
+import org.eclipse.swt.widgets.Composite;
 
 /**
  * Desktop service of OpenOffice.org.
@@ -120,6 +121,22 @@ public interface IDesktopService extends IDisposeable {
    * @author Andreas Bröker
    */
   public IFrame constructNewOfficeFrame(Container container) throws DesktopException;
+  //----------------------------------------------------------------------------
+  /**
+   * Constructs new OpenOffice.org frame which is integrated into the 
+   * submitted SWT container. This method works only on local OpenOffice.org
+   * applications.
+   * 
+   * @param container SWT container to be used
+   * 
+   * @return new OpenOffice.org frame which is integrated into the 
+   * submitted SWT container
+   * 
+   * @throws DesktopException if the frame can not be constructed
+   * 
+   * @author Thorsten Behrens
+   */
+  public IFrame constructNewOfficeFrame(Composite composite) throws DesktopException;
   //----------------------------------------------------------------------------
   /**
    * Constructs new OpenOffice.org frame which uses the submitted native view. 
