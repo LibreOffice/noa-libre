@@ -158,7 +158,7 @@ public class MainWindow extends ApplicationWindow {
 
                 // Windows-only: set focus to contained
                 // LibreOffice. Embed protocol not properly working...
-                if (System.getProperty("os.name")..startsWith("Windows"))
+                if (System.getProperty("os.name").startsWith("Windows"))
                 {
                     long hwndChild = OS.GetWindow(container.handle,
                                                   OS.GW_CHILD);
