@@ -636,7 +636,11 @@ public class LocalOfficeConnectionGhost implements OfficeConnection {
 						.beginSubTask(Messages
 								.getString("LocalOfficeConnectionGhost_monitor_constructing_initial_context_message")); //$NON-NLS-1$
 
-			XComponentContext xContext = Bootstrap.bootstrap();
+			XComponentContext xContext = null;
+			if (officeArguments != null && officeArguments.length > 0)
+				xContext = Bootstrap.bootstrap(officeArguments);
+			else
+				xContext = Bootstrap.bootstrap();
 			return xContext;
 		} catch (java.lang.Exception exception) {
 			System.out.println("java.lang.Exception: "); //$NON-NLS-1$
