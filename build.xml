@@ -17,7 +17,7 @@
 
     <!-- Minimal LibreOffice version you want to build against. Beware,
          LibreOffice sometimes removes API in major releases -->
-    <property name="libojars.version" value="5.0.3"/>
+    <property name="libojars.version" value="5.0.5"/>
 
     <artifact:dependencies pathId="dependency.classpath">
       <dependency groupId="junit" artifactId="junit" version="3.8.2" scope="test"/>
