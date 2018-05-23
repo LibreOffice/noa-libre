@@ -63,8 +63,15 @@ public interface IOfficeApplication extends IDisposeable {
   /** Configuration key for the application home path (only for local applications). */
   public static final String APPLICATION_HOME_KEY = "home";
   /** 
-   * Configuration key for the application arguments (only for local applications). <br>
+   * Configuration key for the application arguments (only for local applications).<br>
    * Value must be of type string array String[]!<br><br>
+   * If not set, default options will be used @see com.sun.star.comp.helper.Bootstrap#getDefaultOptions()<br>
+   * You can also use the default list provided by {@link com.sun.star.comp.helper.Bootstrap#getDefaultOptions()}<br>
+   * and change it to fit your needs, for example:<br><br>
+   * List list = Array.asList(Bootstrap.getDefaultOptions());<br>
+   * list.remove("--nologo");<br>
+   * list.add("--invisible ");<br>
+   * configuration.put(IOfficeApplication.APPLICATION_ARGUMENTS_KEY, list.toArray(new String[list.size()]));<br>
    */
   public static final String APPLICATION_ARGUMENTS_KEY = "arguments";
 
