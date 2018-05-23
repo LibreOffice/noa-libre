@@ -55,12 +55,12 @@ import ag.ion.bion.officelayer.document.IDocument;
 import ag.ion.bion.officelayer.text.ITextDocument;
 import ag.ion.noa.NOAException;
 
-public class MainWindow extends ApplicationWindow {
+public class FrameWithSWT extends ApplicationWindow {
     private IOfficeApplication officeApplication=null;
     private ITextDocument textDocument=null;
     private ExecutorService executor = Executors.newSingleThreadExecutor();
 
-    public MainWindow(Shell arg0)
+    public FrameWithSWT(Shell arg0)
     {
         super(arg0);
     }
@@ -71,7 +71,7 @@ public class MainWindow extends ApplicationWindow {
         try
         {
             Shell shell = new Shell(Display.getCurrent(), SWT.SHELL_TRIM);
-            MainWindow window =  new MainWindow(shell);
+            FrameWithSWT window =  new FrameWithSWT(shell);
             window.setBlockOnOpen(true);
             window.open();
             Display.getCurrent().dispose();
