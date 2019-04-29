@@ -37,7 +37,6 @@
 package ag.ion.noa;
 
 import java.text.MessageFormat;
-
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 

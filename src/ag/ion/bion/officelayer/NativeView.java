@@ -45,7 +45,6 @@ import java.awt.Graphics;
 import java.io.File;
 
 import ag.ion.bion.officelayer.application.IOfficeApplication;
-import java.lang.reflect.Field;
 
 /**
  * Class to pass the system window handle to the OpenOffice.org toolkit.
