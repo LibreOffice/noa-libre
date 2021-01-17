@@ -1,7 +1,7 @@
 # noa-libre
 UNO API of LibreOffice easy and understandable - Nice Office Access
 
-NOA-libre is an object-oriented lightweight Java wrapper around LibreOffice UNO API, providing higher-level  abstraction of 
+NOA-libre is an object-oriented lightweight Java wrapper around LibreOffice UNO API, providing higher-level abstraction of 
 many UNO interfaces. It is a fork of Ubion's NOA (Nice Office Access) built around API of OpenOffice.org.
 
 ## Documentation
