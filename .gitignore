@@ -1,4 +1,9 @@
 /build/
 /dist/
 /manifest.mf
+*.iml
+# IntelliJ Directories
+.idea/
+out/
+.settings/
 *~
